@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code a crib</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <audio id="myAudio">
+        <source src="audio.mp3" type="audio/mpeg">
+    </audio>
+
+    <div id="button-container-id" class="button-container">
+        <div onclick="playAudio()" class="play-button"></div>
+        <div class="play-button-background"></div>
+    </div>
+
+    <div class="background_image">
+        <div class="stars-container">
+            <div class="stars-row1">
+                <div class="star star-0">
+                    <span style="font-size: 140px;">❄</span>
+                </div>
+                <div class="star star-1">
+                    <span style="font-size: 55px;">❄</span>
+                </div>
+                <div class="star star-2">
+                    <span style="font-size: 105px;">❄</span>
+                </div>
+            </div>
+            <div class="stars-row2">
+                <div class="star star-3">
+                    <span style="font-size: 80px;">❄</span>
+                </div>
+                <div class="star star-4">
+                    <span style="font-size: 80px;">❄</span>
+                </div>
+            </div>
+            <div class="stars-row3">
+                <div class="star star-5">
+                    <span style="font-size: 80px;">❄</span>
+                </div>
+                <div class="star star-6">
+                    <span style="font-size: 80px;">❄</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="canvas-container">
+        <canvas id="canvas" width="640" height="480"></canvas>
+    </div>
+
+    <script src="index.js"></script>
+</body>
+
+</html>
