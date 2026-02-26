@@ -10,6 +10,7 @@ const isMenuOpen = ref(false)
 const navLinks = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
+  { name: 'Education', href: '#education' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
   { name: 'Contact', href: '#contact' },
@@ -34,21 +35,21 @@ onUnmounted(() => {
 <template>
   <header
     :class="[
-      'fixed top-0 w-full z-50 transition-all duration-300',
-      isScrolled ? 'bg-background/80 backdrop-blur-md shadow-sm' : 'bg-transparent',
+      'fixed top-0 w-full z-50 transition-all duration-200 ease-out',
+      isScrolled ? 'bg-background/90 backdrop-blur-md border-b border-border/50' : 'bg-transparent',
     ]"
   >
-    <div class="container mx-auto px-4 py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold">
+    <div class="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
+      <a href="/" class="text-xl font-bold tracking-tight hover:opacity-90 transition-opacity duration-200">
         Akhil<span class="text-primary">Johnson</span>
       </a>
 
-      <nav class="hidden md:flex items-center space-x-6">
+      <nav class="hidden md:flex items-center gap-6">
         <a
           v-for="link in navLinks"
           :key="link.name"
           :href="link.href"
-          class="text-sm font-medium hover:text-primary transition-colors"
+          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
         >
           {{ link.name }}
         </a>
@@ -73,7 +74,7 @@ onUnmounted(() => {
           v-for="link in navLinks"
           :key="link.name"
           :href="link.href"
-          class="text-sm font-medium py-2 hover:text-primary transition-colors"
+          class="text-sm font-medium py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
           @click="toggleMenu"
         >
           {{ link.name }}

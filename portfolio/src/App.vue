@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar.vue'
 import Hero from '@/components/Hero.vue'
 import About from '@/components/About.vue'
 import Experience from '@/components/Experience.vue'
+import Education from '@/components/Education.vue'
 import Projects from '@/components/Projects.vue'
 import Skills from '@/components/Skills.vue'
 import Contact from '@/components/Contact.vue'
@@ -17,6 +18,7 @@ import Toast from '@/components/ui/Toast.vue'
       <Hero />
       <About />
       <Experience />
+      <Education />
       <Projects />
       <Skills />
       <Contact />

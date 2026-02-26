@@ -99,14 +99,14 @@ const personalProjects: Project[] = [
 </script>
 
 <template>
-  <section id="projects" class="py-20 bg-muted/30">
+  <section id="projects" class="section-alt">
     <div class="container mx-auto px-4">
       <div
         v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
+        :initial="{ opacity: 0, y: 12 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }"
       >
-        <h2 class="text-3xl font-bold text-center mb-12">Projects</h2>
+        <h2 class="section-heading">Projects</h2>
 
         <Tabs default-value="career" class="w-full">
           <TabsList class="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
@@ -121,14 +121,14 @@ const personalProjects: Project[] = [
                 :key="index"
                 v-motion
                 :initial="{ opacity: 0, y: 20 }"
-                :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: index * 100 } }"
+                :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
               >
-                <Card class="h-full flex flex-col">
-                  <div class="aspect-video w-full overflow-hidden">
+                <Card class="h-full flex flex-col transition-shadow duration-300 hover:shadow-md">
+                  <div class="aspect-video w-full overflow-hidden rounded-t-lg">
                     <img
                       :src="project.image || '/placeholder.svg'"
                       :alt="project.title"
-                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]"
                     />
                   </div>
                   <CardHeader>
@@ -169,14 +169,14 @@ const personalProjects: Project[] = [
                 :key="index"
                 v-motion
                 :initial="{ opacity: 0, y: 20 }"
-                :enter="{ opacity: 1, y: 0, transition: { duration: 500, delay: index * 100 } }"
+                :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
               >
-                <Card class="h-full flex flex-col">
-                  <div class="aspect-video w-full overflow-hidden">
+                <Card class="h-full flex flex-col transition-shadow duration-300 hover:shadow-md">
+                  <div class="aspect-video w-full overflow-hidden rounded-t-lg">
                     <img
                       :src="project.image || '/placeholder.svg'"
                       :alt="project.title"
-                      class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                      class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]"
                     />
                   </div>
                   <CardHeader>

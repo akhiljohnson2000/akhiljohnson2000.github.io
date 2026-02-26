@@ -5,40 +5,39 @@ import CardContent from '@/components/ui/CardContent.vue'
 </script>
 
 <template>
-  <section id="about" class="py-20 bg-muted/30">
+  <section id="about" class="section-alt">
     <div class="container mx-auto px-4">
       <div
         v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
+        :initial="{ opacity: 0, y: 12 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }"
         class="max-w-3xl mx-auto"
       >
-        <h2 class="text-3xl font-bold text-center mb-12">About Me</h2>
+        <h2 class="section-heading">About Me</h2>
 
-        <Card>
-          <CardContent class="p-6">
-            <div class="flex items-center mb-4">
-              <div class="flex items-center text-muted-foreground">
-                <MapPin class="h-4 w-4 mr-2" />
-                <span>Thrissur, Kerala, India</span>
-              </div>
+        <Card class="overflow-hidden transition-shadow duration-300 hover:shadow-md">
+          <CardContent class="p-6 md:p-8">
+            <div class="flex items-center gap-2 text-muted-foreground mb-6">
+              <MapPin class="h-4 w-4 shrink-0" />
+              <span>Thrissur, Kerala, India</span>
             </div>
 
-            <p class="mb-4">
-              I'm a front-end developer with proven experience at Cakap and Qburst in helping them create and maintain
-              a better code base for reusability. Passionate about learning and development with a desire to apply
-              skills.
+            <p class="mb-4 leading-relaxed text-muted-foreground/90">
+              Senior Frontend Engineer with 8+ years of experience building high-performance, scalable web applications
+              across education, real-time communication, and data-driven platforms. Strong expertise in React, Next.js,
+              and Angular, with focus on component-driven architecture, performance optimization, accessibility
+              (WCAG), SEO, and design systems.
             </p>
 
-            <p class="mb-4">
-              With over 7 years of experience in Angular and 5 years in React, I've developed a strong foundation in
-              building responsive, user-friendly web applications that deliver exceptional user experiences.
+            <p class="mb-4 leading-relaxed text-muted-foreground/90">
+              I own features end-to-end, mentor engineers, and collaborate with product, design, and backend teams to
+              deliver production-grade user experiences at scale. My expertise includes dashboards, WebRTC interfaces
+              for video and audio, and real-time chat services.
             </p>
 
-            <p>
-              I'm eager to tackle more complex problems and continue to find ways to maximize user efficiency. My
-              expertise includes developing dashboards, RTC interfaces for video and audio conversations, and
-              real-time chat services for interaction between users.
+            <p class="leading-relaxed text-muted-foreground/90">
+              React-first mindset with a strong Angular background; focused on performance, scalability, SEO, and
+              proven ability to work in remote, cross-functional teams.
             </p>
           </CardContent>
         </Card>

@@ -54,9 +54,36 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground font-sans antialiased;
   }
   html {
     scroll-behavior: smooth;
+  }
+}
+
+/* Section layout and headings */
+.section {
+  @apply py-16 md:py-20;
+}
+.section-alt {
+  @apply py-16 md:py-20 bg-muted/30;
+}
+.section-heading {
+  @apply text-2xl md:text-3xl font-bold text-center mb-10 md:mb-12 tracking-tight text-foreground;
+}
+
+/* Stable, subtle transitions */
+@media (prefers-reduced-motion: no-preference) {
+  .transition-shadow,
+  a[class*='transition'],
+  button[class*='transition'] {
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
   }
 }

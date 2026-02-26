@@ -36,17 +36,17 @@ function handleSubmit(e: Event) {
 </script>
 
 <template>
-  <section id="contact" class="py-20 bg-muted/30">
+  <section id="contact" class="section-alt">
     <div class="container mx-auto px-4">
       <div
         v-motion
-        :initial="{ opacity: 0, y: 20 }"
-        :enter="{ opacity: 1, y: 0, transition: { duration: 500 } }"
+        :initial="{ opacity: 0, y: 12 }"
+        :enter="{ opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }"
       >
-        <h2 class="text-3xl font-bold text-center mb-12">Get In Touch</h2>
+        <h2 class="section-heading">Get In Touch</h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <Card>
+          <Card class="transition-shadow duration-300 hover:shadow-md">
             <CardHeader>
               <CardTitle>Contact Information</CardTitle>
               <CardDescription>Feel free to reach out to me through any of these channels.</CardDescription>
@@ -66,7 +66,7 @@ function handleSubmit(e: Event) {
                   <p class="font-medium">Email</p>
                   <a
                     href="mailto:akhiljohnson2000@gmail.com"
-                    class="text-muted-foreground hover:text-primary transition-colors"
+                    class="text-muted-foreground hover:text-primary transition-colors duration-200"
                   >
                     akhiljohnson2000@gmail.com
                   </a>
@@ -77,7 +77,7 @@ function handleSubmit(e: Event) {
                 <Phone class="h-5 w-5 mr-3 text-primary" />
                 <div>
                   <p class="font-medium">Phone</p>
-                  <a href="tel:+919809194911" class="text-muted-foreground hover:text-primary transition-colors">
+                  <a href="tel:+919809194911" class="text-muted-foreground hover:text-primary transition-colors duration-200">
                     +91 9809194911
                   </a>
                 </div>
@@ -85,7 +85,7 @@ function handleSubmit(e: Event) {
             </CardContent>
           </Card>
 
-          <Card>
+          <Card class="transition-shadow duration-300 hover:shadow-md">
             <CardHeader>
               <CardTitle>Send a Message</CardTitle>
               <CardDescription>Fill out the form below and I'll get back to you as soon as possible.</CardDescription>
@@ -126,7 +126,7 @@ function handleSubmit(e: Event) {
                     required
                   />
                 </div>
-                <Button type="submit" class="w-full" :disabled="isSubmitting">
+                <Button type="submit" class="w-full transition-transform duration-200 hover:scale-[1.01] active:scale-[0.99]" :disabled="isSubmitting">
                   {{ isSubmitting ? 'Sending...' : 'Send Message' }}
                 </Button>
               </form>
