@@ -53,7 +53,7 @@ onUnmounted(() => {
           {{ link.name }}
         </a>
         <ModeToggle />
-        <Button as="a" href="/resume.pdf" target="_blank" rel="noopener noreferrer">
+        <Button as="a" href="/akhil_johnson_cv.pdf" target="_blank" rel="noopener noreferrer">
           Resume
         </Button>
       </nav>
@@ -78,7 +78,7 @@ onUnmounted(() => {
         >
           {{ link.name }}
         </a>
-        <Button as="a" href="/resume.pdf" target="_blank" rel="noopener noreferrer" class="w-full">
+        <Button as="a" href="/akhil_johnson_cv.pdf" target="_blank" rel="noopener noreferrer" class="w-full">
           Resume
         </Button>
       </div>
