@@ -18,7 +18,7 @@ const emit = defineEmits<{ 'update:modelValue': [value: string] }>()
 <template>
   <TabsRoot
     :default-value="defaultValue"
-    :model-value="modelValue ?? defaultValue"
+    :model-value="modelValue"
     @update:model-value="(v) => emit('update:modelValue', v)"
     :class="cn('w-full', props.class)"
   >

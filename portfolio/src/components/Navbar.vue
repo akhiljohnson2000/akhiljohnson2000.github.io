@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from 'vue'
+import { RouterLink } from 'vue-router'
 import Button from '@/components/ui/Button.vue'
 import ModeToggle from '@/components/ModeToggle.vue'
 import { Menu, X } from 'lucide-vue-next'
@@ -39,9 +40,9 @@ onUnmounted(() => {
     ]"
   >
     <div class="container mx-auto px-4 py-3 md:py-4 flex items-center justify-between">
-      <a href="/" class="text-xl font-bold tracking-tight hover:opacity-90 transition-opacity duration-200">
+      <RouterLink to="/" class="text-xl font-bold tracking-tight hover:opacity-90 transition-opacity duration-200">
         Akhil<span class="text-primary">Johnson</span>
-      </a>
+      </RouterLink>
 
       <nav class="hidden md:flex items-center gap-6">
         <a

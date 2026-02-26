@@ -7,11 +7,15 @@ import CardTitle from '@/components/ui/CardTitle.vue'
 import CardDescription from '@/components/ui/CardDescription.vue'
 import Badge from '@/components/ui/Badge.vue'
 import Button from '@/components/ui/Button.vue'
-import Tabs from '@/components/ui/Tabs.vue'
-import TabsList from '@/components/ui/TabsList.vue'
-import TabsTrigger from '@/components/ui/TabsTrigger.vue'
-import TabsContent from '@/components/ui/TabsContent.vue'
+import { ref } from 'vue'
+import { RouterLink } from 'vue-router'
 import { ExternalLink, Github } from 'lucide-vue-next'
+
+function isInternalLink(link?: string) {
+  return link?.startsWith('/')
+}
+
+const activeTab = ref<'career' | 'personal'>('career')
 
 interface Project {
   title: string
@@ -63,6 +67,14 @@ const careerProjects: Project[] = [
 
 const personalProjects: Project[] = [
   {
+    title: 'JavaScript Engine Visualizer',
+    description:
+      'Interactive 3D simulation of how a JavaScript engine works: Call Stack, Heap, Web APIs, Event Loop, Microtask and Callback queues. Run code in slow motion.',
+    image: '/placeholder.svg?height=200&width=400',
+    technologies: ['Vue 3', 'Three.js', 'GSAP', 'TypeScript'],
+    link: '/javascript-engine-visualizer',
+  },
+  {
     title: 'Portfolio Website',
     description:
       'A modern, responsive portfolio website built with Vue.js and Tailwind CSS to showcase my skills and projects.',
@@ -108,13 +120,27 @@ const personalProjects: Project[] = [
       >
         <h2 class="section-heading">Projects</h2>
 
-        <Tabs default-value="career" class="w-full">
-          <TabsList class="grid w-full max-w-md mx-auto grid-cols-2 mb-12">
-            <TabsTrigger value="career">Career Projects</TabsTrigger>
-            <TabsTrigger value="personal">Personal Projects</TabsTrigger>
-          </TabsList>
+        <div class="w-full">
+          <div class="grid w-full max-w-md mx-auto grid-cols-2 mb-12 rounded-md bg-muted p-1 text-muted-foreground">
+            <button
+              type="button"
+              class="inline-flex h-10 items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              :class="activeTab === 'career' ? 'bg-background text-foreground shadow-sm' : 'hover:text-foreground'"
+              @click="activeTab = 'career'"
+            >
+              Career Projects
+            </button>
+            <button
+              type="button"
+              class="inline-flex h-10 items-center justify-center rounded-sm px-3 py-1.5 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50"
+              :class="activeTab === 'personal' ? 'bg-background text-foreground shadow-sm' : 'hover:text-foreground'"
+              @click="activeTab = 'personal'"
+            >
+              Personal Projects
+            </button>
+          </div>
 
-          <TabsContent value="career">
+          <div v-show="activeTab === 'career'" class="mt-2">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div
                 v-for="(project, index) in careerProjects"
@@ -152,7 +178,11 @@ const personalProjects: Project[] = [
                       <Github class="h-4 w-4 mr-2" />
                       GitHub
                     </Button>
-                    <Button v-if="project.link" size="sm" as="a" :href="project.link" target="_blank" rel="noopener noreferrer">
+                    <RouterLink v-if="project.link && isInternalLink(project.link)" :to="project.link" class="inline-flex items-center justify-center h-9 rounded-md px-3 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90">
+                      <ExternalLink class="h-4 w-4 mr-2" />
+                      Visit
+                    </RouterLink>
+                    <Button v-else-if="project.link" size="sm" as="a" :href="project.link" target="_blank" rel="noopener noreferrer">
                       <ExternalLink class="h-4 w-4 mr-2" />
                       Visit
                     </Button>
@@ -160,9 +190,9 @@ const personalProjects: Project[] = [
                 </Card>
               </div>
             </div>
-          </TabsContent>
+          </div>
 
-          <TabsContent value="personal">
+          <div v-show="activeTab === 'personal'" class="mt-2">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div
                 v-for="(project, index) in personalProjects"
@@ -200,7 +230,11 @@ const personalProjects: Project[] = [
                       <Github class="h-4 w-4 mr-2" />
                       GitHub
                     </Button>
-                    <Button v-if="project.link" size="sm" as="a" :href="project.link" target="_blank" rel="noopener noreferrer">
+                    <RouterLink v-if="project.link && isInternalLink(project.link)" :to="project.link" class="inline-flex items-center justify-center h-9 rounded-md px-3 text-sm font-medium bg-primary text-primary-foreground hover:bg-primary/90">
+                      <ExternalLink class="h-4 w-4 mr-2" />
+                      Visit
+                    </RouterLink>
+                    <Button v-else-if="project.link" size="sm" as="a" :href="project.link" target="_blank" rel="noopener noreferrer">
                       <ExternalLink class="h-4 w-4 mr-2" />
                       Visit
                     </Button>
@@ -208,8 +242,8 @@ const personalProjects: Project[] = [
                 </Card>
               </div>
             </div>
-          </TabsContent>
-        </Tabs>
+          </div>
+        </div>
       </div>
     </div>
   </section>
