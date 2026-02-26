@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Button from '@/components/ui/Button.vue'
+import TypedNameThree from '@/components/TypedNameThree.vue'
 import { ArrowDown, Github, Linkedin, Mail } from 'lucide-vue-next'
 </script>
 
@@ -14,8 +15,8 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-vue-next'
         :enter="{ opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }"
         class="max-w-3xl mx-auto text-center"
       >
-        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4">
-          Hi, I'm <span class="text-primary">Akhil Johnson</span>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-4 flex flex-wrap items-center justify-center gap-x-2 gap-y-1 leading-tight">
+          <span class="inline-block">Hi, I'm</span> <TypedNameThree />
         </h1>
         <h2 class="text-xl md:text-2xl font-medium text-muted-foreground mb-6">
           Expert Angular and React Developer
