@@ -2,9 +2,11 @@
 """
 Clean repo root and deploy portfolio build.
 
-- Keeps only: .git, portfolio, javascript-engine-visualizer, .gitignore
+- Keeps only: .git, portfolio, .gitignore, deploy_update.py
 - Deletes all other files and folders at repo root
 - Copies contents of portfolio/dist/ to repo root (for GitHub Pages)
+
+The JavaScript Engine Visualizer lives inside portfolio/javascript-engine-visualizer/ (Vue).
 """
 
 import os
@@ -14,7 +16,7 @@ from pathlib import Path
 # Run from repo root (directory where this script lives)
 REPO_ROOT = Path(__file__).resolve().parent
 
-KEEP = {".git", "portfolio", "javascript-engine-visualizer", ".gitignore", "deploy_update.py"}
+KEEP = {".git", "portfolio", ".gitignore", "deploy_update.py"}
 DIST_SOURCE = REPO_ROOT / "portfolio" / "dist"
 
 
@@ -55,7 +57,7 @@ def main():
             print(f"Error copying {item.name}: {e}")
             return 1
 
-    print("Done. Root now has: .git, portfolio, javascript-engine-visualizer, deploy_update.py, .gitignore + dist contents.")
+    print("Done. Root now has: .git, portfolio, deploy_update.py, .gitignore + dist contents.")
     return 0
 
 

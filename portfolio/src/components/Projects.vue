@@ -67,14 +67,6 @@ const careerProjects: Project[] = [
 
 const personalProjects: Project[] = [
   {
-    title: 'JavaScript Engine Visualizer',
-    description:
-      'Interactive 3D simulation of how a JavaScript engine works: Call Stack, Heap, Web APIs, Event Loop, Microtask and Callback queues. Run code in slow motion.',
-    image: '/placeholder.svg?height=200&width=400',
-    technologies: ['Vue 3', 'Three.js', 'GSAP', 'TypeScript'],
-    link: '/javascript-engine-visualizer',
-  },
-  {
     title: 'Portfolio Website',
     description:
       'A modern, responsive portfolio website built with Vue.js and Tailwind CSS to showcase my skills and projects.',
