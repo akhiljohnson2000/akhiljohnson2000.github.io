@@ -133,7 +133,7 @@ const personalProjects: Project[] = [
           </div>
 
           <div v-show="activeTab === 'career'" class="mt-2">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <div
                 v-for="(project, index) in careerProjects"
                 :key="index"
@@ -141,14 +141,7 @@ const personalProjects: Project[] = [
                 :initial="{ opacity: 0, y: 20 }"
                 :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
               >
-                <Card class="h-full flex flex-col transition-shadow duration-300 hover:shadow-md">
-                  <div class="aspect-video w-full overflow-hidden rounded-t-lg">
-                    <img
-                      :src="project.image || '/placeholder.svg'"
-                      :alt="project.title"
-                      class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]"
-                    />
-                  </div>
+              <Card class="h-full flex flex-col transition-shadow duration-300 hover:shadow-md">
                   <CardHeader>
                     <div class="flex justify-between items-start">
                       <div>
@@ -185,7 +178,7 @@ const personalProjects: Project[] = [
           </div>
 
           <div v-show="activeTab === 'personal'" class="mt-2">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
               <div
                 v-for="(project, index) in personalProjects"
                 :key="index"
@@ -194,13 +187,6 @@ const personalProjects: Project[] = [
                 :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
               >
                 <Card class="h-full flex flex-col transition-shadow duration-300 hover:shadow-md">
-                  <div class="aspect-video w-full overflow-hidden rounded-t-lg">
-                    <img
-                      :src="project.image || '/placeholder.svg'"
-                      :alt="project.title"
-                      class="w-full h-full object-cover transition-transform duration-300 ease-out hover:scale-[1.02]"
-                    />
-                  </div>
                   <CardHeader>
                     <div class="flex justify-between items-start">
                       <div>

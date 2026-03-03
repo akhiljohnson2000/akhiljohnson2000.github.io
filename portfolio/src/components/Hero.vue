@@ -31,9 +31,6 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-vue-next'
           <Button as="a" href="#projects" size="lg" class="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
             View My Work
           </Button>
-          <Button as="a" href="#contact" variant="outline" size="lg" class="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
-            Contact Me
-          </Button>
         </div>
 
         <div class="flex items-center justify-center gap-4">
