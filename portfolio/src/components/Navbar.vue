@@ -8,11 +8,12 @@ import { Menu, X } from 'lucide-vue-next'
 const isScrolled = ref(false)
 const isMenuOpen = ref(false)
 
-const navLinks = [
+const navLinks: Array<{ name: string; href?: string; to?: string }> = [
   { name: 'About', href: '#about' },
   { name: 'Experience', href: '#experience' },
   { name: 'Projects', href: '#projects' },
   { name: 'Skills', href: '#skills' },
+  { name: 'Services', href: '#services' },
 ]
 
 function handleScroll() {
@@ -44,14 +45,22 @@ onUnmounted(() => {
       </RouterLink>
 
       <nav class="hidden md:flex items-center gap-6">
-        <a
-          v-for="link in navLinks"
-          :key="link.name"
-          :href="link.href"
-          class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
-        >
-          {{ link.name }}
-        </a>
+        <template v-for="link in navLinks" :key="link.name">
+          <RouterLink
+            v-if="link.to"
+            :to="link.to"
+            class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            {{ link.name }}
+          </RouterLink>
+          <a
+            v-else
+            :href="link.href"
+            class="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors duration-200"
+          >
+            {{ link.name }}
+          </a>
+        </template>
         <ModeToggle />
         <Button as="a" href="/akhil_johnson_cv.pdf" target="_blank" rel="noopener noreferrer">
           Resume
@@ -69,15 +78,24 @@ onUnmounted(() => {
 
     <div v-show="isMenuOpen" class="md:hidden bg-background border-t">
       <div class="container mx-auto px-4 py-4 flex flex-col space-y-4">
-        <a
-          v-for="link in navLinks"
-          :key="link.name"
-          :href="link.href"
-          class="text-sm font-medium py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
-          @click="toggleMenu"
-        >
-          {{ link.name }}
-        </a>
+        <template v-for="link in navLinks" :key="link.name">
+          <RouterLink
+            v-if="link.to"
+            :to="link.to"
+            class="text-sm font-medium py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+            @click="toggleMenu"
+          >
+            {{ link.name }}
+          </RouterLink>
+          <a
+            v-else
+            :href="link.href"
+            class="text-sm font-medium py-2 text-muted-foreground hover:text-foreground transition-colors duration-200"
+            @click="toggleMenu"
+          >
+            {{ link.name }}
+          </a>
+        </template>
         <Button as="a" href="/akhil_johnson_cv.pdf" target="_blank" rel="noopener noreferrer" class="w-full">
           Resume
         </Button>
