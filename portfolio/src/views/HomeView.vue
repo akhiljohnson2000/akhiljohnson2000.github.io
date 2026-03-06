@@ -5,7 +5,6 @@ import About from '@/components/About.vue'
 import Experience from '@/components/Experience.vue'
 import Projects from '@/components/Projects.vue'
 import Skills from '@/components/Skills.vue'
-import Services from '@/components/Services.vue'
 import Toast from '@/components/ui/Toast.vue'
 </script>
 
@@ -18,7 +17,6 @@ import Toast from '@/components/ui/Toast.vue'
       <Experience />
       <Projects />
       <Skills />
-      <Services />
     </main>
     <Toast />
   </div>
