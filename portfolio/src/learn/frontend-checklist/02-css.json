@@ -1,0 +1,63 @@
+{
+  "title": "CSS Mastery",
+  "topics": [
+    {
+      "name": "Core Concepts",
+      "subtopics": [
+        "box_model",
+        "specificity",
+        "cascade",
+        "inheritance",
+        "computed_styles",
+        "initial_vs_inherit_vs_unset_vs_revert"
+      ],
+      "references": []
+    },
+    {
+      "name": "Layout Systems",
+      "subtopics": [
+        "display_types",
+        "flexbox_complete",
+        "grid_complete",
+        "positioning",
+        "z_index_stacking_context",
+        "float_and_clear"
+      ],
+      "references": []
+    },
+    {
+      "name": "Responsive Design",
+      "subtopics": [
+        "media_queries",
+        "container_queries",
+        "fluid_layouts",
+        "mobile_first_design",
+        "viewport_units"
+      ],
+      "references": []
+    },
+    {
+      "name": "Rendering & Performance",
+      "subtopics": [
+        "reflow_and_repaint",
+        "layout_thrashing",
+        "paint_cost",
+        "compositing_layers",
+        "gpu_acceleration"
+      ],
+      "references": []
+    },
+    {
+      "name": "Advanced Styling",
+      "subtopics": [
+        "css_variables",
+        "custom_properties",
+        "animations",
+        "transitions",
+        "transform",
+        "filters"
+      ],
+      "references": []
+    }
+  ]
+}

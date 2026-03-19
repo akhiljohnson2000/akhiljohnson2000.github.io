@@ -1,0 +1,45 @@
+{
+  "title": "State Management",
+  "topics": [
+    {
+      "name": "Fundamentals",
+      "subtopics": [
+        "local_vs_global_state",
+        "client_vs_server_state",
+        "state_normalization",
+        "immutability"
+      ],
+      "references": []
+    },
+    {
+      "name": "Patterns",
+      "subtopics": [
+        "flux_architecture",
+        "event_driven_state",
+        "observer_pattern"
+      ],
+      "references": []
+    },
+    {
+      "name": "Libraries",
+      "subtopics": [
+        "redux",
+        "redux_toolkit",
+        "zustand",
+        "react_query",
+        "mobx"
+      ],
+      "references": []
+    },
+    {
+      "name": "Advanced Concepts",
+      "subtopics": [
+        "selector_memoization",
+        "cache_invalidation",
+        "state_synchronization",
+        "optimistic_updates"
+      ],
+      "references": []
+    }
+  ]
+}

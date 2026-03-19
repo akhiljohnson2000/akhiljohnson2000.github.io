@@ -1,0 +1,23 @@
+{
+  "title": "Accessibility",
+  "topics": [
+    {
+      "name": "Core Principles",
+      "subtopics": [
+        "wcag_guidelines",
+        "perceivable_operable_understandable_robust"
+      ],
+      "references": []
+    },
+    {
+      "name": "Implementation",
+      "subtopics": [
+        "aria_roles",
+        "keyboard_navigation",
+        "focus_management",
+        "screen_readers"
+      ],
+      "references": []
+    }
+  ]
+}

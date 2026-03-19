@@ -1,0 +1,49 @@
+{
+  "title": "React",
+  "topics": [
+    {
+      "name": "Core Concepts",
+      "subtopics": [
+        "jsx",
+        "components",
+        "props_vs_state",
+        "event_handling",
+        "controlled_components"
+      ],
+      "references": []
+    },
+    {
+      "name": "Hooks",
+      "subtopics": [
+        "useState",
+        "useEffect",
+        "useMemo",
+        "useCallback",
+        "useRef",
+        "custom_hooks"
+      ],
+      "references": []
+    },
+    {
+      "name": "Rendering & Lifecycle",
+      "subtopics": [
+        "render_cycle",
+        "reconciliation",
+        "virtual_dom",
+        "render_vs_commit_phase"
+      ],
+      "references": []
+    },
+    {
+      "name": "Advanced",
+      "subtopics": [
+        "context_api",
+        "error_boundaries",
+        "code_splitting",
+        "suspense",
+        "concurrent_rendering"
+      ],
+      "references": []
+    }
+  ]
+}

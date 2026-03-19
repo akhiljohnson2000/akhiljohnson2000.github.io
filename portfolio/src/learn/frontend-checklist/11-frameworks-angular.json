@@ -1,0 +1,46 @@
+{
+  "title": "Angular",
+  "topics": [
+    {
+      "name": "Core Architecture",
+      "subtopics": [
+        "components",
+        "modules",
+        "services",
+        "dependency_injection",
+        "standalone_components"
+      ],
+      "references": []
+    },
+    {
+      "name": "Templates & Binding",
+      "subtopics": [
+        "interpolation",
+        "property_binding",
+        "event_binding",
+        "two_way_binding"
+      ],
+      "references": []
+    },
+    {
+      "name": "RxJS & Async",
+      "subtopics": [
+        "observables",
+        "subjects",
+        "operators_map_switchmap_mergemap",
+        "async_pipe"
+      ],
+      "references": []
+    },
+    {
+      "name": "Change Detection",
+      "subtopics": [
+        "default_strategy",
+        "onpush_strategy",
+        "zone_js",
+        "signals"
+      ],
+      "references": []
+    }
+  ]
+}

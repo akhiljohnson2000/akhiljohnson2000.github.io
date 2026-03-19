@@ -1,0 +1,55 @@
+{
+  "title": "DevTools & Debugging",
+  "topics": [
+    {
+      "name": "Elements & Styling",
+      "subtopics": [
+        "inspect_dom",
+        "live_edit_styles",
+        "css_debugging",
+        "layout_inspection"
+      ],
+      "references": []
+    },
+    {
+      "name": "Console & Debugging",
+      "subtopics": [
+        "console_methods",
+        "breakpoints",
+        "watch_expressions",
+        "step_over_into_out"
+      ],
+      "references": []
+    },
+    {
+      "name": "Network Debugging",
+      "subtopics": [
+        "request_inspection",
+        "headers_analysis",
+        "payload_debugging",
+        "waterfall_analysis"
+      ],
+      "references": []
+    },
+    {
+      "name": "Performance Profiling",
+      "subtopics": [
+        "flame_chart",
+        "long_tasks",
+        "fps_monitoring",
+        "cpu_profiling"
+      ],
+      "references": []
+    },
+    {
+      "name": "Memory Debugging",
+      "subtopics": [
+        "heap_snapshots",
+        "memory_leaks",
+        "detached_dom_nodes",
+        "retainers"
+      ],
+      "references": []
+    }
+  ]
+}

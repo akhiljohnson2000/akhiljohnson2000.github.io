@@ -1,0 +1,47 @@
+{
+  "title": "Frontend System Design",
+  "topics": [
+    {
+      "name": "Rendering Strategies",
+      "subtopics": [
+        "csr",
+        "ssr",
+        "ssg",
+        "isr",
+        "hydration",
+        "partial_hydration"
+      ],
+      "references": []
+    },
+    {
+      "name": "Data Layer",
+      "subtopics": [
+        "api_design",
+        "rest_vs_graphql",
+        "caching_strategies",
+        "state_synchronization"
+      ],
+      "references": []
+    },
+    {
+      "name": "Performance at Scale",
+      "subtopics": [
+        "performance_budget",
+        "lazy_loading_routes",
+        "cdn_usage",
+        "edge_caching"
+      ],
+      "references": []
+    },
+    {
+      "name": "Scalable UI Systems",
+      "subtopics": [
+        "component_library_design",
+        "design_tokens",
+        "theming",
+        "multi_tenant_ui"
+      ],
+      "references": []
+    }
+  ]
+}

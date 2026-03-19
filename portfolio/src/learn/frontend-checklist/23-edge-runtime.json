@@ -1,0 +1,25 @@
+{
+  "title": "Edge Runtime",
+  "topics": [
+    {
+      "name": "Edge Concepts",
+      "subtopics": [
+        "edge_functions",
+        "serverless_edge",
+        "latency_optimization",
+        "geo_distribution"
+      ],
+      "references": []
+    },
+    {
+      "name": "Rendering at Edge",
+      "subtopics": [
+        "edge_ssr",
+        "streaming",
+        "middleware_execution",
+        "edge_caching"
+      ],
+      "references": []
+    }
+  ]
+}

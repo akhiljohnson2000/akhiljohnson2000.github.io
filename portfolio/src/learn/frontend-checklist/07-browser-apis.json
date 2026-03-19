@@ -1,0 +1,63 @@
+{
+  "title": "Browser APIs",
+  "topics": [
+    {
+      "name": "DOM APIs",
+      "subtopics": [
+        "document_query_selector",
+        "dom_traversal",
+        "dom_manipulation",
+        "element_attributes_vs_properties",
+        "event_listeners",
+        "event_propagation_bubbling_capturing",
+        "event_delegation"
+      ],
+      "references": []
+    },
+    {
+      "name": "Storage APIs",
+      "subtopics": [
+        "localStorage",
+        "sessionStorage",
+        "cookies",
+        "indexedDB",
+        "storage_limits",
+        "security_considerations_storage"
+      ],
+      "references": []
+    },
+    {
+      "name": "Network APIs",
+      "subtopics": [
+        "fetch_api",
+        "xmlhttprequest",
+        "request_response_lifecycle",
+        "headers_and_status_codes",
+        "abort_controller",
+        "streaming_responses"
+      ],
+      "references": []
+    },
+    {
+      "name": "Browser APIs Core",
+      "subtopics": [
+        "setTimeout_setInterval",
+        "requestAnimationFrame",
+        "mutationObserver",
+        "intersectionObserver",
+        "resizeObserver"
+      ],
+      "references": []
+    },
+    {
+      "name": "History & Navigation",
+      "subtopics": [
+        "history_api",
+        "pushState_replaceState",
+        "popstate_event",
+        "navigation_patterns_spa"
+      ],
+      "references": []
+    }
+  ]
+}

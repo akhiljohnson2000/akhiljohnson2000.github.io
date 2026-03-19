@@ -1,0 +1,50 @@
+{
+  "title": "Rendering & Performance",
+  "topics": [
+    {
+      "name": "Critical Rendering Path",
+      "subtopics": [
+        "dom_construction",
+        "cssom_construction",
+        "render_tree",
+        "layout_reflow",
+        "paint",
+        "compositing"
+      ],
+      "references": []
+    },
+    {
+      "name": "Layout & Paint Optimization",
+      "subtopics": [
+        "avoid_layout_thrashing",
+        "batch_dom_updates",
+        "minimize_reflows",
+        "will_change_property",
+        "layer_promotion"
+      ],
+      "references": []
+    },
+    {
+      "name": "Performance Metrics",
+      "subtopics": [
+        "first_contentful_paint",
+        "largest_contentful_paint",
+        "cumulative_layout_shift",
+        "time_to_interactive",
+        "web_vitals"
+      ],
+      "references": []
+    },
+    {
+      "name": "Optimization Techniques",
+      "subtopics": [
+        "code_splitting",
+        "lazy_loading",
+        "tree_shaking",
+        "resource_compression",
+        "image_optimization"
+      ],
+      "references": []
+    }
+  ]
+}

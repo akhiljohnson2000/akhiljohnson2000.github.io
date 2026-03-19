@@ -1,0 +1,49 @@
+{
+  "title": "Build Tools",
+  "topics": [
+    {
+      "name": "Bundlers",
+      "subtopics": [
+        "webpack_architecture",
+        "entry_output",
+        "loaders_vs_plugins",
+        "dependency_graph",
+        "code_splitting_chunks",
+        "tree_shaking",
+        "side_effects"
+      ],
+      "references": []
+    },
+    {
+      "name": "Modern Tooling",
+      "subtopics": [
+        "vite_architecture",
+        "esbuild",
+        "rollup",
+        "dev_server_vs_build",
+        "hot_module_replacement"
+      ],
+      "references": []
+    },
+    {
+      "name": "Transpilation",
+      "subtopics": [
+        "babel_pipeline",
+        "polyfills",
+        "preset_env",
+        "browser_compatibility"
+      ],
+      "references": []
+    },
+    {
+      "name": "Optimization",
+      "subtopics": [
+        "minification",
+        "compression_gzip_brotli",
+        "bundle_analysis",
+        "code_splitting_strategies"
+      ],
+      "references": []
+    }
+  ]
+}
