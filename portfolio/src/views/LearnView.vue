@@ -100,21 +100,18 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
                 </CardHeader>
 
                 <CardContent v-if="expanded[topic.key]">
-                  <div v-if="topic.items.length === 0" class="text-muted-foreground text-sm">
+                  <div v-if="topic.items.length === 0" class="text-muted-foreground text-[20px]">
                     No topics yet.
                   </div>
-                  <div v-else class="overflow-x-auto">
-                    <table class="w-full table-auto border border-border/60">
+                  <div v-else>
+                    <table class="w-full table-fixed border border-border/60">
                       <thead class="bg-muted/30">
                         <tr>
-                          <th class="text-left px-3 py-2 text-xs font-semibold text-muted-foreground border-b border-border/60">
+                          <th class="w-[30%] text-left px-3 py-2 text-sm font-semibold text-muted-foreground border-b border-border/60">
                             Topic
                           </th>
-                          <th class="text-left px-3 py-2 text-xs font-semibold text-muted-foreground border-b border-border/60">
-                            Subtopics
-                          </th>
-                          <th class="text-left px-3 py-2 text-xs font-semibold text-muted-foreground border-b border-border/60">
-                            References
+                          <th class="w-[70%] text-left px-3 py-2 text-sm font-semibold text-muted-foreground border-b border-border/60">
+                            Subtopics & References
                           </th>
                         </tr>
                       </thead>
@@ -124,32 +121,37 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
                           :key="idx"
                           class="border-b border-border/60 last:border-b-0"
                         >
-                          <td class="px-3 py-2 align-top text-sm font-medium">
+                          <td class="px-3 py-2 align-top text-[20px] font-medium whitespace-normal break-words">
                             {{ t.name ?? 'Untitled' }}
                           </td>
-                          <td class="px-3 py-2 align-top">
-                            <ul v-if="Array.isArray(t.subtopics) && t.subtopics.length" class="list-disc pl-5 space-y-1">
-                              <li
-                                v-for="(st, sidx) in t.subtopics"
-                                :key="sidx"
-                                class="text-sm text-foreground/90"
-                              >
-                                {{ typeof st === 'string' ? st : JSON.stringify(st) }}
-                              </li>
-                            </ul>
-                            <div v-else class="text-muted-foreground text-sm">-</div>
-                          </td>
-                          <td class="px-3 py-2 align-top">
-                            <ul v-if="Array.isArray(t.references) && t.references.length" class="list-disc pl-5 space-y-1">
-                              <li
-                                v-for="(r, ridx) in t.references"
-                                :key="ridx"
-                                class="text-sm text-foreground/90"
-                              >
-                                {{ typeof r === 'string' ? r : JSON.stringify(r) }}
-                              </li>
-                            </ul>
-                            <div v-else class="text-muted-foreground text-sm">-</div>
+                          <td class="px-3 py-2 align-top whitespace-normal break-words">
+                            <div v-if="Array.isArray(t.subtopics) && t.subtopics.length">
+                              <!-- <div class="text-xs font-semibold text-muted-foreground mb-1">Subtopics</div> -->
+                              <ul class="list-disc pl-5 space-y-1">
+                                <li
+                                  v-for="(st, sidx) in t.subtopics"
+                                  :key="sidx"
+                                  class="text-[20px] text-foreground/90 whitespace-normal break-words break-all"
+                                >
+                                  {{ typeof st === 'string' ? st : JSON.stringify(st) }}
+                                </li>
+                              </ul>
+                            </div>
+                            <div v-else class="text-muted-foreground text-[20px] mb-1">Subtopics: -</div>
+
+                            <div v-if="Array.isArray(t.references) && t.references.length" class="mt-3">
+                              <div class="text-xs font-semibold text-muted-foreground mb-1">References</div>
+                              <ul class="list-disc pl-5 space-y-1">
+                                <li
+                                  v-for="(r, ridx) in t.references"
+                                  :key="ridx"
+                                  class="text-[20px] text-foreground/90 whitespace-normal break-words break-all"
+                                >
+                                  {{ typeof r === 'string' ? r : JSON.stringify(r) }}
+                                </li>
+                              </ul>
+                            </div>
+                            <!-- <div v-else class="text-muted-foreground text-[20px] mt-1">References: -</div> -->
                           </td>
                         </tr>
                       </tbody>
