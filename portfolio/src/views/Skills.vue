@@ -50,8 +50,9 @@ const skillCategories = [
 </script>
 
 <template>
-  <section id="skills" class="section">
-    <div class="container mx-auto px-4">
+  <div class="pt-24">
+    <section id="skills" class="section">
+      <div class="container mx-auto px-4">
       <div
         v-motion
         :initial="{ opacity: 0, y: 12 }"
@@ -88,5 +89,6 @@ const skillCategories = [
         </div>
       </div>
     </div>
-  </section>
+    </section>
+  </div>
 </template>

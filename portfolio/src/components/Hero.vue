@@ -28,7 +28,7 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-vue-next'
         </p>
 
         <div class="flex flex-col sm:flex-row items-center justify-center gap-3 mb-10">
-          <Button as="a" href="#projects" size="lg" class="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
+          <Button as="a" href="#/projects" size="lg" class="transition-transform duration-200 hover:scale-[1.02] active:scale-[0.98]">
             View My Work
           </Button>
         </div>
@@ -64,7 +64,7 @@ import { ArrowDown, Github, Linkedin, Mail } from 'lucide-vue-next'
     </div>
 
     <a
-      href="#about"
+      href="#/about"
       class="absolute bottom-8 left-1/2 -translate-x-1/2 rounded-full p-2 text-muted-foreground hover:text-foreground hover:bg-muted/50 transition-colors duration-200 animate-bounce"
       aria-label="Scroll down"
     >

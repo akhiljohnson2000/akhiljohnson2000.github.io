@@ -103,8 +103,9 @@ const personalProjects: Project[] = [
 </script>
 
 <template>
-  <section id="projects" class="section-alt">
-    <div class="container mx-auto px-4">
+  <div class="pt-24">
+    <section id="projects" class="section-alt">
+      <div class="container mx-auto px-4">
       <div
         v-motion
         :initial="{ opacity: 0, y: 12 }"
@@ -137,6 +138,7 @@ const personalProjects: Project[] = [
               <div
                 v-for="(project, index) in careerProjects"
                 :key="index"
+                v-motion
                 :initial="{ opacity: 0, y: 20 }"
                 :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
               >
@@ -223,5 +225,6 @@ const personalProjects: Project[] = [
         </div>
       </div>
     </div>
-  </section>
+    </section>
+  </div>
 </template>

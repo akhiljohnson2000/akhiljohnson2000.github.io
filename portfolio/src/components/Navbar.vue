@@ -9,10 +9,10 @@ const isScrolled = ref(false)
 const isMenuOpen = ref(false)
 
 const navLinks: Array<{ name: string; href?: string; to?: string }> = [
-  { name: 'About', href: '#about' },
-  { name: 'Experience', href: '#experience' },
-  { name: 'Projects', href: '#projects' },
-  { name: 'Skills', href: '#skills' },
+  { name: 'About', to: '/about' },
+  { name: 'Experience', to: '/experience' },
+  { name: 'Projects', to: '/projects' },
+  { name: 'Skills', to: '/skills' },
   { name: 'Learn', to: '/learn' },
 ]
 

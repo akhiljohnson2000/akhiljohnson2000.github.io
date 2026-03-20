@@ -79,59 +79,61 @@ const experiences = [
 </script>
 
 <template>
-  <section id="experience" class="section">
-    <div class="container mx-auto px-4">
-      <div
-        v-motion
-        :initial="{ opacity: 0, y: 12 }"
-        :enter="{ opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }"
-      >
-        <h2 class="section-heading">Experience</h2>
+  <div class="pt-24">
+    <section id="experience" class="section">
+      <div class="container mx-auto px-4">
+        <div
+          v-motion
+          :initial="{ opacity: 0, y: 12 }"
+          :enter="{ opacity: 1, y: 0, transition: { duration: 0.35, ease: 'easeOut' } }"
+        >
+          <h2 class="section-heading">Experience</h2>
 
-        <div class="space-y-6">
-          <div
-            v-for="(exp, index) in experiences"
-            :key="exp.company"
-            v-motion
-            :initial="{ opacity: 0, y: 12 }"
-            :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
-          >
-            <Card class="transition-shadow duration-300 hover:shadow-md">
-              <CardHeader class="pb-3">
-                <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
-                  <div>
-                    <CardTitle class="text-lg">{{ exp.position }}</CardTitle>
-                    <CardDescription class="mt-1">
-                      <a
-                        :href="exp.website"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="hover:text-primary transition-colors duration-200"
-                      >
-                        {{ exp.company }}
-                      </a>
-                      <span class="text-muted-foreground"> · {{ exp.location }}</span>
-                    </CardDescription>
+          <div class="space-y-6">
+            <div
+              v-for="(exp, index) in experiences"
+              :key="exp.company"
+              v-motion
+              :initial="{ opacity: 0, y: 12 }"
+              :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
+            >
+              <Card class="transition-shadow duration-300 hover:shadow-md">
+                <CardHeader class="pb-3">
+                  <div class="flex flex-col md:flex-row md:justify-between md:items-start gap-2">
+                    <div>
+                      <CardTitle class="text-lg">{{ exp.position }}</CardTitle>
+                      <CardDescription class="mt-1">
+                        <a
+                          :href="exp.website"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="hover:text-primary transition-colors duration-200"
+                        >
+                          {{ exp.company }}
+                        </a>
+                        <span class="text-muted-foreground"> · {{ exp.location }}</span>
+                      </CardDescription>
+                    </div>
+                    <Badge variant="outline" class="w-fit shrink-0 text-xs">
+                      {{ exp.period }}
+                    </Badge>
                   </div>
-                  <Badge variant="outline" class="w-fit shrink-0 text-xs">
-                    {{ exp.period }}
-                  </Badge>
-                </div>
-              </CardHeader>
-              <CardContent class="pt-0">
-                <ul class="list-disc pl-5 space-y-1.5 text-sm text-muted-foreground/90 mb-4">
-                  <li v-for="(item, i) in exp.description" :key="i">{{ item }}</li>
-                </ul>
-                <div class="flex flex-wrap gap-1.5">
-                  <Badge v-for="(tech, i) in exp.technologies" :key="i" variant="secondary" class="text-xs font-medium">
-                    {{ tech }}
-                  </Badge>
-                </div>
-              </CardContent>
-            </Card>
+                </CardHeader>
+                <CardContent class="pt-0">
+                  <ul class="list-disc pl-5 space-y-1.5 text-sm text-muted-foreground/90 mb-4">
+                    <li v-for="(item, i) in exp.description" :key="i">{{ item }}</li>
+                  </ul>
+                  <div class="flex flex-wrap gap-1.5">
+                    <Badge v-for="(tech, i) in exp.technologies" :key="i" variant="secondary" class="text-xs font-medium">
+                      {{ tech }}
+                    </Badge>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 </template>

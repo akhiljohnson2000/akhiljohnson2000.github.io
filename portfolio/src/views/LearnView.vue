@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed, ref } from 'vue'
-import Navbar from '@/components/Navbar.vue'
 import Card from '@/components/ui/Card.vue'
 import CardHeader from '@/components/ui/CardHeader.vue'
 import CardTitle from '@/components/ui/CardTitle.vue'
@@ -62,9 +61,7 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
 </script>
 
 <template>
-  <div class="min-h-screen bg-background">
-    <Navbar />
-    <main class="pt-24">
+  <main class="pt-24">
       <section class="section-alt">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
@@ -164,5 +161,4 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
         </div>
       </section>
     </main>
-  </div>
 </template>
