@@ -97,7 +97,7 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
                 </CardHeader>
 
                 <CardContent v-if="expanded[topic.key]">
-                  <div v-if="topic.items.length === 0" class="text-muted-foreground text-[20px]">
+                  <div v-if="topic.items.length === 0" class="text-muted-foreground text-[15px] md:text-[20px]">
                     No topics yet.
                   </div>
                   <div v-else>
@@ -118,7 +118,7 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
                           :key="idx"
                           class="border-b border-border/60 last:border-b-0"
                         >
-                          <td class="px-3 py-2 align-top text-[20px] font-medium whitespace-normal break-words">
+                          <td class="px-3 py-2 align-top text-[15px] md:text-[20px] font-medium whitespace-normal break-words">
                             {{ t.name ?? 'Untitled' }}
                           </td>
                           <td class="px-3 py-2 align-top whitespace-normal break-words">
@@ -128,13 +128,13 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
                                 <li
                                   v-for="(st, sidx) in t.subtopics"
                                   :key="sidx"
-                                  class="text-[20px] text-foreground/90 whitespace-normal break-words break-all"
+                                  class="text-[15px] md:text-[20px] text-foreground/90 whitespace-normal break-words break-all"
                                 >
                                   {{ typeof st === 'string' ? st : JSON.stringify(st) }}
                                 </li>
                               </ul>
                             </div>
-                            <div v-else class="text-muted-foreground text-[20px] mb-1">Subtopics: -</div>
+                            <div v-else class="text-muted-foreground text-[15px] md:text-[20px] mb-1">Subtopics: -</div>
 
                             <div v-if="Array.isArray(t.references) && t.references.length" class="mt-3">
                               <div class="text-xs font-semibold text-muted-foreground mb-1">References</div>
@@ -142,13 +142,13 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
                                 <li
                                   v-for="(r, ridx) in t.references"
                                   :key="ridx"
-                                  class="text-[20px] text-foreground/90 whitespace-normal break-words break-all"
+                                  class="text-[15px] md:text-[20px] text-foreground/90 whitespace-normal break-words break-all"
                                 >
                                   {{ typeof r === 'string' ? r : JSON.stringify(r) }}
                                 </li>
                               </ul>
                             </div>
-                            <!-- <div v-else class="text-muted-foreground text-[20px] mt-1">References: -</div> -->
+                            <!-- <div v-else class="text-muted-foreground text-[15px] md:text-[20px] mt-1">References: -</div> -->
                           </td>
                         </tr>
                       </tbody>
