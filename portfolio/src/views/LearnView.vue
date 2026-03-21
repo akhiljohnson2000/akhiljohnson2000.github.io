@@ -15,35 +15,37 @@ type ChecklistFile = {
   }>
 }
 
-// Loads every JSON checklist file under `src/learn/frontend-checklist/`
-const modules = import.meta.glob('../learn/frontend-checklist/*.json', { eager: true }) as Record<
-  string,
-  { default?: ChecklistFile }
->
-
-function extractOrder(filePath: string) {
-  // filenames are prefixed like `01-html.json`, `02-css.json`, etc.
-  const match = filePath.match(/\/(\d+)-[^/]+\.json$/)
-  return match ? Number(match[1]) : Number.MAX_SAFE_INTEGER
+type CombinedChecklistFile = {
+  modules?: Array<{
+    order?: number
+    title?: string
+    topics?: ChecklistFile['topics']
+  }>
 }
 
+// Load the single combined file only.
+const combinedModules = import.meta.glob('../learn/frontend-checklist/all-checklists.json', { eager: true }) as Record<
+  string,
+  { default?: CombinedChecklistFile }
+>
+
 const topics = computed(() => {
-  const entries = Object.entries(modules)
-  return entries
-    .map(([path, mod]) => {
-      const data = mod.default ?? {}
-      const title = data.title ?? path.split('/').pop()?.replace(/^\d+-/, '').replace(/\.json$/, '') ?? 'Untitled'
-      // JSON structure uses `topics[]` (each has `name`, `subtopics[]`, `references[]`)
-      const items = Array.isArray(data.topics) ? data.topics : []
-      const order = extractOrder(path)
+  const combined = Object.values(combinedModules)[0]?.default
+  const modules = combined?.modules ?? []
+
+  return [...modules]
+    .sort((a, b) => (a.order ?? Number.MAX_SAFE_INTEGER) - (b.order ?? Number.MAX_SAFE_INTEGER))
+    .map((m) => {
+      const order = m.order ?? Number.MAX_SAFE_INTEGER
+      const title = m.title ?? 'Untitled'
+      const items = Array.isArray(m.topics) ? m.topics : []
       return {
-        key: path,
+        key: `${order}-${title}`,
         title,
         items,
         order,
       }
     })
-    .sort((a, b) => a.order - b.order)
 })
 
 const expanded = ref<Record<string, boolean>>({})
