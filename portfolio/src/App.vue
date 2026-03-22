@@ -5,7 +5,7 @@ import Navbar from '@/components/Navbar.vue'
 import Toast from '@/components/ui/Toast.vue'
 
 const route = useRoute()
-const showNavbar = computed(() => route.name !== 'GenerateCv')
+const showNavbar = computed(() => route.name !== 'ResumeGenerator')
 </script>
 
 <template>

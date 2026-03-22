@@ -67,7 +67,12 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
       <section class="section-alt">
         <div class="container mx-auto px-4">
           <div class="max-w-4xl mx-auto">
-            <!-- <h1 class="text-3xl md:text-4xl font-bold tracking-tight mb-8">Learn</h1> -->
+            <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight mb-3 leading-tight">
+              Senior Front End JavaScript developer checklist
+            </h1>
+            <p class="text-muted-foreground text-sm md:text-base mb-8 md:mb-10 max-w-3xl">
+              Click a topic to expand. Each module lists subtopics and references to study in depth.
+            </p>
 
             <div class="space-y-4">
               <!-- <div class="flex items-start justify-between gap-4">
@@ -84,7 +89,7 @@ function handleToggleKeydown(e: KeyboardEvent, key: string) {
               <Card v-for="topic in topics" :key="topic.key">
                 <CardHeader @click="toggleTopic(topic.key)" class="cursor-pointer">
                   <div
-                    class="flex items-center justify-between gap-4select-none"
+                    class="flex items-center justify-between gap-4 select-none"
                     role="button"
                     tabindex="0"
                     :aria-expanded="expanded[topic.key] ? 'true' : 'false'"

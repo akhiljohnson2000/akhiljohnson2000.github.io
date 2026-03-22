@@ -13,8 +13,7 @@ const navLinks: Array<{ name: string; href?: string; to?: string }> = [
   { name: 'Experience', to: '/experience' },
   { name: 'Projects', to: '/projects' },
   { name: 'Skills', to: '/skills' },
-  { name: 'Learn', to: '/learn' },
-  { name: 'Generate CV', to: '/generate-cv' },
+  { name: 'Services', to: '/services' },
 ]
 
 function handleScroll() {

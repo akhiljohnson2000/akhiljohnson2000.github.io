@@ -8,8 +8,9 @@ const router = createRouter({
     { path: '/experience', name: 'Experience', component: () => import('@/views/Experience.vue') },
     { path: '/projects', name: 'Projects', component: () => import('@/views/Projects.vue') },
     { path: '/skills', name: 'Skills', component: () => import('@/views/Skills.vue') },
+    { path: '/services', name: 'Services', component: () => import('@/views/ServicesView.vue') },
     { path: '/learn', name: 'Learn', component: () => import('@/views/LearnView.vue') },
-    { path: '/generate-cv', name: 'GenerateCv', component: () => import('@/views/GenerateCvView.vue') },
+    { path: '/generate-cv', name: 'ResumeGenerator', component: () => import('@/views/GenerateCvView.vue') },
   ],
 })
 

@@ -12,12 +12,13 @@ import defaultCv from '@/data/cv-default.json'
 import type { CvResume } from '@/types/cv-resume'
 import { normalizeCvResume } from '@/lib/cv-normalize'
 
-const STORAGE_KEY = 'portfolio-generate-cv-json'
+const STORAGE_KEY = 'portfolio-resume-json'
+const STORAGE_KEY_LEGACY = 'portfolio-generate-cv-json'
 
 function readStoredJson(): string {
   const fallback = JSON.stringify(defaultCv, null, 2)
   try {
-    const s = localStorage.getItem(STORAGE_KEY)
+    const s = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(STORAGE_KEY_LEGACY)
     if (s) {
       JSON.parse(s)
       return s
@@ -25,6 +26,7 @@ function readStoredJson(): string {
   } catch {
     try {
       localStorage.removeItem(STORAGE_KEY)
+      localStorage.removeItem(STORAGE_KEY_LEGACY)
     } catch {
       /* ignore */
     }
@@ -93,7 +95,7 @@ function summaryParagraphs(summary: string) {
 }
 
 function buildPdfFilename(fullName: string) {
-  const base = (fullName || 'CV').replace(/\s+/g, '')
+  const base = (fullName || 'Resume').replace(/\s+/g, '')
   const now = new Date()
   const d = now.getDate()
   const m = now.getMonth() + 1
@@ -199,6 +201,16 @@ const hasSecondPage = computed(() => {
   )
 })
 
+/** Avoid an extra PDF page from float / sub-pixel height mismatch (common cause of “black” blank pages). */
+const PDF_PAGE_SPLIT_EPS_MM = 3
+
+function fillPdfPageWhite(pdf: jsPDF) {
+  const w = pdf.internal.pageSize.getWidth()
+  const h = pdf.internal.pageSize.getHeight()
+  pdf.setFillColor(255, 255, 255)
+  pdf.rect(0, 0, w, h, 'F')
+}
+
 /** Append one canvas image to the PDF, splitting across PDF pages if taller than A4. */
 function addCanvasToPdf(
   pdf: jsPDF,
@@ -212,12 +224,14 @@ function addCanvasToPdf(
   let heightLeft = imgHeightMm
   let position = 0
 
+  fillPdfPageWhite(pdf)
   pdf.addImage(imgData, 'PNG', 0, position, imgWidthMm, imgHeightMm)
   heightLeft -= pageHeight
 
-  while (heightLeft > 0) {
+  while (heightLeft > PDF_PAGE_SPLIT_EPS_MM) {
     position = heightLeft - imgHeightMm
     pdf.addPage()
+    fillPdfPageWhite(pdf)
     pdf.addImage(imgData, 'PNG', 0, position, imgWidthMm, imgHeightMm)
     heightLeft -= pageHeight
   }
@@ -238,11 +252,11 @@ function addCanvasToPdf(
           <Home class="h-5 w-5" aria-hidden="true" />
         </RouterLink>
         <div class="min-w-0">
-          <h1 class="text-lg font-semibold tracking-tight">Generate CV</h1>
+          <h1 class="text-lg font-semibold tracking-tight">Make Your Resume</h1>
           <p class="text-xs text-muted-foreground">
             <span class="md:hidden">Edit JSON or preview. </span>
             <span class="hidden md:inline">Edit JSON on the left and preview on the right. </span>
-            Export matches the classic CV layout (white page, print-ready).
+            Export matches a classic resume layout (white page, print-ready).
           </p>
         </div>
       </div>
@@ -312,10 +326,6 @@ function addCanvasToPdf(
             >
               <!-- Page 1: profile, summary, experience -->
               <section class="cv-page cv-print-root bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10">
-                <div class="flex items-center justify-between gap-3 border-b border-dashed border-gray-300 pb-2 mb-6">
-                  <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">Page 1</span>
-                  <span class="text-[10px] text-gray-400">A4 preview</span>
-                </div>
               <!-- Header -->
               <header class="mb-6">
                 <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 uppercase">
@@ -387,11 +397,6 @@ function addCanvasToPdf(
                 v-if="hasSecondPage"
                 class="cv-page cv-print-root bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10"
               >
-                <div class="flex items-center justify-between gap-3 border-b border-dashed border-gray-300 pb-2 mb-6">
-                  <span class="text-[10px] font-semibold uppercase tracking-[0.2em] text-gray-400">Page 2</span>
-                  <span class="text-[10px] text-gray-400">A4 preview</span>
-                </div>
-
               <!-- Education -->
               <section v-if="cvData.education.length" class="mb-6">
                 <h3 class="cv-section-title">Education</h3>
@@ -534,9 +539,8 @@ function addCanvasToPdf(
   color: #1e3a8a;
 }
 
-/* A4-sized sheets in the preview (content can grow beyond one printed page). */
+/* Sheet cards: height follows content so PDF canvas isn’t forced taller than needed (avoids blank PDF pages). */
 .cv-page {
-  min-height: 297mm;
   box-sizing: border-box;
 }
 </style>
