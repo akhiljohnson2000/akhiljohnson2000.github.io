@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, nextTick, computed } from 'vue'
 import { useDebounceFn, useMediaQuery } from '@vueuse/core'
-import { RouterLink } from 'vue-router'
+import { RouterLink, useRouter } from 'vue-router'
 import { Download, Home } from 'lucide-vue-next'
 import type { jsPDF } from 'jspdf'
 
@@ -35,8 +35,18 @@ function readStoredJson(): string {
 }
 
 const activeTab = ref<'preview' | 'edit'>('preview')
-/** md breakpoint — side-by-side JSON + preview */
+/** md breakpoint — side-by-side JSON + preview; below this, show “desktop only” message */
 const isDesktop = useMediaQuery('(min-width: 768px)')
+
+const router = useRouter()
+
+function goBackFromMobileGate() {
+  if (typeof window !== 'undefined' && window.history.length > 1) {
+    router.back()
+  } else {
+    router.push('/services')
+  }
+}
 
 const jsonText = ref(readStoredJson())
 const parseError = ref<string | null>(null)
@@ -239,7 +249,25 @@ function addCanvasToPdf(
 </script>
 
 <template>
-  <div class="min-h-screen flex flex-col bg-background pt-4 md:pt-6">
+  <div class="min-h-screen flex flex-col bg-background">
+    <!-- Mobile: desktop-only tool -->
+    <div
+      v-if="!isDesktop"
+      class="flex flex-1 flex-col items-center justify-center px-6 py-12 text-center"
+    >
+      <p class="text-lg font-semibold text-foreground max-w-md">
+        This page is not available on mobile devices.
+      </p>
+      <p class="mt-3 text-sm text-muted-foreground max-w-md leading-relaxed">
+        The Resume Generator works best on a desktop or tablet browser. Please open this page on a larger screen.
+      </p>
+      <Button type="button" class="mt-8" @click="goBackFromMobileGate">
+        Go back
+      </Button>
+    </div>
+
+    <template v-else>
+    <div class="flex flex-col flex-1 min-h-0 pt-4 md:pt-6">
     <header
       class="border-b border-border/60 bg-background/95 backdrop-blur px-4 py-3 flex flex-wrap items-center justify-between gap-3 shrink-0 z-10"
     >
@@ -319,27 +347,26 @@ function addCanvasToPdf(
           <span class="text-xs font-medium text-muted-foreground">Preview</span>
         </div>
         <div
-          class="cv-preview-scroll-area flex-1 min-h-0 min-w-0 w-full overflow-x-auto overflow-y-auto bg-zinc-200/80 dark:bg-zinc-950/80 touch-pan-x overscroll-x-contain"
+          class="flex-1 min-h-0 w-full overflow-y-auto overflow-x-hidden bg-zinc-200/80 dark:bg-zinc-950/80"
         >
-          <!-- Wrapper is exactly A4-wide so the parent gains a horizontal scrollbar on narrow viewports -->
-          <div class="inline-block min-h-full w-max max-w-none p-4 sm:p-6 pb-8 mx-auto">
+          <div class="max-w-[210mm] w-full mx-auto p-6 pb-8">
             <div
               ref="cvPreviewRef"
-              class="cv-preview-pages cv-preview-fixed-width flex flex-col gap-8 text-[13px] leading-relaxed"
+              class="cv-preview-pages cv-print-root flex flex-col gap-8 leading-[1.45]"
             >
               <!-- Page 1: profile, summary, experience -->
-              <section class="cv-page cv-print-root bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10">
+              <section class="cv-page bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10">
               <!-- Header -->
               <header class="mb-6">
-                <h2 class="text-3xl font-bold tracking-tight text-gray-900 uppercase">
+                <h2 class="cv-preview-name font-bold tracking-tight text-gray-900 uppercase">
                   {{ cvData.basics.full_name || 'Your Name' }}
                 </h2>
-                <p v-if="cvData.basics.headline" class="mt-1 text-[13px] text-gray-800">
+                <p v-if="cvData.basics.headline" class="mt-1 text-gray-800 cv-preview-muted">
                   {{ cvData.basics.headline }}
                 </p>
                 <p
                   v-if="contactHeaderParts.length"
-                  class="mt-2 flex flex-wrap items-center gap-x-1.5 text-[12px] text-gray-800 tabular-nums"
+                  class="mt-2 flex flex-wrap items-center gap-x-1.5 text-gray-800 tabular-nums cv-preview-contact"
                 >
                   <template v-for="(part, i) in contactHeaderParts" :key="i">
                     <span v-if="i > 0" class="text-gray-500 select-none" aria-hidden="true"> | </span>
@@ -358,7 +385,7 @@ function addCanvasToPdf(
               <!-- Summary -->
               <section v-if="cvData.basics.summary" class="mb-6">
                 <h3 class="cv-section-title">Summary</h3>
-                <div class="space-y-2 text-[12px] text-gray-900">
+                <div class="space-y-2 text-gray-900">
                   <p v-for="(p, i) in summaryParagraphs(cvData.basics.summary)" :key="i" class="whitespace-pre-wrap">
                     {{ p }}
                   </p>
@@ -372,10 +399,10 @@ function addCanvasToPdf(
                   <article v-for="(job, idx) in cvData.work_experience" :key="idx">
                     <div class="flex flex-row items-start justify-between gap-3">
                       <div class="min-w-0 pr-2">
-                        <span v-if="job.company_name" class="font-bold text-[13px] text-gray-900 uppercase">{{job.company_name + "&nbsp;"}} </span>
-                        <span v-if="job.location" class="text-[12px] text-gray-800">{{job.location}}</span>
+                        <span v-if="job.company_name" class="font-bold text-gray-900 uppercase cv-preview-strong">{{job.company_name + "&nbsp;"}} </span>
+                        <span v-if="job.location" class="text-gray-800">{{job.location}}</span>
                       </div>
-                      <div class="text-[11px] font-semibold uppercase text-gray-800 text-right shrink-0 max-w-[48%]">
+                      <div class="font-semibold uppercase text-gray-800 text-right shrink-0 max-w-[48%] cv-preview-meta">
                         {{ job.job_title }}
                         <span v-if="job.start_date || job.end_date" class="font-normal">
                           &nbsp;&nbsp;{{ job.start_date }} — {{ job.end_date }}
@@ -384,7 +411,7 @@ function addCanvasToPdf(
                     </div>
                     <ul
                       v-if="job.responsibilities.filter((r) => r.trim()).length"
-                      class="mt-2 list-disc pl-5 space-y-1 text-[12px] text-gray-900"
+                      class="mt-2 list-disc pl-5 space-y-1 text-gray-900"
                     >
                       <li v-for="(line, li) in job.responsibilities.filter((r) => r.trim())" :key="li">
                         {{ line }}
@@ -398,7 +425,7 @@ function addCanvasToPdf(
               <!-- Page 2: education, skills, and the rest -->
               <section
                 v-if="hasSecondPage"
-                class="cv-page cv-print-root bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10"
+                class="cv-page bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10"
               >
               <!-- Education -->
               <section v-if="cvData.education.length" class="mb-6">
@@ -407,16 +434,16 @@ function addCanvasToPdf(
                   <article v-for="(ed, idx) in cvData.education" :key="idx">
                     <div class="flex flex-row items-start justify-between gap-3">
                       <div class="min-w-0 pr-2">
-                        <div class="font-bold text-[13px] text-gray-900 uppercase">
+                        <div class="font-bold text-gray-900 uppercase cv-preview-strong">
                           {{ ed.institution_name }}
                         </div>
-                        <div class="text-[12px] text-gray-800">
+                        <div class="text-gray-800">
                           <span v-if="ed.degree">{{ ed.degree }}</span>
                           <span v-if="ed.field_of_study"> • {{ ed.field_of_study }}</span>
                           <span v-if="ed.grade" class="font-medium"> • {{ ed.grade }}</span>
                         </div>
                       </div>
-                      <div class="text-[11px] uppercase text-gray-800 text-right shrink-0 max-w-[48%]">
+                      <div class="uppercase text-gray-800 text-right shrink-0 max-w-[48%] cv-preview-meta">
                         {{ ed.start_date }} — {{ ed.end_date }}
                       </div>
                     </div>
@@ -434,7 +461,7 @@ function addCanvasToPdf(
                     class="flex gap-3"
                   >
                     <!-- <span class="text-[11px] font-bold text-gray-400 select-none w-6">#{{ i + 1 }}</span> -->
-                    <p class="flex-1 text-[12px] text-gray-900 whitespace-pre-wrap">
+                    <p class="flex-1 text-gray-900 whitespace-pre-wrap">
                       {{ skill }}
                     </p>
                   </div>
@@ -446,15 +473,15 @@ function addCanvasToPdf(
                 <h3 class="cv-section-title">Projects</h3>
                 <div class="space-y-4">
                   <article v-for="(proj, idx) in cvData.projects" :key="idx">
-                    <div class="font-bold text-[13px] text-gray-900">{{ proj.project_name }}</div>
-                    <p v-if="proj.description" class="text-[12px] text-gray-900 mt-1 whitespace-pre-wrap">
+                    <div class="font-bold text-gray-900 cv-preview-strong">{{ proj.project_name }}</div>
+                    <p v-if="proj.description" class="text-gray-900 mt-1 whitespace-pre-wrap">
                       {{ proj.description }}
                     </p>
-                    <div v-if="proj.technologies.filter((t) => t.trim()).length" class="text-[11px] mt-1 text-gray-800">
+                    <div v-if="proj.technologies.filter((t) => t.trim()).length" class="mt-1 text-gray-800 cv-preview-meta">
                       <span class="font-semibold">Tech:</span>
                       {{ proj.technologies.filter((t) => t.trim()).join(', ') }}
                     </div>
-                    <div class="text-[11px] text-gray-800 mt-1">
+                    <div class="text-gray-800 mt-1 cv-preview-meta">
                       <span v-if="proj.role">{{ proj.role }}</span>
                       <span v-if="proj.start_date || proj.end_date">
                         &nbsp;• {{ proj.start_date }} — {{ proj.end_date }}
@@ -463,7 +490,7 @@ function addCanvasToPdf(
                     <a
                       v-if="proj.project_url"
                       :href="proj.project_url"
-                      class="text-[11px] text-blue-800 underline break-all"
+                      class="text-blue-800 underline break-all cv-preview-meta"
                     >
                       {{ proj.project_url }}
                     </a>
@@ -475,15 +502,15 @@ function addCanvasToPdf(
               <section v-if="cvData.certifications.length" class="mb-6">
                 <h3 class="cv-section-title">Certifications</h3>
                 <div class="space-y-3">
-                  <article v-for="(c, idx) in cvData.certifications" :key="idx" class="text-[12px] text-gray-900">
+                  <article v-for="(c, idx) in cvData.certifications" :key="idx" class="text-gray-900">
                     <div class="font-semibold">{{ c.name }}</div>
                     <div v-if="c.issuing_organization" class="text-gray-800">{{ c.issuing_organization }}</div>
-                    <div class="text-[11px] text-gray-800">
+                    <div class="text-gray-800 cv-preview-meta">
                       <span v-if="c.issue_date">Issued {{ c.issue_date }}</span>
                       <span v-if="c.expiration_date">&nbsp;• Expires {{ c.expiration_date }}</span>
                     </div>
-                    <div v-if="c.credential_id" class="text-[11px]">ID: {{ c.credential_id }}</div>
-                    <a v-if="c.credential_url" :href="c.credential_url" class="text-[11px] text-blue-800 underline break-all">
+                    <div v-if="c.credential_id" class="cv-preview-meta">ID: {{ c.credential_id }}</div>
+                    <a v-if="c.credential_url" :href="c.credential_url" class="text-blue-800 underline break-all cv-preview-meta">
                       {{ c.credential_url }}
                     </a>
                   </article>
@@ -497,7 +524,7 @@ function addCanvasToPdf(
                   <div
                     v-for="(lang, i) in cvData.languages"
                     :key="i"
-                    class="flex gap-3 text-[12px] text-gray-900"
+                    class="flex gap-3 text-gray-900"
                   >
                     <!-- <span class="text-[11px] font-bold text-gray-400 w-6">#{{ i + 1 }}</span> -->
                     <span>
@@ -511,7 +538,7 @@ function addCanvasToPdf(
               <!-- Achievements / Key strengths -->
               <section v-if="cvData.achievements.filter((a) => a.trim()).length" class="mb-6">
                 <h3 class="cv-section-title">Key Strengths</h3>
-                <ul class="list-disc pl-5 space-y-1 text-[12px] text-gray-900">
+                <ul class="list-disc pl-5 space-y-1 text-gray-900">
                   <li v-for="(a, i) in cvData.achievements.filter((x) => x.trim())" :key="i">
                     {{ a }}
                   </li>
@@ -521,7 +548,7 @@ function addCanvasToPdf(
               <!-- Keywords -->
               <section v-if="cvData.keywords.filter((k) => k.trim()).length">
                 <h3 class="cv-section-title">Keywords</h3>
-                <p class="text-[11px] text-gray-800 leading-snug">
+                <p class="text-gray-800 leading-snug cv-preview-meta">
                   {{ cvData.keywords.filter((k) => k.trim()).join(' · ') }}
                 </p>
               </section>
@@ -531,13 +558,56 @@ function addCanvasToPdf(
         </div>
       </section>
     </div>
+    </div>
+    </template>
   </div>
 </template>
 
 <style scoped>
-.cv-section-title {
-  @apply text-[12px] font-bold tracking-[0.12em] uppercase text-gray-900 border-b border-gray-900 pb-1 mb-3;
+/*
+ * Fixed px sizes only — no breakpoints. Preview looks the same at every viewport width
+ * (only line wraps change when the column is narrow).
+ */
+.cv-preview-pages {
+  box-sizing: border-box;
+  font-size: 13px;
+  line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
 }
+
+.cv-preview-name {
+  font-size: 30px;
+  line-height: 1.15;
+}
+
+.cv-section-title {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgb(17 24 39);
+  border-bottom: 1px solid rgb(17 24 39);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.cv-preview-meta {
+  font-size: 11px;
+}
+
+.cv-preview-strong {
+  font-size: 13px;
+}
+
+.cv-preview-contact {
+  font-size: 12px;
+}
+
+.cv-preview-muted {
+  font-size: 13px;
+}
+
 .cv-print-root a {
   color: #1e3a8a;
 }
@@ -545,17 +615,5 @@ function addCanvasToPdf(
 /* Sheet cards: height follows content so PDF canvas isn’t forced taller than needed (avoids blank PDF pages). */
 .cv-page {
   box-sizing: border-box;
-}
-
-/*
- * Fixed A4 width (ISO 216). Horizontal scroll on .cv-preview-scroll-area when viewport is narrower.
- * min/max width lock prevents flex/grid from shrinking the “paper” on responsive layouts.
- */
-.cv-preview-fixed-width {
-  box-sizing: border-box;
-  width: 210mm;
-  min-width: 210mm;
-  max-width: 210mm;
-  flex-shrink: 0;
 }
 </style>
