@@ -138,9 +138,6 @@ const personalProjects: Project[] = [
               <div
                 v-for="(project, index) in careerProjects"
                 :key="index"
-                v-motion
-                :initial="{ opacity: 0, y: 20 }"
-                :enter="{ opacity: 1, y: 0, transition: { duration: 0.32, delay: index * 60, ease: 'easeOut' } }"
               >
               <Card class="h-full flex flex-col transition-shadow duration-300 hover:shadow-md">
                   <CardHeader>
