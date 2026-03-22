@@ -183,7 +183,7 @@ const previewPanelClass = computed(() => {
     return 'flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden md:w-1/2'
   }
   return activeTab.value === 'preview'
-    ? 'flex min-h-0 flex-1 flex-col overflow-hidden'
+    ? 'flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden'
     : 'hidden'
 })
 
@@ -318,17 +318,20 @@ function addCanvasToPdf(
         <div class="hidden md:block border-b border-border/60 px-4 py-2 shrink-0 bg-zinc-200/50 dark:bg-zinc-900/50">
           <span class="text-xs font-medium text-muted-foreground">Preview</span>
         </div>
-        <div class="flex-1 min-h-0 overflow-auto bg-zinc-200/80 dark:bg-zinc-950/80">
-          <div class="min-h-full flex justify-center p-4 md:p-6">
+        <div
+          class="cv-preview-scroll-area flex-1 min-h-0 min-w-0 w-full overflow-x-auto overflow-y-auto bg-zinc-200/80 dark:bg-zinc-950/80 touch-pan-x overscroll-x-contain"
+        >
+          <!-- Wrapper is exactly A4-wide so the parent gains a horizontal scrollbar on narrow viewports -->
+          <div class="inline-block min-h-full w-max max-w-none p-4 sm:p-6 pb-8 mx-auto">
             <div
               ref="cvPreviewRef"
-              class="cv-preview-pages flex w-full max-w-[210mm] flex-col gap-8 text-[13px] leading-relaxed"
+              class="cv-preview-pages cv-preview-fixed-width flex flex-col gap-8 text-[13px] leading-relaxed"
             >
               <!-- Page 1: profile, summary, experience -->
               <section class="cv-page cv-print-root bg-white text-gray-900 shadow-lg border border-black/10 px-8 py-10">
               <!-- Header -->
               <header class="mb-6">
-                <h2 class="text-2xl md:text-3xl font-bold tracking-tight text-gray-900 uppercase">
+                <h2 class="text-3xl font-bold tracking-tight text-gray-900 uppercase">
                   {{ cvData.basics.full_name || 'Your Name' }}
                 </h2>
                 <p v-if="cvData.basics.headline" class="mt-1 text-[13px] text-gray-800">
@@ -367,12 +370,12 @@ function addCanvasToPdf(
                 <h3 class="cv-section-title">Experience</h3>
                 <div class="space-y-5">
                   <article v-for="(job, idx) in cvData.work_experience" :key="idx">
-                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
-                      <div>
+                    <div class="flex flex-row items-start justify-between gap-3">
+                      <div class="min-w-0 pr-2">
                         <span v-if="job.company_name" class="font-bold text-[13px] text-gray-900 uppercase">{{job.company_name + "&nbsp;"}} </span>
                         <span v-if="job.location" class="text-[12px] text-gray-800">{{job.location}}</span>
                       </div>
-                      <div class="text-[11px] font-semibold uppercase text-gray-800 sm:text-right shrink-0">
+                      <div class="text-[11px] font-semibold uppercase text-gray-800 text-right shrink-0 max-w-[48%]">
                         {{ job.job_title }}
                         <span v-if="job.start_date || job.end_date" class="font-normal">
                           &nbsp;&nbsp;{{ job.start_date }} — {{ job.end_date }}
@@ -402,8 +405,8 @@ function addCanvasToPdf(
                 <h3 class="cv-section-title">Education</h3>
                 <div class="space-y-4">
                   <article v-for="(ed, idx) in cvData.education" :key="idx">
-                    <div class="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-1">
-                      <div>
+                    <div class="flex flex-row items-start justify-between gap-3">
+                      <div class="min-w-0 pr-2">
                         <div class="font-bold text-[13px] text-gray-900 uppercase">
                           {{ ed.institution_name }}
                         </div>
@@ -413,7 +416,7 @@ function addCanvasToPdf(
                           <span v-if="ed.grade" class="font-medium"> • {{ ed.grade }}</span>
                         </div>
                       </div>
-                      <div class="text-[11px] uppercase text-gray-800 sm:text-right shrink-0">
+                      <div class="text-[11px] uppercase text-gray-800 text-right shrink-0 max-w-[48%]">
                         {{ ed.start_date }} — {{ ed.end_date }}
                       </div>
                     </div>
@@ -542,5 +545,17 @@ function addCanvasToPdf(
 /* Sheet cards: height follows content so PDF canvas isn’t forced taller than needed (avoids blank PDF pages). */
 .cv-page {
   box-sizing: border-box;
+}
+
+/*
+ * Fixed A4 width (ISO 216). Horizontal scroll on .cv-preview-scroll-area when viewport is narrower.
+ * min/max width lock prevents flex/grid from shrinking the “paper” on responsive layouts.
+ */
+.cv-preview-fixed-width {
+  box-sizing: border-box;
+  width: 210mm;
+  min-width: 210mm;
+  max-width: 210mm;
+  flex-shrink: 0;
 }
 </style>
