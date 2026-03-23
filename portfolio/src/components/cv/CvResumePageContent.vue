@@ -254,7 +254,7 @@ function summaryParagraphs(summary: string) {
   text-transform: uppercase;
   color: rgb(17 24 39);
   border-bottom: 1px solid rgb(17 24 39);
-  padding-bottom: .8rem;
+  padding-bottom: .2rem;
   margin-bottom: 0.75rem;
   line-height: calc(1.2em - 1.15mm);
 }

@@ -1,13 +1,11 @@
 <script setup lang="ts">
-import { ref, watch, nextTick, computed, onMounted, onUnmounted } from 'vue'
-import { useDebounceFn, useEventListener, useMediaQuery, useResizeObserver } from '@vueuse/core'
+import { ref, watch, computed, onUnmounted } from 'vue'
+import { useDebounceFn, useEventListener, useMediaQuery } from '@vueuse/core'
 import { RouterLink, useRouter } from 'vue-router'
 import { Check, Copy, Download, Home, X } from 'lucide-vue-next'
-import type { jsPDF } from 'jspdf'
 
 import Button from '@/components/ui/Button.vue'
 import Textarea from '@/components/ui/Textarea.vue'
-import CvResumePageContent from '@/components/cv/CvResumePageContent.vue'
 
 import defaultCv from '@/data/cv-default.json'
 import type { CvResume } from '@/types/cv-resume'
@@ -36,8 +34,7 @@ function readStoredJson(): string {
   return fallback
 }
 
-const activeTab = ref<'preview' | 'edit'>('preview')
-/** md breakpoint — side-by-side JSON + preview; below this, show “desktop only” message */
+/** md breakpoint — below this, show “desktop only” message */
 const isDesktop = useMediaQuery('(min-width: 768px)')
 
 const router = useRouter()
@@ -61,7 +58,6 @@ const cvData = ref<CvResume>(
     }
   })(),
 )
-const cvPreviewRef = ref<HTMLElement | null>(null)
 const exporting = ref(false)
 
 const structureModalOpen = ref(false)
@@ -116,79 +112,6 @@ useEventListener('keydown', (e: KeyboardEvent) => {
   if (e.key === 'Escape' && structureModalOpen.value) closeStructureModal()
 })
 
-/** A4 viewport height in px (one frame); used with translateY for stacked page previews. */
-const previewPageCount = ref(1)
-const pageSliceHeightPx = ref(0)
-
-function measurePreviewPages() {
-  const root = cvPreviewRef.value
-  if (!root) return
-  const firstSlide = root.querySelector('.cv-page-slide') as HTMLElement | null
-  const firstInner = root.querySelector('.cv-page-slide-inner') as HTMLElement | null
-  if (!firstSlide || !firstInner) return
-  /*
-   * Slice height = .cv-page-slide viewport (must match translateY step).
-   * firstInner.scrollHeight includes .cv-page-slide-inner padding-bottom (4lh) so page count stays aligned.
-   */
-  let vh = firstSlide.clientHeight
-  if (vh <= 0) {
-    vh = firstSlide.offsetHeight
-  }
-  if (vh <= 0) {
-    const parsed = parseFloat(getComputedStyle(firstSlide).height)
-    vh = Number.isFinite(parsed) ? parsed : 0
-  }
-  const ch = firstInner.scrollHeight
-  if (vh <= 0 || ch <= 0) return
-  pageSliceHeightPx.value = vh
-  previewPageCount.value = Math.max(1, Math.ceil(ch / vh - 1e-9))
-}
-
-function updatePreviewPageCount() {
-  nextTick(() => {
-    /* Double rAF: mm-based slide height must settle before offsetHeight is valid. */
-    requestAnimationFrame(() => {
-      requestAnimationFrame(() => {
-        measurePreviewPages()
-        /* If slide still reports 0, retry once after layout (do not use frame height — it breaks slices). */
-        if (pageSliceHeightPx.value <= 0) {
-          setTimeout(() => measurePreviewPages(), 50)
-        }
-      })
-    })
-  })
-}
-
-const debouncedPreviewLayout = useDebounceFn(updatePreviewPageCount, 200)
-
-watch(
-  () => cvData.value,
-  () => {
-    debouncedPreviewLayout()
-  },
-  { deep: true },
-)
-
-onMounted(() => {
-  updatePreviewPageCount()
-})
-
-useResizeObserver(cvPreviewRef, () => {
-  debouncedPreviewLayout()
-})
-
-function buildPdfFilename(fullName: string) {
-  const base = (fullName || 'Resume').replace(/\s+/g, '')
-  const now = new Date()
-  const d = now.getDate()
-  const m = now.getMonth() + 1
-  const y = String(now.getFullYear()).slice(-2)
-  const hh = String(now.getHours()).padStart(2, '0')
-  const mm = String(now.getMinutes()).padStart(2, '0')
-  // Mirrors "22/3/26_16:45" using filesystem-safe separators.
-  return `${base}_${d}-${m}-${y}_${hh}-${mm}.pdf`
-}
-
 function applyJson() {
   try {
     const parsed = JSON.parse(jsonText.value)
@@ -206,43 +129,302 @@ watch(jsonText, () => {
   debouncedApply()
 })
 
-function resetToTemplate() {
-  jsonText.value = JSON.stringify(defaultCv, null, 2)
-  applyJson()
+function buildPdfFilename(fullName: string) {
+  const base = (fullName || 'Resume').replace(/\s+/g, '')
+  const now = new Date()
+  const d = now.getDate()
+  const m = now.getMonth() + 1
+  const y = String(now.getFullYear()).slice(-2)
+  const hh = String(now.getHours()).padStart(2, '0')
+  const mm = String(now.getMinutes()).padStart(2, '0')
+  return `${base}_${d}-${m}-${y}_${hh}-${mm}.pdf`
+}
+
+function mkLinkRuns(basics: CvResume['basics']) {
+  const entries = [
+    { label: 'LinkedIn', url: basics.linkedin_url?.trim() || '' },
+    { label: 'GitHub', url: basics.github_url?.trim() || '' },
+    { label: 'Portfolio', url: basics.portfolio_url?.trim() || '' },
+  ].filter((item) => item.url)
+
+  // pdfmake supports mixed text fragments: [{text:'LinkedIn', link:'...'}, ' | ', ...]
+  const runs: Array<Record<string, unknown>> = []
+  entries.forEach((item, idx) => {
+    if (idx > 0) runs.push({ text: ' | ' })
+    runs.push({
+      text: item.label,
+      link: item.url,
+      color: '#1e3a8a',
+      decoration: 'underline',
+    })
+  })
+  return runs
+}
+
+function nonEmptyLines(values: string[]) {
+  return values.map((v) => v.trim()).filter(Boolean)
+}
+
+function pdfSectionHeader(title: string) {
+  return {
+    margin: [0, 5, 0, 6],
+    stack: [
+      { text: title, style: 'sectionTitle', fontSize: 9 },
+      {
+        canvas: [
+          {
+            type: 'line',
+            x1: 0,
+            y1: 0,
+            x2: 535,
+            y2: 0,
+            lineWidth: .5,
+            lineColor: '#111827',
+          },
+        ],
+      },
+    ],
+  }
+}
+
+let pdfMakePromise: Promise<any> | null = null
+
+async function getPdfMake() {
+  if (!pdfMakePromise) {
+    pdfMakePromise = (async () => {
+      const [pdfMakeMod, pdfFontsMod] = await Promise.all([
+        import('pdfmake/build/pdfmake'),
+        import('pdfmake/build/vfs_fonts'),
+      ])
+      const pdfMake = (pdfMakeMod as any).default ?? pdfMakeMod
+      const pdfFontsModule = (pdfFontsMod as any).default ?? pdfFontsMod
+      const vfs =
+        pdfFontsModule?.vfs ??
+        pdfFontsModule?.pdfMake?.vfs ??
+        pdfFontsModule
+
+      if (!vfs || typeof vfs !== 'object') {
+        throw new Error('Could not initialize pdf fonts (vfs).')
+      }
+      if (typeof pdfMake.addVirtualFileSystem === 'function') {
+        pdfMake.addVirtualFileSystem(vfs)
+      } else {
+        pdfMake.vfs = vfs
+      }
+      return pdfMake
+    })()
+  }
+  return pdfMakePromise
+}
+
+function buildPdfDocDefinition(data: CvResume): any {
+  const b = data.basics
+  const contactLine = [
+    b.email?.trim(),
+    b.phone?.trim(),
+    [b.location_city, b.location_state, b.location_country].map((x) => x?.trim()).filter(Boolean).join(', '),
+  ]
+    .filter(Boolean)
+    .join(' | ')
+
+  const linksLine = mkLinkRuns(b)
+  // Single "address" line: email/phone/location first, then clickable link labels.
+  const addressAndLinksRuns: Array<Record<string, unknown>> = []
+  if (contactLine) addressAndLinksRuns.push({ text: contactLine })
+  if (contactLine && linksLine.length) addressAndLinksRuns.push({ text: ' | ' })
+  addressAndLinksRuns.push(...linksLine)
+
+  const summaryParagraphs = b.summary
+    .split(/\n\s*\n/)
+    .map((p) => p.trim())
+    .filter(Boolean)
+
+  const workBlocks = data.work_experience
+    .map((job) => {
+      const responsibilities = nonEmptyLines(job.responsibilities)
+      const companyLine = [job.company_name, job.location].filter(Boolean).join(' | ')
+      const dateRange = [job.start_date, job.end_date].filter(Boolean).join(' — ')
+      const hasTitle = !!job.job_title?.trim()
+
+      const titleMarginBottom = responsibilities.length ? 2 : 6
+      const companyMarginBottom = hasTitle ? 1 : titleMarginBottom
+
+      const blocks: any[] = []
+
+      // Left-aligned company text + right-aligned date range.
+      if (dateRange) {
+        blocks.push({
+          columns: [
+            { text: companyLine, bold: true },
+            { text: dateRange, alignment: 'right' },
+          ],
+          columnGap: 10,
+          margin: [0, 0, 0, companyMarginBottom],
+        })
+      } else {
+        blocks.push({
+          text: companyLine,
+          bold: true,
+          margin: [0, 0, 0, companyMarginBottom],
+        })
+      }
+
+      if (hasTitle) {
+        blocks.push({
+          text: job.job_title,
+          margin: [0, 0, 0, titleMarginBottom],
+        })
+      }
+
+      if (responsibilities.length) {
+        blocks.push({ ul: responsibilities, margin: [10, 0, 0, 6] })
+      }
+
+      return blocks
+    })
+    .flat()
+
+  const educationBlocks = data.education
+    .map((ed) => {
+      const institutionWithGrade = [ed.institution_name?.trim(), ed.grade?.trim()]
+        .filter(Boolean)
+        .join(' - ')
+      const dateRange = [ed.start_date?.trim(), ed.end_date?.trim()].filter(Boolean).join(' — ')
+      const degreeAndField = [ed.degree?.trim(), ed.field_of_study?.trim()].filter(Boolean).join(' | ')
+
+      const blocks: any[] = []
+      if (institutionWithGrade || dateRange) {
+        blocks.push({
+          columns: [
+            { text: institutionWithGrade, bold: true },
+            { text: dateRange, alignment: 'right' },
+          ],
+          columnGap: 10,
+          margin: [0, 0, 0, degreeAndField ? 1 : 6],
+        })
+      }
+      if (degreeAndField) {
+        blocks.push({
+          text: degreeAndField,
+          margin: [0, 0, 0, 6],
+        })
+      }
+      return blocks
+    })
+    .flat()
+
+  const projectBlocks = data.projects
+    .map((project) => {
+      const details = [
+        [project.role, [project.start_date, project.end_date].filter(Boolean).join(' — ')]
+          .filter(Boolean)
+          .join(' | '),
+        project.description?.trim(),
+        project.technologies?.filter(Boolean).length
+          ? `Technologies: ${project.technologies.filter(Boolean).join(', ')}`
+          : '',
+        project.project_url?.trim() ? `URL: ${project.project_url.trim()}` : '',
+      ].filter(Boolean)
+      return [
+        { text: project.project_name?.trim(), bold: true, margin: [0, 0, 0, 1] },
+        { text: details.join('\n'), margin: [0, 0, 0, 6] },
+      ]
+    })
+    .flat()
+    .filter((item) => item.text)
+
+  return {
+    pageSize: 'A4',
+    pageMargins: [28, 42, 28, 42],
+    defaultStyle: {
+      fontSize: 11,
+      lineHeight: 1.1,
+    },
+    styles: {
+      name: { fontSize: 24, bold: true, margin: [0, 0, 0, 0]},
+        // Reduce vertical gap to the next "address" line by ~0.1mm.
+        // pdfmake margins are in points; 0.1mm ≈ 0.28pt.
+        headline: { fontSize: 11, margin: [0, 0, 0, 2] },
+      sectionTitle: { fontSize: 11, bold: true, characterSpacing: 1, margin: [0, 0, 0, 2] },
+    },
+    content: [
+      { text: b.full_name || 'Your Name', style: 'name' },
+      ...(b.headline?.trim() ? [{ text: b.headline.trim(), style: 'headline' }] : []),
+      ...(addressAndLinksRuns.length ? [{ text: addressAndLinksRuns, margin: [0, 0, 0, 8] }] : []),
+      ...(summaryParagraphs.length
+        ? [
+            pdfSectionHeader('SUMMARY'),
+            ...summaryParagraphs.map((p) => ({ text: p, margin: [0, 0, 0, 4] })),
+          ]
+        : []),
+      ...(workBlocks.length
+        ? [pdfSectionHeader('EXPERIENCE'), ...workBlocks]
+        : []),
+      ...(educationBlocks.length
+        ? [pdfSectionHeader('EDUCATION'), ...educationBlocks]
+        : []),
+      ...(data.skills.filter((x) => x.trim()).length
+        ? [
+            pdfSectionHeader('SKILLS'),
+            ...data.skills
+              .filter((x) => x.trim())
+              .map((skill) => ({ text: skill.trim(), margin: [0, 0, 0, 2] })),
+          ]
+        : []),
+      ...(data.projects.filter((p) => p.project_name?.trim() || p.description?.trim()).length
+        ? [pdfSectionHeader('PROJECTS'), ...projectBlocks]
+        : []),
+      ...(data.languages.filter((l) => l.language.trim()).length
+        ? [
+            pdfSectionHeader('LANGUAGES'),
+            ...data.languages
+              .filter((l) => l.language.trim())
+              .map((l) => ({
+                text: [l.language.trim(), l.proficiency.trim()].filter(Boolean).join(' — '),
+                margin: [0, 0, 0, 2],
+              })),
+          ]
+        : []),
+      ...(data.certifications.filter((c) => c.name.trim()).length
+        ? [
+            pdfSectionHeader('CERTIFICATIONS'),
+            ...data.certifications
+              .filter((c) => c.name.trim())
+              .map((c) => ({
+                text: [
+                  c.name.trim(),
+                  [c.issuing_organization.trim(), c.issue_date.trim()].filter(Boolean).join(' | '),
+                  c.credential_url.trim(),
+                ]
+                  .filter(Boolean)
+                  .join('\n'),
+                margin: [0, 0, 0, 6],
+              })),
+          ]
+        : []),
+      ...(data.achievements.filter((a) => a.trim()).length
+        ? [
+            pdfSectionHeader('KEY STRENGTHS'),
+            { ul: data.achievements.filter((a) => a.trim()), margin: [10, 0, 0, 4] },
+          ]
+        : []),
+      ...(data.keywords.filter((k) => k.trim()).length
+        ? [
+            pdfSectionHeader('KEYWORDS'),
+            { text: data.keywords.filter((k) => k.trim()).join(' · ') },
+          ]
+        : []),
+    ],
+  }
 }
 
 async function exportPdf() {
-  if (parseError.value) return
-  const el = cvPreviewRef.value
-  if (!el) return
+  if (parseError.value || exporting.value) return
   exporting.value = true
-  await nextTick()
   try {
-    const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
-      import('html2canvas'),
-      import('jspdf'),
-    ])
-    const pageEls = Array.from(el.querySelectorAll<HTMLElement>('.cv-page'))
-    const targets = pageEls.length ? pageEls : [el]
-
-    const pdf = new jsPDF({ orientation: 'portrait', unit: 'mm', format: 'a4' })
-    const pageWidth = pdf.internal.pageSize.getWidth()
-    let isFirst = true
-
-    for (const pageEl of targets) {
-      const canvas = await html2canvas(pageEl, {
-        scale: 2,
-        useCORS: true,
-        logging: false,
-        backgroundColor: '#ffffff',
-      })
-      const imgData = canvas.toDataURL('image/png')
-      if (!isFirst) pdf.addPage()
-      isFirst = false
-      addSingleA4PageImage(pdf, imgData, pageWidth, canvas.height, canvas.width)
-    }
-
-    pdf.save(buildPdfFilename(cvData.value.basics.full_name))
+    const pdfMake = await getPdfMake()
+    const docDefinition = buildPdfDocDefinition(cvData.value)
+    pdfMake.createPdf(docDefinition).download(buildPdfFilename(cvData.value.basics.full_name))
   } catch (e) {
     console.error(e)
     parseError.value = e instanceof Error ? e.message : 'Could not export PDF'
@@ -253,76 +435,11 @@ async function exportPdf() {
 
 /** Mobile: show one panel at a time; desktop: both columns always visible */
 const jsonPanelClass = computed(() => {
-  if (isDesktop.value) {
-    return 'flex min-h-0 min-w-0 flex-col border-border md:w-1/2 md:max-w-[50%] md:border-r md:border-b-0 border-b'
-  }
-  return activeTab.value === 'edit'
-    ? 'flex min-h-0 flex-1 flex-col border-b border-border'
-    : 'hidden'
+  return isDesktop.value
+    ? 'flex min-h-0 min-w-0 flex-1 flex-col border-border'
+    : 'flex min-h-0 flex-1 flex-col border-b border-border'
 })
 
-const previewPanelClass = computed(() => {
-  if (isDesktop.value) {
-    return 'flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden md:w-1/2'
-  }
-  return activeTab.value === 'preview'
-    ? 'flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden'
-    : 'hidden'
-})
-
-/** Avoid an extra PDF page from float / sub-pixel height mismatch (common cause of “black” blank pages). */
-const PDF_PAGE_SPLIT_EPS_MM = 3
-
-function fillPdfPageWhite(pdf: jsPDF) {
-  const w = pdf.internal.pageSize.getWidth()
-  const h = pdf.internal.pageSize.getHeight()
-  pdf.setFillColor(255, 255, 255)
-  pdf.rect(0, 0, w, h, 'F')
-}
-
-/** One preview frame ≈ A4; fit to PDF page. Fall back to vertical split if canvas is taller than A4. */
-function addSingleA4PageImage(
-  pdf: jsPDF,
-  imgData: string,
-  imgWidthMm: number,
-  canvasHeightPx: number,
-  canvasWidthPx: number,
-) {
-  const pageHeightMm = pdf.internal.pageSize.getHeight()
-  const imgHeightMm = (canvasHeightPx * imgWidthMm) / canvasWidthPx
-  fillPdfPageWhite(pdf)
-  if (imgHeightMm <= pageHeightMm + 2) {
-    pdf.addImage(imgData, 'PNG', 0, 0, imgWidthMm, imgHeightMm)
-  } else {
-    addCanvasToPdf(pdf, imgData, imgWidthMm, canvasHeightPx, canvasWidthPx)
-  }
-}
-
-/** Append one canvas image to the PDF, splitting across PDF pages if taller than A4. */
-function addCanvasToPdf(
-  pdf: jsPDF,
-  imgData: string,
-  imgWidthMm: number,
-  canvasHeightPx: number,
-  canvasWidthPx: number,
-) {
-  const pageHeight = pdf.internal.pageSize.getHeight()
-  const imgHeightMm = (canvasHeightPx * imgWidthMm) / canvasWidthPx
-  let heightLeft = imgHeightMm
-  let position = 0
-
-  fillPdfPageWhite(pdf)
-  pdf.addImage(imgData, 'PNG', 0, position, imgWidthMm, imgHeightMm)
-  heightLeft -= pageHeight
-
-  while (heightLeft > PDF_PAGE_SPLIT_EPS_MM) {
-    position = heightLeft - imgHeightMm
-    pdf.addPage()
-    fillPdfPageWhite(pdf)
-    pdf.addImage(imgData, 'PNG', 0, position, imgWidthMm, imgHeightMm)
-    heightLeft -= pageHeight
-  }
-}
 </script>
 
 <template>
@@ -358,63 +475,36 @@ function addCanvasToPdf(
         </RouterLink>
         <div class="min-w-0">
           <h1 class="text-lg font-semibold tracking-tight">Make Your Resume</h1>
-          <p class="text-xs text-muted-foreground">
-            <span class="md:hidden">Edit JSON or preview. </span>
-            <span class="hidden md:inline">Edit JSON on the left and preview on the right. </span>
-            Export matches a classic resume layout (white page, print-ready).
-          </p>
+  
         </div>
       </div>
-      <!-- Desktop: Reset + Export only -->
+      <!-- Desktop: Export -->
       <div class="hidden md:flex flex-wrap items-center justify-end gap-2 shrink-0 px-2 py-2">
-        <Button type="button" variant="outline" size="sm" @click="resetToTemplate">
-          Reset Template
-        </Button>
         <Button type="button" size="sm" :disabled="!!parseError || exporting" @click="exportPdf">
           <Download class="h-4 w-4" />
           {{ exporting ? 'Exporting…' : 'Export' }}
         </Button>
       </div>
-      <!-- Mobile: tab switchers + actions per tab -->
-      <div class="flex md:hidden flex-wrap items-center justify-end gap-2 shrink-0 w-full sm:w-auto px-2 py-2">
-        <template v-if="activeTab === 'preview'">
-          <Button type="button" variant="outline" size="sm" @click="activeTab = 'edit'">
-            Edit JSON
-          </Button>
-          <Button type="button" size="sm" :disabled="!!parseError || exporting" @click="exportPdf">
-            <Download class="h-4 w-4" />
-            {{ exporting ? 'Exporting…' : 'Export' }}
-          </Button>
-        </template>
-        <template v-else>
-          <Button type="button" variant="outline" size="sm" @click="activeTab = 'preview'">
-            Preview
-          </Button>
-          <Button type="button" variant="outline" size="sm" @click="resetToTemplate">
-            Reset Template
-          </Button>
-        </template>
-      </div>
     </header>
 
-    <div class="flex flex-1 flex-col md:flex-row min-h-0 overflow-hidden">
+    <div class="flex flex-1 flex-col min-h-0 overflow-hidden">
       <!-- JSON editor -->
       <section :class="jsonPanelClass">
         <div
           class="hidden md:flex border-b border-border/60 p-0 shrink-0 items-center justify-between gap-2 px-2 py-2"
         >
-          <span class="text-xs font-medium text-muted-foreground">JSON</span>
+        <span v-if="parseError" class="text-sm text-destructive shrink-0">
+            {{ parseError }}
+        </span>
+          <span v-else class="text-xs text-muted-foreground shrink-0">
+            JSON is saved in this browser (localStorage). Invalid JSON will not update the preview until fixed.
+          </span>
           <Button type="button" variant="outline" size="sm" @click="openStructureModal">
             View JSON structure
           </Button>
         </div>
         <div class="flex flex-1 min-h-0 flex-col p-0 gap-1">
-          <p v-if="parseError" class="text-sm text-destructive shrink-0">
-            {{ parseError }}
-          </p>
-          <p v-else class="text-xs text-muted-foreground shrink-0">
-            JSON is saved in this browser (localStorage). Invalid JSON will not update the preview until fixed.
-          </p>
+          
           <Textarea
             v-model="jsonText"
             class="min-h-[50vh] md:min-h-0 md:flex-1 font-mono text-[13px] leading-relaxed resize-none"
@@ -423,45 +513,9 @@ function addCanvasToPdf(
         </div>
       </section>
 
-      <!-- Preview -->
-      <section :class="previewPanelClass">
-        <div class="hidden md:block border-b border-border/60 p-0 shrink-0 bg-zinc-200/50 dark:bg-zinc-900/50 px-2 py-2">
-          <span class="text-xs font-medium text-muted-foreground">Preview</span>
-        </div>
-        <div
-          class="flex-1 min-h-0 w-full overflow-y-auto overflow-x-hidden bg-zinc-200/80 dark:bg-zinc-950/80"
-        >
-          <div class="w-full max-w-full m-0 p-0">
-            <div
-              ref="cvPreviewRef"
-              class="cv-preview-pages cv-print-root flex flex-col gap-0 leading-[1.45]"
-            >
-              <!-- Outer: 210×297mm A4. Inner text: 20mm margin on all sides (170×257mm content box). -->
-              <section
-                v-for="pageIndex in previewPageCount"
-                :key="pageIndex"
-                class="cv-page cv-page-frame bg-white text-gray-900 shadow-lg border border-black/10 overflow-hidden"
-                :aria-label="`Resume page ${pageIndex}`"
-              >
-                <!-- translateY must be on the inner, not the slide: moving the slide scrolls the whole
-                     clipping box and does not reveal lower content (2nd page looked blank). -->
-                <div class="cv-page-slide">
-                  <div
-                    class="cv-page-slide-inner"
-                    :style="{
-                      transform: `translateY(-${(pageIndex - 1) * pageSliceHeightPx}px)`,
-                    }"
-                  >
-                    <CvResumePageContent :cv-data="cvData" />
-                  </div>
-                </div>
-              </section>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
     </div>
+
     </template>
 
     <Teleport to="body">
@@ -523,53 +577,3 @@ function addCanvasToPdf(
     </Teleport>
   </div>
 </template>
-
-<style scoped>
-/*
- * Fixed px sizes only — no breakpoints. Preview looks the same at every viewport width
- * (only line wraps change when the column is narrow).
- */
-.cv-preview-pages {
-  box-sizing: border-box;
-  font-size: 13px;
-  /* Body copy: 1.45 line-height minus 0.65 mm */
-  line-height: calc(1.45em - 0.65mm);
-  -webkit-text-size-adjust: 100%;
-  text-size-adjust: 100%;
-}
-
-/*
- * ISO 216 A4 — outer: 210mm × 297mm.
- * Inner content area: 20mm margins on top, bottom, left, right → 170mm × 257mm usable.
- */
-.cv-page-frame {
-  --cv-a4-margin-left-right: 10mm;
-  --cv-a4-margin-top-bottom: 12mm;
-  box-sizing: border-box;
-  width: 210mm;
-  max-width: 100%;
-  height: 297mm;
-  margin: 0 auto;
-  padding: var(--cv-a4-margin-top-bottom) var(--cv-a4-margin-left-right);
-  overflow: hidden;
-}
-
-.cv-page-slide {
-  /* Fixed viewport; inner is translated inside this clip for multi-page preview. */
-  width: 100%;
-  height: calc(297mm - 2 * var(--cv-a4-margin-top-bottom));
-  max-height: calc(297mm - 2 * var(--cv-a4-margin-top-bottom));
-  box-sizing: border-box;
-  overflow: hidden;
-}
-
-.cv-page-slide-inner {
-  min-height: 0;
-  will-change: transform;
-  box-sizing: border-box;
-  line-height: inherit;
-  /* ~4 lines of breathing room; lh matches inherited line-height (same offset as body) */
-  padding-bottom: calc(4 * (1.45em - 0.65mm));
-  padding-bottom: 4lh;
-}
-</style>
