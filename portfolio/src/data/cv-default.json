@@ -1,136 +1,90 @@
 {
   "basics": {
-    "full_name": "Akhil Johnson",
-    "headline": "Expert Angular and React Developer. Building Dynamic User Interfaces.",
-    "email": "akhiljohnson2000@gmail.com",
-    "phone": "",
-    "location_city": "Thrissur",
-    "location_state": "Kerala",
-    "location_country": "India",
-    "linkedin_url": "https://www.linkedin.com/in/akhiljohnson2000/",
-    "github_url": "https://github.com/akhiljohnson2000",
-    "portfolio_url": "https://akhiljohnson2000.github.io",
-    "summary": "Senior Frontend Engineer with 8+ years of experience building high-performance, scalable web applications across education, real-time communication, and data-driven platforms.\n\nStrong expertise in React, Next.js, and Angular, with deep focus on component-driven architecture, performance optimization, accessibility (WCAG), SEO, and design systems.\n\nProven ability to own features end-to-end, mentor engineers, and collaborate with product, design, and backend teams to deliver production-grade user experiences at scale."
+    "full_name": "Your Name",
+    "headline": "Your Role | Key Skills | Your Value Proposition",
+    "email": "your.email@example.com",
+    "phone": "+91 XXXXX XXXXX",
+    "location_city": "Your City",
+    "location_state": "Your State",
+    "location_country": "Your Country",
+    "linkedin_url": "https://linkedin.com/in/yourprofile",
+    "github_url": "https://github.com/yourusername",
+    "portfolio_url": "https://yourportfolio.com",
+    "summary": "Write a short professional summary highlighting your experience, key skills, and what value you bring. Mention years of experience, technologies, and domains you have worked in."
   },
   "work_experience": [
     {
-      "company_name": "Clockhash Technologies",
-      "job_title": "Senior Software Engineer",
-      "location": "Kochi",
-      "start_date": "JAN 2025",
-      "end_date": "CURRENTLY WORKING",
-      "employment_type": "Full-time",
+      "company_name": "Company Name",
+      "job_title": "Your Job Title",
+      "location": "City, Country",
+      "start_date": "MMM YYYY",
+      "end_date": "PRESENT or MMM YYYY",
+      "employment_type": "Full-time / Part-time / Contract",
       "responsibilities": [
-        "Owning and delivering end-to-end frontend features using React, Next.js, and React Native.",
-        "Built reusable components and hooks aligned with a shared UI architecture.",
-        "Improved SEO and performance through SSR, optimized rendering, and lazy loading.",
-        "Collaborated closely with designers and backend engineers to translate UI/UX designs into scalable frontend solutions."
-      ]
-    },
-    {
-      "company_name": "CAKAP (Remote)",
-      "job_title": "Senior Software Engineer",
-      "location": "Jakarta, Indonesia",
-      "start_date": "FEB 2022",
-      "end_date": "SEPT 2024",
-      "employment_type": "Full-time",
-      "responsibilities": [
-        "Developed large-scale React and Angular dashboards for teachers and students used by thousands of daily users.",
-        "Built real-time React interfaces for video, audio, and chat using WebRTC (Twilio, Agora, Whereby).",
-        "Designed reusable UI components and frontend libraries, contributing to design consistency and faster development cycles.",
-        "Improved frontend performance by 35% through rendering optimizations, lazy loading, and efficient state management.",
-        "Mentored junior engineers, led code reviews, and conducted knowledge-sharing sessions.",
-        "Worked in Agile teams, contributing to sprint planning, estimations, and timely milestone delivery."
-      ]
-    },
-    {
-      "company_name": "QBurst",
-      "job_title": "Senior Software Engineer",
-      "location": "Koratty Info Park, Thrissur",
-      "start_date": "OCT 2018",
-      "end_date": "FEB 2022",
-      "employment_type": "Full-time",
-      "responsibilities": [
-        "Built scalable frontend applications using Angular and React for education and trading platforms.",
-        "Implemented performance optimizations including code splitting and lazy loading, improving load times by 25%.",
-        "Integrated REST APIs and collaborated with backend teams for seamless data flow.",
-        "Contributed to mobile deployments using Cordova for Android and iOS."
-      ]
-    },
-    {
-      "company_name": "Perfomatix",
-      "job_title": "Software Engineer",
-      "location": "Trivandrum",
-      "start_date": "Jan 2018",
-      "end_date": "Oct 2018",
-      "employment_type": "Full-time",
-      "responsibilities": [
-        "Developed SPAs using Angular and React, improving engagement and responsiveness.",
-        "Built data visualization dashboards using D3.js and Highcharts, reducing page load time by 30%.",
-        "Ensured responsive and cross-browser compatible UI implementations."
-      ]
-    },
-    {
-      "company_name": "Jay4Web",
-      "job_title": "Junior Software Engineer",
-      "location": "Ernakulam",
-      "start_date": "Jul 2017",
-      "end_date": "Dec 2017",
-      "employment_type": "Full-time",
-      "responsibilities": [
-        "Developed responsive web and hybrid mobile applications using Angular, Ionic, and Cordova.",
-        "Collaborated with designers and backend developers to deliver user-friendly interfaces."
+        "Describe your key responsibility or achievement.",
+        "Mention technologies and tools you used.",
+        "Add measurable impact (e.g., improved performance by XX%).",
+        "Explain collaboration or leadership contributions."
       ]
     }
   ],
   "education": [
     {
-      "institution_name": "METS SCHOOL OF ENGINEERING",
-      "degree": "BTECH",
-      "field_of_study": "Electronics and communication Engineering",
-      "start_date": "JUN 2013",
-      "end_date": "MAY 2017",
-      "grade": "7.5 GPA"
-    },
-    {
-      "institution_name": "ST.SEBASTIAN H.S.S, KUTTIKAD",
-      "degree": "+2",
-      "field_of_study": "XII Computer science",
-      "start_date": "JUN 2011",
-      "end_date": "MAR 2013",
-      "grade": "76%"
+      "institution_name": "University / School Name",
+      "degree": "Your Degree",
+      "field_of_study": "Your Field of Study",
+      "start_date": "MMM YYYY",
+      "end_date": "MMM YYYY",
+      "grade": "X.X GPA / XX%"
     }
   ],
   "skills": [
-    "Frontend Frameworks — React, Next.js (SSR, SEO optimization), Angular",
-    "State Management & Architecture — Redux, Context API, RxJS, NgRx, Component-driven design",
-    "Performance & Optimization — Code splitting, lazy loading, memoization, Web Vitals, Lighthouse, Chrome DevTools",
-    "Accessibility & SEO — WCAG, ARIA, semantic HTML, SSR, metadata optimization",
-    "Testing & Tooling — Jest, Karma, Jasmine, Webpack, NPM",
-    "APIs & Auth — REST APIs, JWT-based authentication",
-    "Dev Practices — Agile (Scrum, Kanban), Git, code reviews, documentation"
+    "Primary Skill (e.g., React)",
+    "Secondary Skill (e.g., Angular)",
+    "Programming Language (e.g., JavaScript)",
+    "Tools (e.g., Git, Webpack)",
+    "Other Relevant Skill"
   ],
   "languages": [
-    { "language": "English", "proficiency": "Professional" },
-    { "language": "Hindi", "proficiency": "Conversational" },
-    { "language": "Malayalam", "proficiency": "Native" }
+    {
+      "language": "Language Name",
+      "proficiency": "Basic / Conversational / Professional / Native"
+    }
   ],
-  "certifications": [],
-  "projects": [],
+  "certifications": [
+    {
+      "name": "Certification Name",
+      "issuing_organization": "Organization Name",
+      "issue_date": "MMM YYYY",
+      "expiration_date": "MMM YYYY or N/A",
+      "credential_id": "Credential ID (if any)",
+      "credential_url": "https://credential-link.com"
+    }
+  ],
+  "projects": [
+    {
+      "project_name": "Project Name",
+      "description": "Briefly describe the project, your role, and impact.",
+      "technologies": [
+        "Tech 1",
+        "Tech 2",
+        "Tech 3"
+      ],
+      "role": "Your Role (e.g., Frontend Developer)",
+      "start_date": "MMM YYYY",
+      "end_date": "MMM YYYY",
+      "project_url": "https://project-link.com"
+    }
+  ],
   "achievements": [
-    "Senior-level ownership of frontend systems",
-    "React-first mindset with strong Angular background",
-    "Performance, scalability, and SEO focus",
-    "Mentorship and leadership experience",
-    "Proven ability to work in remote, cross-functional teams"
+    "Mention a key achievement with measurable impact.",
+    "Example: Improved system performance by XX%.",
+    "Example: Led a team of X developers."
   ],
   "keywords": [
-    "React",
-    "Angular",
-    "Next.js",
-    "TypeScript",
-    "Frontend",
-    "Performance",
-    "Accessibility"
+    "Skill Keyword 1",
+    "Skill Keyword 2",
+    "Technology Keyword",
+    "Domain Keyword"
   ]
 }

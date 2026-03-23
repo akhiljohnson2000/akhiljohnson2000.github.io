@@ -1,1 +1,0 @@
-import{d as t,b as a,e as o,p as n,u as c,q as p,s as l}from"./index-DY-SKEIE.js";const u=t({__name:"CardDescription",props:{class:{}},setup(e){const r=e;return(s,m)=>(a(),o("div",n({class:c(p)("text-sm text-muted-foreground",r.class)},s.$attrs),[l(s.$slots,"default")],16))}});export{u as _};

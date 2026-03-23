@@ -59,6 +59,12 @@
   html {
     scroll-behavior: smooth;
   }
+  button:not(:disabled) {
+    @apply cursor-pointer;
+  }
+  button:disabled {
+    @apply cursor-not-allowed;
+  }
 }
 
 /* Section layout and headings */
