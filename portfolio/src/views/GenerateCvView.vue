@@ -3,6 +3,8 @@ import { ref, watch, computed, onUnmounted } from 'vue'
 import { useDebounceFn, useEventListener, useMediaQuery } from '@vueuse/core'
 import { RouterLink, useRouter } from 'vue-router'
 import { Check, Copy, Download, Home, X } from 'lucide-vue-next'
+import pdfMakeModule from 'pdfmake/build/pdfmake'
+import pdfFontsModule from 'pdfmake/build/vfs_fonts'
 
 import Button from '@/components/ui/Button.vue'
 import Textarea from '@/components/ui/Textarea.vue'
@@ -187,34 +189,25 @@ function pdfSectionHeader(title: string) {
   }
 }
 
-let pdfMakePromise: Promise<any> | null = null
+let pdfMakeReady = false
 
-async function getPdfMake() {
-  if (!pdfMakePromise) {
-    pdfMakePromise = (async () => {
-      const [pdfMakeMod, pdfFontsMod] = await Promise.all([
-        import('pdfmake/build/pdfmake'),
-        import('pdfmake/build/vfs_fonts'),
-      ])
-      const pdfMake = (pdfMakeMod as any).default ?? pdfMakeMod
-      const pdfFontsModule = (pdfFontsMod as any).default ?? pdfFontsMod
-      const vfs =
-        pdfFontsModule?.vfs ??
-        pdfFontsModule?.pdfMake?.vfs ??
-        pdfFontsModule
+function getPdfMake() {
+  const pdfMake = (pdfMakeModule as any).default ?? pdfMakeModule
+  if (!pdfMakeReady) {
+    const fonts = (pdfFontsModule as any).default ?? pdfFontsModule
+    const vfs = fonts?.vfs ?? fonts?.pdfMake?.vfs ?? fonts
 
-      if (!vfs || typeof vfs !== 'object') {
-        throw new Error('Could not initialize pdf fonts (vfs).')
-      }
-      if (typeof pdfMake.addVirtualFileSystem === 'function') {
-        pdfMake.addVirtualFileSystem(vfs)
-      } else {
-        pdfMake.vfs = vfs
-      }
-      return pdfMake
-    })()
+    if (!vfs || typeof vfs !== 'object') {
+      throw new Error('Could not initialize pdf fonts (vfs).')
+    }
+    if (typeof pdfMake.addVirtualFileSystem === 'function') {
+      pdfMake.addVirtualFileSystem(vfs)
+    } else {
+      pdfMake.vfs = vfs
+    }
+    pdfMakeReady = true
   }
-  return pdfMakePromise
+  return pdfMake
 }
 
 function buildPdfDocDefinition(data: CvResume): any {
@@ -422,7 +415,7 @@ async function exportPdf() {
   if (parseError.value || exporting.value) return
   exporting.value = true
   try {
-    const pdfMake = await getPdfMake()
+    const pdfMake = getPdfMake()
     const docDefinition = buildPdfDocDefinition(cvData.value)
     pdfMake.createPdf(docDefinition).download(buildPdfFilename(cvData.value.basics.full_name))
   } catch (e) {
