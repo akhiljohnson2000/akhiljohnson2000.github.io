@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, computed, onUnmounted } from 'vue'
 import { useDebounceFn, useEventListener, useMediaQuery } from '@vueuse/core'
-import { RouterLink, useRouter } from 'vue-router'
+import { RouterLink } from 'vue-router'
 import { Check, Copy, Download, Home, X } from 'lucide-vue-next'
 import pdfMakeModule from 'pdfmake/build/pdfmake'
 import pdfFontsModule from 'pdfmake/build/vfs_fonts'
@@ -38,16 +38,6 @@ function readStoredJson(): string {
 
 /** md breakpoint — below this, show “desktop only” message */
 const isDesktop = useMediaQuery('(min-width: 768px)')
-
-const router = useRouter()
-
-function goBackFromMobileGate() {
-  if (typeof window !== 'undefined' && window.history.length > 1) {
-    router.back()
-  } else {
-    router.push('/services')
-  }
-}
 
 const jsonText = ref(readStoredJson())
 const parseError = ref<string | null>(null)
@@ -437,23 +427,6 @@ const jsonPanelClass = computed(() => {
 
 <template>
   <div class="min-h-screen flex flex-col bg-background">
-    <!-- Mobile: desktop-only tool -->
-    <div
-      v-if="!isDesktop"
-      class="flex flex-1 flex-col items-center justify-center p-0 text-center"
-    >
-      <p class="text-lg font-semibold text-foreground max-w-md">
-        This page is not available on mobile devices.
-      </p>
-      <p class="mt-2 text-sm text-muted-foreground max-w-md leading-relaxed px-2">
-        The Resume Generator works best on a desktop or tablet browser. Please open this page on a larger screen.
-      </p>
-      <Button type="button" class="mt-4" @click="goBackFromMobileGate">
-        Go back
-      </Button>
-    </div>
-
-    <template v-else>
     <div class="flex flex-col flex-1 min-h-0">
     <header
       class="border-b border-border/60 bg-background/95 backdrop-blur p-0 flex flex-wrap items-center justify-between gap-2 shrink-0 z-10"
@@ -471,8 +444,7 @@ const jsonPanelClass = computed(() => {
   
         </div>
       </div>
-      <!-- Desktop: Export -->
-      <div class="hidden md:flex flex-wrap items-center justify-end gap-2 shrink-0 px-2 py-2">
+      <div class="flex flex-wrap items-center justify-end gap-2 shrink-0 px-2 py-2">
         <Button type="button" size="sm" :disabled="!!parseError || exporting" @click="exportPdf">
           <Download class="h-4 w-4" />
           {{ exporting ? 'Exporting…' : 'Export' }}
@@ -508,8 +480,6 @@ const jsonPanelClass = computed(() => {
 
     </div>
     </div>
-
-    </template>
 
     <Teleport to="body">
       <div
