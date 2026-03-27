@@ -8,6 +8,7 @@ import pdfFontsModule from 'pdfmake/build/vfs_fonts'
 
 import Button from '@/components/ui/Button.vue'
 import Textarea from '@/components/ui/Textarea.vue'
+import CvResumeEditorForm from '@/components/cv/CvResumeEditorForm.vue'
 
 import defaultCv from '@/data/cv-default.json'
 import type { CvResume } from '@/types/cv-resume'
@@ -16,6 +17,17 @@ import { jsonKeysStructure } from '@/lib/json-structure'
 
 const STORAGE_KEY = 'portfolio-resume-json'
 const STORAGE_KEY_LEGACY = 'portfolio-generate-cv-json'
+const STORAGE_KEY_EDIT_MODE = 'portfolio-generate-cv-edit-mode'
+
+function readEditMode(): 'json' | 'ui' {
+  try {
+    const s = localStorage.getItem(STORAGE_KEY_EDIT_MODE)
+    if (s === 'json' || s === 'ui') return s
+  } catch {
+    /* ignore */
+  }
+  return 'ui'
+}
 
 function readStoredJson(): string {
   const fallback = JSON.stringify(defaultCv, null, 2)
@@ -36,8 +48,9 @@ function readStoredJson(): string {
   return fallback
 }
 
-/** md breakpoint — below this, show “desktop only” message */
 const isDesktop = useMediaQuery('(min-width: 768px)')
+
+const editMode = ref<'json' | 'ui'>(readEditMode())
 
 const jsonText = ref(readStoredJson())
 const parseError = ref<string | null>(null)
@@ -104,22 +117,70 @@ useEventListener('keydown', (e: KeyboardEvent) => {
   if (e.key === 'Escape' && structureModalOpen.value) closeStructureModal()
 })
 
-function applyJson() {
+function tryApplyJsonSync(): boolean {
   try {
     const parsed = JSON.parse(jsonText.value)
     parseError.value = null
     cvData.value = normalizeCvResume(parsed)
     localStorage.setItem(STORAGE_KEY, jsonText.value)
+    return true
   } catch (e) {
     parseError.value = e instanceof Error ? e.message : 'Invalid JSON'
+    return false
   }
+}
+
+function applyJson() {
+  tryApplyJsonSync()
 }
 
 const debouncedApply = useDebounceFn(applyJson, 450)
 
 watch(jsonText, () => {
+  if (editMode.value !== 'json') return
   debouncedApply()
 })
+
+const debouncedSyncJsonFromCv = useDebounceFn(() => {
+  jsonText.value = JSON.stringify(cvData.value, null, 2)
+  try {
+    localStorage.setItem(STORAGE_KEY, jsonText.value)
+  } catch {
+    /* ignore */
+  }
+  parseError.value = null
+}, 450)
+
+watch(
+  cvData,
+  () => {
+    if (editMode.value !== 'ui') return
+    debouncedSyncJsonFromCv()
+  },
+  { deep: true },
+)
+
+function setEditMode(mode: 'json' | 'ui') {
+  if (mode === editMode.value) return
+  if (mode === 'ui') {
+    if (!tryApplyJsonSync()) return
+    editMode.value = 'ui'
+    try {
+      localStorage.setItem(STORAGE_KEY_EDIT_MODE, 'ui')
+    } catch {
+      /* ignore */
+    }
+  } else {
+    jsonText.value = JSON.stringify(cvData.value, null, 2)
+    parseError.value = null
+    editMode.value = 'json'
+    try {
+      localStorage.setItem(STORAGE_KEY_EDIT_MODE, 'json')
+    } catch {
+      /* ignore */
+    }
+  }
+}
 
 function buildPdfFilename(fullName: string) {
   const base = (fullName || 'Resume').replace(/\s+/g, '')
@@ -431,7 +492,7 @@ const jsonPanelClass = computed(() => {
     <header
       class="border-b border-border/60 bg-background/95 backdrop-blur p-0 flex flex-wrap items-center justify-between gap-2 shrink-0 z-10"
     >
-      <div class="flex items-center gap-2 min-w-0 flex-1 px-2 py-2">
+      <div class="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2 px-2 py-2">
         <RouterLink
           to="/"
           class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border/60 bg-background text-muted-foreground hover:bg-accent hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
@@ -439,9 +500,44 @@ const jsonPanelClass = computed(() => {
         >
           <Home class="h-5 w-5" aria-hidden="true" />
         </RouterLink>
-        <div class="min-w-0">
-          <h1 class="text-lg font-semibold tracking-tight">Make Your Resume</h1>
-  
+        <h1 class="text-lg font-semibold tracking-tight shrink-0">Make Your Resume</h1>
+        <div
+          class="relative inline-grid h-9 min-w-[15.5rem] shrink-0 grid-cols-2 items-stretch rounded-full border border-border/80 bg-muted/70 p-1 shadow-inner ring-1 ring-black/[0.04] dark:ring-white/[0.06]"
+          role="group"
+          aria-label="Editor mode: Text fields or JSON"
+        >
+          <!-- Sliding pill -->
+          <span
+            aria-hidden="true"
+            class="pointer-events-none absolute left-1 top-1 h-[calc(100%-8px)] w-[calc(50%-4px)] rounded-full bg-pink-500 shadow-md shadow-pink-500/25 transition-[left,box-shadow] duration-200 ease-out dark:bg-pink-600 dark:shadow-pink-600/30"
+            :class="editMode === 'ui' ? 'left-1' : 'left-[calc(50%+2px)]'"
+          />
+          <button
+            type="button"
+            class="relative z-10 flex items-center justify-center rounded-full px-1.5 text-[11px] font-semibold leading-tight tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-xs"
+            :class="
+              editMode === 'ui'
+                ? 'text-white'
+                : 'text-muted-foreground hover:text-foreground'
+            "
+            :aria-pressed="editMode === 'ui'"
+            @click="setEditMode('ui')"
+          >
+            Text fields
+          </button>
+          <button
+            type="button"
+            class="relative z-10 flex items-center justify-center rounded-full px-1.5 text-[11px] font-semibold leading-tight tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-xs"
+            :class="
+              editMode === 'json'
+                ? 'text-white'
+                : 'text-muted-foreground hover:text-foreground'
+            "
+            :aria-pressed="editMode === 'json'"
+            @click="setEditMode('json')"
+          >
+            JSON
+          </button>
         </div>
       </div>
       <div class="flex flex-wrap items-center justify-end gap-2 shrink-0 px-2 py-2">
@@ -452,27 +548,43 @@ const jsonPanelClass = computed(() => {
       </div>
     </header>
 
-    <div class="flex flex-1 flex-col min-h-0 overflow-hidden">
+    <div
+      class="flex flex-1 flex-col min-h-0 overflow-hidden px-4 sm:px-6 md:px-10 lg:px-12"
+    >
       <!-- JSON editor -->
       <section :class="jsonPanelClass">
         <div
-          class="hidden md:flex border-b border-border/60 p-0 shrink-0 items-center justify-between gap-2 px-2 py-2"
+          class="flex border-b border-border/60 p-0 shrink-0 flex-wrap items-center justify-between gap-2 py-2"
         >
-        <span v-if="parseError" class="text-sm text-destructive shrink-0">
+          <span v-if="parseError" class="text-sm text-destructive shrink-0">
             {{ parseError }}
-        </span>
-          <span v-else class="text-xs text-muted-foreground shrink-0">
-            JSON is saved in this browser (localStorage). Invalid JSON will not update the preview until fixed.
           </span>
-          <Button type="button" variant="outline" size="sm" @click="openStructureModal">
+          <span v-else-if="editMode === 'json'" class="text-xs text-muted-foreground shrink-0 min-w-0">
+            JSON is saved in this browser (localStorage). Invalid JSON will not apply until fixed.
+          </span>
+          <span v-else class="text-xs text-muted-foreground shrink-0 min-w-0">
+            Edits are saved in this browser (localStorage) and used when you export.
+          </span>
+          <Button
+            v-if="editMode === 'json'"
+            type="button"
+            variant="outline"
+            size="sm"
+            class="shrink-0"
+            @click="openStructureModal"
+          >
             View JSON structure
           </Button>
         </div>
-        <div class="flex flex-1 min-h-0 flex-col p-0 gap-1">
-          
+        <div v-if="editMode === 'ui'" class="flex flex-1 min-h-0 flex-col overflow-y-auto py-3">
+          <CvResumeEditorForm v-model="cvData" />
+        </div>
+        <div v-else class="flex flex-1 min-h-0 flex-col p-0 gap-1 overflow-y-auto">
           <Textarea
             v-model="jsonText"
-            class="min-h-[50vh] md:min-h-0 md:flex-1 font-mono text-[13px] leading-relaxed resize-none"
+            autosize
+            :rows="2"
+            class="min-h-[min(50vh,28rem)] font-mono text-[13px] leading-relaxed"
             placeholder="{ ... }"
           />
         </div>
