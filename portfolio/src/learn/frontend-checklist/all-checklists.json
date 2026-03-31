@@ -797,7 +797,12 @@
             "components",
             "props_vs_state",
             "event_handling",
-            "controlled_components"
+            "controlled_components",
+            "uncontrolled_components",
+            "composition_vs_inheritance",
+            "immutability",
+            "conditional_rendering",
+            "lists_and_keys"
           ],
           "references": []
         },
@@ -809,7 +814,13 @@
             "useMemo",
             "useCallback",
             "useRef",
-            "custom_hooks"
+            "custom_hooks",
+            "useReducer",
+            "useLayoutEffect",
+            "useImperativeHandle",
+            "useDebugValue",
+            "stale_closures",
+            "hook_rules_and_violations"
           ],
           "references": []
         },
@@ -819,18 +830,248 @@
             "render_cycle",
             "reconciliation",
             "virtual_dom",
-            "render_vs_commit_phase"
+            "render_vs_commit_phase",
+            "mount_update_unmount",
+            "strict_mode_behavior",
+            "double_render_in_dev",
+            "batched_updates"
           ],
           "references": []
         },
         {
-          "name": "Advanced",
+          "name": "State Management",
           "subtopics": [
+            "local_vs_global_state",
+            "lifting_state_up",
+            "prop_drilling",
             "context_api",
-            "error_boundaries",
+            "context_performance_issues",
+            "useReducer_patterns",
+            "redux_basics",
+            "zustand_basics",
+            "server_state_vs_client_state",
+            "react_query_basics",
+            "cache_invalidation"
+          ],
+          "references": []
+        },
+        {
+          "name": "Performance Optimization",
+          "subtopics": [
+            "react_memo",
+            "useMemo_vs_useCallback",
+            "avoid_unnecessary_rerenders",
+            "key_stability",
+            "list_virtualization",
+            "windowing_large_lists",
             "code_splitting",
-            "suspense",
-            "concurrent_rendering"
+            "lazy_loading",
+            "profiling_with_react_devtools",
+            "memoization_strategies"
+          ],
+          "references": []
+        },
+        {
+          "name": "Architecture & Design Patterns",
+          "subtopics": [
+            "container_presentational_pattern",
+            "compound_components",
+            "render_props",
+            "higher_order_components",
+            "hooks_based_architecture",
+            "feature_based_folder_structure",
+            "separation_of_concerns",
+            "reusable_component_design",
+            "design_systems",
+            "monorepo_vs_multirepo"
+          ],
+          "references": []
+        },
+        {
+          "name": "Data Fetching & APIs",
+          "subtopics": [
+            "fetch_vs_axios",
+            "rest_api_integration",
+            "graphql_basics",
+            "error_handling",
+            "loading_states",
+            "optimistic_updates",
+            "retry_logic",
+            "pagination_and_infinite_scroll",
+            "debouncing_and_throttling_requests"
+          ],
+          "references": []
+        },
+        {
+          "name": "Forms & Validation",
+          "subtopics": [
+            "forms_and_validation",
+            "controlled_form_patterns",
+            "uncontrolled_forms",
+            "form_libraries_formik_react_hook_form",
+            "dynamic_forms",
+            "field_arrays",
+            "validation_schemas_yup_zod",
+            "debounced_inputs"
+          ],
+          "references": []
+        },
+        {
+          "name": "Routing",
+          "subtopics": [
+            "react_router_basics",
+            "nested_routes",
+            "dynamic_routes",
+            "route_guards",
+            "lazy_loaded_routes",
+            "navigation_patterns",
+            "query_params_and_search"
+          ],
+          "references": []
+        },
+        {
+          "name": "Accessibility (A11y)",
+          "subtopics": [
+            "semantic_html",
+            "aria_roles",
+            "keyboard_navigation",
+            "focus_management",
+            "screen_reader_support",
+            "accessible_forms",
+            "accessible_modals"
+          ],
+          "references": []
+        },
+        {
+          "name": "Security",
+          "subtopics": [
+            "xss_prevention",
+            "dangerouslySetInnerHTML_risks",
+            "input_sanitization",
+            "auth_token_handling",
+            "csrf_basics"
+          ],
+          "references": []
+        },
+        {
+          "name": "Testing",
+          "subtopics": [
+            "jest_basics",
+            "react_testing_library",
+            "unit_testing_components",
+            "integration_testing",
+            "mocking_apis",
+            "testing_async_behavior",
+            "edge_case_testing"
+          ],
+          "references": []
+        },
+        {
+          "name": "Tooling & Build Systems",
+          "subtopics": [
+            "vite_vs_webpack",
+            "bundling",
+            "tree_shaking",
+            "environment_variables",
+            "eslint_prettier",
+            "ci_cd_basics"
+          ],
+          "references": []
+        },
+        {
+          "name": "Modern React",
+          "subtopics": [
+            "concurrent_rendering",
+            "useTransition",
+            "suspense_for_data_fetching",
+            "server_components",
+            "streaming_ssr"
+          ],
+          "references": []
+        },
+        {
+          "name": "SSR & Frameworks",
+          "subtopics": [
+            "nextjs_basics",
+            "ssr_vs_ssg",
+            "hydration",
+            "seo_considerations",
+            "server_components_basics"
+          ],
+          "references": []
+        },
+        {
+          "name": "TypeScript with React",
+          "subtopics": [
+            "typing_props_and_state",
+            "functional_component_types",
+            "generic_components",
+            "typing_hooks",
+            "discriminated_unions",
+            "utility_types",
+            "strict_null_checks"
+          ],
+          "references": []
+        },
+        {
+          "name": "Events & Internals",
+          "subtopics": [
+            "synthetic_events",
+            "event_delegation",
+            "capture_vs_bubble_phase",
+            "event_propagation"
+          ],
+          "references": []
+        },
+        {
+          "name": "Portals",
+          "subtopics": [
+            "react_portals",
+            "modals_tooltips_portals",
+            "event_propagation_in_portals"
+          ],
+          "references": []
+        },
+        {
+          "name": "Micro Frontends",
+          "subtopics": [
+            "module_federation",
+            "micro_frontend_architecture",
+            "shared_dependencies",
+            "deployment_strategies"
+          ],
+          "references": []
+        },
+        {
+          "name": "Internationalization",
+          "subtopics": [
+            "i18n_basics",
+            "localization_patterns",
+            "date_number_formatting",
+            "rtl_support"
+          ],
+          "references": []
+        },
+        {
+          "name": "Observability & Monitoring",
+          "subtopics": [
+            "logging_strategies",
+            "error_tracking_sentry",
+            "performance_monitoring",
+            "user_analytics"
+          ],
+          "references": []
+        },
+        {
+          "name": "Debugging & Production Issues",
+          "subtopics": [
+            "debugging_rerenders",
+            "memory_leaks_useEffect_cleanup",
+            "race_conditions",
+            "stale_state_issues",
+            "infinite_loops",
+            "production_logging",
+            "error_reproduction_strategies"
           ],
           "references": []
         }
@@ -1740,6 +1981,235 @@
             "game_like_interactions",
             "scroll_based_animations",
             "immersive_experiences"
+          ]
+        }
+      ]
+    },
+    {
+      "order": 30,
+      "title": "Node.js Mastery",
+      "topics": [
+        {
+          "name": "Core Architecture",
+          "subtopics": [
+            "nodejs_runtime_overview",
+            "libuv_architecture",
+            "single_threaded_event_loop",
+            "event_loop_phases",
+            "microtasks_vs_macrotasks",
+            "process_vs_thread",
+            "worker_threads",
+            "cluster_module",
+            "child_process",
+            "nodejs_vs_browser_runtime"
+          ]
+        },
+        {
+          "name": "Modules & Dependency System",
+          "subtopics": [
+            "commonjs_vs_esmodules",
+            "require_vs_import",
+            "module_resolution_algorithm",
+            "caching_behavior",
+            "circular_dependencies",
+            "dynamic_import",
+            "package_json_exports_imports",
+            "monorepo_dependency_management"
+          ]
+        },
+        {
+          "name": "Asynchronous Internals",
+          "subtopics": [
+            "event_loop_deep_dive",
+            "nexttick_queue",
+            "setimmediate_vs_settimeout",
+            "promise_microtask_queue",
+            "async_hooks",
+            "execution_order_edge_cases"
+          ]
+        },
+        {
+          "name": "Streams & Buffers",
+          "subtopics": [
+            "readable_stream",
+            "writable_stream",
+            "duplex_stream",
+            "transform_stream",
+            "backpressure_handling",
+            "highwatermark",
+            "stream_pipeline",
+            "zero_copy_buffers",
+            "buffer_vs_string",
+            "binary_data_processing"
+          ]
+        },
+        {
+          "name": "Filesystem & I/O",
+          "subtopics": [
+            "fs_module_sync_vs_async",
+            "file_descriptors",
+            "streaming_large_files",
+            "watchers_fs_watch",
+            "io_bound_vs_cpu_bound_tasks"
+          ]
+        },
+        {
+          "name": "Networking & HTTP",
+          "subtopics": [
+            "http_module_internals",
+            "tcp_udp_basics",
+            "http_request_response_lifecycle",
+            "headers_and_status_codes",
+            "keep_alive_connections",
+            "http2_basics",
+            "https_tls_handshake",
+            "reverse_proxy_concepts"
+          ]
+        },
+        {
+          "name": "Express & API Architecture",
+          "subtopics": [
+            "middleware_pipeline",
+            "request_lifecycle",
+            "routing_patterns",
+            "error_handling_middleware",
+            "validation_layers",
+            "controller_service_repository_pattern",
+            "modular_api_design",
+            "rate_limiting",
+            "api_versioning"
+          ]
+        },
+        {
+          "name": "Performance & Optimization",
+          "subtopics": [
+            "event_loop_blocking",
+            "cpu_bound_vs_io_bound",
+            "worker_threads_usage",
+            "clustering_and_scaling",
+            "load_balancing",
+            "memory_profiling",
+            "heap_snapshots",
+            "garbage_collection_tuning",
+            "benchmarking",
+            "performance_hooks"
+          ]
+        },
+        {
+          "name": "Caching & Scalability",
+          "subtopics": [
+            "in_memory_cache",
+            "redis_basics",
+            "cache_invalidation_strategies",
+            "ttl_and_lru",
+            "horizontal_scaling",
+            "stateless_vs_stateful_services",
+            "session_storage_strategies"
+          ]
+        },
+        {
+          "name": "Security",
+          "subtopics": [
+            "authentication_jwt",
+            "oauth_basics",
+            "password_hashing_bcrypt",
+            "xss_csrf_protection",
+            "helmet_security_headers",
+            "rate_limiting_ddos_protection",
+            "secure_cookie_handling",
+            "input_validation_and_sanitization"
+          ]
+        },
+        {
+          "name": "Error Handling & Reliability",
+          "subtopics": [
+            "operational_vs_programmer_errors",
+            "graceful_shutdown",
+            "uncaught_exception",
+            "unhandled_rejection",
+            "retry_strategies",
+            "circuit_breaker_pattern",
+            "timeout_handling"
+          ]
+        },
+        {
+          "name": "Logging & Observability",
+          "subtopics": [
+            "structured_logging",
+            "log_levels",
+            "request_tracing",
+            "correlation_ids",
+            "metrics_collection",
+            "distributed_tracing",
+            "monitoring_tools"
+          ]
+        },
+        {
+          "name": "Database Integration",
+          "subtopics": [
+            "connection_pooling",
+            "transactions",
+            "orm_vs_query_builder",
+            "n_plus_one_problem",
+            "indexing_basics",
+            "read_write_splitting",
+            "data_consistency_patterns"
+          ]
+        },
+        {
+          "name": "Realtime Systems",
+          "subtopics": [
+            "websockets_server",
+            "socketio_basics",
+            "pub_sub_patterns",
+            "event_driven_architecture",
+            "message_queues",
+            "backpressure_in_realtime"
+          ]
+        },
+        {
+          "name": "Queues & Background Jobs",
+          "subtopics": [
+            "job_queues",
+            "bullmq_basics",
+            "retry_and_backoff",
+            "delayed_jobs",
+            "idempotency",
+            "eventual_consistency"
+          ]
+        },
+        {
+          "name": "Testing",
+          "subtopics": [
+            "unit_testing",
+            "integration_testing",
+            "api_testing",
+            "mocking_dependencies",
+            "test_isolation",
+            "load_testing"
+          ]
+        },
+        {
+          "name": "Deployment & DevOps",
+          "subtopics": [
+            "environment_configuration",
+            "process_management_pm2",
+            "docker_basics",
+            "ci_cd_pipelines",
+            "blue_green_deployment",
+            "zero_downtime_deployments"
+          ]
+        },
+        {
+          "name": "Advanced Patterns & Architecture",
+          "subtopics": [
+            "clean_architecture",
+            "hexagonal_architecture",
+            "dependency_injection",
+            "event_sourcing",
+            "cqrs_pattern",
+            "microservices_vs_monolith",
+            "api_gateway_pattern"
           ]
         }
       ]
