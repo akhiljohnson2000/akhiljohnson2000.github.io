@@ -1,0 +1,214 @@
+{
+  "order": 13,
+  "title": "State Management",
+  "topics": [
+    {
+      "Fundamentals": {
+        "local_vs_global_state": [
+          "Local vs Global State defines a core concept used in State Management",
+          "It explains what local vs global state is and why it matters",
+          "It covers the main rules and mental model behind local vs global state",
+          "It shows how local vs global state behaves in real application code",
+          "It highlights common mistakes developers make with local vs global state",
+          "It compares local vs global state with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of local vs global state",
+          "It includes practical usage patterns for local vs global state in Fundamentals",
+          "It helps with debugging issues connected to local vs global state",
+          "It prepares you to answer interview and architecture questions about local vs global state"
+        ],
+        "client_vs_server_state": [
+          "Client vs Server State defines a core concept used in State Management",
+          "It explains what client vs server state is and why it matters",
+          "It covers the main rules and mental model behind client vs server state",
+          "It shows how client vs server state behaves in real application code",
+          "It highlights common mistakes developers make with client vs server state",
+          "It compares client vs server state with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of client vs server state",
+          "It includes practical usage patterns for client vs server state in Fundamentals",
+          "It helps with debugging issues connected to client vs server state",
+          "It prepares you to answer interview and architecture questions about client vs server state"
+        ],
+        "state_normalization": [
+          "State Normalization defines a core concept used in State Management",
+          "It explains what state normalization is and why it matters",
+          "It covers the main rules and mental model behind state normalization",
+          "It shows how state normalization behaves in real application code",
+          "It highlights common mistakes developers make with state normalization",
+          "It compares state normalization with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of state normalization",
+          "It includes practical usage patterns for state normalization in Fundamentals",
+          "It helps with debugging issues connected to state normalization",
+          "It prepares you to answer interview and architecture questions about state normalization"
+        ],
+        "immutability": [
+          "Immutability defines a core concept used in State Management",
+          "It explains what immutability is and why it matters",
+          "It covers the main rules and mental model behind immutability",
+          "It shows how immutability behaves in real application code",
+          "It highlights common mistakes developers make with immutability",
+          "It compares immutability with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of immutability",
+          "It includes practical usage patterns for immutability in Fundamentals",
+          "It helps with debugging issues connected to immutability",
+          "It prepares you to answer interview and architecture questions about immutability"
+        ]
+      }
+    },
+    {
+      "Patterns": {
+        "flux_architecture": [
+          "Flux Architecture defines a core concept used in State Management",
+          "It explains what flux architecture is and why it matters",
+          "It covers the main rules and mental model behind flux architecture",
+          "It shows how flux architecture behaves in real application code",
+          "It highlights common mistakes developers make with flux architecture",
+          "It compares flux architecture with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of flux architecture",
+          "It includes practical usage patterns for flux architecture in Patterns",
+          "It helps with debugging issues connected to flux architecture",
+          "It prepares you to answer interview and architecture questions about flux architecture"
+        ],
+        "event_driven_state": [
+          "Event Driven State defines a core concept used in State Management",
+          "It explains what event driven state is and why it matters",
+          "It covers the main rules and mental model behind event driven state",
+          "It shows how event driven state behaves in real application code",
+          "It highlights common mistakes developers make with event driven state",
+          "It compares event driven state with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of event driven state",
+          "It includes practical usage patterns for event driven state in Patterns",
+          "It helps with debugging issues connected to event driven state",
+          "It prepares you to answer interview and architecture questions about event driven state"
+        ],
+        "observer_pattern": [
+          "Observer Pattern defines a core concept used in State Management",
+          "It explains what observer pattern is and why it matters",
+          "It covers the main rules and mental model behind observer pattern",
+          "It shows how observer pattern behaves in real application code",
+          "It highlights common mistakes developers make with observer pattern",
+          "It compares observer pattern with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of observer pattern",
+          "It includes practical usage patterns for observer pattern in Patterns",
+          "It helps with debugging issues connected to observer pattern",
+          "It prepares you to answer interview and architecture questions about observer pattern"
+        ]
+      }
+    },
+    {
+      "Libraries": {
+        "redux": [
+          "Redux defines a core concept used in State Management",
+          "It explains what redux is and why it matters",
+          "It covers the main rules and mental model behind redux",
+          "It shows how redux behaves in real application code",
+          "It highlights common mistakes developers make with redux",
+          "It compares redux with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of redux",
+          "It includes practical usage patterns for redux in Libraries",
+          "It helps with debugging issues connected to redux",
+          "It prepares you to answer interview and architecture questions about redux"
+        ],
+        "redux_toolkit": [
+          "Redux Toolkit defines a core concept used in State Management",
+          "It explains what redux toolkit is and why it matters",
+          "It covers the main rules and mental model behind redux toolkit",
+          "It shows how redux toolkit behaves in real application code",
+          "It highlights common mistakes developers make with redux toolkit",
+          "It compares redux toolkit with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of redux toolkit",
+          "It includes practical usage patterns for redux toolkit in Libraries",
+          "It helps with debugging issues connected to redux toolkit",
+          "It prepares you to answer interview and architecture questions about redux toolkit"
+        ],
+        "zustand": [
+          "Zustand defines a core concept used in State Management",
+          "It explains what zustand is and why it matters",
+          "It covers the main rules and mental model behind zustand",
+          "It shows how zustand behaves in real application code",
+          "It highlights common mistakes developers make with zustand",
+          "It compares zustand with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of zustand",
+          "It includes practical usage patterns for zustand in Libraries",
+          "It helps with debugging issues connected to zustand",
+          "It prepares you to answer interview and architecture questions about zustand"
+        ],
+        "react_query": [
+          "React Query defines a core concept used in State Management",
+          "It explains what react query is and why it matters",
+          "It covers the main rules and mental model behind react query",
+          "It shows how react query behaves in real application code",
+          "It highlights common mistakes developers make with react query",
+          "It compares react query with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of react query",
+          "It includes practical usage patterns for react query in Libraries",
+          "It helps with debugging issues connected to react query",
+          "It prepares you to answer interview and architecture questions about react query"
+        ],
+        "mobx": [
+          "Mobx defines a core concept used in State Management",
+          "It explains what mobx is and why it matters",
+          "It covers the main rules and mental model behind mobx",
+          "It shows how mobx behaves in real application code",
+          "It highlights common mistakes developers make with mobx",
+          "It compares mobx with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of mobx",
+          "It includes practical usage patterns for mobx in Libraries",
+          "It helps with debugging issues connected to mobx",
+          "It prepares you to answer interview and architecture questions about mobx"
+        ]
+      }
+    },
+    {
+      "Advanced Concepts": {
+        "selector_memoization": [
+          "Selector Memoization defines a core concept used in State Management",
+          "It explains what selector memoization is and why it matters",
+          "It covers the main rules and mental model behind selector memoization",
+          "It shows how selector memoization behaves in real application code",
+          "It highlights common mistakes developers make with selector memoization",
+          "It compares selector memoization with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of selector memoization",
+          "It includes practical usage patterns for selector memoization in Advanced Concepts",
+          "It helps with debugging issues connected to selector memoization",
+          "It prepares you to answer interview and architecture questions about selector memoization"
+        ],
+        "cache_invalidation": [
+          "Cache Invalidation defines a core concept used in State Management",
+          "It explains what cache invalidation is and why it matters",
+          "It covers the main rules and mental model behind cache invalidation",
+          "It shows how cache invalidation behaves in real application code",
+          "It highlights common mistakes developers make with cache invalidation",
+          "It compares cache invalidation with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of cache invalidation",
+          "It includes practical usage patterns for cache invalidation in Advanced Concepts",
+          "It helps with debugging issues connected to cache invalidation",
+          "It prepares you to answer interview and architecture questions about cache invalidation"
+        ],
+        "state_synchronization": [
+          "State Synchronization defines a core concept used in State Management",
+          "It explains what state synchronization is and why it matters",
+          "It covers the main rules and mental model behind state synchronization",
+          "It shows how state synchronization behaves in real application code",
+          "It highlights common mistakes developers make with state synchronization",
+          "It compares state synchronization with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of state synchronization",
+          "It includes practical usage patterns for state synchronization in Advanced Concepts",
+          "It helps with debugging issues connected to state synchronization",
+          "It prepares you to answer interview and architecture questions about state synchronization"
+        ],
+        "optimistic_updates": [
+          "Optimistic Updates defines a core concept used in State Management",
+          "It explains what optimistic updates is and why it matters",
+          "It covers the main rules and mental model behind optimistic updates",
+          "It shows how optimistic updates behaves in real application code",
+          "It highlights common mistakes developers make with optimistic updates",
+          "It compares optimistic updates with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of optimistic updates",
+          "It includes practical usage patterns for optimistic updates in Advanced Concepts",
+          "It helps with debugging issues connected to optimistic updates",
+          "It prepares you to answer interview and architecture questions about optimistic updates"
+        ]
+      }
+    }
+  ]
+}

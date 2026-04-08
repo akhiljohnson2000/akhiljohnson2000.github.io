@@ -1,0 +1,174 @@
+{
+  "order": 21,
+  "title": "Forms & Validation",
+  "topics": [
+    {
+      "Form Handling": {
+        "controlled_components": [
+          "Define Controlled Components clearly and explain where it fits within Form Handling.",
+          "Understand the core purpose of Controlled Components and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Controlled Components.",
+          "Study how Controlled Components works internally step by step in real application flow.",
+          "Compare Controlled Components with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Controlled Components.",
+          "Practice Controlled Components with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Controlled Components.",
+          "Learn how to debug, test, and validate behavior when working with Controlled Components.",
+          "Be able to explain Controlled Components in interviews using practical examples and tradeoffs."
+        ],
+        "uncontrolled_components": [
+          "Define Uncontrolled Components clearly and explain where it fits within Form Handling.",
+          "Understand the core purpose of Uncontrolled Components and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Uncontrolled Components.",
+          "Study how Uncontrolled Components works internally step by step in real application flow.",
+          "Compare Uncontrolled Components with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Uncontrolled Components.",
+          "Practice Uncontrolled Components with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Uncontrolled Components.",
+          "Learn how to debug, test, and validate behavior when working with Uncontrolled Components.",
+          "Be able to explain Uncontrolled Components in interviews using practical examples and tradeoffs."
+        ],
+        "form_state_management": [
+          "Define Form State Management clearly and explain where it fits within Form Handling.",
+          "Understand the core purpose of Form State Management and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Form State Management.",
+          "Study how Form State Management works internally step by step in real application flow.",
+          "Compare Form State Management with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Form State Management.",
+          "Practice Form State Management with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Form State Management.",
+          "Learn how to debug, test, and validate behavior when working with Form State Management.",
+          "Be able to explain Form State Management in interviews using practical examples and tradeoffs."
+        ],
+        "large_form_performance": [
+          "Define Large Form Performance clearly and explain where it fits within Form Handling.",
+          "Understand the core purpose of Large Form Performance and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Large Form Performance.",
+          "Study how Large Form Performance works internally step by step in real application flow.",
+          "Compare Large Form Performance with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Large Form Performance.",
+          "Practice Large Form Performance with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Large Form Performance.",
+          "Learn how to debug, test, and validate behavior when working with Large Form Performance.",
+          "Be able to explain Large Form Performance in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Validation": {
+        "schema_validation": [
+          "Define Schema Validation clearly and explain where it fits within Validation.",
+          "Understand the core purpose of Schema Validation and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Schema Validation.",
+          "Study how Schema Validation works internally step by step in real application flow.",
+          "Compare Schema Validation with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Schema Validation.",
+          "Practice Schema Validation with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Schema Validation.",
+          "Learn how to debug, test, and validate behavior when working with Schema Validation.",
+          "Be able to explain Schema Validation in interviews using practical examples and tradeoffs."
+        ],
+        "yup": [
+          "Define Yup clearly and explain where it fits within Validation.",
+          "Understand the core purpose of Yup and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Yup.",
+          "Study how Yup works internally step by step in real application flow.",
+          "Compare Yup with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Yup.",
+          "Practice Yup with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Yup.",
+          "Learn how to debug, test, and validate behavior when working with Yup.",
+          "Be able to explain Yup in interviews using practical examples and tradeoffs."
+        ],
+        "zod": [
+          "Define Zod clearly and explain where it fits within Validation.",
+          "Understand the core purpose of Zod and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Zod.",
+          "Study how Zod works internally step by step in real application flow.",
+          "Compare Zod with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Zod.",
+          "Practice Zod with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Zod.",
+          "Learn how to debug, test, and validate behavior when working with Zod.",
+          "Be able to explain Zod in interviews using practical examples and tradeoffs."
+        ],
+        "custom_validation": [
+          "Define Custom Validation clearly and explain where it fits within Validation.",
+          "Understand the core purpose of Custom Validation and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Custom Validation.",
+          "Study how Custom Validation works internally step by step in real application flow.",
+          "Compare Custom Validation with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Custom Validation.",
+          "Practice Custom Validation with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Custom Validation.",
+          "Learn how to debug, test, and validate behavior when working with Custom Validation.",
+          "Be able to explain Custom Validation in interviews using practical examples and tradeoffs."
+        ],
+        "async_validation": [
+          "Define Async Validation clearly and explain where it fits within Validation.",
+          "Understand the core purpose of Async Validation and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Async Validation.",
+          "Study how Async Validation works internally step by step in real application flow.",
+          "Compare Async Validation with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Async Validation.",
+          "Practice Async Validation with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Async Validation.",
+          "Learn how to debug, test, and validate behavior when working with Async Validation.",
+          "Be able to explain Async Validation in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "UX in Forms": {
+        "error_handling_ui": [
+          "Define Error Handling UI clearly and explain where it fits within UX in Forms.",
+          "Understand the core purpose of Error Handling UI and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Error Handling UI.",
+          "Study how Error Handling UI works internally step by step in real application flow.",
+          "Compare Error Handling UI with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Error Handling UI.",
+          "Practice Error Handling UI with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Error Handling UI.",
+          "Learn how to debug, test, and validate behavior when working with Error Handling UI.",
+          "Be able to explain Error Handling UI in interviews using practical examples and tradeoffs."
+        ],
+        "real_time_validation": [
+          "Define Real Time Validation clearly and explain where it fits within UX in Forms.",
+          "Understand the core purpose of Real Time Validation and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Real Time Validation.",
+          "Study how Real Time Validation works internally step by step in real application flow.",
+          "Compare Real Time Validation with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Real Time Validation.",
+          "Practice Real Time Validation with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Real Time Validation.",
+          "Learn how to debug, test, and validate behavior when working with Real Time Validation.",
+          "Be able to explain Real Time Validation in interviews using practical examples and tradeoffs."
+        ],
+        "accessibility_forms": [
+          "Define Accessibility Forms clearly and explain where it fits within UX in Forms.",
+          "Understand the core purpose of Accessibility Forms and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Accessibility Forms.",
+          "Study how Accessibility Forms works internally step by step in real application flow.",
+          "Compare Accessibility Forms with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Accessibility Forms.",
+          "Practice Accessibility Forms with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Accessibility Forms.",
+          "Learn how to debug, test, and validate behavior when working with Accessibility Forms.",
+          "Be able to explain Accessibility Forms in interviews using practical examples and tradeoffs."
+        ],
+        "form_feedback_patterns": [
+          "Define Form Feedback Patterns clearly and explain where it fits within UX in Forms.",
+          "Understand the core purpose of Form Feedback Patterns and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Form Feedback Patterns.",
+          "Study how Form Feedback Patterns works internally step by step in real application flow.",
+          "Compare Form Feedback Patterns with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Form Feedback Patterns.",
+          "Practice Form Feedback Patterns with small examples before applying it in larger Forms & Validation projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Form Feedback Patterns.",
+          "Learn how to debug, test, and validate behavior when working with Form Feedback Patterns.",
+          "Be able to explain Form Feedback Patterns in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

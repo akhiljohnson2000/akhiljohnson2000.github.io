@@ -1,0 +1,110 @@
+{
+  "order": 23,
+  "title": "Edge Runtime",
+  "topics": [
+    {
+      "Edge Concepts": {
+        "edge_functions": [
+          "Define Edge Functions clearly and explain where it fits within Edge Concepts.",
+          "Understand the core purpose of Edge Functions and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Edge Functions.",
+          "Study how Edge Functions works internally step by step in real application flow.",
+          "Compare Edge Functions with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Edge Functions.",
+          "Practice Edge Functions with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Edge Functions.",
+          "Learn how to debug, test, and validate behavior when working with Edge Functions.",
+          "Be able to explain Edge Functions in interviews using practical examples and tradeoffs."
+        ],
+        "serverless_edge": [
+          "Define Serverless Edge clearly and explain where it fits within Edge Concepts.",
+          "Understand the core purpose of Serverless Edge and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Serverless Edge.",
+          "Study how Serverless Edge works internally step by step in real application flow.",
+          "Compare Serverless Edge with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Serverless Edge.",
+          "Practice Serverless Edge with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Serverless Edge.",
+          "Learn how to debug, test, and validate behavior when working with Serverless Edge.",
+          "Be able to explain Serverless Edge in interviews using practical examples and tradeoffs."
+        ],
+        "latency_optimization": [
+          "Define Latency Optimization clearly and explain where it fits within Edge Concepts.",
+          "Understand the core purpose of Latency Optimization and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Latency Optimization.",
+          "Study how Latency Optimization works internally step by step in real application flow.",
+          "Compare Latency Optimization with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Latency Optimization.",
+          "Practice Latency Optimization with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Latency Optimization.",
+          "Learn how to debug, test, and validate behavior when working with Latency Optimization.",
+          "Be able to explain Latency Optimization in interviews using practical examples and tradeoffs."
+        ],
+        "geo_distribution": [
+          "Define Geo Distribution clearly and explain where it fits within Edge Concepts.",
+          "Understand the core purpose of Geo Distribution and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Geo Distribution.",
+          "Study how Geo Distribution works internally step by step in real application flow.",
+          "Compare Geo Distribution with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Geo Distribution.",
+          "Practice Geo Distribution with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Geo Distribution.",
+          "Learn how to debug, test, and validate behavior when working with Geo Distribution.",
+          "Be able to explain Geo Distribution in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Rendering at Edge": {
+        "edge_ssr": [
+          "Define Edge SSR clearly and explain where it fits within Rendering at Edge.",
+          "Understand the core purpose of Edge SSR and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Edge SSR.",
+          "Study how Edge SSR works internally step by step in real application flow.",
+          "Compare Edge SSR with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Edge SSR.",
+          "Practice Edge SSR with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Edge SSR.",
+          "Learn how to debug, test, and validate behavior when working with Edge SSR.",
+          "Be able to explain Edge SSR in interviews using practical examples and tradeoffs."
+        ],
+        "streaming": [
+          "Define Streaming clearly and explain where it fits within Rendering at Edge.",
+          "Understand the core purpose of Streaming and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Streaming.",
+          "Study how Streaming works internally step by step in real application flow.",
+          "Compare Streaming with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Streaming.",
+          "Practice Streaming with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Streaming.",
+          "Learn how to debug, test, and validate behavior when working with Streaming.",
+          "Be able to explain Streaming in interviews using practical examples and tradeoffs."
+        ],
+        "middleware_execution": [
+          "Define Middleware Execution clearly and explain where it fits within Rendering at Edge.",
+          "Understand the core purpose of Middleware Execution and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Middleware Execution.",
+          "Study how Middleware Execution works internally step by step in real application flow.",
+          "Compare Middleware Execution with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Middleware Execution.",
+          "Practice Middleware Execution with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Middleware Execution.",
+          "Learn how to debug, test, and validate behavior when working with Middleware Execution.",
+          "Be able to explain Middleware Execution in interviews using practical examples and tradeoffs."
+        ],
+        "edge_caching": [
+          "Define Edge Caching clearly and explain where it fits within Rendering at Edge.",
+          "Understand the core purpose of Edge Caching and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Edge Caching.",
+          "Study how Edge Caching works internally step by step in real application flow.",
+          "Compare Edge Caching with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Edge Caching.",
+          "Practice Edge Caching with small examples before applying it in larger Edge Runtime projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Edge Caching.",
+          "Learn how to debug, test, and validate behavior when working with Edge Caching.",
+          "Be able to explain Edge Caching in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

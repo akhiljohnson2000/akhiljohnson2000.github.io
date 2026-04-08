@@ -1,0 +1,86 @@
+{
+  "order": 25,
+  "title": "Realtime & WebSockets",
+  "topics": [
+    {
+      "Realtime Communication": {
+        "websockets_protocol": [
+          "Define Websockets Protocol clearly and explain where it fits within Realtime Communication.",
+          "Understand the core purpose of Websockets Protocol and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Websockets Protocol.",
+          "Study how Websockets Protocol works internally step by step in real application flow.",
+          "Compare Websockets Protocol with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Websockets Protocol.",
+          "Practice Websockets Protocol with small examples before applying it in larger Realtime & WebSockets projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Websockets Protocol.",
+          "Learn how to debug, test, and validate behavior when working with Websockets Protocol.",
+          "Be able to explain Websockets Protocol in interviews using practical examples and tradeoffs."
+        ],
+        "server_sent_events": [
+          "Define Server Sent Events clearly and explain where it fits within Realtime Communication.",
+          "Understand the core purpose of Server Sent Events and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Server Sent Events.",
+          "Study how Server Sent Events works internally step by step in real application flow.",
+          "Compare Server Sent Events with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Server Sent Events.",
+          "Practice Server Sent Events with small examples before applying it in larger Realtime & WebSockets projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Server Sent Events.",
+          "Learn how to debug, test, and validate behavior when working with Server Sent Events.",
+          "Be able to explain Server Sent Events in interviews using practical examples and tradeoffs."
+        ],
+        "polling_vs_long_polling": [
+          "Define Polling Vs Long Polling clearly and explain where it fits within Realtime Communication.",
+          "Understand the core purpose of Polling Vs Long Polling and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Polling Vs Long Polling.",
+          "Study how Polling Vs Long Polling works internally step by step in real application flow.",
+          "Compare Polling Vs Long Polling with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Polling Vs Long Polling.",
+          "Practice Polling Vs Long Polling with small examples before applying it in larger Realtime & WebSockets projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Polling Vs Long Polling.",
+          "Learn how to debug, test, and validate behavior when working with Polling Vs Long Polling.",
+          "Be able to explain Polling Vs Long Polling in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Realtime Architecture": {
+        "connection_management": [
+          "Define Connection Management clearly and explain where it fits within Realtime Architecture.",
+          "Understand the core purpose of Connection Management and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Connection Management.",
+          "Study how Connection Management works internally step by step in real application flow.",
+          "Compare Connection Management with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Connection Management.",
+          "Practice Connection Management with small examples before applying it in larger Realtime & WebSockets projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Connection Management.",
+          "Learn how to debug, test, and validate behavior when working with Connection Management.",
+          "Be able to explain Connection Management in interviews using practical examples and tradeoffs."
+        ],
+        "reconnection_strategies": [
+          "Define Reconnection Strategies clearly and explain where it fits within Realtime Architecture.",
+          "Understand the core purpose of Reconnection Strategies and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Reconnection Strategies.",
+          "Study how Reconnection Strategies works internally step by step in real application flow.",
+          "Compare Reconnection Strategies with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Reconnection Strategies.",
+          "Practice Reconnection Strategies with small examples before applying it in larger Realtime & WebSockets projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Reconnection Strategies.",
+          "Learn how to debug, test, and validate behavior when working with Reconnection Strategies.",
+          "Be able to explain Reconnection Strategies in interviews using practical examples and tradeoffs."
+        ],
+        "backpressure_handling": [
+          "Define Backpressure Handling clearly and explain where it fits within Realtime Architecture.",
+          "Understand the core purpose of Backpressure Handling and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Backpressure Handling.",
+          "Study how Backpressure Handling works internally step by step in real application flow.",
+          "Compare Backpressure Handling with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Backpressure Handling.",
+          "Practice Backpressure Handling with small examples before applying it in larger Realtime & WebSockets projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Backpressure Handling.",
+          "Learn how to debug, test, and validate behavior when working with Backpressure Handling.",
+          "Be able to explain Backpressure Handling in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

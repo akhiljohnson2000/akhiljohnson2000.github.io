@@ -1,0 +1,130 @@
+{
+  "order": 30,
+  "title": "Node.js Mastery",
+  "topics": [
+    {
+      "Core Architecture": {
+        "nodejs_runtime_overview": [
+          "Node.js is a JavaScript runtime built on Chrome V8 engine",
+          "It allows running JavaScript outside the browser",
+          "Uses event-driven, non-blocking I/O model",
+          "Designed for building scalable network applications",
+          "Single-threaded execution with async capabilities",
+          "Handles concurrency using event loop and callbacks",
+          "Includes built-in modules like fs, http, path",
+          "Uses libuv for async operations",
+          "Supports CommonJS module system",
+          "Ideal for I/O-heavy applications"
+        ],
+        "libuv_architecture": [
+          "libuv is a C library used by Node.js",
+          "Handles asynchronous I/O operations",
+          "Implements event loop internally",
+          "Manages thread pool for blocking tasks",
+          "Supports TCP, UDP, file system operations",
+          "Abstracts OS-level operations",
+          "Handles timers and polling",
+          "Used for cross-platform compatibility",
+          "Manages async DNS resolution",
+          "Core backbone of Node.js async behavior"
+        ],
+        "single_threaded_event_loop": [
+          "Node.js runs JavaScript in a single thread",
+          "Uses event loop for concurrency",
+          "Avoids thread-per-request model",
+          "Handles multiple requests efficiently",
+          "Delegates heavy work to worker threads",
+          "Non-blocking execution model",
+          "Callbacks executed via event loop",
+          "Prevents context switching overhead",
+          "Efficient for I/O-bound tasks",
+          "Can block if CPU-heavy tasks run"
+        ],
+        "event_loop_phases": [
+          "Timers phase executes setTimeout/setInterval",
+          "Pending callbacks phase handles system callbacks",
+          "Idle/prepare phase used internally",
+          "Poll phase handles I/O events",
+          "Check phase executes setImmediate",
+          "Close callbacks phase handles cleanup",
+          "Each phase has its own queue",
+          "Event loop cycles continuously",
+          "Microtasks run between phases",
+          "Order of execution is deterministic"
+        ],
+        "microtasks_vs_macrotasks": [
+          "Microtasks include Promises and process.nextTick",
+          "Macrotasks include setTimeout and setImmediate",
+          "Microtasks run before next event loop tick",
+          "Macrotasks run in event loop phases",
+          "Promise callbacks are microtasks",
+          "setTimeout callbacks are macrotasks",
+          "process.nextTick has higher priority",
+          "Microtask queue drains completely",
+          "Can starve event loop if overused",
+          "Important for execution order control"
+        ],
+        "process_vs_thread": [
+          "Process is an independent execution unit",
+          "Thread is a lightweight unit within process",
+          "Node.js runs in a single process by default",
+          "Threads share memory, processes do not",
+          "Worker threads enable multithreading",
+          "Processes are isolated and safer",
+          "Threads are faster but complex",
+          "Cluster module uses multiple processes",
+          "Thread pool used by libuv",
+          "Choice depends on workload type"
+        ],
+        "worker_threads": [
+          "Enable multi-threading in Node.js",
+          "Used for CPU-intensive tasks",
+          "Each worker has its own V8 instance",
+          "Communicate via message passing",
+          "SharedArrayBuffer allows shared memory",
+          "Avoid blocking main thread",
+          "Useful for heavy computations",
+          "Introduced in Node.js v10+",
+          "Alternative to child processes",
+          "Improves performance for CPU-bound tasks"
+        ],
+        "cluster_module": [
+          "Used to create multiple Node.js processes",
+          "Leverages multi-core CPUs",
+          "Each worker is a separate process",
+          "Shares same server port",
+          "Managed by master process",
+          "Improves scalability",
+          "Handles load distribution",
+          "Workers can be restarted",
+          "Good for stateless applications",
+          "Deprecated in favor of other approaches (partially)"
+        ],
+        "child_process": [
+          "Used to spawn new processes",
+          "Supports exec, spawn, fork methods",
+          "Allows running shell commands",
+          "Used for heavy or external tasks",
+          "Separate memory space",
+          "Communication via IPC",
+          "Useful for scripting",
+          "Fork is optimized for Node.js modules",
+          "Avoids blocking main thread",
+          "Higher overhead than worker threads"
+        ],
+        "nodejs_vs_browser_runtime": [
+          "Node.js runs outside browser",
+          "Browser JS runs in window environment",
+          "Node has access to file system",
+          "Browser has DOM APIs",
+          "Node uses CommonJS, browser uses ESModules",
+          "Different global objects (global vs window)",
+          "Node supports backend development",
+          "Browser focuses on UI rendering",
+          "Different event loop implementations",
+          "Security restrictions differ"
+        ]
+      }
+    }
+  ]
+}

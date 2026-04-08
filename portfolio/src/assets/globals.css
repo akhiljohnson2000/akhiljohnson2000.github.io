@@ -72,7 +72,7 @@
   @apply py-16 md:py-20;
 }
 .section-alt {
-  @apply py-16 md:py-20 bg-muted/30;
+  @apply py-3 md:py-20 bg-muted/30;
 }
 .section-heading {
   @apply text-2xl md:text-3xl font-bold text-center mb-10 md:mb-12 tracking-tight text-foreground;

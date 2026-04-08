@@ -1,0 +1,150 @@
+{
+  "order": 22,
+  "title": "CI/CD & Deployment",
+  "topics": [
+    {
+      "CI/CD Basics": {
+        "continuous_integration": [
+          "Define Continuous Integration clearly and explain where it fits within CI/CD Basics.",
+          "Understand the core purpose of Continuous Integration and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Continuous Integration.",
+          "Study how Continuous Integration works internally step by step in real application flow.",
+          "Compare Continuous Integration with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Continuous Integration.",
+          "Practice Continuous Integration with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Continuous Integration.",
+          "Learn how to debug, test, and validate behavior when working with Continuous Integration.",
+          "Be able to explain Continuous Integration in interviews using practical examples and tradeoffs."
+        ],
+        "continuous_delivery": [
+          "Define Continuous Delivery clearly and explain where it fits within CI/CD Basics.",
+          "Understand the core purpose of Continuous Delivery and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Continuous Delivery.",
+          "Study how Continuous Delivery works internally step by step in real application flow.",
+          "Compare Continuous Delivery with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Continuous Delivery.",
+          "Practice Continuous Delivery with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Continuous Delivery.",
+          "Learn how to debug, test, and validate behavior when working with Continuous Delivery.",
+          "Be able to explain Continuous Delivery in interviews using practical examples and tradeoffs."
+        ],
+        "pipeline_stages": [
+          "Define Pipeline Stages clearly and explain where it fits within CI/CD Basics.",
+          "Understand the core purpose of Pipeline Stages and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Pipeline Stages.",
+          "Study how Pipeline Stages works internally step by step in real application flow.",
+          "Compare Pipeline Stages with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Pipeline Stages.",
+          "Practice Pipeline Stages with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Pipeline Stages.",
+          "Learn how to debug, test, and validate behavior when working with Pipeline Stages.",
+          "Be able to explain Pipeline Stages in interviews using practical examples and tradeoffs."
+        ],
+        "build_test_deploy": [
+          "Define Build Test Deploy clearly and explain where it fits within CI/CD Basics.",
+          "Understand the core purpose of Build Test Deploy and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Build Test Deploy.",
+          "Study how Build Test Deploy works internally step by step in real application flow.",
+          "Compare Build Test Deploy with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Build Test Deploy.",
+          "Practice Build Test Deploy with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Build Test Deploy.",
+          "Learn how to debug, test, and validate behavior when working with Build Test Deploy.",
+          "Be able to explain Build Test Deploy in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Deployment Strategies": {
+        "blue_green": [
+          "Define Blue Green clearly and explain where it fits within Deployment Strategies.",
+          "Understand the core purpose of Blue Green and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Blue Green.",
+          "Study how Blue Green works internally step by step in real application flow.",
+          "Compare Blue Green with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Blue Green.",
+          "Practice Blue Green with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Blue Green.",
+          "Learn how to debug, test, and validate behavior when working with Blue Green.",
+          "Be able to explain Blue Green in interviews using practical examples and tradeoffs."
+        ],
+        "canary": [
+          "Define Canary clearly and explain where it fits within Deployment Strategies.",
+          "Understand the core purpose of Canary and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Canary.",
+          "Study how Canary works internally step by step in real application flow.",
+          "Compare Canary with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Canary.",
+          "Practice Canary with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Canary.",
+          "Learn how to debug, test, and validate behavior when working with Canary.",
+          "Be able to explain Canary in interviews using practical examples and tradeoffs."
+        ],
+        "rolling_updates": [
+          "Define Rolling Updates clearly and explain where it fits within Deployment Strategies.",
+          "Understand the core purpose of Rolling Updates and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Rolling Updates.",
+          "Study how Rolling Updates works internally step by step in real application flow.",
+          "Compare Rolling Updates with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Rolling Updates.",
+          "Practice Rolling Updates with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Rolling Updates.",
+          "Learn how to debug, test, and validate behavior when working with Rolling Updates.",
+          "Be able to explain Rolling Updates in interviews using practical examples and tradeoffs."
+        ],
+        "feature_flags": [
+          "Define Feature Flags clearly and explain where it fits within Deployment Strategies.",
+          "Understand the core purpose of Feature Flags and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Feature Flags.",
+          "Study how Feature Flags works internally step by step in real application flow.",
+          "Compare Feature Flags with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Feature Flags.",
+          "Practice Feature Flags with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Feature Flags.",
+          "Learn how to debug, test, and validate behavior when working with Feature Flags.",
+          "Be able to explain Feature Flags in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Hosting Platforms": {
+        "vercel": [
+          "Define Vercel clearly and explain where it fits within Hosting Platforms.",
+          "Understand the core purpose of Vercel and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Vercel.",
+          "Study how Vercel works internally step by step in real application flow.",
+          "Compare Vercel with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Vercel.",
+          "Practice Vercel with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Vercel.",
+          "Learn how to debug, test, and validate behavior when working with Vercel.",
+          "Be able to explain Vercel in interviews using practical examples and tradeoffs."
+        ],
+        "netlify": [
+          "Define Netlify clearly and explain where it fits within Hosting Platforms.",
+          "Understand the core purpose of Netlify and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Netlify.",
+          "Study how Netlify works internally step by step in real application flow.",
+          "Compare Netlify with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Netlify.",
+          "Practice Netlify with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Netlify.",
+          "Learn how to debug, test, and validate behavior when working with Netlify.",
+          "Be able to explain Netlify in interviews using practical examples and tradeoffs."
+        ],
+        "aws_s3_cloudfront": [
+          "Define Aws S3 Cloudfront clearly and explain where it fits within Hosting Platforms.",
+          "Understand the core purpose of Aws S3 Cloudfront and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Aws S3 Cloudfront.",
+          "Study how Aws S3 Cloudfront works internally step by step in real application flow.",
+          "Compare Aws S3 Cloudfront with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Aws S3 Cloudfront.",
+          "Practice Aws S3 Cloudfront with small examples before applying it in larger CI/CD & Deployment projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Aws S3 Cloudfront.",
+          "Learn how to debug, test, and validate behavior when working with Aws S3 Cloudfront.",
+          "Be able to explain Aws S3 Cloudfront in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

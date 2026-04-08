@@ -1,0 +1,162 @@
+{
+  "order": 12,
+  "title": "Vue",
+  "topics": [
+    {
+      "Core Concepts": {
+        "template_syntax": [
+          "Template Syntax defines a core concept used in Vue",
+          "It explains what template syntax is and why it matters",
+          "It covers the main rules and mental model behind template syntax",
+          "It shows how template syntax behaves in real application code",
+          "It highlights common mistakes developers make with template syntax",
+          "It compares template syntax with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of template syntax",
+          "It includes practical usage patterns for template syntax in Core Concepts",
+          "It helps with debugging issues connected to template syntax",
+          "It prepares you to answer interview and architecture questions about template syntax"
+        ],
+        "directives": [
+          "Directives defines a core concept used in Vue",
+          "It explains what directives is and why it matters",
+          "It covers the main rules and mental model behind directives",
+          "It shows how directives behaves in real application code",
+          "It highlights common mistakes developers make with directives",
+          "It compares directives with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of directives",
+          "It includes practical usage patterns for directives in Core Concepts",
+          "It helps with debugging issues connected to directives",
+          "It prepares you to answer interview and architecture questions about directives"
+        ],
+        "reactivity_system": [
+          "Reactivity System defines a core concept used in Vue",
+          "It explains what reactivity system is and why it matters",
+          "It covers the main rules and mental model behind reactivity system",
+          "It shows how reactivity system behaves in real application code",
+          "It highlights common mistakes developers make with reactivity system",
+          "It compares reactivity system with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of reactivity system",
+          "It includes practical usage patterns for reactivity system in Core Concepts",
+          "It helps with debugging issues connected to reactivity system",
+          "It prepares you to answer interview and architecture questions about reactivity system"
+        ],
+        "computed_properties": [
+          "Computed Properties defines a core concept used in Vue",
+          "It explains what computed properties is and why it matters",
+          "It covers the main rules and mental model behind computed properties",
+          "It shows how computed properties behaves in real application code",
+          "It highlights common mistakes developers make with computed properties",
+          "It compares computed properties with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of computed properties",
+          "It includes practical usage patterns for computed properties in Core Concepts",
+          "It helps with debugging issues connected to computed properties",
+          "It prepares you to answer interview and architecture questions about computed properties"
+        ],
+        "watchers": [
+          "Watchers defines a core concept used in Vue",
+          "It explains what watchers is and why it matters",
+          "It covers the main rules and mental model behind watchers",
+          "It shows how watchers behaves in real application code",
+          "It highlights common mistakes developers make with watchers",
+          "It compares watchers with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of watchers",
+          "It includes practical usage patterns for watchers in Core Concepts",
+          "It helps with debugging issues connected to watchers",
+          "It prepares you to answer interview and architecture questions about watchers"
+        ]
+      }
+    },
+    {
+      "Composition API": {
+        "setup_function": [
+          "Setup Function defines a core concept used in Vue",
+          "It explains what setup function is and why it matters",
+          "It covers the main rules and mental model behind setup function",
+          "It shows how setup function behaves in real application code",
+          "It highlights common mistakes developers make with setup function",
+          "It compares setup function with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of setup function",
+          "It includes practical usage patterns for setup function in Composition API",
+          "It helps with debugging issues connected to setup function",
+          "It prepares you to answer interview and architecture questions about setup function"
+        ],
+        "ref_vs_reactive": [
+          "Ref vs Reactive defines a core concept used in Vue",
+          "It explains what ref vs reactive is and why it matters",
+          "It covers the main rules and mental model behind ref vs reactive",
+          "It shows how ref vs reactive behaves in real application code",
+          "It highlights common mistakes developers make with ref vs reactive",
+          "It compares ref vs reactive with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of ref vs reactive",
+          "It includes practical usage patterns for ref vs reactive in Composition API",
+          "It helps with debugging issues connected to ref vs reactive",
+          "It prepares you to answer interview and architecture questions about ref vs reactive"
+        ],
+        "lifecycle_hooks": [
+          "Lifecycle Hooks defines a core concept used in Vue",
+          "It explains what lifecycle hooks is and why it matters",
+          "It covers the main rules and mental model behind lifecycle hooks",
+          "It shows how lifecycle hooks behaves in real application code",
+          "It highlights common mistakes developers make with lifecycle hooks",
+          "It compares lifecycle hooks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of lifecycle hooks",
+          "It includes practical usage patterns for lifecycle hooks in Composition API",
+          "It helps with debugging issues connected to lifecycle hooks",
+          "It prepares you to answer interview and architecture questions about lifecycle hooks"
+        ],
+        "composition_patterns": [
+          "Composition Patterns defines a core concept used in Vue",
+          "It explains what composition patterns is and why it matters",
+          "It covers the main rules and mental model behind composition patterns",
+          "It shows how composition patterns behaves in real application code",
+          "It highlights common mistakes developers make with composition patterns",
+          "It compares composition patterns with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of composition patterns",
+          "It includes practical usage patterns for composition patterns in Composition API",
+          "It helps with debugging issues connected to composition patterns",
+          "It prepares you to answer interview and architecture questions about composition patterns"
+        ]
+      }
+    },
+    {
+      "Rendering": {
+        "virtual_dom": [
+          "Virtual DOM defines a core concept used in Vue",
+          "It explains what virtual dom is and why it matters",
+          "It covers the main rules and mental model behind virtual dom",
+          "It shows how virtual dom behaves in real application code",
+          "It highlights common mistakes developers make with virtual dom",
+          "It compares virtual dom with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of virtual dom",
+          "It includes practical usage patterns for virtual dom in Rendering",
+          "It helps with debugging issues connected to virtual dom",
+          "It prepares you to answer interview and architecture questions about virtual dom"
+        ],
+        "diffing_algorithm": [
+          "Diffing Algorithm defines a core concept used in Vue",
+          "It explains what diffing algorithm is and why it matters",
+          "It covers the main rules and mental model behind diffing algorithm",
+          "It shows how diffing algorithm behaves in real application code",
+          "It highlights common mistakes developers make with diffing algorithm",
+          "It compares diffing algorithm with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of diffing algorithm",
+          "It includes practical usage patterns for diffing algorithm in Rendering",
+          "It helps with debugging issues connected to diffing algorithm",
+          "It prepares you to answer interview and architecture questions about diffing algorithm"
+        ],
+        "template_compilation": [
+          "Template Compilation defines a core concept used in Vue",
+          "It explains what template compilation is and why it matters",
+          "It covers the main rules and mental model behind template compilation",
+          "It shows how template compilation behaves in real application code",
+          "It highlights common mistakes developers make with template compilation",
+          "It compares template compilation with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of template compilation",
+          "It includes practical usage patterns for template compilation in Rendering",
+          "It helps with debugging issues connected to template compilation",
+          "It prepares you to answer interview and architecture questions about template compilation"
+        ]
+      }
+    }
+  ]
+}

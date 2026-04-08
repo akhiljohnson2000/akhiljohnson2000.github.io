@@ -7,9 +7,9 @@ import { ArrowRight, FileText, ListChecks } from 'lucide-vue-next'
 const services = [
   {
     to: '/learn',
-    title: 'Senior Front End JavaScript developer checklist',
+    title: 'Learn',
     description:
-      'Expandable topics, subtopics, and references — a structured path for leveling up as a senior frontend engineer.',
+      'Module checklists with topics, subtopics, and references — open a track and study in depth.',
     icon: ListChecks,
   },
   {

@@ -1,0 +1,202 @@
+{
+  "order": 17,
+  "title": "Frontend Infrastructure",
+  "topics": [
+    {
+      "Micro Frontends": {
+        "micro_frontend_architecture": [
+          "Micro Frontend Architecture defines a core concept used in Frontend Infrastructure",
+          "It explains what micro frontend architecture is and why it matters",
+          "It covers the main rules and mental model behind micro frontend architecture",
+          "It shows how micro frontend architecture behaves in real application code",
+          "It highlights common mistakes developers make with micro frontend architecture",
+          "It compares micro frontend architecture with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of micro frontend architecture",
+          "It includes practical usage patterns for micro frontend architecture in Micro Frontends",
+          "It helps with debugging issues connected to micro frontend architecture",
+          "It prepares you to answer interview and architecture questions about micro frontend architecture"
+        ],
+        "module_federation": [
+          "Module Federation defines a core concept used in Frontend Infrastructure",
+          "It explains what module federation is and why it matters",
+          "It covers the main rules and mental model behind module federation",
+          "It shows how module federation behaves in real application code",
+          "It highlights common mistakes developers make with module federation",
+          "It compares module federation with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of module federation",
+          "It includes practical usage patterns for module federation in Micro Frontends",
+          "It helps with debugging issues connected to module federation",
+          "It prepares you to answer interview and architecture questions about module federation"
+        ],
+        "integration_strategies": [
+          "Integration Strategies defines a core concept used in Frontend Infrastructure",
+          "It explains what integration strategies is and why it matters",
+          "It covers the main rules and mental model behind integration strategies",
+          "It shows how integration strategies behaves in real application code",
+          "It highlights common mistakes developers make with integration strategies",
+          "It compares integration strategies with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of integration strategies",
+          "It includes practical usage patterns for integration strategies in Micro Frontends",
+          "It helps with debugging issues connected to integration strategies",
+          "It prepares you to answer interview and architecture questions about integration strategies"
+        ],
+        "shared_dependencies": [
+          "Shared Dependencies defines a core concept used in Frontend Infrastructure",
+          "It explains what shared dependencies is and why it matters",
+          "It covers the main rules and mental model behind shared dependencies",
+          "It shows how shared dependencies behaves in real application code",
+          "It highlights common mistakes developers make with shared dependencies",
+          "It compares shared dependencies with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of shared dependencies",
+          "It includes practical usage patterns for shared dependencies in Micro Frontends",
+          "It helps with debugging issues connected to shared dependencies",
+          "It prepares you to answer interview and architecture questions about shared dependencies"
+        ]
+      }
+    },
+    {
+      "Monorepo Management": {
+        "monorepo_vs_polyrepo": [
+          "Monorepo vs Polyrepo defines a core concept used in Frontend Infrastructure",
+          "It explains what monorepo vs polyrepo is and why it matters",
+          "It covers the main rules and mental model behind monorepo vs polyrepo",
+          "It shows how monorepo vs polyrepo behaves in real application code",
+          "It highlights common mistakes developers make with monorepo vs polyrepo",
+          "It compares monorepo vs polyrepo with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of monorepo vs polyrepo",
+          "It includes practical usage patterns for monorepo vs polyrepo in Monorepo Management",
+          "It helps with debugging issues connected to monorepo vs polyrepo",
+          "It prepares you to answer interview and architecture questions about monorepo vs polyrepo"
+        ],
+        "nx": [
+          "Nx defines a core concept used in Frontend Infrastructure",
+          "It explains what nx is and why it matters",
+          "It covers the main rules and mental model behind nx",
+          "It shows how nx behaves in real application code",
+          "It highlights common mistakes developers make with nx",
+          "It compares nx with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of nx",
+          "It includes practical usage patterns for nx in Monorepo Management",
+          "It helps with debugging issues connected to nx",
+          "It prepares you to answer interview and architecture questions about nx"
+        ],
+        "turborepo": [
+          "Turborepo defines a core concept used in Frontend Infrastructure",
+          "It explains what turborepo is and why it matters",
+          "It covers the main rules and mental model behind turborepo",
+          "It shows how turborepo behaves in real application code",
+          "It highlights common mistakes developers make with turborepo",
+          "It compares turborepo with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of turborepo",
+          "It includes practical usage patterns for turborepo in Monorepo Management",
+          "It helps with debugging issues connected to turborepo",
+          "It prepares you to answer interview and architecture questions about turborepo"
+        ],
+        "dependency_graph_management": [
+          "Dependency Graph Management defines a core concept used in Frontend Infrastructure",
+          "It explains what dependency graph management is and why it matters",
+          "It covers the main rules and mental model behind dependency graph management",
+          "It shows how dependency graph management behaves in real application code",
+          "It highlights common mistakes developers make with dependency graph management",
+          "It compares dependency graph management with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of dependency graph management",
+          "It includes practical usage patterns for dependency graph management in Monorepo Management",
+          "It helps with debugging issues connected to dependency graph management",
+          "It prepares you to answer interview and architecture questions about dependency graph management"
+        ]
+      }
+    },
+    {
+      "Versioning & Releases": {
+        "semantic_versioning": [
+          "Semantic Versioning defines a core concept used in Frontend Infrastructure",
+          "It explains what semantic versioning is and why it matters",
+          "It covers the main rules and mental model behind semantic versioning",
+          "It shows how semantic versioning behaves in real application code",
+          "It highlights common mistakes developers make with semantic versioning",
+          "It compares semantic versioning with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of semantic versioning",
+          "It includes practical usage patterns for semantic versioning in Versioning & Releases",
+          "It helps with debugging issues connected to semantic versioning",
+          "It prepares you to answer interview and architecture questions about semantic versioning"
+        ],
+        "release_strategies": [
+          "Release Strategies defines a core concept used in Frontend Infrastructure",
+          "It explains what release strategies is and why it matters",
+          "It covers the main rules and mental model behind release strategies",
+          "It shows how release strategies behaves in real application code",
+          "It highlights common mistakes developers make with release strategies",
+          "It compares release strategies with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of release strategies",
+          "It includes practical usage patterns for release strategies in Versioning & Releases",
+          "It helps with debugging issues connected to release strategies",
+          "It prepares you to answer interview and architecture questions about release strategies"
+        ],
+        "changelog_management": [
+          "Changelog Management defines a core concept used in Frontend Infrastructure",
+          "It explains what changelog management is and why it matters",
+          "It covers the main rules and mental model behind changelog management",
+          "It shows how changelog management behaves in real application code",
+          "It highlights common mistakes developers make with changelog management",
+          "It compares changelog management with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of changelog management",
+          "It includes practical usage patterns for changelog management in Versioning & Releases",
+          "It helps with debugging issues connected to changelog management",
+          "It prepares you to answer interview and architecture questions about changelog management"
+        ]
+      }
+    },
+    {
+      "Design Systems": {
+        "component_library": [
+          "Component Library defines a core concept used in Frontend Infrastructure",
+          "It explains what component library is and why it matters",
+          "It covers the main rules and mental model behind component library",
+          "It shows how component library behaves in real application code",
+          "It highlights common mistakes developers make with component library",
+          "It compares component library with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of component library",
+          "It includes practical usage patterns for component library in Design Systems",
+          "It helps with debugging issues connected to component library",
+          "It prepares you to answer interview and architecture questions about component library"
+        ],
+        "storybook": [
+          "Storybook defines a core concept used in Frontend Infrastructure",
+          "It explains what storybook is and why it matters",
+          "It covers the main rules and mental model behind storybook",
+          "It shows how storybook behaves in real application code",
+          "It highlights common mistakes developers make with storybook",
+          "It compares storybook with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of storybook",
+          "It includes practical usage patterns for storybook in Design Systems",
+          "It helps with debugging issues connected to storybook",
+          "It prepares you to answer interview and architecture questions about storybook"
+        ],
+        "design_tokens": [
+          "Design Tokens defines a core concept used in Frontend Infrastructure",
+          "It explains what design tokens is and why it matters",
+          "It covers the main rules and mental model behind design tokens",
+          "It shows how design tokens behaves in real application code",
+          "It highlights common mistakes developers make with design tokens",
+          "It compares design tokens with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of design tokens",
+          "It includes practical usage patterns for design tokens in Design Systems",
+          "It helps with debugging issues connected to design tokens",
+          "It prepares you to answer interview and architecture questions about design tokens"
+        ],
+        "cross_team_scalability": [
+          "Cross Team Scalability defines a core concept used in Frontend Infrastructure",
+          "It explains what cross team scalability is and why it matters",
+          "It covers the main rules and mental model behind cross team scalability",
+          "It shows how cross team scalability behaves in real application code",
+          "It highlights common mistakes developers make with cross team scalability",
+          "It compares cross team scalability with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of cross team scalability",
+          "It includes practical usage patterns for cross team scalability in Design Systems",
+          "It helps with debugging issues connected to cross team scalability",
+          "It prepares you to answer interview and architecture questions about cross team scalability"
+        ]
+      }
+    }
+  ]
+}

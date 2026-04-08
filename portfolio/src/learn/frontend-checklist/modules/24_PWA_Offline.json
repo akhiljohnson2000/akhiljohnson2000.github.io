@@ -1,0 +1,138 @@
+{
+  "order": 24,
+  "title": "PWA & Offline",
+  "topics": [
+    {
+      "Service Workers": {
+        "lifecycle": [
+          "Define Lifecycle clearly and explain where it fits within Service Workers.",
+          "Understand the core purpose of Lifecycle and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Lifecycle.",
+          "Study how Lifecycle works internally step by step in real application flow.",
+          "Compare Lifecycle with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Lifecycle.",
+          "Practice Lifecycle with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Lifecycle.",
+          "Learn how to debug, test, and validate behavior when working with Lifecycle.",
+          "Be able to explain Lifecycle in interviews using practical examples and tradeoffs."
+        ],
+        "install_activate": [
+          "Define Install Activate clearly and explain where it fits within Service Workers.",
+          "Understand the core purpose of Install Activate and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Install Activate.",
+          "Study how Install Activate works internally step by step in real application flow.",
+          "Compare Install Activate with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Install Activate.",
+          "Practice Install Activate with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Install Activate.",
+          "Learn how to debug, test, and validate behavior when working with Install Activate.",
+          "Be able to explain Install Activate in interviews using practical examples and tradeoffs."
+        ],
+        "fetch_event": [
+          "Define Fetch Event clearly and explain where it fits within Service Workers.",
+          "Understand the core purpose of Fetch Event and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Fetch Event.",
+          "Study how Fetch Event works internally step by step in real application flow.",
+          "Compare Fetch Event with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Fetch Event.",
+          "Practice Fetch Event with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Fetch Event.",
+          "Learn how to debug, test, and validate behavior when working with Fetch Event.",
+          "Be able to explain Fetch Event in interviews using practical examples and tradeoffs."
+        ],
+        "cache_api": [
+          "Define Cache API clearly and explain where it fits within Service Workers.",
+          "Understand the core purpose of Cache API and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Cache API.",
+          "Study how Cache API works internally step by step in real application flow.",
+          "Compare Cache API with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Cache API.",
+          "Practice Cache API with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Cache API.",
+          "Learn how to debug, test, and validate behavior when working with Cache API.",
+          "Be able to explain Cache API in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Caching Strategies": {
+        "cache_first": [
+          "Define Cache First clearly and explain where it fits within Caching Strategies.",
+          "Understand the core purpose of Cache First and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Cache First.",
+          "Study how Cache First works internally step by step in real application flow.",
+          "Compare Cache First with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Cache First.",
+          "Practice Cache First with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Cache First.",
+          "Learn how to debug, test, and validate behavior when working with Cache First.",
+          "Be able to explain Cache First in interviews using practical examples and tradeoffs."
+        ],
+        "network_first": [
+          "Define Network First clearly and explain where it fits within Caching Strategies.",
+          "Understand the core purpose of Network First and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Network First.",
+          "Study how Network First works internally step by step in real application flow.",
+          "Compare Network First with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Network First.",
+          "Practice Network First with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Network First.",
+          "Learn how to debug, test, and validate behavior when working with Network First.",
+          "Be able to explain Network First in interviews using practical examples and tradeoffs."
+        ],
+        "stale_while_revalidate": [
+          "Define Stale While Revalidate clearly and explain where it fits within Caching Strategies.",
+          "Understand the core purpose of Stale While Revalidate and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Stale While Revalidate.",
+          "Study how Stale While Revalidate works internally step by step in real application flow.",
+          "Compare Stale While Revalidate with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Stale While Revalidate.",
+          "Practice Stale While Revalidate with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Stale While Revalidate.",
+          "Learn how to debug, test, and validate behavior when working with Stale While Revalidate.",
+          "Be able to explain Stale While Revalidate in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Offline UX": {
+        "offline_fallback": [
+          "Define Offline Fallback clearly and explain where it fits within Offline UX.",
+          "Understand the core purpose of Offline Fallback and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Offline Fallback.",
+          "Study how Offline Fallback works internally step by step in real application flow.",
+          "Compare Offline Fallback with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Offline Fallback.",
+          "Practice Offline Fallback with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Offline Fallback.",
+          "Learn how to debug, test, and validate behavior when working with Offline Fallback.",
+          "Be able to explain Offline Fallback in interviews using practical examples and tradeoffs."
+        ],
+        "background_sync": [
+          "Define Background Sync clearly and explain where it fits within Offline UX.",
+          "Understand the core purpose of Background Sync and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Background Sync.",
+          "Study how Background Sync works internally step by step in real application flow.",
+          "Compare Background Sync with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Background Sync.",
+          "Practice Background Sync with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Background Sync.",
+          "Learn how to debug, test, and validate behavior when working with Background Sync.",
+          "Be able to explain Background Sync in interviews using practical examples and tradeoffs."
+        ],
+        "push_notifications": [
+          "Define Push Notifications clearly and explain where it fits within Offline UX.",
+          "Understand the core purpose of Push Notifications and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Push Notifications.",
+          "Study how Push Notifications works internally step by step in real application flow.",
+          "Compare Push Notifications with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Push Notifications.",
+          "Practice Push Notifications with small examples before applying it in larger PWA & Offline projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Push Notifications.",
+          "Learn how to debug, test, and validate behavior when working with Push Notifications.",
+          "Be able to explain Push Notifications in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

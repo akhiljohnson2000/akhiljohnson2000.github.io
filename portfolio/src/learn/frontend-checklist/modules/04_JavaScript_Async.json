@@ -1,0 +1,222 @@
+{
+  "order": 4,
+  "title": "JavaScript Async",
+  "topics": [
+    {
+      "Event Loop": {
+        "call_stack": [
+          "Call Stack defines a core concept used in JavaScript Async",
+          "It explains what call stack is and why it matters",
+          "It covers the main rules and mental model behind call stack",
+          "It shows how call stack behaves in real application code",
+          "It highlights common mistakes developers make with call stack",
+          "It compares call stack with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of call stack",
+          "It includes practical usage patterns for call stack in Event Loop",
+          "It helps with debugging issues connected to call stack",
+          "It prepares you to answer interview and architecture questions about call stack"
+        ],
+        "web_apis": [
+          "Web APIs defines a core concept used in JavaScript Async",
+          "It explains what web apis is and why it matters",
+          "It covers the main rules and mental model behind web apis",
+          "It shows how web apis behaves in real application code",
+          "It highlights common mistakes developers make with web apis",
+          "It compares web apis with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of web apis",
+          "It includes practical usage patterns for web apis in Event Loop",
+          "It helps with debugging issues connected to web apis",
+          "It prepares you to answer interview and architecture questions about web apis"
+        ],
+        "callback_queue": [
+          "Callback Queue defines a core concept used in JavaScript Async",
+          "It explains what callback queue is and why it matters",
+          "It covers the main rules and mental model behind callback queue",
+          "It shows how callback queue behaves in real application code",
+          "It highlights common mistakes developers make with callback queue",
+          "It compares callback queue with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of callback queue",
+          "It includes practical usage patterns for callback queue in Event Loop",
+          "It helps with debugging issues connected to callback queue",
+          "It prepares you to answer interview and architecture questions about callback queue"
+        ],
+        "microtask_queue": [
+          "Microtask Queue defines a core concept used in JavaScript Async",
+          "It explains what microtask queue is and why it matters",
+          "It covers the main rules and mental model behind microtask queue",
+          "It shows how microtask queue behaves in real application code",
+          "It highlights common mistakes developers make with microtask queue",
+          "It compares microtask queue with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of microtask queue",
+          "It includes practical usage patterns for microtask queue in Event Loop",
+          "It helps with debugging issues connected to microtask queue",
+          "It prepares you to answer interview and architecture questions about microtask queue"
+        ],
+        "macrotask_queue": [
+          "Macrotask Queue defines a core concept used in JavaScript Async",
+          "It explains what macrotask queue is and why it matters",
+          "It covers the main rules and mental model behind macrotask queue",
+          "It shows how macrotask queue behaves in real application code",
+          "It highlights common mistakes developers make with macrotask queue",
+          "It compares macrotask queue with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of macrotask queue",
+          "It includes practical usage patterns for macrotask queue in Event Loop",
+          "It helps with debugging issues connected to macrotask queue",
+          "It prepares you to answer interview and architecture questions about macrotask queue"
+        ],
+        "execution_order": [
+          "Execution Order defines a core concept used in JavaScript Async",
+          "It explains what execution order is and why it matters",
+          "It covers the main rules and mental model behind execution order",
+          "It shows how execution order behaves in real application code",
+          "It highlights common mistakes developers make with execution order",
+          "It compares execution order with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of execution order",
+          "It includes practical usage patterns for execution order in Event Loop",
+          "It helps with debugging issues connected to execution order",
+          "It prepares you to answer interview and architecture questions about execution order"
+        ],
+        "event_loop_cycle": [
+          "Event Loop Cycle defines a core concept used in JavaScript Async",
+          "It explains what event loop cycle is and why it matters",
+          "It covers the main rules and mental model behind event loop cycle",
+          "It shows how event loop cycle behaves in real application code",
+          "It highlights common mistakes developers make with event loop cycle",
+          "It compares event loop cycle with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of event loop cycle",
+          "It includes practical usage patterns for event loop cycle in Event Loop",
+          "It helps with debugging issues connected to event loop cycle",
+          "It prepares you to answer interview and architecture questions about event loop cycle"
+        ]
+      }
+    },
+    {
+      "Promises": {
+        "promise_states": [
+          "Promise States defines a core concept used in JavaScript Async",
+          "It explains what promise states is and why it matters",
+          "It covers the main rules and mental model behind promise states",
+          "It shows how promise states behaves in real application code",
+          "It highlights common mistakes developers make with promise states",
+          "It compares promise states with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of promise states",
+          "It includes practical usage patterns for promise states in Promises",
+          "It helps with debugging issues connected to promise states",
+          "It prepares you to answer interview and architecture questions about promise states"
+        ],
+        "then_chain": [
+          "Then Chain defines a core concept used in JavaScript Async",
+          "It explains what then chain is and why it matters",
+          "It covers the main rules and mental model behind then chain",
+          "It shows how then chain behaves in real application code",
+          "It highlights common mistakes developers make with then chain",
+          "It compares then chain with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of then chain",
+          "It includes practical usage patterns for then chain in Promises",
+          "It helps with debugging issues connected to then chain",
+          "It prepares you to answer interview and architecture questions about then chain"
+        ],
+        "catch_finally": [
+          "Catch Finally defines a core concept used in JavaScript Async",
+          "It explains what catch finally is and why it matters",
+          "It covers the main rules and mental model behind catch finally",
+          "It shows how catch finally behaves in real application code",
+          "It highlights common mistakes developers make with catch finally",
+          "It compares catch finally with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of catch finally",
+          "It includes practical usage patterns for catch finally in Promises",
+          "It helps with debugging issues connected to catch finally",
+          "It prepares you to answer interview and architecture questions about catch finally"
+        ],
+        "promise_all": [
+          "Promise All defines a core concept used in JavaScript Async",
+          "It explains what promise all is and why it matters",
+          "It covers the main rules and mental model behind promise all",
+          "It shows how promise all behaves in real application code",
+          "It highlights common mistakes developers make with promise all",
+          "It compares promise all with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of promise all",
+          "It includes practical usage patterns for promise all in Promises",
+          "It helps with debugging issues connected to promise all",
+          "It prepares you to answer interview and architecture questions about promise all"
+        ],
+        "promise_race": [
+          "Promise Race defines a core concept used in JavaScript Async",
+          "It explains what promise race is and why it matters",
+          "It covers the main rules and mental model behind promise race",
+          "It shows how promise race behaves in real application code",
+          "It highlights common mistakes developers make with promise race",
+          "It compares promise race with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of promise race",
+          "It includes practical usage patterns for promise race in Promises",
+          "It helps with debugging issues connected to promise race",
+          "It prepares you to answer interview and architecture questions about promise race"
+        ],
+        "promise_allSettled": [
+          "Promise Allsettled defines a core concept used in JavaScript Async",
+          "It explains what promise allsettled is and why it matters",
+          "It covers the main rules and mental model behind promise allsettled",
+          "It shows how promise allsettled behaves in real application code",
+          "It highlights common mistakes developers make with promise allsettled",
+          "It compares promise allsettled with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of promise allsettled",
+          "It includes practical usage patterns for promise allsettled in Promises",
+          "It helps with debugging issues connected to promise allsettled",
+          "It prepares you to answer interview and architecture questions about promise allsettled"
+        ]
+      }
+    },
+    {
+      "Async/Await": {
+        "async_function": [
+          "async Function defines a core concept used in JavaScript Async",
+          "It explains what async function is and why it matters",
+          "It covers the main rules and mental model behind async function",
+          "It shows how async function behaves in real application code",
+          "It highlights common mistakes developers make with async function",
+          "It compares async function with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of async function",
+          "It includes practical usage patterns for async function in Async/Await",
+          "It helps with debugging issues connected to async function",
+          "It prepares you to answer interview and architecture questions about async function"
+        ],
+        "await_behavior": [
+          "await Behavior defines a core concept used in JavaScript Async",
+          "It explains what await behavior is and why it matters",
+          "It covers the main rules and mental model behind await behavior",
+          "It shows how await behavior behaves in real application code",
+          "It highlights common mistakes developers make with await behavior",
+          "It compares await behavior with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of await behavior",
+          "It includes practical usage patterns for await behavior in Async/Await",
+          "It helps with debugging issues connected to await behavior",
+          "It prepares you to answer interview and architecture questions about await behavior"
+        ],
+        "error_handling": [
+          "Error Handling defines a core concept used in JavaScript Async",
+          "It explains what error handling is and why it matters",
+          "It covers the main rules and mental model behind error handling",
+          "It shows how error handling behaves in real application code",
+          "It highlights common mistakes developers make with error handling",
+          "It compares error handling with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of error handling",
+          "It includes practical usage patterns for error handling in Async/Await",
+          "It helps with debugging issues connected to error handling",
+          "It prepares you to answer interview and architecture questions about error handling"
+        ],
+        "parallel_vs_sequential": [
+          "Parallel vs Sequential defines a core concept used in JavaScript Async",
+          "It explains what parallel vs sequential is and why it matters",
+          "It covers the main rules and mental model behind parallel vs sequential",
+          "It shows how parallel vs sequential behaves in real application code",
+          "It highlights common mistakes developers make with parallel vs sequential",
+          "It compares parallel vs sequential with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of parallel vs sequential",
+          "It includes practical usage patterns for parallel vs sequential in Async/Await",
+          "It helps with debugging issues connected to parallel vs sequential",
+          "It prepares you to answer interview and architecture questions about parallel vs sequential"
+        ]
+      }
+    }
+  ]
+}

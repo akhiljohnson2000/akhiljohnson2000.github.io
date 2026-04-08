@@ -1,0 +1,262 @@
+{
+  "order": 14,
+  "title": "Build Tools",
+  "topics": [
+    {
+      "Bundlers": {
+        "webpack_architecture": [
+          "Webpack Architecture defines a core concept used in Build Tools",
+          "It explains what webpack architecture is and why it matters",
+          "It covers the main rules and mental model behind webpack architecture",
+          "It shows how webpack architecture behaves in real application code",
+          "It highlights common mistakes developers make with webpack architecture",
+          "It compares webpack architecture with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of webpack architecture",
+          "It includes practical usage patterns for webpack architecture in Bundlers",
+          "It helps with debugging issues connected to webpack architecture",
+          "It prepares you to answer interview and architecture questions about webpack architecture"
+        ],
+        "entry_output": [
+          "Entry Output defines a core concept used in Build Tools",
+          "It explains what entry output is and why it matters",
+          "It covers the main rules and mental model behind entry output",
+          "It shows how entry output behaves in real application code",
+          "It highlights common mistakes developers make with entry output",
+          "It compares entry output with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of entry output",
+          "It includes practical usage patterns for entry output in Bundlers",
+          "It helps with debugging issues connected to entry output",
+          "It prepares you to answer interview and architecture questions about entry output"
+        ],
+        "loaders_vs_plugins": [
+          "Loaders vs Plugins defines a core concept used in Build Tools",
+          "It explains what loaders vs plugins is and why it matters",
+          "It covers the main rules and mental model behind loaders vs plugins",
+          "It shows how loaders vs plugins behaves in real application code",
+          "It highlights common mistakes developers make with loaders vs plugins",
+          "It compares loaders vs plugins with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of loaders vs plugins",
+          "It includes practical usage patterns for loaders vs plugins in Bundlers",
+          "It helps with debugging issues connected to loaders vs plugins",
+          "It prepares you to answer interview and architecture questions about loaders vs plugins"
+        ],
+        "dependency_graph": [
+          "Dependency Graph defines a core concept used in Build Tools",
+          "It explains what dependency graph is and why it matters",
+          "It covers the main rules and mental model behind dependency graph",
+          "It shows how dependency graph behaves in real application code",
+          "It highlights common mistakes developers make with dependency graph",
+          "It compares dependency graph with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of dependency graph",
+          "It includes practical usage patterns for dependency graph in Bundlers",
+          "It helps with debugging issues connected to dependency graph",
+          "It prepares you to answer interview and architecture questions about dependency graph"
+        ],
+        "code_splitting_chunks": [
+          "Code Splitting Chunks defines a core concept used in Build Tools",
+          "It explains what code splitting chunks is and why it matters",
+          "It covers the main rules and mental model behind code splitting chunks",
+          "It shows how code splitting chunks behaves in real application code",
+          "It highlights common mistakes developers make with code splitting chunks",
+          "It compares code splitting chunks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of code splitting chunks",
+          "It includes practical usage patterns for code splitting chunks in Bundlers",
+          "It helps with debugging issues connected to code splitting chunks",
+          "It prepares you to answer interview and architecture questions about code splitting chunks"
+        ],
+        "tree_shaking": [
+          "Tree Shaking defines a core concept used in Build Tools",
+          "It explains what tree shaking is and why it matters",
+          "It covers the main rules and mental model behind tree shaking",
+          "It shows how tree shaking behaves in real application code",
+          "It highlights common mistakes developers make with tree shaking",
+          "It compares tree shaking with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of tree shaking",
+          "It includes practical usage patterns for tree shaking in Bundlers",
+          "It helps with debugging issues connected to tree shaking",
+          "It prepares you to answer interview and architecture questions about tree shaking"
+        ],
+        "side_effects": [
+          "Side Effects defines a core concept used in Build Tools",
+          "It explains what side effects is and why it matters",
+          "It covers the main rules and mental model behind side effects",
+          "It shows how side effects behaves in real application code",
+          "It highlights common mistakes developers make with side effects",
+          "It compares side effects with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of side effects",
+          "It includes practical usage patterns for side effects in Bundlers",
+          "It helps with debugging issues connected to side effects",
+          "It prepares you to answer interview and architecture questions about side effects"
+        ]
+      }
+    },
+    {
+      "Modern Tooling": {
+        "vite_architecture": [
+          "Vite Architecture defines a core concept used in Build Tools",
+          "It explains what vite architecture is and why it matters",
+          "It covers the main rules and mental model behind vite architecture",
+          "It shows how vite architecture behaves in real application code",
+          "It highlights common mistakes developers make with vite architecture",
+          "It compares vite architecture with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of vite architecture",
+          "It includes practical usage patterns for vite architecture in Modern Tooling",
+          "It helps with debugging issues connected to vite architecture",
+          "It prepares you to answer interview and architecture questions about vite architecture"
+        ],
+        "esbuild": [
+          "Esbuild defines a core concept used in Build Tools",
+          "It explains what esbuild is and why it matters",
+          "It covers the main rules and mental model behind esbuild",
+          "It shows how esbuild behaves in real application code",
+          "It highlights common mistakes developers make with esbuild",
+          "It compares esbuild with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of esbuild",
+          "It includes practical usage patterns for esbuild in Modern Tooling",
+          "It helps with debugging issues connected to esbuild",
+          "It prepares you to answer interview and architecture questions about esbuild"
+        ],
+        "rollup": [
+          "Rollup defines a core concept used in Build Tools",
+          "It explains what rollup is and why it matters",
+          "It covers the main rules and mental model behind rollup",
+          "It shows how rollup behaves in real application code",
+          "It highlights common mistakes developers make with rollup",
+          "It compares rollup with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of rollup",
+          "It includes practical usage patterns for rollup in Modern Tooling",
+          "It helps with debugging issues connected to rollup",
+          "It prepares you to answer interview and architecture questions about rollup"
+        ],
+        "dev_server_vs_build": [
+          "Dev Server vs Build defines a core concept used in Build Tools",
+          "It explains what dev server vs build is and why it matters",
+          "It covers the main rules and mental model behind dev server vs build",
+          "It shows how dev server vs build behaves in real application code",
+          "It highlights common mistakes developers make with dev server vs build",
+          "It compares dev server vs build with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of dev server vs build",
+          "It includes practical usage patterns for dev server vs build in Modern Tooling",
+          "It helps with debugging issues connected to dev server vs build",
+          "It prepares you to answer interview and architecture questions about dev server vs build"
+        ],
+        "hot_module_replacement": [
+          "Hot Module Replacement defines a core concept used in Build Tools",
+          "It explains what hot module replacement is and why it matters",
+          "It covers the main rules and mental model behind hot module replacement",
+          "It shows how hot module replacement behaves in real application code",
+          "It highlights common mistakes developers make with hot module replacement",
+          "It compares hot module replacement with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of hot module replacement",
+          "It includes practical usage patterns for hot module replacement in Modern Tooling",
+          "It helps with debugging issues connected to hot module replacement",
+          "It prepares you to answer interview and architecture questions about hot module replacement"
+        ]
+      }
+    },
+    {
+      "Transpilation": {
+        "babel_pipeline": [
+          "Babel Pipeline defines a core concept used in Build Tools",
+          "It explains what babel pipeline is and why it matters",
+          "It covers the main rules and mental model behind babel pipeline",
+          "It shows how babel pipeline behaves in real application code",
+          "It highlights common mistakes developers make with babel pipeline",
+          "It compares babel pipeline with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of babel pipeline",
+          "It includes practical usage patterns for babel pipeline in Transpilation",
+          "It helps with debugging issues connected to babel pipeline",
+          "It prepares you to answer interview and architecture questions about babel pipeline"
+        ],
+        "polyfills": [
+          "Polyfills defines a core concept used in Build Tools",
+          "It explains what polyfills is and why it matters",
+          "It covers the main rules and mental model behind polyfills",
+          "It shows how polyfills behaves in real application code",
+          "It highlights common mistakes developers make with polyfills",
+          "It compares polyfills with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of polyfills",
+          "It includes practical usage patterns for polyfills in Transpilation",
+          "It helps with debugging issues connected to polyfills",
+          "It prepares you to answer interview and architecture questions about polyfills"
+        ],
+        "preset_env": [
+          "Preset Env defines a core concept used in Build Tools",
+          "It explains what preset env is and why it matters",
+          "It covers the main rules and mental model behind preset env",
+          "It shows how preset env behaves in real application code",
+          "It highlights common mistakes developers make with preset env",
+          "It compares preset env with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of preset env",
+          "It includes practical usage patterns for preset env in Transpilation",
+          "It helps with debugging issues connected to preset env",
+          "It prepares you to answer interview and architecture questions about preset env"
+        ],
+        "browser_compatibility": [
+          "Browser Compatibility defines a core concept used in Build Tools",
+          "It explains what browser compatibility is and why it matters",
+          "It covers the main rules and mental model behind browser compatibility",
+          "It shows how browser compatibility behaves in real application code",
+          "It highlights common mistakes developers make with browser compatibility",
+          "It compares browser compatibility with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of browser compatibility",
+          "It includes practical usage patterns for browser compatibility in Transpilation",
+          "It helps with debugging issues connected to browser compatibility",
+          "It prepares you to answer interview and architecture questions about browser compatibility"
+        ]
+      }
+    },
+    {
+      "Optimization": {
+        "minification": [
+          "Minification defines a core concept used in Build Tools",
+          "It explains what minification is and why it matters",
+          "It covers the main rules and mental model behind minification",
+          "It shows how minification behaves in real application code",
+          "It highlights common mistakes developers make with minification",
+          "It compares minification with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of minification",
+          "It includes practical usage patterns for minification in Optimization",
+          "It helps with debugging issues connected to minification",
+          "It prepares you to answer interview and architecture questions about minification"
+        ],
+        "compression_gzip_brotli": [
+          "Compression Gzip Brotli defines a core concept used in Build Tools",
+          "It explains what compression gzip brotli is and why it matters",
+          "It covers the main rules and mental model behind compression gzip brotli",
+          "It shows how compression gzip brotli behaves in real application code",
+          "It highlights common mistakes developers make with compression gzip brotli",
+          "It compares compression gzip brotli with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of compression gzip brotli",
+          "It includes practical usage patterns for compression gzip brotli in Optimization",
+          "It helps with debugging issues connected to compression gzip brotli",
+          "It prepares you to answer interview and architecture questions about compression gzip brotli"
+        ],
+        "bundle_analysis": [
+          "Bundle Analysis defines a core concept used in Build Tools",
+          "It explains what bundle analysis is and why it matters",
+          "It covers the main rules and mental model behind bundle analysis",
+          "It shows how bundle analysis behaves in real application code",
+          "It highlights common mistakes developers make with bundle analysis",
+          "It compares bundle analysis with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of bundle analysis",
+          "It includes practical usage patterns for bundle analysis in Optimization",
+          "It helps with debugging issues connected to bundle analysis",
+          "It prepares you to answer interview and architecture questions about bundle analysis"
+        ],
+        "code_splitting_strategies": [
+          "Code Splitting Strategies defines a core concept used in Build Tools",
+          "It explains what code splitting strategies is and why it matters",
+          "It covers the main rules and mental model behind code splitting strategies",
+          "It shows how code splitting strategies behaves in real application code",
+          "It highlights common mistakes developers make with code splitting strategies",
+          "It compares code splitting strategies with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of code splitting strategies",
+          "It includes practical usage patterns for code splitting strategies in Optimization",
+          "It helps with debugging issues connected to code splitting strategies",
+          "It prepares you to answer interview and architecture questions about code splitting strategies"
+        ]
+      }
+    }
+  ]
+}

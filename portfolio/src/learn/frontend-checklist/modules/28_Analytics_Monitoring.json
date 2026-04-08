@@ -1,0 +1,150 @@
+{
+  "order": 28,
+  "title": "Analytics & Monitoring",
+  "topics": [
+    {
+      "Analytics": {
+        "event_tracking": [
+          "Define Event Tracking clearly and explain where it fits within Analytics.",
+          "Understand the core purpose of Event Tracking and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Event Tracking.",
+          "Study how Event Tracking works internally step by step in real application flow.",
+          "Compare Event Tracking with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Event Tracking.",
+          "Practice Event Tracking with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Event Tracking.",
+          "Learn how to debug, test, and validate behavior when working with Event Tracking.",
+          "Be able to explain Event Tracking in interviews using practical examples and tradeoffs."
+        ],
+        "funnels": [
+          "Define Funnels clearly and explain where it fits within Analytics.",
+          "Understand the core purpose of Funnels and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Funnels.",
+          "Study how Funnels works internally step by step in real application flow.",
+          "Compare Funnels with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Funnels.",
+          "Practice Funnels with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Funnels.",
+          "Learn how to debug, test, and validate behavior when working with Funnels.",
+          "Be able to explain Funnels in interviews using practical examples and tradeoffs."
+        ],
+        "user_behavior": [
+          "Define User Behavior clearly and explain where it fits within Analytics.",
+          "Understand the core purpose of User Behavior and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to User Behavior.",
+          "Study how User Behavior works internally step by step in real application flow.",
+          "Compare User Behavior with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in User Behavior.",
+          "Practice User Behavior with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to User Behavior.",
+          "Learn how to debug, test, and validate behavior when working with User Behavior.",
+          "Be able to explain User Behavior in interviews using practical examples and tradeoffs."
+        ],
+        "conversion_tracking": [
+          "Define Conversion Tracking clearly and explain where it fits within Analytics.",
+          "Understand the core purpose of Conversion Tracking and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Conversion Tracking.",
+          "Study how Conversion Tracking works internally step by step in real application flow.",
+          "Compare Conversion Tracking with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Conversion Tracking.",
+          "Practice Conversion Tracking with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Conversion Tracking.",
+          "Learn how to debug, test, and validate behavior when working with Conversion Tracking.",
+          "Be able to explain Conversion Tracking in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Monitoring": {
+        "error_tracking": [
+          "Define Error Tracking clearly and explain where it fits within Monitoring.",
+          "Understand the core purpose of Error Tracking and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Error Tracking.",
+          "Study how Error Tracking works internally step by step in real application flow.",
+          "Compare Error Tracking with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Error Tracking.",
+          "Practice Error Tracking with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Error Tracking.",
+          "Learn how to debug, test, and validate behavior when working with Error Tracking.",
+          "Be able to explain Error Tracking in interviews using practical examples and tradeoffs."
+        ],
+        "performance_monitoring": [
+          "Define Performance Monitoring clearly and explain where it fits within Monitoring.",
+          "Understand the core purpose of Performance Monitoring and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Performance Monitoring.",
+          "Study how Performance Monitoring works internally step by step in real application flow.",
+          "Compare Performance Monitoring with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Performance Monitoring.",
+          "Practice Performance Monitoring with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Performance Monitoring.",
+          "Learn how to debug, test, and validate behavior when working with Performance Monitoring.",
+          "Be able to explain Performance Monitoring in interviews using practical examples and tradeoffs."
+        ],
+        "real_user_monitoring": [
+          "Define Real User Monitoring clearly and explain where it fits within Monitoring.",
+          "Understand the core purpose of Real User Monitoring and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Real User Monitoring.",
+          "Study how Real User Monitoring works internally step by step in real application flow.",
+          "Compare Real User Monitoring with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Real User Monitoring.",
+          "Practice Real User Monitoring with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Real User Monitoring.",
+          "Learn how to debug, test, and validate behavior when working with Real User Monitoring.",
+          "Be able to explain Real User Monitoring in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Tools": {
+        "google_analytics": [
+          "Define Google Analytics clearly and explain where it fits within Tools.",
+          "Understand the core purpose of Google Analytics and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Google Analytics.",
+          "Study how Google Analytics works internally step by step in real application flow.",
+          "Compare Google Analytics with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Google Analytics.",
+          "Practice Google Analytics with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Google Analytics.",
+          "Learn how to debug, test, and validate behavior when working with Google Analytics.",
+          "Be able to explain Google Analytics in interviews using practical examples and tradeoffs."
+        ],
+        "mixpanel": [
+          "Define Mixpanel clearly and explain where it fits within Tools.",
+          "Understand the core purpose of Mixpanel and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Mixpanel.",
+          "Study how Mixpanel works internally step by step in real application flow.",
+          "Compare Mixpanel with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Mixpanel.",
+          "Practice Mixpanel with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Mixpanel.",
+          "Learn how to debug, test, and validate behavior when working with Mixpanel.",
+          "Be able to explain Mixpanel in interviews using practical examples and tradeoffs."
+        ],
+        "sentry": [
+          "Define Sentry clearly and explain where it fits within Tools.",
+          "Understand the core purpose of Sentry and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Sentry.",
+          "Study how Sentry works internally step by step in real application flow.",
+          "Compare Sentry with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Sentry.",
+          "Practice Sentry with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Sentry.",
+          "Learn how to debug, test, and validate behavior when working with Sentry.",
+          "Be able to explain Sentry in interviews using practical examples and tradeoffs."
+        ],
+        "logrocket": [
+          "Define Logrocket clearly and explain where it fits within Tools.",
+          "Understand the core purpose of Logrocket and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Logrocket.",
+          "Study how Logrocket works internally step by step in real application flow.",
+          "Compare Logrocket with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Logrocket.",
+          "Practice Logrocket with small examples before applying it in larger Analytics & Monitoring projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Logrocket.",
+          "Learn how to debug, test, and validate behavior when working with Logrocket.",
+          "Be able to explain Logrocket in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

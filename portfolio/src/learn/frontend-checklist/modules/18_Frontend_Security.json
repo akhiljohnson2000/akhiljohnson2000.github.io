@@ -1,0 +1,214 @@
+{
+  "order": 18,
+  "title": "Frontend Security",
+  "topics": [
+    {
+      "Core Security Concepts": {
+        "same_origin_policy": [
+          "Same Origin Policy defines a core concept used in Frontend Security",
+          "It explains what same origin policy is and why it matters",
+          "It covers the main rules and mental model behind same origin policy",
+          "It shows how same origin policy behaves in real application code",
+          "It highlights common mistakes developers make with same origin policy",
+          "It compares same origin policy with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of same origin policy",
+          "It includes practical usage patterns for same origin policy in Core Security Concepts",
+          "It helps with debugging issues connected to same origin policy",
+          "It prepares you to answer interview and architecture questions about same origin policy"
+        ],
+        "cors": [
+          "CORS defines a core concept used in Frontend Security",
+          "It explains what cors is and why it matters",
+          "It covers the main rules and mental model behind cors",
+          "It shows how cors behaves in real application code",
+          "It highlights common mistakes developers make with cors",
+          "It compares cors with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of cors",
+          "It includes practical usage patterns for cors in Core Security Concepts",
+          "It helps with debugging issues connected to cors",
+          "It prepares you to answer interview and architecture questions about cors"
+        ],
+        "secure_headers": [
+          "Secure Headers defines a core concept used in Frontend Security",
+          "It explains what secure headers is and why it matters",
+          "It covers the main rules and mental model behind secure headers",
+          "It shows how secure headers behaves in real application code",
+          "It highlights common mistakes developers make with secure headers",
+          "It compares secure headers with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of secure headers",
+          "It includes practical usage patterns for secure headers in Core Security Concepts",
+          "It helps with debugging issues connected to secure headers",
+          "It prepares you to answer interview and architecture questions about secure headers"
+        ],
+        "https_tls": [
+          "HTTPS TLS defines a core concept used in Frontend Security",
+          "It explains what https tls is and why it matters",
+          "It covers the main rules and mental model behind https tls",
+          "It shows how https tls behaves in real application code",
+          "It highlights common mistakes developers make with https tls",
+          "It compares https tls with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of https tls",
+          "It includes practical usage patterns for https tls in Core Security Concepts",
+          "It helps with debugging issues connected to https tls",
+          "It prepares you to answer interview and architecture questions about https tls"
+        ]
+      }
+    },
+    {
+      "Common Attacks": {
+        "xss_attacks": [
+          "XSS Attacks defines a core concept used in Frontend Security",
+          "It explains what xss attacks is and why it matters",
+          "It covers the main rules and mental model behind xss attacks",
+          "It shows how xss attacks behaves in real application code",
+          "It highlights common mistakes developers make with xss attacks",
+          "It compares xss attacks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of xss attacks",
+          "It includes practical usage patterns for xss attacks in Common Attacks",
+          "It helps with debugging issues connected to xss attacks",
+          "It prepares you to answer interview and architecture questions about xss attacks"
+        ],
+        "csrf_attacks": [
+          "CSRF Attacks defines a core concept used in Frontend Security",
+          "It explains what csrf attacks is and why it matters",
+          "It covers the main rules and mental model behind csrf attacks",
+          "It shows how csrf attacks behaves in real application code",
+          "It highlights common mistakes developers make with csrf attacks",
+          "It compares csrf attacks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of csrf attacks",
+          "It includes practical usage patterns for csrf attacks in Common Attacks",
+          "It helps with debugging issues connected to csrf attacks",
+          "It prepares you to answer interview and architecture questions about csrf attacks"
+        ],
+        "clickjacking": [
+          "Clickjacking defines a core concept used in Frontend Security",
+          "It explains what clickjacking is and why it matters",
+          "It covers the main rules and mental model behind clickjacking",
+          "It shows how clickjacking behaves in real application code",
+          "It highlights common mistakes developers make with clickjacking",
+          "It compares clickjacking with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of clickjacking",
+          "It includes practical usage patterns for clickjacking in Common Attacks",
+          "It helps with debugging issues connected to clickjacking",
+          "It prepares you to answer interview and architecture questions about clickjacking"
+        ],
+        "injection_attacks": [
+          "Injection Attacks defines a core concept used in Frontend Security",
+          "It explains what injection attacks is and why it matters",
+          "It covers the main rules and mental model behind injection attacks",
+          "It shows how injection attacks behaves in real application code",
+          "It highlights common mistakes developers make with injection attacks",
+          "It compares injection attacks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of injection attacks",
+          "It includes practical usage patterns for injection attacks in Common Attacks",
+          "It helps with debugging issues connected to injection attacks",
+          "It prepares you to answer interview and architecture questions about injection attacks"
+        ]
+      }
+    },
+    {
+      "Authentication": {
+        "jwt": [
+          "JWT defines a core concept used in Frontend Security",
+          "It explains what jwt is and why it matters",
+          "It covers the main rules and mental model behind jwt",
+          "It shows how jwt behaves in real application code",
+          "It highlights common mistakes developers make with jwt",
+          "It compares jwt with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of jwt",
+          "It includes practical usage patterns for jwt in Authentication",
+          "It helps with debugging issues connected to jwt",
+          "It prepares you to answer interview and architecture questions about jwt"
+        ],
+        "oauth": [
+          "OAuth defines a core concept used in Frontend Security",
+          "It explains what oauth is and why it matters",
+          "It covers the main rules and mental model behind oauth",
+          "It shows how oauth behaves in real application code",
+          "It highlights common mistakes developers make with oauth",
+          "It compares oauth with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of oauth",
+          "It includes practical usage patterns for oauth in Authentication",
+          "It helps with debugging issues connected to oauth",
+          "It prepares you to answer interview and architecture questions about oauth"
+        ],
+        "session_based_auth": [
+          "Session Based Auth defines a core concept used in Frontend Security",
+          "It explains what session based auth is and why it matters",
+          "It covers the main rules and mental model behind session based auth",
+          "It shows how session based auth behaves in real application code",
+          "It highlights common mistakes developers make with session based auth",
+          "It compares session based auth with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of session based auth",
+          "It includes practical usage patterns for session based auth in Authentication",
+          "It helps with debugging issues connected to session based auth",
+          "It prepares you to answer interview and architecture questions about session based auth"
+        ],
+        "token_storage_strategies": [
+          "Token Storage Strategies defines a core concept used in Frontend Security",
+          "It explains what token storage strategies is and why it matters",
+          "It covers the main rules and mental model behind token storage strategies",
+          "It shows how token storage strategies behaves in real application code",
+          "It highlights common mistakes developers make with token storage strategies",
+          "It compares token storage strategies with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of token storage strategies",
+          "It includes practical usage patterns for token storage strategies in Authentication",
+          "It helps with debugging issues connected to token storage strategies",
+          "It prepares you to answer interview and architecture questions about token storage strategies"
+        ]
+      }
+    },
+    {
+      "Best Practices": {
+        "input_sanitization": [
+          "Input Sanitization defines a core concept used in Frontend Security",
+          "It explains what input sanitization is and why it matters",
+          "It covers the main rules and mental model behind input sanitization",
+          "It shows how input sanitization behaves in real application code",
+          "It highlights common mistakes developers make with input sanitization",
+          "It compares input sanitization with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of input sanitization",
+          "It includes practical usage patterns for input sanitization in Best Practices",
+          "It helps with debugging issues connected to input sanitization",
+          "It prepares you to answer interview and architecture questions about input sanitization"
+        ],
+        "secure_storage": [
+          "Secure Storage defines a core concept used in Frontend Security",
+          "It explains what secure storage is and why it matters",
+          "It covers the main rules and mental model behind secure storage",
+          "It shows how secure storage behaves in real application code",
+          "It highlights common mistakes developers make with secure storage",
+          "It compares secure storage with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of secure storage",
+          "It includes practical usage patterns for secure storage in Best Practices",
+          "It helps with debugging issues connected to secure storage",
+          "It prepares you to answer interview and architecture questions about secure storage"
+        ],
+        "http_only_cookies": [
+          "HTTP Only Cookies defines a core concept used in Frontend Security",
+          "It explains what http only cookies is and why it matters",
+          "It covers the main rules and mental model behind http only cookies",
+          "It shows how http only cookies behaves in real application code",
+          "It highlights common mistakes developers make with http only cookies",
+          "It compares http only cookies with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of http only cookies",
+          "It includes practical usage patterns for http only cookies in Best Practices",
+          "It helps with debugging issues connected to http only cookies",
+          "It prepares you to answer interview and architecture questions about http only cookies"
+        ],
+        "content_security_policy": [
+          "Content Security Policy defines a core concept used in Frontend Security",
+          "It explains what content security policy is and why it matters",
+          "It covers the main rules and mental model behind content security policy",
+          "It shows how content security policy behaves in real application code",
+          "It highlights common mistakes developers make with content security policy",
+          "It compares content security policy with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of content security policy",
+          "It includes practical usage patterns for content security policy in Best Practices",
+          "It helps with debugging issues connected to content security policy",
+          "It prepares you to answer interview and architecture questions about content security policy"
+        ]
+      }
+    }
+  ]
+}

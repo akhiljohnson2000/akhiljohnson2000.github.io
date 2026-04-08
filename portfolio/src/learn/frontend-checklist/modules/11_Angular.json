@@ -1,0 +1,226 @@
+{
+  "order": 11,
+  "title": "Angular",
+  "topics": [
+    {
+      "Core Architecture": {
+        "components": [
+          "Components defines a core concept used in Angular",
+          "It explains what components is and why it matters",
+          "It covers the main rules and mental model behind components",
+          "It shows how components behaves in real application code",
+          "It highlights common mistakes developers make with components",
+          "It compares components with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of components",
+          "It includes practical usage patterns for components in Core Architecture",
+          "It helps with debugging issues connected to components",
+          "It prepares you to answer interview and architecture questions about components"
+        ],
+        "modules": [
+          "Modules defines a core concept used in Angular",
+          "It explains what modules is and why it matters",
+          "It covers the main rules and mental model behind modules",
+          "It shows how modules behaves in real application code",
+          "It highlights common mistakes developers make with modules",
+          "It compares modules with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of modules",
+          "It includes practical usage patterns for modules in Core Architecture",
+          "It helps with debugging issues connected to modules",
+          "It prepares you to answer interview and architecture questions about modules"
+        ],
+        "services": [
+          "Services defines a core concept used in Angular",
+          "It explains what services is and why it matters",
+          "It covers the main rules and mental model behind services",
+          "It shows how services behaves in real application code",
+          "It highlights common mistakes developers make with services",
+          "It compares services with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of services",
+          "It includes practical usage patterns for services in Core Architecture",
+          "It helps with debugging issues connected to services",
+          "It prepares you to answer interview and architecture questions about services"
+        ],
+        "dependency_injection": [
+          "Dependency Injection defines a core concept used in Angular",
+          "It explains what dependency injection is and why it matters",
+          "It covers the main rules and mental model behind dependency injection",
+          "It shows how dependency injection behaves in real application code",
+          "It highlights common mistakes developers make with dependency injection",
+          "It compares dependency injection with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of dependency injection",
+          "It includes practical usage patterns for dependency injection in Core Architecture",
+          "It helps with debugging issues connected to dependency injection",
+          "It prepares you to answer interview and architecture questions about dependency injection"
+        ],
+        "standalone_components": [
+          "Standalone Components defines a core concept used in Angular",
+          "It explains what standalone components is and why it matters",
+          "It covers the main rules and mental model behind standalone components",
+          "It shows how standalone components behaves in real application code",
+          "It highlights common mistakes developers make with standalone components",
+          "It compares standalone components with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of standalone components",
+          "It includes practical usage patterns for standalone components in Core Architecture",
+          "It helps with debugging issues connected to standalone components",
+          "It prepares you to answer interview and architecture questions about standalone components"
+        ]
+      }
+    },
+    {
+      "Templates & Binding": {
+        "interpolation": [
+          "Interpolation defines a core concept used in Angular",
+          "It explains what interpolation is and why it matters",
+          "It covers the main rules and mental model behind interpolation",
+          "It shows how interpolation behaves in real application code",
+          "It highlights common mistakes developers make with interpolation",
+          "It compares interpolation with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of interpolation",
+          "It includes practical usage patterns for interpolation in Templates & Binding",
+          "It helps with debugging issues connected to interpolation",
+          "It prepares you to answer interview and architecture questions about interpolation"
+        ],
+        "property_binding": [
+          "Property Binding defines a core concept used in Angular",
+          "It explains what property binding is and why it matters",
+          "It covers the main rules and mental model behind property binding",
+          "It shows how property binding behaves in real application code",
+          "It highlights common mistakes developers make with property binding",
+          "It compares property binding with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of property binding",
+          "It includes practical usage patterns for property binding in Templates & Binding",
+          "It helps with debugging issues connected to property binding",
+          "It prepares you to answer interview and architecture questions about property binding"
+        ],
+        "event_binding": [
+          "Event Binding defines a core concept used in Angular",
+          "It explains what event binding is and why it matters",
+          "It covers the main rules and mental model behind event binding",
+          "It shows how event binding behaves in real application code",
+          "It highlights common mistakes developers make with event binding",
+          "It compares event binding with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of event binding",
+          "It includes practical usage patterns for event binding in Templates & Binding",
+          "It helps with debugging issues connected to event binding",
+          "It prepares you to answer interview and architecture questions about event binding"
+        ],
+        "two_way_binding": [
+          "Two Way Binding defines a core concept used in Angular",
+          "It explains what two way binding is and why it matters",
+          "It covers the main rules and mental model behind two way binding",
+          "It shows how two way binding behaves in real application code",
+          "It highlights common mistakes developers make with two way binding",
+          "It compares two way binding with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of two way binding",
+          "It includes practical usage patterns for two way binding in Templates & Binding",
+          "It helps with debugging issues connected to two way binding",
+          "It prepares you to answer interview and architecture questions about two way binding"
+        ]
+      }
+    },
+    {
+      "RxJS & Async": {
+        "observables": [
+          "Observables defines a core concept used in Angular",
+          "It explains what observables is and why it matters",
+          "It covers the main rules and mental model behind observables",
+          "It shows how observables behaves in real application code",
+          "It highlights common mistakes developers make with observables",
+          "It compares observables with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of observables",
+          "It includes practical usage patterns for observables in RxJS & Async",
+          "It helps with debugging issues connected to observables",
+          "It prepares you to answer interview and architecture questions about observables"
+        ],
+        "subjects": [
+          "Subjects defines a core concept used in Angular",
+          "It explains what subjects is and why it matters",
+          "It covers the main rules and mental model behind subjects",
+          "It shows how subjects behaves in real application code",
+          "It highlights common mistakes developers make with subjects",
+          "It compares subjects with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of subjects",
+          "It includes practical usage patterns for subjects in RxJS & Async",
+          "It helps with debugging issues connected to subjects",
+          "It prepares you to answer interview and architecture questions about subjects"
+        ],
+        "operators_map_switchmap_mergemap": [
+          "Operators Map Switchmap Mergemap defines a core concept used in Angular",
+          "It explains what operators map switchmap mergemap is and why it matters",
+          "It covers the main rules and mental model behind operators map switchmap mergemap",
+          "It shows how operators map switchmap mergemap behaves in real application code",
+          "It highlights common mistakes developers make with operators map switchmap mergemap",
+          "It compares operators map switchmap mergemap with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of operators map switchmap mergemap",
+          "It includes practical usage patterns for operators map switchmap mergemap in RxJS & Async",
+          "It helps with debugging issues connected to operators map switchmap mergemap",
+          "It prepares you to answer interview and architecture questions about operators map switchmap mergemap"
+        ],
+        "async_pipe": [
+          "async Pipe defines a core concept used in Angular",
+          "It explains what async pipe is and why it matters",
+          "It covers the main rules and mental model behind async pipe",
+          "It shows how async pipe behaves in real application code",
+          "It highlights common mistakes developers make with async pipe",
+          "It compares async pipe with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of async pipe",
+          "It includes practical usage patterns for async pipe in RxJS & Async",
+          "It helps with debugging issues connected to async pipe",
+          "It prepares you to answer interview and architecture questions about async pipe"
+        ]
+      }
+    },
+    {
+      "Change Detection": {
+        "default_strategy": [
+          "Default Strategy defines a core concept used in Angular",
+          "It explains what default strategy is and why it matters",
+          "It covers the main rules and mental model behind default strategy",
+          "It shows how default strategy behaves in real application code",
+          "It highlights common mistakes developers make with default strategy",
+          "It compares default strategy with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of default strategy",
+          "It includes practical usage patterns for default strategy in Change Detection",
+          "It helps with debugging issues connected to default strategy",
+          "It prepares you to answer interview and architecture questions about default strategy"
+        ],
+        "onpush_strategy": [
+          "Onpush Strategy defines a core concept used in Angular",
+          "It explains what onpush strategy is and why it matters",
+          "It covers the main rules and mental model behind onpush strategy",
+          "It shows how onpush strategy behaves in real application code",
+          "It highlights common mistakes developers make with onpush strategy",
+          "It compares onpush strategy with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of onpush strategy",
+          "It includes practical usage patterns for onpush strategy in Change Detection",
+          "It helps with debugging issues connected to onpush strategy",
+          "It prepares you to answer interview and architecture questions about onpush strategy"
+        ],
+        "zone_js": [
+          "Zone JS defines a core concept used in Angular",
+          "It explains what zone js is and why it matters",
+          "It covers the main rules and mental model behind zone js",
+          "It shows how zone js behaves in real application code",
+          "It highlights common mistakes developers make with zone js",
+          "It compares zone js with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of zone js",
+          "It includes practical usage patterns for zone js in Change Detection",
+          "It helps with debugging issues connected to zone js",
+          "It prepares you to answer interview and architecture questions about zone js"
+        ],
+        "signals": [
+          "Signals defines a core concept used in Angular",
+          "It explains what signals is and why it matters",
+          "It covers the main rules and mental model behind signals",
+          "It shows how signals behaves in real application code",
+          "It highlights common mistakes developers make with signals",
+          "It compares signals with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of signals",
+          "It includes practical usage patterns for signals in Change Detection",
+          "It helps with debugging issues connected to signals",
+          "It prepares you to answer interview and architecture questions about signals"
+        ]
+      }
+    }
+  ]
+}

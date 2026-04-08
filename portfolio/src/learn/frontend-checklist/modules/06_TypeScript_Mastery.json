@@ -1,0 +1,138 @@
+{
+  "order": 6,
+  "title": "TypeScript Mastery",
+  "topics": [
+    {
+      "Core Types": {
+        "primitive_types": [
+          "Primitive Types defines a core concept used in TypeScript Mastery",
+          "It explains what primitive types is and why it matters",
+          "It covers the main rules and mental model behind primitive types",
+          "It shows how primitive types behaves in real application code",
+          "It highlights common mistakes developers make with primitive types",
+          "It compares primitive types with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of primitive types",
+          "It includes practical usage patterns for primitive types in Core Types",
+          "It helps with debugging issues connected to primitive types",
+          "It prepares you to answer interview and architecture questions about primitive types"
+        ],
+        "any_unknown_never": [
+          "Any Unknown Never defines a core concept used in TypeScript Mastery",
+          "It explains what any unknown never is and why it matters",
+          "It covers the main rules and mental model behind any unknown never",
+          "It shows how any unknown never behaves in real application code",
+          "It highlights common mistakes developers make with any unknown never",
+          "It compares any unknown never with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of any unknown never",
+          "It includes practical usage patterns for any unknown never in Core Types",
+          "It helps with debugging issues connected to any unknown never",
+          "It prepares you to answer interview and architecture questions about any unknown never"
+        ],
+        "type_inference": [
+          "Type Inference defines a core concept used in TypeScript Mastery",
+          "It explains what type inference is and why it matters",
+          "It covers the main rules and mental model behind type inference",
+          "It shows how type inference behaves in real application code",
+          "It highlights common mistakes developers make with type inference",
+          "It compares type inference with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of type inference",
+          "It includes practical usage patterns for type inference in Core Types",
+          "It helps with debugging issues connected to type inference",
+          "It prepares you to answer interview and architecture questions about type inference"
+        ]
+      }
+    },
+    {
+      "Advanced Types": {
+        "union_types": [
+          "Union Types defines a core concept used in TypeScript Mastery",
+          "It explains what union types is and why it matters",
+          "It covers the main rules and mental model behind union types",
+          "It shows how union types behaves in real application code",
+          "It highlights common mistakes developers make with union types",
+          "It compares union types with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of union types",
+          "It includes practical usage patterns for union types in Advanced Types",
+          "It helps with debugging issues connected to union types",
+          "It prepares you to answer interview and architecture questions about union types"
+        ],
+        "intersection_types": [
+          "Intersection Types defines a core concept used in TypeScript Mastery",
+          "It explains what intersection types is and why it matters",
+          "It covers the main rules and mental model behind intersection types",
+          "It shows how intersection types behaves in real application code",
+          "It highlights common mistakes developers make with intersection types",
+          "It compares intersection types with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of intersection types",
+          "It includes practical usage patterns for intersection types in Advanced Types",
+          "It helps with debugging issues connected to intersection types",
+          "It prepares you to answer interview and architecture questions about intersection types"
+        ],
+        "mapped_types": [
+          "Mapped Types defines a core concept used in TypeScript Mastery",
+          "It explains what mapped types is and why it matters",
+          "It covers the main rules and mental model behind mapped types",
+          "It shows how mapped types behaves in real application code",
+          "It highlights common mistakes developers make with mapped types",
+          "It compares mapped types with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of mapped types",
+          "It includes practical usage patterns for mapped types in Advanced Types",
+          "It helps with debugging issues connected to mapped types",
+          "It prepares you to answer interview and architecture questions about mapped types"
+        ],
+        "conditional_types": [
+          "Conditional Types defines a core concept used in TypeScript Mastery",
+          "It explains what conditional types is and why it matters",
+          "It covers the main rules and mental model behind conditional types",
+          "It shows how conditional types behaves in real application code",
+          "It highlights common mistakes developers make with conditional types",
+          "It compares conditional types with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of conditional types",
+          "It includes practical usage patterns for conditional types in Advanced Types",
+          "It helps with debugging issues connected to conditional types",
+          "It prepares you to answer interview and architecture questions about conditional types"
+        ]
+      }
+    },
+    {
+      "Generics": {
+        "generic_functions": [
+          "Generic Functions defines a core concept used in TypeScript Mastery",
+          "It explains what generic functions is and why it matters",
+          "It covers the main rules and mental model behind generic functions",
+          "It shows how generic functions behaves in real application code",
+          "It highlights common mistakes developers make with generic functions",
+          "It compares generic functions with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of generic functions",
+          "It includes practical usage patterns for generic functions in Generics",
+          "It helps with debugging issues connected to generic functions",
+          "It prepares you to answer interview and architecture questions about generic functions"
+        ],
+        "constraints": [
+          "Constraints defines a core concept used in TypeScript Mastery",
+          "It explains what constraints is and why it matters",
+          "It covers the main rules and mental model behind constraints",
+          "It shows how constraints behaves in real application code",
+          "It highlights common mistakes developers make with constraints",
+          "It compares constraints with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of constraints",
+          "It includes practical usage patterns for constraints in Generics",
+          "It helps with debugging issues connected to constraints",
+          "It prepares you to answer interview and architecture questions about constraints"
+        ],
+        "default_generics": [
+          "Default Generics defines a core concept used in TypeScript Mastery",
+          "It explains what default generics is and why it matters",
+          "It covers the main rules and mental model behind default generics",
+          "It shows how default generics behaves in real application code",
+          "It highlights common mistakes developers make with default generics",
+          "It compares default generics with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of default generics",
+          "It includes practical usage patterns for default generics in Generics",
+          "It helps with debugging issues connected to default generics",
+          "It prepares you to answer interview and architecture questions about default generics"
+        ]
+      }
+    }
+  ]
+}

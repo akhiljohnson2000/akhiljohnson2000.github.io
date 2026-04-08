@@ -1,0 +1,274 @@
+{
+  "order": 8,
+  "title": "Rendering & Performance",
+  "topics": [
+    {
+      "Critical Rendering Path": {
+        "dom_construction": [
+          "DOM Construction defines a core concept used in Rendering & Performance",
+          "It explains what dom construction is and why it matters",
+          "It covers the main rules and mental model behind dom construction",
+          "It shows how dom construction behaves in real application code",
+          "It highlights common mistakes developers make with dom construction",
+          "It compares dom construction with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of dom construction",
+          "It includes practical usage patterns for dom construction in Critical Rendering Path",
+          "It helps with debugging issues connected to dom construction",
+          "It prepares you to answer interview and architecture questions about dom construction"
+        ],
+        "cssom_construction": [
+          "Cssom Construction defines a core concept used in Rendering & Performance",
+          "It explains what cssom construction is and why it matters",
+          "It covers the main rules and mental model behind cssom construction",
+          "It shows how cssom construction behaves in real application code",
+          "It highlights common mistakes developers make with cssom construction",
+          "It compares cssom construction with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of cssom construction",
+          "It includes practical usage patterns for cssom construction in Critical Rendering Path",
+          "It helps with debugging issues connected to cssom construction",
+          "It prepares you to answer interview and architecture questions about cssom construction"
+        ],
+        "render_tree": [
+          "Render Tree defines a core concept used in Rendering & Performance",
+          "It explains what render tree is and why it matters",
+          "It covers the main rules and mental model behind render tree",
+          "It shows how render tree behaves in real application code",
+          "It highlights common mistakes developers make with render tree",
+          "It compares render tree with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of render tree",
+          "It includes practical usage patterns for render tree in Critical Rendering Path",
+          "It helps with debugging issues connected to render tree",
+          "It prepares you to answer interview and architecture questions about render tree"
+        ],
+        "layout_reflow": [
+          "Layout Reflow defines a core concept used in Rendering & Performance",
+          "It explains what layout reflow is and why it matters",
+          "It covers the main rules and mental model behind layout reflow",
+          "It shows how layout reflow behaves in real application code",
+          "It highlights common mistakes developers make with layout reflow",
+          "It compares layout reflow with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of layout reflow",
+          "It includes practical usage patterns for layout reflow in Critical Rendering Path",
+          "It helps with debugging issues connected to layout reflow",
+          "It prepares you to answer interview and architecture questions about layout reflow"
+        ],
+        "paint": [
+          "Paint defines a core concept used in Rendering & Performance",
+          "It explains what paint is and why it matters",
+          "It covers the main rules and mental model behind paint",
+          "It shows how paint behaves in real application code",
+          "It highlights common mistakes developers make with paint",
+          "It compares paint with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of paint",
+          "It includes practical usage patterns for paint in Critical Rendering Path",
+          "It helps with debugging issues connected to paint",
+          "It prepares you to answer interview and architecture questions about paint"
+        ],
+        "compositing": [
+          "Compositing defines a core concept used in Rendering & Performance",
+          "It explains what compositing is and why it matters",
+          "It covers the main rules and mental model behind compositing",
+          "It shows how compositing behaves in real application code",
+          "It highlights common mistakes developers make with compositing",
+          "It compares compositing with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of compositing",
+          "It includes practical usage patterns for compositing in Critical Rendering Path",
+          "It helps with debugging issues connected to compositing",
+          "It prepares you to answer interview and architecture questions about compositing"
+        ]
+      }
+    },
+    {
+      "Layout & Paint Optimization": {
+        "avoid_layout_thrashing": [
+          "Avoid Layout Thrashing defines a core concept used in Rendering & Performance",
+          "It explains what avoid layout thrashing is and why it matters",
+          "It covers the main rules and mental model behind avoid layout thrashing",
+          "It shows how avoid layout thrashing behaves in real application code",
+          "It highlights common mistakes developers make with avoid layout thrashing",
+          "It compares avoid layout thrashing with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of avoid layout thrashing",
+          "It includes practical usage patterns for avoid layout thrashing in Layout & Paint Optimization",
+          "It helps with debugging issues connected to avoid layout thrashing",
+          "It prepares you to answer interview and architecture questions about avoid layout thrashing"
+        ],
+        "batch_dom_updates": [
+          "Batch DOM Updates defines a core concept used in Rendering & Performance",
+          "It explains what batch dom updates is and why it matters",
+          "It covers the main rules and mental model behind batch dom updates",
+          "It shows how batch dom updates behaves in real application code",
+          "It highlights common mistakes developers make with batch dom updates",
+          "It compares batch dom updates with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of batch dom updates",
+          "It includes practical usage patterns for batch dom updates in Layout & Paint Optimization",
+          "It helps with debugging issues connected to batch dom updates",
+          "It prepares you to answer interview and architecture questions about batch dom updates"
+        ],
+        "minimize_reflows": [
+          "Minimize Reflows defines a core concept used in Rendering & Performance",
+          "It explains what minimize reflows is and why it matters",
+          "It covers the main rules and mental model behind minimize reflows",
+          "It shows how minimize reflows behaves in real application code",
+          "It highlights common mistakes developers make with minimize reflows",
+          "It compares minimize reflows with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of minimize reflows",
+          "It includes practical usage patterns for minimize reflows in Layout & Paint Optimization",
+          "It helps with debugging issues connected to minimize reflows",
+          "It prepares you to answer interview and architecture questions about minimize reflows"
+        ],
+        "will_change_property": [
+          "Will Change Property defines a core concept used in Rendering & Performance",
+          "It explains what will change property is and why it matters",
+          "It covers the main rules and mental model behind will change property",
+          "It shows how will change property behaves in real application code",
+          "It highlights common mistakes developers make with will change property",
+          "It compares will change property with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of will change property",
+          "It includes practical usage patterns for will change property in Layout & Paint Optimization",
+          "It helps with debugging issues connected to will change property",
+          "It prepares you to answer interview and architecture questions about will change property"
+        ],
+        "layer_promotion": [
+          "Layer Promotion defines a core concept used in Rendering & Performance",
+          "It explains what layer promotion is and why it matters",
+          "It covers the main rules and mental model behind layer promotion",
+          "It shows how layer promotion behaves in real application code",
+          "It highlights common mistakes developers make with layer promotion",
+          "It compares layer promotion with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of layer promotion",
+          "It includes practical usage patterns for layer promotion in Layout & Paint Optimization",
+          "It helps with debugging issues connected to layer promotion",
+          "It prepares you to answer interview and architecture questions about layer promotion"
+        ]
+      }
+    },
+    {
+      "Performance Metrics": {
+        "first_contentful_paint": [
+          "First Contentful Paint defines a core concept used in Rendering & Performance",
+          "It explains what first contentful paint is and why it matters",
+          "It covers the main rules and mental model behind first contentful paint",
+          "It shows how first contentful paint behaves in real application code",
+          "It highlights common mistakes developers make with first contentful paint",
+          "It compares first contentful paint with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of first contentful paint",
+          "It includes practical usage patterns for first contentful paint in Performance Metrics",
+          "It helps with debugging issues connected to first contentful paint",
+          "It prepares you to answer interview and architecture questions about first contentful paint"
+        ],
+        "largest_contentful_paint": [
+          "Largest Contentful Paint defines a core concept used in Rendering & Performance",
+          "It explains what largest contentful paint is and why it matters",
+          "It covers the main rules and mental model behind largest contentful paint",
+          "It shows how largest contentful paint behaves in real application code",
+          "It highlights common mistakes developers make with largest contentful paint",
+          "It compares largest contentful paint with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of largest contentful paint",
+          "It includes practical usage patterns for largest contentful paint in Performance Metrics",
+          "It helps with debugging issues connected to largest contentful paint",
+          "It prepares you to answer interview and architecture questions about largest contentful paint"
+        ],
+        "cumulative_layout_shift": [
+          "Cumulative Layout Shift defines a core concept used in Rendering & Performance",
+          "It explains what cumulative layout shift is and why it matters",
+          "It covers the main rules and mental model behind cumulative layout shift",
+          "It shows how cumulative layout shift behaves in real application code",
+          "It highlights common mistakes developers make with cumulative layout shift",
+          "It compares cumulative layout shift with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of cumulative layout shift",
+          "It includes practical usage patterns for cumulative layout shift in Performance Metrics",
+          "It helps with debugging issues connected to cumulative layout shift",
+          "It prepares you to answer interview and architecture questions about cumulative layout shift"
+        ],
+        "time_to_interactive": [
+          "Time to Interactive defines a core concept used in Rendering & Performance",
+          "It explains what time to interactive is and why it matters",
+          "It covers the main rules and mental model behind time to interactive",
+          "It shows how time to interactive behaves in real application code",
+          "It highlights common mistakes developers make with time to interactive",
+          "It compares time to interactive with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of time to interactive",
+          "It includes practical usage patterns for time to interactive in Performance Metrics",
+          "It helps with debugging issues connected to time to interactive",
+          "It prepares you to answer interview and architecture questions about time to interactive"
+        ],
+        "web_vitals": [
+          "Web Vitals defines a core concept used in Rendering & Performance",
+          "It explains what web vitals is and why it matters",
+          "It covers the main rules and mental model behind web vitals",
+          "It shows how web vitals behaves in real application code",
+          "It highlights common mistakes developers make with web vitals",
+          "It compares web vitals with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of web vitals",
+          "It includes practical usage patterns for web vitals in Performance Metrics",
+          "It helps with debugging issues connected to web vitals",
+          "It prepares you to answer interview and architecture questions about web vitals"
+        ]
+      }
+    },
+    {
+      "Optimization Techniques": {
+        "code_splitting": [
+          "Code Splitting defines a core concept used in Rendering & Performance",
+          "It explains what code splitting is and why it matters",
+          "It covers the main rules and mental model behind code splitting",
+          "It shows how code splitting behaves in real application code",
+          "It highlights common mistakes developers make with code splitting",
+          "It compares code splitting with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of code splitting",
+          "It includes practical usage patterns for code splitting in Optimization Techniques",
+          "It helps with debugging issues connected to code splitting",
+          "It prepares you to answer interview and architecture questions about code splitting"
+        ],
+        "lazy_loading": [
+          "Lazy Loading defines a core concept used in Rendering & Performance",
+          "It explains what lazy loading is and why it matters",
+          "It covers the main rules and mental model behind lazy loading",
+          "It shows how lazy loading behaves in real application code",
+          "It highlights common mistakes developers make with lazy loading",
+          "It compares lazy loading with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of lazy loading",
+          "It includes practical usage patterns for lazy loading in Optimization Techniques",
+          "It helps with debugging issues connected to lazy loading",
+          "It prepares you to answer interview and architecture questions about lazy loading"
+        ],
+        "tree_shaking": [
+          "Tree Shaking defines a core concept used in Rendering & Performance",
+          "It explains what tree shaking is and why it matters",
+          "It covers the main rules and mental model behind tree shaking",
+          "It shows how tree shaking behaves in real application code",
+          "It highlights common mistakes developers make with tree shaking",
+          "It compares tree shaking with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of tree shaking",
+          "It includes practical usage patterns for tree shaking in Optimization Techniques",
+          "It helps with debugging issues connected to tree shaking",
+          "It prepares you to answer interview and architecture questions about tree shaking"
+        ],
+        "resource_compression": [
+          "Resource Compression defines a core concept used in Rendering & Performance",
+          "It explains what resource compression is and why it matters",
+          "It covers the main rules and mental model behind resource compression",
+          "It shows how resource compression behaves in real application code",
+          "It highlights common mistakes developers make with resource compression",
+          "It compares resource compression with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of resource compression",
+          "It includes practical usage patterns for resource compression in Optimization Techniques",
+          "It helps with debugging issues connected to resource compression",
+          "It prepares you to answer interview and architecture questions about resource compression"
+        ],
+        "image_optimization": [
+          "Image Optimization defines a core concept used in Rendering & Performance",
+          "It explains what image optimization is and why it matters",
+          "It covers the main rules and mental model behind image optimization",
+          "It shows how image optimization behaves in real application code",
+          "It highlights common mistakes developers make with image optimization",
+          "It compares image optimization with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of image optimization",
+          "It includes practical usage patterns for image optimization in Optimization Techniques",
+          "It helps with debugging issues connected to image optimization",
+          "It prepares you to answer interview and architecture questions about image optimization"
+        ]
+      }
+    }
+  ]
+}

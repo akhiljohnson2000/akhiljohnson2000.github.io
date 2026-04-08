@@ -1,0 +1,86 @@
+{
+  "order": 26,
+  "title": "Accessibility",
+  "topics": [
+    {
+      "Core Principles": {
+        "wcag_guidelines": [
+          "Define WCAG Guidelines clearly and explain where it fits within Core Principles.",
+          "Understand the core purpose of WCAG Guidelines and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to WCAG Guidelines.",
+          "Study how WCAG Guidelines works internally step by step in real application flow.",
+          "Compare WCAG Guidelines with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in WCAG Guidelines.",
+          "Practice WCAG Guidelines with small examples before applying it in larger Accessibility projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to WCAG Guidelines.",
+          "Learn how to debug, test, and validate behavior when working with WCAG Guidelines.",
+          "Be able to explain WCAG Guidelines in interviews using practical examples and tradeoffs."
+        ],
+        "perceivable_operable_understandable_robust": [
+          "Define Perceivable Operable Understandable Robust clearly and explain where it fits within Core Principles.",
+          "Understand the core purpose of Perceivable Operable Understandable Robust and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Perceivable Operable Understandable Robust.",
+          "Study how Perceivable Operable Understandable Robust works internally step by step in real application flow.",
+          "Compare Perceivable Operable Understandable Robust with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Perceivable Operable Understandable Robust.",
+          "Practice Perceivable Operable Understandable Robust with small examples before applying it in larger Accessibility projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Perceivable Operable Understandable Robust.",
+          "Learn how to debug, test, and validate behavior when working with Perceivable Operable Understandable Robust.",
+          "Be able to explain Perceivable Operable Understandable Robust in interviews using practical examples and tradeoffs."
+        ]
+      }
+    },
+    {
+      "Implementation": {
+        "aria_roles": [
+          "Define Aria Roles clearly and explain where it fits within Implementation.",
+          "Understand the core purpose of Aria Roles and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Aria Roles.",
+          "Study how Aria Roles works internally step by step in real application flow.",
+          "Compare Aria Roles with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Aria Roles.",
+          "Practice Aria Roles with small examples before applying it in larger Accessibility projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Aria Roles.",
+          "Learn how to debug, test, and validate behavior when working with Aria Roles.",
+          "Be able to explain Aria Roles in interviews using practical examples and tradeoffs."
+        ],
+        "keyboard_navigation": [
+          "Define Keyboard Navigation clearly and explain where it fits within Implementation.",
+          "Understand the core purpose of Keyboard Navigation and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Keyboard Navigation.",
+          "Study how Keyboard Navigation works internally step by step in real application flow.",
+          "Compare Keyboard Navigation with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Keyboard Navigation.",
+          "Practice Keyboard Navigation with small examples before applying it in larger Accessibility projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Keyboard Navigation.",
+          "Learn how to debug, test, and validate behavior when working with Keyboard Navigation.",
+          "Be able to explain Keyboard Navigation in interviews using practical examples and tradeoffs."
+        ],
+        "focus_management": [
+          "Define Focus Management clearly and explain where it fits within Implementation.",
+          "Understand the core purpose of Focus Management and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Focus Management.",
+          "Study how Focus Management works internally step by step in real application flow.",
+          "Compare Focus Management with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Focus Management.",
+          "Practice Focus Management with small examples before applying it in larger Accessibility projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Focus Management.",
+          "Learn how to debug, test, and validate behavior when working with Focus Management.",
+          "Be able to explain Focus Management in interviews using practical examples and tradeoffs."
+        ],
+        "screen_readers": [
+          "Define Screen Readers clearly and explain where it fits within Implementation.",
+          "Understand the core purpose of Screen Readers and the problem it is meant to solve.",
+          "Learn the main concepts, terminology, and mental models related to Screen Readers.",
+          "Study how Screen Readers works internally step by step in real application flow.",
+          "Compare Screen Readers with related alternatives and know when each approach is better.",
+          "Identify common implementation patterns, best practices, and typical pitfalls in Screen Readers.",
+          "Practice Screen Readers with small examples before applying it in larger Accessibility projects.",
+          "Understand performance, scalability, accessibility, or security concerns connected to Screen Readers.",
+          "Learn how to debug, test, and validate behavior when working with Screen Readers.",
+          "Be able to explain Screen Readers in interviews using practical examples and tradeoffs."
+        ]
+      }
+    }
+  ]
+}

@@ -1,0 +1,266 @@
+{
+  "order": 9,
+  "title": "DevTools & Debugging",
+  "topics": [
+    {
+      "Elements & Styling": {
+        "inspect_dom": [
+          "Inspect DOM defines a core concept used in DevTools & Debugging",
+          "It explains what inspect dom is and why it matters",
+          "It covers the main rules and mental model behind inspect dom",
+          "It shows how inspect dom behaves in real application code",
+          "It highlights common mistakes developers make with inspect dom",
+          "It compares inspect dom with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of inspect dom",
+          "It includes practical usage patterns for inspect dom in Elements & Styling",
+          "It helps with debugging issues connected to inspect dom",
+          "It prepares you to answer interview and architecture questions about inspect dom"
+        ],
+        "live_edit_styles": [
+          "Live Edit Styles defines a core concept used in DevTools & Debugging",
+          "It explains what live edit styles is and why it matters",
+          "It covers the main rules and mental model behind live edit styles",
+          "It shows how live edit styles behaves in real application code",
+          "It highlights common mistakes developers make with live edit styles",
+          "It compares live edit styles with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of live edit styles",
+          "It includes practical usage patterns for live edit styles in Elements & Styling",
+          "It helps with debugging issues connected to live edit styles",
+          "It prepares you to answer interview and architecture questions about live edit styles"
+        ],
+        "css_debugging": [
+          "CSS Debugging defines a core concept used in DevTools & Debugging",
+          "It explains what css debugging is and why it matters",
+          "It covers the main rules and mental model behind css debugging",
+          "It shows how css debugging behaves in real application code",
+          "It highlights common mistakes developers make with css debugging",
+          "It compares css debugging with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of css debugging",
+          "It includes practical usage patterns for css debugging in Elements & Styling",
+          "It helps with debugging issues connected to css debugging",
+          "It prepares you to answer interview and architecture questions about css debugging"
+        ],
+        "layout_inspection": [
+          "Layout Inspection defines a core concept used in DevTools & Debugging",
+          "It explains what layout inspection is and why it matters",
+          "It covers the main rules and mental model behind layout inspection",
+          "It shows how layout inspection behaves in real application code",
+          "It highlights common mistakes developers make with layout inspection",
+          "It compares layout inspection with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of layout inspection",
+          "It includes practical usage patterns for layout inspection in Elements & Styling",
+          "It helps with debugging issues connected to layout inspection",
+          "It prepares you to answer interview and architecture questions about layout inspection"
+        ]
+      }
+    },
+    {
+      "Console & Debugging": {
+        "console_methods": [
+          "Console Methods defines a core concept used in DevTools & Debugging",
+          "It explains what console methods is and why it matters",
+          "It covers the main rules and mental model behind console methods",
+          "It shows how console methods behaves in real application code",
+          "It highlights common mistakes developers make with console methods",
+          "It compares console methods with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of console methods",
+          "It includes practical usage patterns for console methods in Console & Debugging",
+          "It helps with debugging issues connected to console methods",
+          "It prepares you to answer interview and architecture questions about console methods"
+        ],
+        "breakpoints": [
+          "Breakpoints defines a core concept used in DevTools & Debugging",
+          "It explains what breakpoints is and why it matters",
+          "It covers the main rules and mental model behind breakpoints",
+          "It shows how breakpoints behaves in real application code",
+          "It highlights common mistakes developers make with breakpoints",
+          "It compares breakpoints with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of breakpoints",
+          "It includes practical usage patterns for breakpoints in Console & Debugging",
+          "It helps with debugging issues connected to breakpoints",
+          "It prepares you to answer interview and architecture questions about breakpoints"
+        ],
+        "watch_expressions": [
+          "Watch Expressions defines a core concept used in DevTools & Debugging",
+          "It explains what watch expressions is and why it matters",
+          "It covers the main rules and mental model behind watch expressions",
+          "It shows how watch expressions behaves in real application code",
+          "It highlights common mistakes developers make with watch expressions",
+          "It compares watch expressions with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of watch expressions",
+          "It includes practical usage patterns for watch expressions in Console & Debugging",
+          "It helps with debugging issues connected to watch expressions",
+          "It prepares you to answer interview and architecture questions about watch expressions"
+        ],
+        "step_over_into_out": [
+          "Step Over Into Out defines a core concept used in DevTools & Debugging",
+          "It explains what step over into out is and why it matters",
+          "It covers the main rules and mental model behind step over into out",
+          "It shows how step over into out behaves in real application code",
+          "It highlights common mistakes developers make with step over into out",
+          "It compares step over into out with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of step over into out",
+          "It includes practical usage patterns for step over into out in Console & Debugging",
+          "It helps with debugging issues connected to step over into out",
+          "It prepares you to answer interview and architecture questions about step over into out"
+        ]
+      }
+    },
+    {
+      "Network Debugging": {
+        "request_inspection": [
+          "Request Inspection defines a core concept used in DevTools & Debugging",
+          "It explains what request inspection is and why it matters",
+          "It covers the main rules and mental model behind request inspection",
+          "It shows how request inspection behaves in real application code",
+          "It highlights common mistakes developers make with request inspection",
+          "It compares request inspection with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of request inspection",
+          "It includes practical usage patterns for request inspection in Network Debugging",
+          "It helps with debugging issues connected to request inspection",
+          "It prepares you to answer interview and architecture questions about request inspection"
+        ],
+        "headers_analysis": [
+          "Headers Analysis defines a core concept used in DevTools & Debugging",
+          "It explains what headers analysis is and why it matters",
+          "It covers the main rules and mental model behind headers analysis",
+          "It shows how headers analysis behaves in real application code",
+          "It highlights common mistakes developers make with headers analysis",
+          "It compares headers analysis with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of headers analysis",
+          "It includes practical usage patterns for headers analysis in Network Debugging",
+          "It helps with debugging issues connected to headers analysis",
+          "It prepares you to answer interview and architecture questions about headers analysis"
+        ],
+        "payload_debugging": [
+          "Payload Debugging defines a core concept used in DevTools & Debugging",
+          "It explains what payload debugging is and why it matters",
+          "It covers the main rules and mental model behind payload debugging",
+          "It shows how payload debugging behaves in real application code",
+          "It highlights common mistakes developers make with payload debugging",
+          "It compares payload debugging with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of payload debugging",
+          "It includes practical usage patterns for payload debugging in Network Debugging",
+          "It helps with debugging issues connected to payload debugging",
+          "It prepares you to answer interview and architecture questions about payload debugging"
+        ],
+        "waterfall_analysis": [
+          "Waterfall Analysis defines a core concept used in DevTools & Debugging",
+          "It explains what waterfall analysis is and why it matters",
+          "It covers the main rules and mental model behind waterfall analysis",
+          "It shows how waterfall analysis behaves in real application code",
+          "It highlights common mistakes developers make with waterfall analysis",
+          "It compares waterfall analysis with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of waterfall analysis",
+          "It includes practical usage patterns for waterfall analysis in Network Debugging",
+          "It helps with debugging issues connected to waterfall analysis",
+          "It prepares you to answer interview and architecture questions about waterfall analysis"
+        ]
+      }
+    },
+    {
+      "Performance Profiling": {
+        "flame_chart": [
+          "Flame Chart defines a core concept used in DevTools & Debugging",
+          "It explains what flame chart is and why it matters",
+          "It covers the main rules and mental model behind flame chart",
+          "It shows how flame chart behaves in real application code",
+          "It highlights common mistakes developers make with flame chart",
+          "It compares flame chart with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of flame chart",
+          "It includes practical usage patterns for flame chart in Performance Profiling",
+          "It helps with debugging issues connected to flame chart",
+          "It prepares you to answer interview and architecture questions about flame chart"
+        ],
+        "long_tasks": [
+          "Long Tasks defines a core concept used in DevTools & Debugging",
+          "It explains what long tasks is and why it matters",
+          "It covers the main rules and mental model behind long tasks",
+          "It shows how long tasks behaves in real application code",
+          "It highlights common mistakes developers make with long tasks",
+          "It compares long tasks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of long tasks",
+          "It includes practical usage patterns for long tasks in Performance Profiling",
+          "It helps with debugging issues connected to long tasks",
+          "It prepares you to answer interview and architecture questions about long tasks"
+        ],
+        "fps_monitoring": [
+          "Fps Monitoring defines a core concept used in DevTools & Debugging",
+          "It explains what fps monitoring is and why it matters",
+          "It covers the main rules and mental model behind fps monitoring",
+          "It shows how fps monitoring behaves in real application code",
+          "It highlights common mistakes developers make with fps monitoring",
+          "It compares fps monitoring with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of fps monitoring",
+          "It includes practical usage patterns for fps monitoring in Performance Profiling",
+          "It helps with debugging issues connected to fps monitoring",
+          "It prepares you to answer interview and architecture questions about fps monitoring"
+        ],
+        "cpu_profiling": [
+          "Cpu Profiling defines a core concept used in DevTools & Debugging",
+          "It explains what cpu profiling is and why it matters",
+          "It covers the main rules and mental model behind cpu profiling",
+          "It shows how cpu profiling behaves in real application code",
+          "It highlights common mistakes developers make with cpu profiling",
+          "It compares cpu profiling with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of cpu profiling",
+          "It includes practical usage patterns for cpu profiling in Performance Profiling",
+          "It helps with debugging issues connected to cpu profiling",
+          "It prepares you to answer interview and architecture questions about cpu profiling"
+        ]
+      }
+    },
+    {
+      "Memory Debugging": {
+        "heap_snapshots": [
+          "Heap Snapshots defines a core concept used in DevTools & Debugging",
+          "It explains what heap snapshots is and why it matters",
+          "It covers the main rules and mental model behind heap snapshots",
+          "It shows how heap snapshots behaves in real application code",
+          "It highlights common mistakes developers make with heap snapshots",
+          "It compares heap snapshots with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of heap snapshots",
+          "It includes practical usage patterns for heap snapshots in Memory Debugging",
+          "It helps with debugging issues connected to heap snapshots",
+          "It prepares you to answer interview and architecture questions about heap snapshots"
+        ],
+        "memory_leaks": [
+          "Memory Leaks defines a core concept used in DevTools & Debugging",
+          "It explains what memory leaks is and why it matters",
+          "It covers the main rules and mental model behind memory leaks",
+          "It shows how memory leaks behaves in real application code",
+          "It highlights common mistakes developers make with memory leaks",
+          "It compares memory leaks with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of memory leaks",
+          "It includes practical usage patterns for memory leaks in Memory Debugging",
+          "It helps with debugging issues connected to memory leaks",
+          "It prepares you to answer interview and architecture questions about memory leaks"
+        ],
+        "detached_dom_nodes": [
+          "Detached DOM Nodes defines a core concept used in DevTools & Debugging",
+          "It explains what detached dom nodes is and why it matters",
+          "It covers the main rules and mental model behind detached dom nodes",
+          "It shows how detached dom nodes behaves in real application code",
+          "It highlights common mistakes developers make with detached dom nodes",
+          "It compares detached dom nodes with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of detached dom nodes",
+          "It includes practical usage patterns for detached dom nodes in Memory Debugging",
+          "It helps with debugging issues connected to detached dom nodes",
+          "It prepares you to answer interview and architecture questions about detached dom nodes"
+        ],
+        "retainers": [
+          "Retainers defines a core concept used in DevTools & Debugging",
+          "It explains what retainers is and why it matters",
+          "It covers the main rules and mental model behind retainers",
+          "It shows how retainers behaves in real application code",
+          "It highlights common mistakes developers make with retainers",
+          "It compares retainers with closely related concepts when relevant",
+          "It describes performance, readability, or maintainability impact of retainers",
+          "It includes practical usage patterns for retainers in Memory Debugging",
+          "It helps with debugging issues connected to retainers",
+          "It prepares you to answer interview and architecture questions about retainers"
+        ]
+      }
+    }
+  ]
+}
