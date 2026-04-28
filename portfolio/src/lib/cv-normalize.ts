@@ -143,6 +143,7 @@ function mergeProjects(raw: unknown): CvProject[] {
     const fb = d[idx] ?? d[d.length - 1] ?? {
       project_name: '',
       description: '',
+      responsibilities: [''],
       technologies: [''],
       role: '',
       start_date: '',
@@ -151,10 +152,14 @@ function mergeProjects(raw: unknown): CvProject[] {
     }
     if (!item || typeof item !== 'object') return { ...fb }
     const o = item as Record<string, unknown>
+    const resp = Array.isArray(o.responsibilities)
+      ? o.responsibilities.map((s) => String(s))
+      : fb.responsibilities
     const tech = Array.isArray(o.technologies) ? o.technologies.map((s) => String(s)) : fb.technologies
     return {
       project_name: String(o.project_name ?? fb.project_name),
       description: String(o.description ?? fb.description),
+      responsibilities: resp.length ? resp : [''],
       technologies: tech.length ? tech : [''],
       role: String(o.role ?? fb.role),
       start_date: String(o.start_date ?? fb.start_date),

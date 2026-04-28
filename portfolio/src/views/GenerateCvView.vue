@@ -193,25 +193,16 @@ function buildPdfFilename(fullName: string) {
   return `${base}_${d}-${m}-${y}_${hh}-${mm}.pdf`
 }
 
-function mkLinkRuns(basics: CvResume['basics']) {
-  const entries = [
-    { label: 'LinkedIn', url: basics.linkedin_url?.trim() || '' },
-    { label: 'GitHub', url: basics.github_url?.trim() || '' },
-    { label: 'Portfolio', url: basics.portfolio_url?.trim() || '' },
-  ].filter((item) => item.url)
-
-  // pdfmake supports mixed text fragments: [{text:'LinkedIn', link:'...'}, ' | ', ...]
-  const runs: Array<Record<string, unknown>> = []
-  entries.forEach((item, idx) => {
-    if (idx > 0) runs.push({ text: ' | ' })
-    runs.push({
-      text: item.label,
-      link: item.url,
+function mkLinkLines(basics: CvResume['basics']) {
+  return [basics.linkedin_url?.trim(), basics.github_url?.trim(), basics.portfolio_url?.trim()]
+    .filter((url): url is string => !!url)
+    .map((url) => ({
+      text: url,
+      link: url,
       color: '#1e3a8a',
       decoration: 'underline',
-    })
-  })
-  return runs
+      margin: [0, 0, 0, 1],
+    }))
 }
 
 function nonEmptyLines(values: string[]) {
@@ -271,12 +262,10 @@ function buildPdfDocDefinition(data: CvResume): any {
     .filter(Boolean)
     .join(' | ')
 
-  const linksLine = mkLinkRuns(b)
-  // Single "address" line: email/phone/location first, then clickable link labels.
-  const addressAndLinksRuns: Array<Record<string, unknown>> = []
-  if (contactLine) addressAndLinksRuns.push({ text: contactLine })
-  if (contactLine && linksLine.length) addressAndLinksRuns.push({ text: ' | ' })
-  addressAndLinksRuns.push(...linksLine)
+  const linkLines = mkLinkLines(b)
+  const headerMetaBlocks: any[] = []
+  if (contactLine) headerMetaBlocks.push({ text: contactLine, margin: [0, 0, 0, linkLines.length ? 1 : 8] })
+  if (linkLines.length) headerMetaBlocks.push({ stack: linkLines, margin: [0, 0, 0, 8] })
 
   const summaryParagraphs = b.summary
     .split(/\n\s*\n/)
@@ -359,6 +348,7 @@ function buildPdfDocDefinition(data: CvResume): any {
 
   const projectBlocks = data.projects
     .map((project) => {
+      const responsibilities = nonEmptyLines(project.responsibilities ?? [])
       const details = [
         [project.role, [project.start_date, project.end_date].filter(Boolean).join(' — ')]
           .filter(Boolean)
@@ -369,13 +359,17 @@ function buildPdfDocDefinition(data: CvResume): any {
           : '',
         project.project_url?.trim() ? `URL: ${project.project_url.trim()}` : '',
       ].filter(Boolean)
-      return [
-        { text: project.project_name?.trim(), bold: true, margin: [0, 0, 0, 1] },
-        { text: details.join('\n'), margin: [0, 0, 0, 6] },
-      ]
+      const blocks: any[] = [{ text: project.project_name?.trim(), bold: true, margin: [0, 0, 0, 1] }]
+      if (details.length) {
+        blocks.push({ text: details.join('\n'), margin: [0, 0, 0, responsibilities.length ? 2 : 6] })
+      }
+      if (responsibilities.length) {
+        blocks.push({ ul: responsibilities, margin: [10, 0, 0, 6] })
+      }
+      return blocks
     })
     .flat()
-    .filter((item) => item.text)
+    .filter((item) => item.text || item.ul)
 
   return {
     pageSize: 'A4',
@@ -394,7 +388,7 @@ function buildPdfDocDefinition(data: CvResume): any {
     content: [
       { text: b.full_name || 'Your Name', style: 'name' },
       ...(b.headline?.trim() ? [{ text: b.headline.trim(), style: 'headline' }] : []),
-      ...(addressAndLinksRuns.length ? [{ text: addressAndLinksRuns, margin: [0, 0, 0, 8] }] : []),
+      ...headerMetaBlocks,
       ...(summaryParagraphs.length
         ? [
             pdfSectionHeader('SUMMARY'),

@@ -24,6 +24,16 @@
           "rendering behavior basics",
           "debug structure issues"
         ],
+        "meta_tags_and_seo": [
+          "meta charset viewport",
+          "meta description usage",
+          "og tags basics",
+          "twitter cards basics",
+          "seo metadata impact",
+          "common meta mistakes",
+          "crawler behavior basics",
+          "interview seo points"
+        ],
         "html_parsing_algorithm": [
           "html parsing flow",
           "tokenization process",
@@ -43,6 +53,26 @@
           "performance dom size",
           "debug dom issues",
           "interview questions focus"
+        ],
+        "cssom_construction": [
+          "css parsing flow",
+          "cssom tree creation",
+          "style rule matching",
+          "cascade priority basics",
+          "blocking css behavior",
+          "common cssom issues",
+          "render dependency basics",
+          "performance impact css"
+        ],
+        "render_tree_construction": [
+          "dom cssom merge",
+          "render tree creation",
+          "visible nodes only",
+          "style computation basics",
+          "layout dependency flow",
+          "common render issues",
+          "debug render tree",
+          "interview focus points"
         ],
         "blocking_vs_non_blocking_parsing": [
           "blocking resources behavior",
@@ -93,6 +123,16 @@
           "performance optimization basics",
           "common crp issues",
           "interview concepts focus"
+        ],
+        "preload_prefetch_preconnect": [
+          "resource hints basics",
+          "preload critical assets",
+          "prefetch future resources",
+          "preconnect dns tcp",
+          "font loading optimization",
+          "network priority impact",
+          "common misuse issues",
+          "performance gains basics"
         ]
       }
     },
@@ -148,6 +188,26 @@
           "accessibility benefits",
           "interview key points"
         ],
+        "forms_and_inputs_semantics": [
+          "form structure basics",
+          "input types usage",
+          "label association rules",
+          "fieldset legend usage",
+          "validation attributes basics",
+          "accessibility form inputs",
+          "common form mistakes",
+          "interview form topics"
+        ],
+        "media_semantics": [
+          "audio video elements",
+          "source track usage",
+          "fallback content basics",
+          "media accessibility captions",
+          "lazy loading media",
+          "performance media loading",
+          "common misuse issues",
+          "interview media basics"
+        ],
         "importance_for_seo": [
           "semantic html for seo",
           "search engine parsing",
@@ -167,6 +227,16 @@
           "navigation clarity basics",
           "user experience impact",
           "interview a11y focus"
+        ],
+        "aria_roles_and_attributes": [
+          "aria roles basics",
+          "aria attributes usage",
+          "aria labels descriptions",
+          "aria live regions",
+          "when to use aria",
+          "avoid overuse aria",
+          "accessibility improvements",
+          "debug a11y issues"
         ],
         "landmark_roles": [
           "aria landmark roles",

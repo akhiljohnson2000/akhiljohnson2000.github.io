@@ -65,6 +65,11 @@
     {
       "project_name": "Project Name",
       "description": "Briefly describe the project, your role, and impact.",
+      "responsibilities": [
+        "Describe your contribution to this project.",
+        "Mention a technical challenge you solved.",
+        "Add measurable impact if possible."
+      ],
       "technologies": [
         "Tech 1",
         "Tech 2",

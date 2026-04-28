@@ -33,6 +33,56 @@
           "override with explicit types",
           "const vs let inference",
           "debug inference issues"
+        ],
+        "enums": [
+          "enum basics",
+          "numeric vs string enums",
+          "const enum usage",
+          "reverse mapping behavior",
+          "enum vs union types",
+          "runtime vs compile impact",
+          "keyof typeof enums",
+          "avoid overuse patterns"
+        ],
+        "type_aliases": [
+          "type alias basics",
+          "primitive object unions",
+          "alias vs interface diff",
+          "reusability patterns",
+          "naming conventions",
+          "recursive aliases",
+          "combine with unions",
+          "debug alias issues"
+        ],
+        "interfaces": [
+          "interface basics",
+          "object shape definition",
+          "optional readonly props",
+          "interface extension",
+          "implements classes usage",
+          "declaration merging",
+          "interface vs type diff",
+          "debug interface issues"
+        ],
+        "functions": [
+          "function typing basics",
+          "parameter return types",
+          "optional default params",
+          "rest params usage",
+          "overload signatures",
+          "this typing basics",
+          "arrow vs function types",
+          "debug function typing"
+        ],
+        "arrays_tuples": [
+          "array type basics",
+          "tuple fixed length",
+          "readonly arrays tuples",
+          "spread rest usage",
+          "tuple labels usage",
+          "heterogeneous arrays",
+          "index access types",
+          "debug array issues"
         ]
       }
     },
@@ -77,6 +127,46 @@
           "recursive conditionals",
           "avoid deep chains",
           "debug conditional results"
+        ],
+        "type_narrowing": [
+          "typeof instanceof checks",
+          "in operator usage",
+          "truthy falsy narrowing",
+          "user defined type guards",
+          "assertion functions usage",
+          "control flow analysis",
+          "never unreachable checks",
+          "debug narrowing issues"
+        ],
+        "type_assertions": [
+          "as syntax basics",
+          "angle bracket syntax",
+          "non null assertion",
+          "const assertion usage",
+          "avoid unsafe assertions",
+          "DOM casting patterns",
+          "narrow vs assert diff",
+          "debug assertion misuse"
+        ],
+        "utility_types": [
+          "partial required readonly",
+          "pick omit record",
+          "exclude extract usage",
+          "returntype parameters",
+          "instance type usage",
+          "awaited promise unwrap",
+          "custom utility creation",
+          "debug utility misuse"
+        ],
+        "indexed_access": [
+          "T[K] basics",
+          "keyof with indexing",
+          "nested access patterns",
+          "safe property access",
+          "dynamic key handling",
+          "array element access",
+          "combine with generics",
+          "debug index errors"
         ]
       }
     },
@@ -111,6 +201,16 @@
           "classes interfaces usage",
           "hidden inference issues",
           "debug default resolution"
+        ],
+        "generic_classes_interfaces": [
+          "generic class basics",
+          "generic interface usage",
+          "type parameter scope",
+          "reuse across layers",
+          "constraints in classes",
+          "default types usage",
+          "composition patterns",
+          "debug generic classes"
         ]
       }
     }

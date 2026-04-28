@@ -49,6 +49,7 @@ export interface CvProject {
   project_name: string
   description: string
   technologies: string[]
+  responsibilities: string[]
   role: string
   start_date: string
   end_date: string

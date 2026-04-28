@@ -65,6 +65,7 @@ function newProject(): CvProject {
   return clone(d.projects[0] ?? {
     project_name: '',
     description: '',
+    responsibilities: [''],
     technologies: [''],
     role: '',
     start_date: '',
@@ -139,6 +140,16 @@ function removeTech(projectIdx: number, techIdx: number) {
   const t = cv.value.projects[projectIdx].technologies
   t.splice(techIdx, 1)
   if (t.length === 0) t.push('')
+}
+
+function addProjectResponsibility(projectIdx: number) {
+  cv.value.projects[projectIdx].responsibilities.push('')
+}
+
+function removeProjectResponsibility(projectIdx: number, lineIdx: number) {
+  const r = cv.value.projects[projectIdx].responsibilities
+  r.splice(lineIdx, 1)
+  if (r.length === 0) r.push('')
 }
 
 function addAchievement() {
@@ -440,6 +451,34 @@ function removeKeyword(i: number) {
           <div class="space-y-1.5">
             <label class="text-xs font-medium text-muted-foreground">End</label>
             <Input v-model="proj.end_date" />
+          </div>
+        </div>
+        <div class="space-y-2">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <span class="text-xs font-medium text-muted-foreground">Responsibilities</span>
+            <Button type="button" variant="outline" size="sm" @click="addProjectResponsibility(pi)">
+              <Plus class="h-4 w-4" aria-hidden="true" />
+              Add line
+            </Button>
+          </div>
+          <div v-for="(_, ri) in proj.responsibilities" :key="'pr-' + pi + '-' + ri" class="flex gap-2">
+            <Textarea
+              v-model="proj.responsibilities[ri]"
+              autosize
+              :rows="1"
+              class="!min-h-0 flex-1 font-sans text-sm leading-normal"
+              placeholder="Project responsibility"
+            />
+            <Button
+              type="button"
+              variant="outline"
+              size="icon"
+              class="h-10 w-10 shrink-0 self-start"
+              aria-label="Remove project responsibility"
+              @click="removeProjectResponsibility(pi, ri)"
+            >
+              <Trash2 class="h-4 w-4" aria-hidden="true" />
+            </Button>
           </div>
         </div>
         <div class="space-y-2">
