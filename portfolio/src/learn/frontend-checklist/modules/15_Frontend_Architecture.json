@@ -5,208 +5,290 @@
     {
       "Project Structure": {
         "feature_based_structure": [
-          "Feature Based Structure defines a core concept used in Frontend Architecture",
-          "It explains what feature based structure is and why it matters",
-          "It covers the main rules and mental model behind feature based structure",
-          "It shows how feature based structure behaves in real application code",
-          "It highlights common mistakes developers make with feature based structure",
-          "It compares feature based structure with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of feature based structure",
-          "It includes practical usage patterns for feature based structure in Project Structure",
-          "It helps with debugging issues connected to feature based structure",
-          "It prepares you to answer interview and architecture questions about feature based structure"
+          "group by feature modules",
+          "encapsulate feature logic",
+          "scalable folder organization",
+          "avoid cross feature coupling",
+          "co locate related files",
+          "improve maintainability clarity",
+          "supports lazy loading",
+          "debug structure issues"
         ],
         "layered_architecture": [
-          "Layered Architecture defines a core concept used in Frontend Architecture",
-          "It explains what layered architecture is and why it matters",
-          "It covers the main rules and mental model behind layered architecture",
-          "It shows how layered architecture behaves in real application code",
-          "It highlights common mistakes developers make with layered architecture",
-          "It compares layered architecture with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of layered architecture",
-          "It includes practical usage patterns for layered architecture in Project Structure",
-          "It helps with debugging issues connected to layered architecture",
-          "It prepares you to answer interview and architecture questions about layered architecture"
+          "separate UI business data",
+          "presentation domain data layers",
+          "clear responsibility boundaries",
+          "reduce tight coupling",
+          "easier testing isolation",
+          "scalable large apps",
+          "maintain clean dependencies",
+          "debug layer violations"
         ],
         "separation_of_concerns": [
-          "Separation of Concerns defines a core concept used in Frontend Architecture",
-          "It explains what separation of concerns is and why it matters",
-          "It covers the main rules and mental model behind separation of concerns",
-          "It shows how separation of concerns behaves in real application code",
-          "It highlights common mistakes developers make with separation of concerns",
-          "It compares separation of concerns with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of separation of concerns",
-          "It includes practical usage patterns for separation of concerns in Project Structure",
-          "It helps with debugging issues connected to separation of concerns",
-          "It prepares you to answer interview and architecture questions about separation of concerns"
+          "separate logic responsibilities",
+          "UI vs business logic",
+          "avoid mixed concerns code",
+          "improve readability maintainability",
+          "modular code structure",
+          "test components independently",
+          "reduce side effects",
+          "debug concern leaks"
         ],
         "scalable_folder_structure": [
-          "Scalable Folder Structure defines a core concept used in Frontend Architecture",
-          "It explains what scalable folder structure is and why it matters",
-          "It covers the main rules and mental model behind scalable folder structure",
-          "It shows how scalable folder structure behaves in real application code",
-          "It highlights common mistakes developers make with scalable folder structure",
-          "It compares scalable folder structure with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of scalable folder structure",
-          "It includes practical usage patterns for scalable folder structure in Project Structure",
-          "It helps with debugging issues connected to scalable folder structure",
-          "It prepares you to answer interview and architecture questions about scalable folder structure"
+          "consistent naming conventions",
+          "group by domain feature",
+          "avoid flat structures",
+          "modular folder hierarchy",
+          "support team scalability",
+          "easy navigation codebase",
+          "maintain clean imports",
+          "debug structure issues"
         ]
       }
     },
     {
       "Design Patterns": {
         "component_patterns": [
-          "Component Patterns defines a core concept used in Frontend Architecture",
-          "It explains what component patterns is and why it matters",
-          "It covers the main rules and mental model behind component patterns",
-          "It shows how component patterns behaves in real application code",
-          "It highlights common mistakes developers make with component patterns",
-          "It compares component patterns with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of component patterns",
-          "It includes practical usage patterns for component patterns in Design Patterns",
-          "It helps with debugging issues connected to component patterns",
-          "It prepares you to answer interview and architecture questions about component patterns"
+          "reuse component patterns",
+          "composition over inheritance",
+          "slot props patterns",
+          "higher order components",
+          "render props usage",
+          "encapsulate UI logic",
+          "improve reusability",
+          "debug pattern misuse"
         ],
         "container_presentational_pattern": [
-          "Container Presentational Pattern defines a core concept used in Frontend Architecture",
-          "It explains what container presentational pattern is and why it matters",
-          "It covers the main rules and mental model behind container presentational pattern",
-          "It shows how container presentational pattern behaves in real application code",
-          "It highlights common mistakes developers make with container presentational pattern",
-          "It compares container presentational pattern with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of container presentational pattern",
-          "It includes practical usage patterns for container presentational pattern in Design Patterns",
-          "It helps with debugging issues connected to container presentational pattern",
-          "It prepares you to answer interview and architecture questions about container presentational pattern"
+          "separate logic UI layers",
+          "container handles state",
+          "presentational UI only",
+          "improve testability",
+          "reduce component complexity",
+          "reuse UI components",
+          "clear data flow",
+          "debug separation issues"
         ],
         "hooks_pattern": [
-          "Hooks Pattern defines a core concept used in Frontend Architecture",
-          "It explains what hooks pattern is and why it matters",
-          "It covers the main rules and mental model behind hooks pattern",
-          "It shows how hooks pattern behaves in real application code",
-          "It highlights common mistakes developers make with hooks pattern",
-          "It compares hooks pattern with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of hooks pattern",
-          "It includes practical usage patterns for hooks pattern in Design Patterns",
-          "It helps with debugging issues connected to hooks pattern",
-          "It prepares you to answer interview and architecture questions about hooks pattern"
+          "extract reusable logic",
+          "custom hooks patterns",
+          "share stateful logic",
+          "avoid duplication code",
+          "encapsulate side effects",
+          "improve readability",
+          "test hooks independently",
+          "debug hook issues"
         ],
         "dependency_injection": [
-          "Dependency Injection defines a core concept used in Frontend Architecture",
-          "It explains what dependency injection is and why it matters",
-          "It covers the main rules and mental model behind dependency injection",
-          "It shows how dependency injection behaves in real application code",
-          "It highlights common mistakes developers make with dependency injection",
-          "It compares dependency injection with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of dependency injection",
-          "It includes practical usage patterns for dependency injection in Design Patterns",
-          "It helps with debugging issues connected to dependency injection",
-          "It prepares you to answer interview and architecture questions about dependency injection"
+          "inject dependencies externally",
+          "reduce tight coupling",
+          "improve testability mocking",
+          "use service abstractions",
+          "manage dependency lifecycle",
+          "flexible architecture design",
+          "token based injection",
+          "debug DI issues"
         ]
       }
     },
     {
       "Code Quality": {
         "linting": [
-          "Linting defines a core concept used in Frontend Architecture",
-          "It explains what linting is and why it matters",
-          "It covers the main rules and mental model behind linting",
-          "It shows how linting behaves in real application code",
-          "It highlights common mistakes developers make with linting",
-          "It compares linting with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of linting",
-          "It includes practical usage patterns for linting in Code Quality",
-          "It helps with debugging issues connected to linting",
-          "It prepares you to answer interview and architecture questions about linting"
+          "eslint rules enforcement",
+          "catch code issues early",
+          "maintain coding standards",
+          "auto fix simple issues",
+          "prevent common mistakes",
+          "integrate CI pipelines",
+          "custom rule configuration",
+          "debug lint errors"
         ],
         "formatting": [
-          "Formatting defines a core concept used in Frontend Architecture",
-          "It explains what formatting is and why it matters",
-          "It covers the main rules and mental model behind formatting",
-          "It shows how formatting behaves in real application code",
-          "It highlights common mistakes developers make with formatting",
-          "It compares formatting with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of formatting",
-          "It includes practical usage patterns for formatting in Code Quality",
-          "It helps with debugging issues connected to formatting",
-          "It prepares you to answer interview and architecture questions about formatting"
+          "prettier code formatting",
+          "consistent code style",
+          "auto format on save",
+          "reduce style debates",
+          "improve readability",
+          "team standardization",
+          "integrate editor tools",
+          "debug formatting conflicts"
         ],
         "code_reviews": [
-          "Code Reviews defines a core concept used in Frontend Architecture",
-          "It explains what code reviews is and why it matters",
-          "It covers the main rules and mental model behind code reviews",
-          "It shows how code reviews behaves in real application code",
-          "It highlights common mistakes developers make with code reviews",
-          "It compares code reviews with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of code reviews",
-          "It includes practical usage patterns for code reviews in Code Quality",
-          "It helps with debugging issues connected to code reviews",
-          "It prepares you to answer interview and architecture questions about code reviews"
+          "peer review process",
+          "ensure code quality",
+          "share knowledge team",
+          "catch bugs early",
+          "enforce standards rules",
+          "improve maintainability",
+          "review design decisions",
+          "debug review issues"
         ],
         "clean_code_principles": [
-          "Clean Code Principles defines a core concept used in Frontend Architecture",
-          "It explains what clean code principles is and why it matters",
-          "It covers the main rules and mental model behind clean code principles",
-          "It shows how clean code principles behaves in real application code",
-          "It highlights common mistakes developers make with clean code principles",
-          "It compares clean code principles with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of clean code principles",
-          "It includes practical usage patterns for clean code principles in Code Quality",
-          "It helps with debugging issues connected to clean code principles",
-          "It prepares you to answer interview and architecture questions about clean code principles"
+          "meaningful naming conventions",
+          "small focused functions",
+          "avoid duplication DRY",
+          "single responsibility principle",
+          "readable maintainable code",
+          "refactor regularly",
+          "avoid complex logic",
+          "debug messy code"
         ]
       }
     },
     {
       "Scalability": {
         "modular_design": [
-          "Modular Design defines a core concept used in Frontend Architecture",
-          "It explains what modular design is and why it matters",
-          "It covers the main rules and mental model behind modular design",
-          "It shows how modular design behaves in real application code",
-          "It highlights common mistakes developers make with modular design",
-          "It compares modular design with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of modular design",
-          "It includes practical usage patterns for modular design in Scalability",
-          "It helps with debugging issues connected to modular design",
-          "It prepares you to answer interview and architecture questions about modular design"
+          "split app into modules",
+          "encapsulate functionality units",
+          "independent module development",
+          "reduce inter module dependency",
+          "easy scaling features",
+          "improve maintainability",
+          "support lazy loading",
+          "debug module issues"
         ],
         "reusability": [
-          "Reusability defines a core concept used in Frontend Architecture",
-          "It explains what reusability is and why it matters",
-          "It covers the main rules and mental model behind reusability",
-          "It shows how reusability behaves in real application code",
-          "It highlights common mistakes developers make with reusability",
-          "It compares reusability with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of reusability",
-          "It includes practical usage patterns for reusability in Scalability",
-          "It helps with debugging issues connected to reusability",
-          "It prepares you to answer interview and architecture questions about reusability"
+          "build reusable components",
+          "share common logic modules",
+          "avoid duplicate code",
+          "design generic utilities",
+          "increase development speed",
+          "maintain consistency UI",
+          "optimize maintenance effort",
+          "debug reuse issues"
         ],
         "shared_libraries": [
-          "Shared Libraries defines a core concept used in Frontend Architecture",
-          "It explains what shared libraries is and why it matters",
-          "It covers the main rules and mental model behind shared libraries",
-          "It shows how shared libraries behaves in real application code",
-          "It highlights common mistakes developers make with shared libraries",
-          "It compares shared libraries with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of shared libraries",
-          "It includes practical usage patterns for shared libraries in Scalability",
-          "It helps with debugging issues connected to shared libraries",
-          "It prepares you to answer interview and architecture questions about shared libraries"
+          "centralize shared utilities",
+          "common components library",
+          "version control libraries",
+          "reuse across projects",
+          "reduce duplication effort",
+          "manage dependencies centrally",
+          "improve consistency",
+          "debug library issues"
         ],
         "design_systems": [
-          "Design Systems defines a core concept used in Frontend Architecture",
-          "It explains what design systems is and why it matters",
-          "It covers the main rules and mental model behind design systems",
-          "It shows how design systems behaves in real application code",
-          "It highlights common mistakes developers make with design systems",
-          "It compares design systems with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of design systems",
-          "It includes practical usage patterns for design systems in Scalability",
-          "It helps with debugging issues connected to design systems",
-          "It prepares you to answer interview and architecture questions about design systems"
+          "standard UI components",
+          "consistent design language",
+          "reusable style tokens",
+          "component documentation",
+          "improve UX consistency",
+          "scale across teams",
+          "integrate with tooling",
+          "debug design issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "props context state flow",
+          "avoid deep prop drilling",
+          "use global store when needed",
+          "event based communication",
+          "maintain data consistency",
+          "lift state appropriately",
+          "optimize rerender scope",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "validate user inputs",
+          "sync async validation",
+          "error state handling",
+          "prevent invalid submission",
+          "use validation libraries",
+          "optimize large forms",
+          "improve UX feedback",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "init update cleanup flow",
+          "handle side effects safely",
+          "cleanup subscriptions",
+          "avoid memory leaks",
+          "framework specific hooks",
+          "control component lifecycle",
+          "optimize hook usage",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load features on demand",
+          "reduce initial bundle size",
+          "route based lazy loading",
+          "optimize performance load",
+          "split code dynamically",
+          "improve load time",
+          "prefetch preload hints",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "offline support features",
+          "service worker integration",
+          "cache static assets",
+          "background sync updates",
+          "installable web app",
+          "improve performance resilience",
+          "push notifications support",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "use devtools effectively",
+          "trace application state",
+          "analyze performance issues",
+          "network request debugging",
+          "breakpoints debugging",
+          "log errors efficiently",
+          "monitor production logs",
+          "debug complex issues"
+        ],
+        "testcase": [
+          "unit integration testing",
+          "test components logic",
+          "mock dependencies usage",
+          "automation test pipelines",
+          "coverage analysis tools",
+          "edge case testing",
+          "maintain test suites",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "code splitting strategies",
+          "memoization techniques usage",
+          "reduce unnecessary renders",
+          "optimize bundle size",
+          "performance profiling tools",
+          "efficient data fetching",
+          "use virtualization lists",
+          "debug performance issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure performance metrics",
+          "optimize load speed",
+          "improve accessibility score",
+          "SEO best practices",
+          "reduce blocking resources",
+          "optimize LCP CLS",
+          "analyze audit reports",
+          "debug performance score"
+        ],
+        "security": [
+          "prevent XSS attacks",
+          "sanitize user inputs",
+          "secure authentication flows",
+          "protect sensitive data",
+          "use HTTPS everywhere",
+          "apply CSP policies",
+          "avoid exposing secrets",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "automate build deploy pipelines",
+          "run tests before deploy",
+          "environment config handling",
+          "monitor production systems",
+          "rollback deployment strategy",
+          "CI tools integration",
+          "optimize build artifacts",
+          "debug deployment issues"
         ]
       }
     }

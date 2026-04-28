@@ -5,232 +5,310 @@
     {
       "Rendering Strategies": {
         "csr": [
-          "CSR defines a core concept used in Frontend System Design",
-          "It explains what csr is and why it matters",
-          "It covers the main rules and mental model behind csr",
-          "It shows how csr behaves in real application code",
-          "It highlights common mistakes developers make with csr",
-          "It compares csr with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of csr",
-          "It includes practical usage patterns for csr in Rendering Strategies",
-          "It helps with debugging issues connected to csr",
-          "It prepares you to answer interview and architecture questions about csr"
+          "render in browser client",
+          "heavy JS bundle load",
+          "slow initial load",
+          "fast subsequent navigation",
+          "SEO limitations issues",
+          "depends on API calls",
+          "good for dashboards apps",
+          "debug hydration issues"
         ],
         "ssr": [
-          "SSR defines a core concept used in Frontend System Design",
-          "It explains what ssr is and why it matters",
-          "It covers the main rules and mental model behind ssr",
-          "It shows how ssr behaves in real application code",
-          "It highlights common mistakes developers make with ssr",
-          "It compares ssr with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of ssr",
-          "It includes practical usage patterns for ssr in Rendering Strategies",
-          "It helps with debugging issues connected to ssr",
-          "It prepares you to answer interview and architecture questions about ssr"
+          "render on server first",
+          "faster initial paint",
+          "better SEO support",
+          "hydration required client",
+          "server load increases",
+          "cache rendered pages",
+          "good for content apps",
+          "debug SSR mismatch"
         ],
         "ssg": [
-          "SSG defines a core concept used in Frontend System Design",
-          "It explains what ssg is and why it matters",
-          "It covers the main rules and mental model behind ssg",
-          "It shows how ssg behaves in real application code",
-          "It highlights common mistakes developers make with ssg",
-          "It compares ssg with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of ssg",
-          "It includes practical usage patterns for ssg in Rendering Strategies",
-          "It helps with debugging issues connected to ssg",
-          "It prepares you to answer interview and architecture questions about ssg"
+          "static build time pages",
+          "very fast load times",
+          "CDN friendly delivery",
+          "no server runtime cost",
+          "rebuild on data change",
+          "best for blogs sites",
+          "high scalability performance",
+          "debug stale content"
         ],
         "isr": [
-          "ISR defines a core concept used in Frontend System Design",
-          "It explains what isr is and why it matters",
-          "It covers the main rules and mental model behind isr",
-          "It shows how isr behaves in real application code",
-          "It highlights common mistakes developers make with isr",
-          "It compares isr with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of isr",
-          "It includes practical usage patterns for isr in Rendering Strategies",
-          "It helps with debugging issues connected to isr",
-          "It prepares you to answer interview and architecture questions about isr"
+          "incremental static regeneration",
+          "update pages after deploy",
+          "stale while revalidate pattern",
+          "combine SSR SSG benefits",
+          "reduce rebuild time",
+          "cache invalidation control",
+          "scalable dynamic content",
+          "debug regeneration issues"
         ],
         "hydration": [
-          "Hydration defines a core concept used in Frontend System Design",
-          "It explains what hydration is and why it matters",
-          "It covers the main rules and mental model behind hydration",
-          "It shows how hydration behaves in real application code",
-          "It highlights common mistakes developers make with hydration",
-          "It compares hydration with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of hydration",
-          "It includes practical usage patterns for hydration in Rendering Strategies",
-          "It helps with debugging issues connected to hydration",
-          "It prepares you to answer interview and architecture questions about hydration"
+          "attach JS to HTML",
+          "make static interactive",
+          "client takeover rendering",
+          "costly large pages",
+          "blocking main thread",
+          "optimize hydration timing",
+          "avoid over hydration",
+          "debug hydration mismatch"
         ],
         "partial_hydration": [
-          "Partial Hydration defines a core concept used in Frontend System Design",
-          "It explains what partial hydration is and why it matters",
-          "It covers the main rules and mental model behind partial hydration",
-          "It shows how partial hydration behaves in real application code",
-          "It highlights common mistakes developers make with partial hydration",
-          "It compares partial hydration with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of partial hydration",
-          "It includes practical usage patterns for partial hydration in Rendering Strategies",
-          "It helps with debugging issues connected to partial hydration",
-          "It prepares you to answer interview and architecture questions about partial hydration"
+          "hydrate only needed parts",
+          "reduce JS execution cost",
+          "islands architecture pattern",
+          "improve performance load",
+          "less main thread work",
+          "component level hydration",
+          "better scalability UI",
+          "debug partial issues"
         ]
       }
     },
     {
       "Data Layer": {
         "api_design": [
-          "API Design defines a core concept used in Frontend System Design",
-          "It explains what api design is and why it matters",
-          "It covers the main rules and mental model behind api design",
-          "It shows how api design behaves in real application code",
-          "It highlights common mistakes developers make with api design",
-          "It compares api design with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of api design",
-          "It includes practical usage patterns for api design in Data Layer",
-          "It helps with debugging issues connected to api design",
-          "It prepares you to answer interview and architecture questions about api design"
+          "design efficient endpoints",
+          "consistent response formats",
+          "versioning API strategy",
+          "pagination filtering support",
+          "error handling standards",
+          "optimize payload size",
+          "secure API access",
+          "debug API issues"
         ],
         "rest_vs_graphql": [
-          "Rest vs Graphql defines a core concept used in Frontend System Design",
-          "It explains what rest vs graphql is and why it matters",
-          "It covers the main rules and mental model behind rest vs graphql",
-          "It shows how rest vs graphql behaves in real application code",
-          "It highlights common mistakes developers make with rest vs graphql",
-          "It compares rest vs graphql with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of rest vs graphql",
-          "It includes practical usage patterns for rest vs graphql in Data Layer",
-          "It helps with debugging issues connected to rest vs graphql",
-          "It prepares you to answer interview and architecture questions about rest vs graphql"
+          "REST multiple endpoints",
+          "GraphQL single endpoint",
+          "overfetch underfetch issues",
+          "flexible query structure",
+          "caching differences",
+          "schema driven GraphQL",
+          "choose based use case",
+          "debug API performance"
         ],
         "caching_strategies": [
-          "Caching Strategies defines a core concept used in Frontend System Design",
-          "It explains what caching strategies is and why it matters",
-          "It covers the main rules and mental model behind caching strategies",
-          "It shows how caching strategies behaves in real application code",
-          "It highlights common mistakes developers make with caching strategies",
-          "It compares caching strategies with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of caching strategies",
-          "It includes practical usage patterns for caching strategies in Data Layer",
-          "It helps with debugging issues connected to caching strategies",
-          "It prepares you to answer interview and architecture questions about caching strategies"
+          "browser cache usage",
+          "CDN caching layers",
+          "memory cache client",
+          "stale while revalidate",
+          "cache invalidation rules",
+          "reduce network calls",
+          "optimize response speed",
+          "debug cache issues"
         ],
         "state_synchronization": [
-          "State Synchronization defines a core concept used in Frontend System Design",
-          "It explains what state synchronization is and why it matters",
-          "It covers the main rules and mental model behind state synchronization",
-          "It shows how state synchronization behaves in real application code",
-          "It highlights common mistakes developers make with state synchronization",
-          "It compares state synchronization with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of state synchronization",
-          "It includes practical usage patterns for state synchronization in Data Layer",
-          "It helps with debugging issues connected to state synchronization",
-          "It prepares you to answer interview and architecture questions about state synchronization"
+          "sync client server data",
+          "real time updates websockets",
+          "polling fallback strategy",
+          "handle stale data",
+          "conflict resolution logic",
+          "offline sync handling",
+          "maintain data consistency",
+          "debug sync issues"
         ]
       }
     },
     {
       "Performance at Scale": {
         "performance_budget": [
-          "Performance Budget defines a core concept used in Frontend System Design",
-          "It explains what performance budget is and why it matters",
-          "It covers the main rules and mental model behind performance budget",
-          "It shows how performance budget behaves in real application code",
-          "It highlights common mistakes developers make with performance budget",
-          "It compares performance budget with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of performance budget",
-          "It includes practical usage patterns for performance budget in Performance at Scale",
-          "It helps with debugging issues connected to performance budget",
-          "It prepares you to answer interview and architecture questions about performance budget"
+          "set size limits bundles",
+          "define load time targets",
+          "monitor performance metrics",
+          "fail builds on exceed",
+          "optimize assets delivery",
+          "track regressions regularly",
+          "improve user experience",
+          "debug budget violations"
         ],
         "lazy_loading_routes": [
-          "Lazy Loading Routes defines a core concept used in Frontend System Design",
-          "It explains what lazy loading routes is and why it matters",
-          "It covers the main rules and mental model behind lazy loading routes",
-          "It shows how lazy loading routes behaves in real application code",
-          "It highlights common mistakes developers make with lazy loading routes",
-          "It compares lazy loading routes with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of lazy loading routes",
-          "It includes practical usage patterns for lazy loading routes in Performance at Scale",
-          "It helps with debugging issues connected to lazy loading routes",
-          "It prepares you to answer interview and architecture questions about lazy loading routes"
+          "load routes on demand",
+          "reduce initial bundle size",
+          "split code per route",
+          "improve load performance",
+          "prefetch next routes",
+          "optimize navigation speed",
+          "handle loading states",
+          "debug lazy route issues"
         ],
         "cdn_usage": [
-          "CDN Usage defines a core concept used in Frontend System Design",
-          "It explains what cdn usage is and why it matters",
-          "It covers the main rules and mental model behind cdn usage",
-          "It shows how cdn usage behaves in real application code",
-          "It highlights common mistakes developers make with cdn usage",
-          "It compares cdn usage with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of cdn usage",
-          "It includes practical usage patterns for cdn usage in Performance at Scale",
-          "It helps with debugging issues connected to cdn usage",
-          "It prepares you to answer interview and architecture questions about cdn usage"
+          "serve assets globally",
+          "reduce latency distance",
+          "cache static resources",
+          "improve load speed",
+          "use edge locations",
+          "optimize asset delivery",
+          "handle cache invalidation",
+          "debug CDN issues"
         ],
         "edge_caching": [
-          "Edge Caching defines a core concept used in Frontend System Design",
-          "It explains what edge caching is and why it matters",
-          "It covers the main rules and mental model behind edge caching",
-          "It shows how edge caching behaves in real application code",
-          "It highlights common mistakes developers make with edge caching",
-          "It compares edge caching with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of edge caching",
-          "It includes practical usage patterns for edge caching in Performance at Scale",
-          "It helps with debugging issues connected to edge caching",
-          "It prepares you to answer interview and architecture questions about edge caching"
+          "cache near user location",
+          "reduce origin server load",
+          "fast response delivery",
+          "use CDN edge logic",
+          "handle dynamic caching",
+          "stale revalidate strategy",
+          "optimize scalability",
+          "debug edge issues"
         ]
       }
     },
     {
       "Scalable UI Systems": {
         "component_library_design": [
-          "Component Library Design defines a core concept used in Frontend System Design",
-          "It explains what component library design is and why it matters",
-          "It covers the main rules and mental model behind component library design",
-          "It shows how component library design behaves in real application code",
-          "It highlights common mistakes developers make with component library design",
-          "It compares component library design with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of component library design",
-          "It includes practical usage patterns for component library design in Scalable UI Systems",
-          "It helps with debugging issues connected to component library design",
-          "It prepares you to answer interview and architecture questions about component library design"
+          "build reusable components",
+          "consistent API design",
+          "document component usage",
+          "versioning library updates",
+          "ensure accessibility support",
+          "optimize bundle size",
+          "share across projects",
+          "debug library issues"
         ],
         "design_tokens": [
-          "Design Tokens defines a core concept used in Frontend System Design",
-          "It explains what design tokens is and why it matters",
-          "It covers the main rules and mental model behind design tokens",
-          "It shows how design tokens behaves in real application code",
-          "It highlights common mistakes developers make with design tokens",
-          "It compares design tokens with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of design tokens",
-          "It includes practical usage patterns for design tokens in Scalable UI Systems",
-          "It helps with debugging issues connected to design tokens",
-          "It prepares you to answer interview and architecture questions about design tokens"
+          "centralize design values",
+          "colors spacing typography",
+          "theme consistency system",
+          "platform agnostic tokens",
+          "update design globally",
+          "use CSS variables",
+          "improve maintainability",
+          "debug token issues"
         ],
         "theming": [
-          "Theming defines a core concept used in Frontend System Design",
-          "It explains what theming is and why it matters",
-          "It covers the main rules and mental model behind theming",
-          "It shows how theming behaves in real application code",
-          "It highlights common mistakes developers make with theming",
-          "It compares theming with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of theming",
-          "It includes practical usage patterns for theming in Scalable UI Systems",
-          "It helps with debugging issues connected to theming",
-          "It prepares you to answer interview and architecture questions about theming"
+          "support multiple themes",
+          "dark light mode",
+          "dynamic style switching",
+          "use CSS variables",
+          "persist user preference",
+          "avoid hardcoded styles",
+          "improve UX flexibility",
+          "debug theme issues"
         ],
         "multi_tenant_ui": [
-          "Multi Tenant Ui defines a core concept used in Frontend System Design",
-          "It explains what multi tenant ui is and why it matters",
-          "It covers the main rules and mental model behind multi tenant ui",
-          "It shows how multi tenant ui behaves in real application code",
-          "It highlights common mistakes developers make with multi tenant ui",
-          "It compares multi tenant ui with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of multi tenant ui",
-          "It includes practical usage patterns for multi tenant ui in Scalable UI Systems",
-          "It helps with debugging issues connected to multi tenant ui",
-          "It prepares you to answer interview and architecture questions about multi tenant ui"
+          "support multiple clients UI",
+          "custom branding themes",
+          "config driven UI changes",
+          "isolate tenant data",
+          "scalable architecture design",
+          "reuse core components",
+          "dynamic feature toggles",
+          "debug tenant issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "props context global store",
+          "avoid deep prop drilling",
+          "event based communication",
+          "maintain state consistency",
+          "lift state appropriately",
+          "optimize rerender scope",
+          "use shared stores",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "validate input data",
+          "sync async validation",
+          "error handling patterns",
+          "prevent invalid submit",
+          "optimize UX feedback",
+          "use validation libraries",
+          "handle large forms",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "init update cleanup phases",
+          "handle side effects",
+          "cleanup subscriptions properly",
+          "avoid memory leaks",
+          "framework lifecycle hooks",
+          "control rendering timing",
+          "optimize lifecycle usage",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load components on demand",
+          "reduce bundle size",
+          "dynamic imports usage",
+          "optimize load performance",
+          "split features modules",
+          "prefetch preload assets",
+          "improve initial load",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "offline support capability",
+          "service worker integration",
+          "cache assets data",
+          "background sync updates",
+          "installable web apps",
+          "push notifications usage",
+          "improve resilience performance",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "use devtools profiling",
+          "trace performance bottlenecks",
+          "analyze network requests",
+          "monitor logs errors",
+          "debug rendering issues",
+          "inspect state changes",
+          "breakpoints debugging",
+          "debug production issues"
+        ],
+        "testcase": [
+          "unit integration tests",
+          "test system flows",
+          "mock API responses",
+          "automation test pipelines",
+          "coverage analysis tools",
+          "edge case testing",
+          "performance testing basics",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "code splitting strategies",
+          "optimize hydration process",
+          "reduce JS execution",
+          "use virtualization lists",
+          "memoization techniques",
+          "optimize data fetching",
+          "analyze performance metrics",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure performance scores",
+          "optimize LCP CLS metrics",
+          "reduce blocking resources",
+          "improve load speed",
+          "analyze audit reports",
+          "optimize asset delivery",
+          "track performance trends",
+          "debug lighthouse issues"
+        ],
+        "security": [
+          "prevent XSS attacks",
+          "secure API calls",
+          "sanitize user inputs",
+          "use HTTPS everywhere",
+          "protect sensitive data",
+          "apply CSP policies",
+          "handle auth securely",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "automate deploy pipelines",
+          "build test release flow",
+          "environment configs handling",
+          "monitor production systems",
+          "rollback strategies setup",
+          "CI tools integration",
+          "optimize deployment speed",
+          "debug deployment issues"
         ]
       }
     }

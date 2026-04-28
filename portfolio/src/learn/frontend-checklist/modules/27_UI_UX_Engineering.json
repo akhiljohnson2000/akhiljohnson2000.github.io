@@ -5,132 +5,226 @@
     {
       "UX Principles": {
         "usability": [
-          "Define Usability clearly and explain where it fits within UX Principles.",
-          "Understand the core purpose of Usability and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Usability.",
-          "Study how Usability works internally step by step in real application flow.",
-          "Compare Usability with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Usability.",
-          "Practice Usability with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Usability.",
-          "Learn how to debug, test, and validate behavior when working with Usability.",
-          "Be able to explain Usability in interviews using practical examples and tradeoffs."
+          "easy intuitive user interactions",
+          "minimize user effort steps",
+          "clear navigation structure",
+          "reduce cognitive load",
+          "fast task completion flow",
+          "error prevention handling",
+          "improve user satisfaction",
+          "debug usability issues"
         ],
         "consistency": [
-          "Define Consistency clearly and explain where it fits within UX Principles.",
-          "Understand the core purpose of Consistency and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Consistency.",
-          "Study how Consistency works internally step by step in real application flow.",
-          "Compare Consistency with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Consistency.",
-          "Practice Consistency with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Consistency.",
-          "Learn how to debug, test, and validate behavior when working with Consistency.",
-          "Be able to explain Consistency in interviews using practical examples and tradeoffs."
+          "uniform UI patterns usage",
+          "consistent design elements",
+          "same interaction behaviors",
+          "predictable user experience",
+          "reuse components styles",
+          "align with design system",
+          "reduce learning curve",
+          "debug inconsistency issues"
         ],
         "feedback": [
-          "Define Feedback clearly and explain where it fits within UX Principles.",
-          "Understand the core purpose of Feedback and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Feedback.",
-          "Study how Feedback works internally step by step in real application flow.",
-          "Compare Feedback with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Feedback.",
-          "Practice Feedback with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Feedback.",
-          "Learn how to debug, test, and validate behavior when working with Feedback.",
-          "Be able to explain Feedback in interviews using practical examples and tradeoffs."
+          "instant user action response",
+          "show success error states",
+          "loading indicators feedback",
+          "progress updates visibility",
+          "disable actions when needed",
+          "guide user interactions",
+          "improve UX clarity",
+          "debug feedback issues"
         ],
         "visual_hierarchy": [
-          "Define Visual Hierarchy clearly and explain where it fits within UX Principles.",
-          "Understand the core purpose of Visual Hierarchy and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Visual Hierarchy.",
-          "Study how Visual Hierarchy works internally step by step in real application flow.",
-          "Compare Visual Hierarchy with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Visual Hierarchy.",
-          "Practice Visual Hierarchy with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Visual Hierarchy.",
-          "Learn how to debug, test, and validate behavior when working with Visual Hierarchy.",
-          "Be able to explain Visual Hierarchy in interviews using practical examples and tradeoffs."
+          "prioritize content importance",
+          "use size color contrast",
+          "guide user attention flow",
+          "clear layout structure",
+          "emphasize key actions",
+          "improve readability clarity",
+          "optimize spacing alignment",
+          "debug hierarchy issues"
         ]
       }
     },
     {
       "Perceived Performance": {
         "skeleton_loaders": [
-          "Define Skeleton Loaders clearly and explain where it fits within Perceived Performance.",
-          "Understand the core purpose of Skeleton Loaders and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Skeleton Loaders.",
-          "Study how Skeleton Loaders works internally step by step in real application flow.",
-          "Compare Skeleton Loaders with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Skeleton Loaders.",
-          "Practice Skeleton Loaders with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Skeleton Loaders.",
-          "Learn how to debug, test, and validate behavior when working with Skeleton Loaders.",
-          "Be able to explain Skeleton Loaders in interviews using practical examples and tradeoffs."
+          "show placeholder content layout",
+          "reduce perceived loading time",
+          "mimic final UI structure",
+          "improve user engagement",
+          "avoid blank screen wait",
+          "better than spinners often",
+          "progressive content reveal",
+          "debug skeleton issues"
         ],
         "spinners": [
-          "Define Spinners clearly and explain where it fits within Perceived Performance.",
-          "Understand the core purpose of Spinners and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Spinners.",
-          "Study how Spinners works internally step by step in real application flow.",
-          "Compare Spinners with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Spinners.",
-          "Practice Spinners with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Spinners.",
-          "Learn how to debug, test, and validate behavior when working with Spinners.",
-          "Be able to explain Spinners in interviews using practical examples and tradeoffs."
+          "indicate loading process",
+          "simple loading feedback",
+          "use for short waits",
+          "avoid long spinner usage",
+          "combine with progress states",
+          "improve UX clarity",
+          "show async operations",
+          "debug spinner issues"
         ],
         "progressive_loading": [
-          "Define Progressive Loading clearly and explain where it fits within Perceived Performance.",
-          "Understand the core purpose of Progressive Loading and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Progressive Loading.",
-          "Study how Progressive Loading works internally step by step in real application flow.",
-          "Compare Progressive Loading with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Progressive Loading.",
-          "Practice Progressive Loading with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Progressive Loading.",
-          "Learn how to debug, test, and validate behavior when working with Progressive Loading.",
-          "Be able to explain Progressive Loading in interviews using practical examples and tradeoffs."
+          "load content step by step",
+          "render critical content first",
+          "lazy load non critical parts",
+          "improve perceived performance",
+          "reduce initial load time",
+          "enhance user experience",
+          "optimize resource loading",
+          "debug loading issues"
         ]
       }
     },
     {
       "Interaction Design": {
         "micro_interactions": [
-          "Define Micro Interactions clearly and explain where it fits within Interaction Design.",
-          "Understand the core purpose of Micro Interactions and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Micro Interactions.",
-          "Study how Micro Interactions works internally step by step in real application flow.",
-          "Compare Micro Interactions with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Micro Interactions.",
-          "Practice Micro Interactions with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Micro Interactions.",
-          "Learn how to debug, test, and validate behavior when working with Micro Interactions.",
-          "Be able to explain Micro Interactions in interviews using practical examples and tradeoffs."
+          "small UI interaction feedback",
+          "hover click animations",
+          "enhance user engagement",
+          "provide visual feedback",
+          "guide user actions",
+          "improve usability clarity",
+          "subtle smooth animations",
+          "debug interaction issues"
         ],
         "animations_for_feedback": [
-          "Define Animations For Feedback clearly and explain where it fits within Interaction Design.",
-          "Understand the core purpose of Animations For Feedback and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Animations For Feedback.",
-          "Study how Animations For Feedback works internally step by step in real application flow.",
-          "Compare Animations For Feedback with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Animations For Feedback.",
-          "Practice Animations For Feedback with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Animations For Feedback.",
-          "Learn how to debug, test, and validate behavior when working with Animations For Feedback.",
-          "Be able to explain Animations For Feedback in interviews using practical examples and tradeoffs."
+          "visual feedback for actions",
+          "transition states smoothly",
+          "indicate success failure",
+          "improve UX responsiveness",
+          "avoid heavy animations",
+          "optimize performance impact",
+          "use easing timing functions",
+          "debug animation issues"
         ],
         "gesture_handling": [
-          "Define Gesture Handling clearly and explain where it fits within Interaction Design.",
-          "Understand the core purpose of Gesture Handling and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Gesture Handling.",
-          "Study how Gesture Handling works internally step by step in real application flow.",
-          "Compare Gesture Handling with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Gesture Handling.",
-          "Practice Gesture Handling with small examples before applying it in larger UI/UX Engineering projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Gesture Handling.",
-          "Learn how to debug, test, and validate behavior when working with Gesture Handling.",
-          "Be able to explain Gesture Handling in interviews using practical examples and tradeoffs."
+          "handle touch gestures events",
+          "swipe pinch tap actions",
+          "optimize mobile interactions",
+          "prevent gesture conflicts",
+          "smooth gesture recognition",
+          "improve UX responsiveness",
+          "support multi touch inputs",
+          "debug gesture issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "pass UI state props",
+          "sync interaction states",
+          "avoid prop drilling",
+          "use context global state",
+          "optimize rerender flow",
+          "maintain UI consistency",
+          "handle dynamic updates",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "validate user inputs UX",
+          "show inline error messages",
+          "real time validation feedback",
+          "prevent invalid submissions",
+          "highlight error fields",
+          "improve usability forms",
+          "clear validation messages",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "handle UI state lifecycle",
+          "trigger animations on mount",
+          "cleanup effects on unmount",
+          "manage interaction states",
+          "optimize lifecycle flow",
+          "avoid memory leaks",
+          "improve UX responsiveness",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load UI components dynamically",
+          "reduce initial render load",
+          "improve performance load",
+          "lazy load heavy UI parts",
+          "optimize user experience",
+          "split UI modules",
+          "prefetch critical components",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "offline friendly UI design",
+          "smooth loading experiences",
+          "cache UI assets",
+          "responsive install prompts",
+          "optimize mobile UX",
+          "improve performance speed",
+          "handle offline feedback",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "inspect UI interactions",
+          "trace user flows",
+          "analyze performance bottlenecks",
+          "debug animation issues",
+          "monitor UX problems",
+          "use devtools effectively",
+          "fix UI bugs quickly",
+          "debug production issues"
+        ],
+        "testcase": [
+          "test user interaction flows",
+          "validate UI states",
+          "simulate user scenarios",
+          "test responsiveness layouts",
+          "edge case testing",
+          "automation UI tests",
+          "performance testing UI",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "optimize render performance",
+          "reduce layout shifts",
+          "use efficient animations",
+          "minimize reflows repaints",
+          "optimize interaction latency",
+          "analyze UX metrics",
+          "improve responsiveness",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure UX performance scores",
+          "analyze CLS LCP metrics",
+          "optimize load speed",
+          "improve responsiveness metrics",
+          "analyze lighthouse reports",
+          "fix audit warnings",
+          "track UX performance",
+          "debug audit issues"
+        ],
+        "security": [
+          "avoid deceptive UI patterns",
+          "secure user interactions",
+          "protect sensitive inputs",
+          "validate user actions",
+          "prevent clickjacking risks",
+          "secure form handling",
+          "ensure trustable UX",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "deploy UI updates safely",
+          "test UX in pipeline",
+          "monitor production UX",
+          "rollback UI issues",
+          "optimize deployment flow",
+          "manage feature releases",
+          "track UX metrics",
+          "debug deployment issues"
         ]
       }
     }

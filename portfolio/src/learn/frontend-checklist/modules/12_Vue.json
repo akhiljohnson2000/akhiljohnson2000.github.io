@@ -5,156 +5,246 @@
     {
       "Core Concepts": {
         "template_syntax": [
-          "Template Syntax defines a core concept used in Vue",
-          "It explains what template syntax is and why it matters",
-          "It covers the main rules and mental model behind template syntax",
-          "It shows how template syntax behaves in real application code",
-          "It highlights common mistakes developers make with template syntax",
-          "It compares template syntax with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of template syntax",
-          "It includes practical usage patterns for template syntax in Core Concepts",
-          "It helps with debugging issues connected to template syntax",
-          "It prepares you to answer interview and architecture questions about template syntax"
+          "mustache interpolation usage",
+          "v-bind shorthand syntax",
+          "v-on event binding",
+          "expressions inside templates",
+          "avoid complex logic",
+          "auto escaping XSS",
+          "conditional rendering basics",
+          "debug template errors"
         ],
         "directives": [
-          "Directives defines a core concept used in Vue",
-          "It explains what directives is and why it matters",
-          "It covers the main rules and mental model behind directives",
-          "It shows how directives behaves in real application code",
-          "It highlights common mistakes developers make with directives",
-          "It compares directives with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of directives",
-          "It includes practical usage patterns for directives in Core Concepts",
-          "It helps with debugging issues connected to directives",
-          "It prepares you to answer interview and architecture questions about directives"
+          "v-if v-else usage",
+          "v-for list rendering",
+          "v-bind dynamic props",
+          "v-on event handling",
+          "v-model two way binding",
+          "custom directives basics",
+          "directive lifecycle hooks",
+          "debug directive issues"
         ],
         "reactivity_system": [
-          "Reactivity System defines a core concept used in Vue",
-          "It explains what reactivity system is and why it matters",
-          "It covers the main rules and mental model behind reactivity system",
-          "It shows how reactivity system behaves in real application code",
-          "It highlights common mistakes developers make with reactivity system",
-          "It compares reactivity system with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of reactivity system",
-          "It includes practical usage patterns for reactivity system in Core Concepts",
-          "It helps with debugging issues connected to reactivity system",
-          "It prepares you to answer interview and architecture questions about reactivity system"
+          "proxy based reactivity",
+          "track trigger mechanism",
+          "reactive data updates",
+          "deep vs shallow reactivity",
+          "avoid direct mutation pitfalls",
+          "ref reactive differences",
+          "dependency tracking system",
+          "debug reactivity issues"
         ],
         "computed_properties": [
-          "Computed Properties defines a core concept used in Vue",
-          "It explains what computed properties is and why it matters",
-          "It covers the main rules and mental model behind computed properties",
-          "It shows how computed properties behaves in real application code",
-          "It highlights common mistakes developers make with computed properties",
-          "It compares computed properties with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of computed properties",
-          "It includes practical usage patterns for computed properties in Core Concepts",
-          "It helps with debugging issues connected to computed properties",
-          "It prepares you to answer interview and architecture questions about computed properties"
+          "cached derived values",
+          "dependency tracking auto",
+          "getter setter usage",
+          "better than methods",
+          "avoid heavy computations",
+          "lazy evaluation behavior",
+          "reactive dependency updates",
+          "debug computed issues"
         ],
         "watchers": [
-          "Watchers defines a core concept used in Vue",
-          "It explains what watchers is and why it matters",
-          "It covers the main rules and mental model behind watchers",
-          "It shows how watchers behaves in real application code",
-          "It highlights common mistakes developers make with watchers",
-          "It compares watchers with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of watchers",
-          "It includes practical usage patterns for watchers in Core Concepts",
-          "It helps with debugging issues connected to watchers",
-          "It prepares you to answer interview and architecture questions about watchers"
+          "watch reactive changes",
+          "side effects handling",
+          "deep watch option",
+          "immediate execution option",
+          "compare watch vs computed",
+          "async operations handling",
+          "cleanup watchers properly",
+          "debug watch triggers"
         ]
       }
     },
     {
       "Composition API": {
         "setup_function": [
-          "Setup Function defines a core concept used in Vue",
-          "It explains what setup function is and why it matters",
-          "It covers the main rules and mental model behind setup function",
-          "It shows how setup function behaves in real application code",
-          "It highlights common mistakes developers make with setup function",
-          "It compares setup function with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of setup function",
-          "It includes practical usage patterns for setup function in Composition API",
-          "It helps with debugging issues connected to setup function",
-          "It prepares you to answer interview and architecture questions about setup function"
+          "entry point composition API",
+          "define reactive state",
+          "return template bindings",
+          "no this context usage",
+          "lifecycle hooks inside setup",
+          "logic reuse pattern",
+          "better type support",
+          "debug setup flow"
         ],
         "ref_vs_reactive": [
-          "Ref vs Reactive defines a core concept used in Vue",
-          "It explains what ref vs reactive is and why it matters",
-          "It covers the main rules and mental model behind ref vs reactive",
-          "It shows how ref vs reactive behaves in real application code",
-          "It highlights common mistakes developers make with ref vs reactive",
-          "It compares ref vs reactive with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of ref vs reactive",
-          "It includes practical usage patterns for ref vs reactive in Composition API",
-          "It helps with debugging issues connected to ref vs reactive",
-          "It prepares you to answer interview and architecture questions about ref vs reactive"
+          "ref for primitives",
+          "reactive for objects",
+          "value property access",
+          "unwrap refs in template",
+          "nested reactivity behavior",
+          "choose based on use case",
+          "performance considerations",
+          "debug reactivity issues"
         ],
         "lifecycle_hooks": [
-          "Lifecycle Hooks defines a core concept used in Vue",
-          "It explains what lifecycle hooks is and why it matters",
-          "It covers the main rules and mental model behind lifecycle hooks",
-          "It shows how lifecycle hooks behaves in real application code",
-          "It highlights common mistakes developers make with lifecycle hooks",
-          "It compares lifecycle hooks with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of lifecycle hooks",
-          "It includes practical usage patterns for lifecycle hooks in Composition API",
-          "It helps with debugging issues connected to lifecycle hooks",
-          "It prepares you to answer interview and architecture questions about lifecycle hooks"
+          "onMounted onUnmounted",
+          "onUpdated lifecycle usage",
+          "onBeforeMount timing",
+          "cleanup side effects",
+          "hook execution order",
+          "composition API hooks",
+          "avoid heavy operations",
+          "debug lifecycle flow"
         ],
         "composition_patterns": [
-          "Composition Patterns defines a core concept used in Vue",
-          "It explains what composition patterns is and why it matters",
-          "It covers the main rules and mental model behind composition patterns",
-          "It shows how composition patterns behaves in real application code",
-          "It highlights common mistakes developers make with composition patterns",
-          "It compares composition patterns with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of composition patterns",
-          "It includes practical usage patterns for composition patterns in Composition API",
-          "It helps with debugging issues connected to composition patterns",
-          "It prepares you to answer interview and architecture questions about composition patterns"
+          "reuse logic via composables",
+          "separate concerns logic",
+          "shared state modules",
+          "encapsulate side effects",
+          "test composables easily",
+          "avoid mixins usage",
+          "scalable code structure",
+          "debug composition issues"
         ]
       }
     },
     {
       "Rendering": {
         "virtual_dom": [
-          "Virtual DOM defines a core concept used in Vue",
-          "It explains what virtual dom is and why it matters",
-          "It covers the main rules and mental model behind virtual dom",
-          "It shows how virtual dom behaves in real application code",
-          "It highlights common mistakes developers make with virtual dom",
-          "It compares virtual dom with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of virtual dom",
-          "It includes practical usage patterns for virtual dom in Rendering",
-          "It helps with debugging issues connected to virtual dom",
-          "It prepares you to answer interview and architecture questions about virtual dom"
+          "virtual DOM abstraction",
+          "efficient UI updates",
+          "compare previous tree",
+          "batch DOM updates",
+          "performance optimization",
+          "avoid direct DOM ops",
+          "framework abstraction layer",
+          "debug render behavior"
         ],
         "diffing_algorithm": [
-          "Diffing Algorithm defines a core concept used in Vue",
-          "It explains what diffing algorithm is and why it matters",
-          "It covers the main rules and mental model behind diffing algorithm",
-          "It shows how diffing algorithm behaves in real application code",
-          "It highlights common mistakes developers make with diffing algorithm",
-          "It compares diffing algorithm with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of diffing algorithm",
-          "It includes practical usage patterns for diffing algorithm in Rendering",
-          "It helps with debugging issues connected to diffing algorithm",
-          "It prepares you to answer interview and architecture questions about diffing algorithm"
+          "compare old new nodes",
+          "key based diffing",
+          "minimize DOM updates",
+          "list rendering optimization",
+          "patching changes efficiently",
+          "avoid unstable keys",
+          "performance large lists",
+          "debug diff issues"
         ],
         "template_compilation": [
-          "Template Compilation defines a core concept used in Vue",
-          "It explains what template compilation is and why it matters",
-          "It covers the main rules and mental model behind template compilation",
-          "It shows how template compilation behaves in real application code",
-          "It highlights common mistakes developers make with template compilation",
-          "It compares template compilation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of template compilation",
-          "It includes practical usage patterns for template compilation in Rendering",
-          "It helps with debugging issues connected to template compilation",
-          "It prepares you to answer interview and architecture questions about template compilation"
+          "compile template to render",
+          "runtime vs compile time",
+          "optimize static nodes",
+          "generate render functions",
+          "reduce runtime cost",
+          "pre compile templates",
+          "improve performance output",
+          "debug compilation errors"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "props parent to child",
+          "emit child to parent",
+          "v-model two way sync",
+          "provide inject pattern",
+          "global store usage",
+          "avoid prop drilling",
+          "event based communication",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "v-model form binding",
+          "input validation rules",
+          "error state handling",
+          "custom validators setup",
+          "form libraries usage",
+          "async validation patterns",
+          "performance large forms",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "beforeCreate created hooks",
+          "mounted updated lifecycle",
+          "unmounted cleanup logic",
+          "composition API hooks",
+          "side effects timing",
+          "avoid heavy hooks",
+          "memory leak prevention",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "dynamic import components",
+          "route based lazy loading",
+          "code splitting bundles",
+          "improve initial load",
+          "async component usage",
+          "optimize performance load",
+          "prefetch preload hints",
+          "debug lazy loading"
+        ],
+        "pwa": [
+          "service worker setup",
+          "offline caching support",
+          "manifest configuration",
+          "installable app setup",
+          "push notifications usage",
+          "background sync features",
+          "performance improvements",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "vue devtools usage",
+          "component tree inspect",
+          "state props debugging",
+          "console log tracing",
+          "network request debug",
+          "watch reactive changes",
+          "breakpoints usage",
+          "debug production issues"
+        ],
+        "testcase": [
+          "unit testing components",
+          "vue test utils usage",
+          "jest testing setup",
+          "mock dependencies usage",
+          "integration testing flows",
+          "async test handling",
+          "coverage reports analysis",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "lazy loading components",
+          "code splitting strategy",
+          "computed optimization usage",
+          "avoid unnecessary watchers",
+          "virtual scroll lists",
+          "bundle size reduction",
+          "SSR hydration optimize",
+          "debug performance issues"
+        ],
+        "efficiency_lighthouse": [
+          "lighthouse audit basics",
+          "performance metrics tracking",
+          "accessibility improvements",
+          "SEO optimization checks",
+          "reduce blocking resources",
+          "optimize LCP CLS",
+          "improve load speed",
+          "debug audit report"
+        ],
+        "security": [
+          "XSS protection Vue",
+          "auto escaping templates",
+          "sanitize user input",
+          "avoid v-html misuse",
+          "secure API handling",
+          "authentication patterns",
+          "content security policy",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "build production bundle",
+          "vite webpack config",
+          "CI pipeline setup",
+          "automated testing deploy",
+          "environment variables usage",
+          "docker deployment basics",
+          "rollback strategies",
+          "debug deployment issues"
         ]
       }
     }

@@ -5,208 +5,290 @@
     {
       "Fundamentals": {
         "local_vs_global_state": [
-          "Local vs Global State defines a core concept used in State Management",
-          "It explains what local vs global state is and why it matters",
-          "It covers the main rules and mental model behind local vs global state",
-          "It shows how local vs global state behaves in real application code",
-          "It highlights common mistakes developers make with local vs global state",
-          "It compares local vs global state with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of local vs global state",
-          "It includes practical usage patterns for local vs global state in Fundamentals",
-          "It helps with debugging issues connected to local vs global state",
-          "It prepares you to answer interview and architecture questions about local vs global state"
+          "component scoped local state",
+          "shared global store state",
+          "lifting state up pattern",
+          "avoid duplicate state copies",
+          "choose scope carefully",
+          "rerender impact scope",
+          "debug state ownership",
+          "optimize state placement"
         ],
         "client_vs_server_state": [
-          "Client vs Server State defines a core concept used in State Management",
-          "It explains what client vs server state is and why it matters",
-          "It covers the main rules and mental model behind client vs server state",
-          "It shows how client vs server state behaves in real application code",
-          "It highlights common mistakes developers make with client vs server state",
-          "It compares client vs server state with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of client vs server state",
-          "It includes practical usage patterns for client vs server state in Fundamentals",
-          "It helps with debugging issues connected to client vs server state",
-          "It prepares you to answer interview and architecture questions about client vs server state"
+          "client UI interaction state",
+          "server fetched remote data",
+          "cache server responses",
+          "sync backend data state",
+          "avoid duplicating server state",
+          "use query libraries",
+          "stale data handling",
+          "debug data sync issues"
         ],
         "state_normalization": [
-          "State Normalization defines a core concept used in State Management",
-          "It explains what state normalization is and why it matters",
-          "It covers the main rules and mental model behind state normalization",
-          "It shows how state normalization behaves in real application code",
-          "It highlights common mistakes developers make with state normalization",
-          "It compares state normalization with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of state normalization",
-          "It includes practical usage patterns for state normalization in Fundamentals",
-          "It helps with debugging issues connected to state normalization",
-          "It prepares you to answer interview and architecture questions about state normalization"
+          "flatten nested state structure",
+          "store entities by id",
+          "avoid deep nesting",
+          "reduce duplication data",
+          "easier updates lookup",
+          "improve performance access",
+          "use normalized schemas",
+          "debug inconsistent state"
         ],
         "immutability": [
-          "Immutability defines a core concept used in State Management",
-          "It explains what immutability is and why it matters",
-          "It covers the main rules and mental model behind immutability",
-          "It shows how immutability behaves in real application code",
-          "It highlights common mistakes developers make with immutability",
-          "It compares immutability with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of immutability",
-          "It includes practical usage patterns for immutability in Fundamentals",
-          "It helps with debugging issues connected to immutability",
-          "It prepares you to answer interview and architecture questions about immutability"
+          "avoid direct state mutation",
+          "use spread operators",
+          "create new references",
+          "shallow vs deep copy",
+          "helps change detection",
+          "predictable state updates",
+          "immutable libraries usage",
+          "debug mutation bugs"
         ]
       }
     },
     {
       "Patterns": {
         "flux_architecture": [
-          "Flux Architecture defines a core concept used in State Management",
-          "It explains what flux architecture is and why it matters",
-          "It covers the main rules and mental model behind flux architecture",
-          "It shows how flux architecture behaves in real application code",
-          "It highlights common mistakes developers make with flux architecture",
-          "It compares flux architecture with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of flux architecture",
-          "It includes practical usage patterns for flux architecture in Patterns",
-          "It helps with debugging issues connected to flux architecture",
-          "It prepares you to answer interview and architecture questions about flux architecture"
+          "unidirectional data flow",
+          "actions dispatch events",
+          "store holds state",
+          "reducers update state",
+          "predictable state changes",
+          "debug via action logs",
+          "separate concerns clearly",
+          "scalable architecture pattern"
         ],
         "event_driven_state": [
-          "Event Driven State defines a core concept used in State Management",
-          "It explains what event driven state is and why it matters",
-          "It covers the main rules and mental model behind event driven state",
-          "It shows how event driven state behaves in real application code",
-          "It highlights common mistakes developers make with event driven state",
-          "It compares event driven state with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of event driven state",
-          "It includes practical usage patterns for event driven state in Patterns",
-          "It helps with debugging issues connected to event driven state",
-          "It prepares you to answer interview and architecture questions about event driven state"
+          "state changes via events",
+          "publish subscribe pattern",
+          "decouple components logic",
+          "async event handling",
+          "event bus communication",
+          "avoid tight coupling",
+          "debug event flows",
+          "manage event lifecycle"
         ],
         "observer_pattern": [
-          "Observer Pattern defines a core concept used in State Management",
-          "It explains what observer pattern is and why it matters",
-          "It covers the main rules and mental model behind observer pattern",
-          "It shows how observer pattern behaves in real application code",
-          "It highlights common mistakes developers make with observer pattern",
-          "It compares observer pattern with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of observer pattern",
-          "It includes practical usage patterns for observer pattern in Patterns",
-          "It helps with debugging issues connected to observer pattern",
-          "It prepares you to answer interview and architecture questions about observer pattern"
+          "subscribe to state changes",
+          "notify observers updates",
+          "reactive data flow",
+          "decouple producer consumer",
+          "used in reactive libs",
+          "handle multiple subscribers",
+          "unsubscribe cleanup needed",
+          "debug observer leaks"
         ]
       }
     },
     {
       "Libraries": {
         "redux": [
-          "Redux defines a core concept used in State Management",
-          "It explains what redux is and why it matters",
-          "It covers the main rules and mental model behind redux",
-          "It shows how redux behaves in real application code",
-          "It highlights common mistakes developers make with redux",
-          "It compares redux with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of redux",
-          "It includes practical usage patterns for redux in Libraries",
-          "It helps with debugging issues connected to redux",
-          "It prepares you to answer interview and architecture questions about redux"
+          "centralized global store",
+          "pure reducer functions",
+          "action based updates",
+          "immutable state updates",
+          "middleware async handling",
+          "devtools time travel",
+          "boilerplate heavy setup",
+          "debug redux flow"
         ],
         "redux_toolkit": [
-          "Redux Toolkit defines a core concept used in State Management",
-          "It explains what redux toolkit is and why it matters",
-          "It covers the main rules and mental model behind redux toolkit",
-          "It shows how redux toolkit behaves in real application code",
-          "It highlights common mistakes developers make with redux toolkit",
-          "It compares redux toolkit with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of redux toolkit",
-          "It includes practical usage patterns for redux toolkit in Libraries",
-          "It helps with debugging issues connected to redux toolkit",
-          "It prepares you to answer interview and architecture questions about redux toolkit"
+          "simplified redux setup",
+          "createSlice usage",
+          "immer immutability handling",
+          "thunks async logic",
+          "less boilerplate code",
+          "better defaults config",
+          "integrates devtools",
+          "debug toolkit usage"
         ],
         "zustand": [
-          "Zustand defines a core concept used in State Management",
-          "It explains what zustand is and why it matters",
-          "It covers the main rules and mental model behind zustand",
-          "It shows how zustand behaves in real application code",
-          "It highlights common mistakes developers make with zustand",
-          "It compares zustand with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of zustand",
-          "It includes practical usage patterns for zustand in Libraries",
-          "It helps with debugging issues connected to zustand",
-          "It prepares you to answer interview and architecture questions about zustand"
+          "lightweight state library",
+          "hook based store",
+          "minimal boilerplate setup",
+          "direct state mutation allowed",
+          "fine grained subscriptions",
+          "good performance scaling",
+          "simple global state",
+          "debug zustand issues"
         ],
         "react_query": [
-          "React Query defines a core concept used in State Management",
-          "It explains what react query is and why it matters",
-          "It covers the main rules and mental model behind react query",
-          "It shows how react query behaves in real application code",
-          "It highlights common mistakes developers make with react query",
-          "It compares react query with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of react query",
-          "It includes practical usage patterns for react query in Libraries",
-          "It helps with debugging issues connected to react query",
-          "It prepares you to answer interview and architecture questions about react query"
+          "server state management",
+          "data fetching caching",
+          "auto refetch mechanisms",
+          "stale time configuration",
+          "background updates sync",
+          "optimistic updates support",
+          "pagination infinite queries",
+          "debug query cache"
         ],
         "mobx": [
-          "Mobx defines a core concept used in State Management",
-          "It explains what mobx is and why it matters",
-          "It covers the main rules and mental model behind mobx",
-          "It shows how mobx behaves in real application code",
-          "It highlights common mistakes developers make with mobx",
-          "It compares mobx with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of mobx",
-          "It includes practical usage patterns for mobx in Libraries",
-          "It helps with debugging issues connected to mobx",
-          "It prepares you to answer interview and architecture questions about mobx"
+          "observable state management",
+          "automatic dependency tracking",
+          "reactive computed values",
+          "minimal boilerplate setup",
+          "mutable style updates",
+          "fine grained reactivity",
+          "side effects reactions",
+          "debug mobx state"
         ]
       }
     },
     {
       "Advanced Concepts": {
         "selector_memoization": [
-          "Selector Memoization defines a core concept used in State Management",
-          "It explains what selector memoization is and why it matters",
-          "It covers the main rules and mental model behind selector memoization",
-          "It shows how selector memoization behaves in real application code",
-          "It highlights common mistakes developers make with selector memoization",
-          "It compares selector memoization with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of selector memoization",
-          "It includes practical usage patterns for selector memoization in Advanced Concepts",
-          "It helps with debugging issues connected to selector memoization",
-          "It prepares you to answer interview and architecture questions about selector memoization"
+          "memoize derived state",
+          "avoid recomputation cost",
+          "reselect library usage",
+          "cache previous results",
+          "dependency based recalculation",
+          "optimize render performance",
+          "use stable inputs",
+          "debug selector issues"
         ],
         "cache_invalidation": [
-          "Cache Invalidation defines a core concept used in State Management",
-          "It explains what cache invalidation is and why it matters",
-          "It covers the main rules and mental model behind cache invalidation",
-          "It shows how cache invalidation behaves in real application code",
-          "It highlights common mistakes developers make with cache invalidation",
-          "It compares cache invalidation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of cache invalidation",
-          "It includes practical usage patterns for cache invalidation in Advanced Concepts",
-          "It helps with debugging issues connected to cache invalidation",
-          "It prepares you to answer interview and architecture questions about cache invalidation"
+          "refresh stale cached data",
+          "manual automatic invalidation",
+          "query key based cache",
+          "time based expiry rules",
+          "avoid stale UI data",
+          "refetch on events",
+          "sync backend updates",
+          "debug cache issues"
         ],
         "state_synchronization": [
-          "State Synchronization defines a core concept used in State Management",
-          "It explains what state synchronization is and why it matters",
-          "It covers the main rules and mental model behind state synchronization",
-          "It shows how state synchronization behaves in real application code",
-          "It highlights common mistakes developers make with state synchronization",
-          "It compares state synchronization with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of state synchronization",
-          "It includes practical usage patterns for state synchronization in Advanced Concepts",
-          "It helps with debugging issues connected to state synchronization",
-          "It prepares you to answer interview and architecture questions about state synchronization"
+          "sync client server state",
+          "real time updates websockets",
+          "multi tab sync storage",
+          "conflict resolution strategies",
+          "offline sync handling",
+          "ensure data consistency",
+          "handle race conditions",
+          "debug sync issues"
         ],
         "optimistic_updates": [
-          "Optimistic Updates defines a core concept used in State Management",
-          "It explains what optimistic updates is and why it matters",
-          "It covers the main rules and mental model behind optimistic updates",
-          "It shows how optimistic updates behaves in real application code",
-          "It highlights common mistakes developers make with optimistic updates",
-          "It compares optimistic updates with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of optimistic updates",
-          "It includes practical usage patterns for optimistic updates in Advanced Concepts",
-          "It helps with debugging issues connected to optimistic updates",
-          "It prepares you to answer interview and architecture questions about optimistic updates"
+          "update UI before response",
+          "rollback on failure",
+          "improve perceived speed",
+          "handle error recovery",
+          "sync with server later",
+          "avoid inconsistent state",
+          "used in mutations",
+          "debug optimistic issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "props and callbacks flow",
+          "context or store sharing",
+          "avoid prop drilling",
+          "event based communication",
+          "lift state when needed",
+          "global store usage",
+          "maintain data consistency",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "form state validation rules",
+          "sync async validation",
+          "error state handling",
+          "touched dirty tracking",
+          "prevent invalid submits",
+          "library usage forms",
+          "optimize large forms",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "init update cleanup flow",
+          "sync state on mount",
+          "cleanup subscriptions properly",
+          "trigger side effects safely",
+          "avoid memory leaks",
+          "framework specific hooks",
+          "handle async updates",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load state on demand",
+          "code splitting stores",
+          "reduce initial load",
+          "dynamic module loading",
+          "optimize performance load",
+          "fetch data when needed",
+          "avoid unused state",
+          "debug lazy state"
+        ],
+        "pwa": [
+          "offline state persistence",
+          "sync background updates",
+          "cache application data",
+          "handle network fallback",
+          "improve app resilience",
+          "local storage strategies",
+          "service worker integration",
+          "debug offline issues"
+        ],
+        "debugging": [
+          "devtools state inspection",
+          "track state changes logs",
+          "time travel debugging",
+          "trace actions updates",
+          "console debugging patterns",
+          "monitor performance impact",
+          "identify memory leaks",
+          "debug production issues"
+        ],
+        "testcase": [
+          "unit test reducers logic",
+          "mock store interactions",
+          "integration state flows",
+          "test async actions",
+          "snapshot state testing",
+          "coverage analysis tools",
+          "edge case testing",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "memoization selectors usage",
+          "avoid unnecessary rerenders",
+          "split state smaller chunks",
+          "optimize store updates",
+          "batch state changes",
+          "use efficient libraries",
+          "profile performance bottlenecks",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure performance metrics",
+          "optimize render blocking",
+          "reduce bundle size impact",
+          "improve user experience",
+          "monitor state updates cost",
+          "optimize data fetching",
+          "analyze audit reports",
+          "debug performance score"
+        ],
+        "security": [
+          "protect sensitive state data",
+          "avoid storing secrets client",
+          "secure API interactions",
+          "validate input data",
+          "prevent XSS injection",
+          "token storage strategies",
+          "sanitize user inputs",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "automate build pipelines",
+          "run tests on deploy",
+          "environment configs handling",
+          "monitor production state",
+          "rollback deployment strategy",
+          "CI tools integration",
+          "optimize build output",
+          "debug deployment issues"
         ]
       }
     }

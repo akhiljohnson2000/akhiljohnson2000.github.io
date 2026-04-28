@@ -5,220 +5,300 @@
     {
       "Browser Security Model": {
         "same_origin_policy_deep": [
-          "Same Origin Policy Deep defines a core concept used in Advanced Web Security",
-          "It explains what same origin policy deep is and why it matters",
-          "It covers the main rules and mental model behind same origin policy deep",
-          "It shows how same origin policy deep behaves in real application code",
-          "It highlights common mistakes developers make with same origin policy deep",
-          "It compares same origin policy deep with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of same origin policy deep",
-          "It includes practical usage patterns for same origin policy deep in Browser Security Model",
-          "It helps with debugging issues connected to same origin policy deep",
-          "It prepares you to answer interview and architecture questions about same origin policy deep"
+          "strict origin matching rules",
+          "protocol host port check",
+          "isolate cross origin data",
+          "affects cookies storage",
+          "iframe access restrictions",
+          "postMessage controlled sharing",
+          "bypass via CORS only",
+          "debug SOP violations"
         ],
         "origin_definition": [
-          "Origin Definition defines a core concept used in Advanced Web Security",
-          "It explains what origin definition is and why it matters",
-          "It covers the main rules and mental model behind origin definition",
-          "It shows how origin definition behaves in real application code",
-          "It highlights common mistakes developers make with origin definition",
-          "It compares origin definition with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of origin definition",
-          "It includes practical usage patterns for origin definition in Browser Security Model",
-          "It helps with debugging issues connected to origin definition",
-          "It prepares you to answer interview and architecture questions about origin definition"
+          "protocol host port tuple",
+          "same origin strict match",
+          "subdomain different origin",
+          "http vs https differs",
+          "port difference matters",
+          "used in security checks",
+          "affects storage access",
+          "debug origin mismatch"
         ],
         "sandboxing": [
-          "Sandboxing defines a core concept used in Advanced Web Security",
-          "It explains what sandboxing is and why it matters",
-          "It covers the main rules and mental model behind sandboxing",
-          "It shows how sandboxing behaves in real application code",
-          "It highlights common mistakes developers make with sandboxing",
-          "It compares sandboxing with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of sandboxing",
-          "It includes practical usage patterns for sandboxing in Browser Security Model",
-          "It helps with debugging issues connected to sandboxing",
-          "It prepares you to answer interview and architecture questions about sandboxing"
+          "restrict iframe capabilities",
+          "disable scripts forms",
+          "limit navigation control",
+          "apply sandbox attributes",
+          "enhance security isolation",
+          "allow specific permissions",
+          "protect parent context",
+          "debug sandbox issues"
         ],
         "process_isolation": [
-          "Process Isolation defines a core concept used in Advanced Web Security",
-          "It explains what process isolation is and why it matters",
-          "It covers the main rules and mental model behind process isolation",
-          "It shows how process isolation behaves in real application code",
-          "It highlights common mistakes developers make with process isolation",
-          "It compares process isolation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of process isolation",
-          "It includes practical usage patterns for process isolation in Browser Security Model",
-          "It helps with debugging issues connected to process isolation",
-          "It prepares you to answer interview and architecture questions about process isolation"
+          "separate browser processes",
+          "isolate site execution",
+          "prevent data leakage",
+          "improve crash safety",
+          "site isolation feature",
+          "mitigate speculative attacks",
+          "secure memory boundaries",
+          "debug isolation issues"
         ]
       }
     },
     {
       "Advanced Attack Vectors": {
         "dom_based_xss": [
-          "DOM Based XSS defines a core concept used in Advanced Web Security",
-          "It explains what dom based xss is and why it matters",
-          "It covers the main rules and mental model behind dom based xss",
-          "It shows how dom based xss behaves in real application code",
-          "It highlights common mistakes developers make with dom based xss",
-          "It compares dom based xss with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of dom based xss",
-          "It includes practical usage patterns for dom based xss in Advanced Attack Vectors",
-          "It helps with debugging issues connected to dom based xss",
-          "It prepares you to answer interview and architecture questions about dom based xss"
+          "client side script injection",
+          "manipulate DOM directly",
+          "unsafe sinks innerHTML eval",
+          "no server involvement",
+          "sanitize dynamic inputs",
+          "avoid unsafe APIs",
+          "use CSP protection",
+          "debug DOM XSS"
         ],
         "stored_vs_reflected_xss": [
-          "Stored vs Reflected XSS defines a core concept used in Advanced Web Security",
-          "It explains what stored vs reflected xss is and why it matters",
-          "It covers the main rules and mental model behind stored vs reflected xss",
-          "It shows how stored vs reflected xss behaves in real application code",
-          "It highlights common mistakes developers make with stored vs reflected xss",
-          "It compares stored vs reflected xss with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of stored vs reflected xss",
-          "It includes practical usage patterns for stored vs reflected xss in Advanced Attack Vectors",
-          "It helps with debugging issues connected to stored vs reflected xss",
-          "It prepares you to answer interview and architecture questions about stored vs reflected xss"
+          "stored persistent attack",
+          "reflected immediate response",
+          "server side injection points",
+          "user input vulnerability",
+          "escape output properly",
+          "validate inputs strictly",
+          "use encoding strategies",
+          "debug XSS types"
         ],
         "csrf_flow_deep": [
-          "CSRF Flow Deep defines a core concept used in Advanced Web Security",
-          "It explains what csrf flow deep is and why it matters",
-          "It covers the main rules and mental model behind csrf flow deep",
-          "It shows how csrf flow deep behaves in real application code",
-          "It highlights common mistakes developers make with csrf flow deep",
-          "It compares csrf flow deep with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of csrf flow deep",
-          "It includes practical usage patterns for csrf flow deep in Advanced Attack Vectors",
-          "It helps with debugging issues connected to csrf flow deep",
-          "It prepares you to answer interview and architecture questions about csrf flow deep"
+          "exploit authenticated requests",
+          "browser sends cookies automatically",
+          "use CSRF tokens validation",
+          "sameSite cookie protection",
+          "check origin referer",
+          "avoid state change GET",
+          "secure sensitive endpoints",
+          "debug CSRF flow"
         ],
         "clickjacking_iframe": [
-          "Clickjacking Iframe defines a core concept used in Advanced Web Security",
-          "It explains what clickjacking iframe is and why it matters",
-          "It covers the main rules and mental model behind clickjacking iframe",
-          "It shows how clickjacking iframe behaves in real application code",
-          "It highlights common mistakes developers make with clickjacking iframe",
-          "It compares clickjacking iframe with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of clickjacking iframe",
-          "It includes practical usage patterns for clickjacking iframe in Advanced Attack Vectors",
-          "It helps with debugging issues connected to clickjacking iframe",
-          "It prepares you to answer interview and architecture questions about clickjacking iframe"
+          "iframe overlay attack",
+          "hidden UI manipulation",
+          "user tricked clicking",
+          "use frame ancestors CSP",
+          "x frame options deny",
+          "visual click protection",
+          "disable embedding pages",
+          "debug clickjacking"
         ],
         "token_theft": [
-          "Token Theft defines a core concept used in Advanced Web Security",
-          "It explains what token theft is and why it matters",
-          "It covers the main rules and mental model behind token theft",
-          "It shows how token theft behaves in real application code",
-          "It highlights common mistakes developers make with token theft",
-          "It compares token theft with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of token theft",
-          "It includes practical usage patterns for token theft in Advanced Attack Vectors",
-          "It helps with debugging issues connected to token theft",
-          "It prepares you to answer interview and architecture questions about token theft"
+          "steal auth tokens",
+          "via XSS attacks",
+          "insecure storage risk",
+          "use httpOnly cookies",
+          "avoid localStorage tokens",
+          "short expiry tokens",
+          "rotate refresh tokens",
+          "debug token leaks"
         ]
       }
     },
     {
       "Secure Auth Flows": {
         "oauth_pkce": [
-          "OAuth PKCE defines a core concept used in Advanced Web Security",
-          "It explains what oauth pkce is and why it matters",
-          "It covers the main rules and mental model behind oauth pkce",
-          "It shows how oauth pkce behaves in real application code",
-          "It highlights common mistakes developers make with oauth pkce",
-          "It compares oauth pkce with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of oauth pkce",
-          "It includes practical usage patterns for oauth pkce in Secure Auth Flows",
-          "It helps with debugging issues connected to oauth pkce",
-          "It prepares you to answer interview and architecture questions about oauth pkce"
+          "secure public client flow",
+          "code verifier challenge",
+          "prevent auth code interception",
+          "use authorization code grant",
+          "no client secret needed",
+          "recommended for SPA",
+          "secure redirect handling",
+          "debug PKCE issues"
         ],
         "refresh_token_rotation": [
-          "Refresh Token Rotation defines a core concept used in Advanced Web Security",
-          "It explains what refresh token rotation is and why it matters",
-          "It covers the main rules and mental model behind refresh token rotation",
-          "It shows how refresh token rotation behaves in real application code",
-          "It highlights common mistakes developers make with refresh token rotation",
-          "It compares refresh token rotation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of refresh token rotation",
-          "It includes practical usage patterns for refresh token rotation in Secure Auth Flows",
-          "It helps with debugging issues connected to refresh token rotation",
-          "It prepares you to answer interview and architecture questions about refresh token rotation"
+          "rotate refresh tokens",
+          "invalidate old tokens",
+          "prevent replay attacks",
+          "improve session security",
+          "store securely server side",
+          "detect token misuse",
+          "limit token lifetime",
+          "debug rotation issues"
         ],
         "silent_auth": [
-          "Silent Auth defines a core concept used in Advanced Web Security",
-          "It explains what silent auth is and why it matters",
-          "It covers the main rules and mental model behind silent auth",
-          "It shows how silent auth behaves in real application code",
-          "It highlights common mistakes developers make with silent auth",
-          "It compares silent auth with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of silent auth",
-          "It includes practical usage patterns for silent auth in Secure Auth Flows",
-          "It helps with debugging issues connected to silent auth",
-          "It prepares you to answer interview and architecture questions about silent auth"
+          "background token refresh",
+          "no user interaction",
+          "iframe based auth check",
+          "maintain session continuity",
+          "handle third party cookies",
+          "avoid login redirects",
+          "improve UX flow",
+          "debug silent auth"
         ],
         "session_fixation": [
-          "Session Fixation defines a core concept used in Advanced Web Security",
-          "It explains what session fixation is and why it matters",
-          "It covers the main rules and mental model behind session fixation",
-          "It shows how session fixation behaves in real application code",
-          "It highlights common mistakes developers make with session fixation",
-          "It compares session fixation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of session fixation",
-          "It includes practical usage patterns for session fixation in Secure Auth Flows",
-          "It helps with debugging issues connected to session fixation",
-          "It prepares you to answer interview and architecture questions about session fixation"
+          "reuse existing session id",
+          "attacker sets session",
+          "fix session before login",
+          "regenerate session on login",
+          "invalidate old sessions",
+          "secure cookie handling",
+          "prevent session hijack",
+          "debug fixation issues"
         ]
       }
     },
     {
       "CSP & Headers": {
         "content_security_policy_advanced": [
-          "Content Security Policy Advanced defines a core concept used in Advanced Web Security",
-          "It explains what content security policy advanced is and why it matters",
-          "It covers the main rules and mental model behind content security policy advanced",
-          "It shows how content security policy advanced behaves in real application code",
-          "It highlights common mistakes developers make with content security policy advanced",
-          "It compares content security policy advanced with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of content security policy advanced",
-          "It includes practical usage patterns for content security policy advanced in CSP & Headers",
-          "It helps with debugging issues connected to content security policy advanced",
-          "It prepares you to answer interview and architecture questions about content security policy advanced"
+          "restrict resource sources",
+          "use nonce hash scripts",
+          "block inline scripts",
+          "prevent XSS attacks",
+          "define strict directives",
+          "monitor violation reports",
+          "fine grained control",
+          "debug CSP issues"
         ],
         "strict_transport_security": [
-          "Strict Transport Security defines a core concept used in Advanced Web Security",
-          "It explains what strict transport security is and why it matters",
-          "It covers the main rules and mental model behind strict transport security",
-          "It shows how strict transport security behaves in real application code",
-          "It highlights common mistakes developers make with strict transport security",
-          "It compares strict transport security with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of strict transport security",
-          "It includes practical usage patterns for strict transport security in CSP & Headers",
-          "It helps with debugging issues connected to strict transport security",
-          "It prepares you to answer interview and architecture questions about strict transport security"
+          "force HTTPS connections",
+          "prevent downgrade attacks",
+          "set HSTS header",
+          "include subdomains option",
+          "preload list support",
+          "long max age config",
+          "secure future requests",
+          "debug HSTS issues"
         ],
         "frame_ancestors": [
-          "Frame Ancestors defines a core concept used in Advanced Web Security",
-          "It explains what frame ancestors is and why it matters",
-          "It covers the main rules and mental model behind frame ancestors",
-          "It shows how frame ancestors behaves in real application code",
-          "It highlights common mistakes developers make with frame ancestors",
-          "It compares frame ancestors with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of frame ancestors",
-          "It includes practical usage patterns for frame ancestors in CSP & Headers",
-          "It helps with debugging issues connected to frame ancestors",
-          "It prepares you to answer interview and architecture questions about frame ancestors"
+          "control iframe embedding",
+          "restrict allowed domains",
+          "prevent clickjacking",
+          "part of CSP directive",
+          "override x frame options",
+          "allow trusted origins",
+          "secure UI rendering",
+          "debug embedding issues"
         ],
         "secure_headers_config": [
-          "Secure Headers Config defines a core concept used in Advanced Web Security",
-          "It explains what secure headers config is and why it matters",
-          "It covers the main rules and mental model behind secure headers config",
-          "It shows how secure headers config behaves in real application code",
-          "It highlights common mistakes developers make with secure headers config",
-          "It compares secure headers config with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of secure headers config",
-          "It includes practical usage patterns for secure headers config in CSP & Headers",
-          "It helps with debugging issues connected to secure headers config",
-          "It prepares you to answer interview and architecture questions about secure headers config"
+          "configure security headers",
+          "CSP HSTS XFO headers",
+          "reduce attack surface",
+          "standard header setup",
+          "protect against exploits",
+          "apply best practices",
+          "server side configuration",
+          "debug header config"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "avoid sensitive data leaks",
+          "secure props state flow",
+          "limit exposure scope",
+          "sanitize shared inputs",
+          "protect API responses",
+          "use secure contexts",
+          "validate data flow",
+          "debug leaks"
+        ],
+        "form_validation": [
+          "strict input validation",
+          "prevent injection attacks",
+          "sanitize user inputs",
+          "client server validation",
+          "error handling safely",
+          "avoid trusting client",
+          "use validation libraries",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "secure init cleanup flow",
+          "clear sensitive data",
+          "avoid memory leaks",
+          "handle auth lifecycle",
+          "secure async effects",
+          "control execution timing",
+          "protect secrets exposure",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load secure modules later",
+          "protect sensitive routes",
+          "dynamic imports control",
+          "reduce attack surface",
+          "auth guard protection",
+          "optimize secure loading",
+          "restrict access modules",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "secure service workers",
+          "validate cached data",
+          "avoid storing secrets",
+          "protect offline data",
+          "secure push messaging",
+          "manage cache policies",
+          "background sync security",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "monitor security logs",
+          "trace suspicious actions",
+          "analyze network headers",
+          "inspect token usage",
+          "use security scanners",
+          "test vulnerabilities",
+          "fix issues quickly",
+          "debug security issues"
+        ],
+        "testcase": [
+          "security test scenarios",
+          "test XSS CSRF flows",
+          "automated security tests",
+          "validate auth flows",
+          "penetration testing basics",
+          "edge case testing",
+          "coverage vulnerabilities",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "reduce attack surface",
+          "optimize security checks",
+          "use secure libraries",
+          "audit dependencies regularly",
+          "update patches timely",
+          "monitor threats actively",
+          "balance performance security",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "audit security practices",
+          "check HTTPS enforcement",
+          "review CSP headers",
+          "analyze vulnerabilities",
+          "fix audit warnings",
+          "track security metrics",
+          "optimize safely",
+          "debug audit issues"
+        ],
+        "security": [
+          "defense in depth strategy",
+          "least privilege principle",
+          "secure coding practices",
+          "regular security audits",
+          "protect sensitive endpoints",
+          "update dependencies frequently",
+          "monitor threats continuously",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "automate security scans",
+          "pipeline vulnerability checks",
+          "secure environment variables",
+          "restrict deployment access",
+          "monitor production security",
+          "rollback insecure builds",
+          "integrate security tools",
+          "debug deployment issues"
         ]
       }
     }

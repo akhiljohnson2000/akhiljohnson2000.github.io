@@ -5,132 +5,112 @@
     {
       "Core Types": {
         "primitive_types": [
-          "Understand all primitive types in TypeScript: string, number, boolean, bigint, symbol, null, and undefined",
-          "Learn how TypeScript treats primitives differently from JavaScript in strict mode",
-          "Understand literal types (e.g., 'hello', 42) and how they narrow values",
-          "Know when primitives are widened vs kept as literals",
-          "Understand immutability of primitive values",
-          "Learn how primitives behave in comparisons and assignments",
-          "Understand pitfalls with null and undefined in real-world apps",
-          "Use primitives effectively in function signatures and APIs",
-          "Understand performance implications vs object wrappers",
-          "Practice modeling domain values using precise primitive types"
+          "all TS primitive types",
+          "strict mode differences",
+          "literal types basics",
+          "widening vs literal types",
+          "immutability basics",
+          "null undefined handling",
+          "function signature usage",
+          "performance vs wrappers"
         ],
         "any_unknown_never": [
-          "Understand the difference between any, unknown, and never",
-          "Learn why any disables type safety and when it should be avoided",
-          "Use unknown safely by forcing type narrowing before usage",
-          "Understand never as a representation of impossible states",
-          "Use never in exhaustive checks (e.g., switch cases)",
-          "Learn how TypeScript infers never in unreachable code",
-          "Understand how these types affect type inference and control flow",
-          "Avoid common mistakes like overusing any in large codebases",
-          "Use unknown for safer APIs and external data handling",
-          "Apply never for type-safe error handling and assertions"
+          "any vs unknown vs never",
+          "avoid any usage",
+          "unknown requires narrowing",
+          "never impossible states",
+          "exhaustive switch checks",
+          "never inference cases",
+          "type safety impact",
+          "safe external data typing"
         ],
         "type_inference": [
-          "Understand how TypeScript infers types without explicit annotations",
-          "Learn contextual typing and how function arguments influence inference",
-          "Understand best common type and union inference",
-          "Learn how inference works with arrays, objects, and functions",
-          "Understand when TypeScript fails to infer correctly",
-          "Know when to override inference with explicit types",
-          "Understand inference in generics and return types",
-          "Learn how const vs let affects inferred types",
-          "Debug issues caused by incorrect type inference",
-          "Use inference to reduce boilerplate while maintaining safety"
+          "automatic type inference",
+          "contextual typing basics",
+          "union inference rules",
+          "arrays objects inference",
+          "inference failure cases",
+          "override with explicit types",
+          "const vs let inference",
+          "debug inference issues"
         ]
       }
     },
     {
       "Advanced Types": {
         "union_types": [
-          "Understand how union types allow multiple possible types (A | B)",
-          "Learn how TypeScript narrows unions using control flow",
-          "Use unions for flexible API design",
-          "Understand discriminated unions for modeling state machines",
-          "Learn how unions affect function inputs and outputs",
-          "Avoid pitfalls where unions lose specificity",
-          "Understand union distribution behavior in conditional types",
-          "Use unions to model optional and variant data structures",
-          "Debug union-related type errors effectively",
-          "Apply unions in real-world patterns like API responses"
+          "A | B basics",
+          "control flow narrowing",
+          "flexible API modeling",
+          "discriminated unions",
+          "input output unions",
+          "loss of specificity",
+          "conditional distribution",
+          "debug union errors"
         ],
         "intersection_types": [
-          "Understand how intersection types combine multiple types (A & B)",
-          "Learn how intersections are used to compose objects",
-          "Understand property conflicts and how TypeScript resolves them",
-          "Use intersections for mixins and reusable patterns",
-          "Learn differences between union vs intersection",
-          "Understand how intersections behave with functions and generics",
-          "Avoid overly complex intersections that reduce readability",
-          "Use intersections for extending third-party types",
-          "Debug issues caused by incompatible intersections",
-          "Apply intersections in scalable architecture design"
+          "A & B basics",
+          "object composition patterns",
+          "property conflict rules",
+          "mixins reusable patterns",
+          "union vs intersection diff",
+          "generics interaction",
+          "complexity readability issues",
+          "debug intersection issues"
         ],
         "mapped_types": [
-          "Understand how mapped types transform existing types",
-          "Learn syntax using [K in keyof T]",
-          "Use mapped types to create reusable transformations",
-          "Understand modifiers like readonly and optional (?)",
-          "Learn key remapping using as keyword",
-          "Use mapped types to build utility types",
-          "Understand deep vs shallow transformations",
-          "Avoid performance issues with deeply nested mapped types",
-          "Debug complex mapped type errors",
-          "Apply mapped types for DRY and scalable type systems"
+          "mapped types basics",
+          "keyof iteration syntax",
+          "reusable transformations",
+          "readonly optional modifiers",
+          "key remapping as",
+          "utility types creation",
+          "deep vs shallow mapping",
+          "debug mapped issues"
         ],
         "conditional_types": [
-          "Understand conditional types using T extends U ? X : Y",
-          "Learn how conditional types enable dynamic type logic",
-          "Understand distributive behavior over unions",
-          "Use infer keyword to extract types",
-          "Build reusable utility types using conditional logic",
-          "Understand recursion in conditional types",
-          "Avoid overly complex conditional chains",
-          "Debug unexpected type results in conditionals",
-          "Use conditional types for API response shaping",
-          "Apply them in advanced generic patterns"
+          "T extends U basics",
+          "dynamic type logic",
+          "union distribution behavior",
+          "infer keyword usage",
+          "utility type building",
+          "recursive conditionals",
+          "avoid deep chains",
+          "debug conditional results"
         ]
       }
     },
     {
       "Generics": {
         "generic_functions": [
-          "Understand how generics allow reusable and type-safe functions",
-          "Learn how to define generic parameters <T>",
-          "Understand type inference in generic functions",
-          "Use generics to preserve input-output relationships",
-          "Learn when generics are better than unions",
-          "Understand multiple generic parameters",
-          "Use generics in async and promise-based functions",
-          "Avoid overengineering with unnecessary generics",
-          "Debug issues with generic inference failures",
-          "Apply generics in reusable utility functions"
+          "generic functions basics",
+          "<T> parameter usage",
+          "generic inference",
+          "input output relation",
+          "generics vs unions",
+          "multiple generics",
+          "async generic usage",
+          "debug inference issues"
         ],
         "constraints": [
-          "Understand how to restrict generics using extends",
-          "Learn how constraints ensure type safety",
-          "Use keyof with constraints for safe property access",
-          "Understand structural constraints vs exact types",
-          "Learn how constraints improve autocomplete and DX",
-          "Avoid overly strict constraints that reduce flexibility",
-          "Use constraints in reusable libraries",
-          "Debug constraint-related type errors",
-          "Combine constraints with conditional types",
-          "Apply constraints in real-world API and utility design"
+          "extends constraint basics",
+          "type safety enforcement",
+          "keyof property access",
+          "structural constraints",
+          "DX autocomplete benefits",
+          "avoid over restriction",
+          "library usage patterns",
+          "debug constraint issues"
         ],
         "default_generics": [
-          "Understand how to define default generic types",
-          "Learn how defaults improve API usability",
-          "Use defaults to reduce required type arguments",
-          "Understand fallback behavior when types are omitted",
-          "Combine defaults with constraints effectively",
-          "Learn how defaults work in classes and interfaces",
-          "Avoid confusion when defaults hide inference issues",
-          "Debug unexpected type resolutions with defaults",
-          "Use defaults in library and framework design",
-          "Apply them to create flexible and ergonomic APIs"
+          "default generics basics",
+          "API usability improvement",
+          "reduce type arguments",
+          "fallback behavior",
+          "combine with constraints",
+          "classes interfaces usage",
+          "hidden inference issues",
+          "debug default resolution"
         ]
       }
     }

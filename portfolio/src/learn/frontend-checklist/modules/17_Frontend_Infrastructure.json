@@ -5,196 +5,280 @@
     {
       "Micro Frontends": {
         "micro_frontend_architecture": [
-          "Micro Frontend Architecture defines a core concept used in Frontend Infrastructure",
-          "It explains what micro frontend architecture is and why it matters",
-          "It covers the main rules and mental model behind micro frontend architecture",
-          "It shows how micro frontend architecture behaves in real application code",
-          "It highlights common mistakes developers make with micro frontend architecture",
-          "It compares micro frontend architecture with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of micro frontend architecture",
-          "It includes practical usage patterns for micro frontend architecture in Micro Frontends",
-          "It helps with debugging issues connected to micro frontend architecture",
-          "It prepares you to answer interview and architecture questions about micro frontend architecture"
+          "split app into micro apps",
+          "independent team ownership",
+          "deploy modules separately",
+          "isolate failures impact",
+          "framework agnostic integration",
+          "shared UI consistency challenges",
+          "complex routing orchestration",
+          "debug integration issues"
         ],
         "module_federation": [
-          "Module Federation defines a core concept used in Frontend Infrastructure",
-          "It explains what module federation is and why it matters",
-          "It covers the main rules and mental model behind module federation",
-          "It shows how module federation behaves in real application code",
-          "It highlights common mistakes developers make with module federation",
-          "It compares module federation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of module federation",
-          "It includes practical usage patterns for module federation in Micro Frontends",
-          "It helps with debugging issues connected to module federation",
-          "It prepares you to answer interview and architecture questions about module federation"
+          "share modules at runtime",
+          "remote host architecture",
+          "dynamic import micro apps",
+          "avoid duplicate dependencies",
+          "version conflict handling",
+          "webpack federation setup",
+          "optimize bundle sharing",
+          "debug federation issues"
         ],
         "integration_strategies": [
-          "Integration Strategies defines a core concept used in Frontend Infrastructure",
-          "It explains what integration strategies is and why it matters",
-          "It covers the main rules and mental model behind integration strategies",
-          "It shows how integration strategies behaves in real application code",
-          "It highlights common mistakes developers make with integration strategies",
-          "It compares integration strategies with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of integration strategies",
-          "It includes practical usage patterns for integration strategies in Micro Frontends",
-          "It helps with debugging issues connected to integration strategies",
-          "It prepares you to answer interview and architecture questions about integration strategies"
+          "iframe based isolation",
+          "client side composition",
+          "server side composition",
+          "web components integration",
+          "routing orchestration logic",
+          "shared state communication",
+          "choose strategy carefully",
+          "debug integration issues"
         ],
         "shared_dependencies": [
-          "Shared Dependencies defines a core concept used in Frontend Infrastructure",
-          "It explains what shared dependencies is and why it matters",
-          "It covers the main rules and mental model behind shared dependencies",
-          "It shows how shared dependencies behaves in real application code",
-          "It highlights common mistakes developers make with shared dependencies",
-          "It compares shared dependencies with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of shared dependencies",
-          "It includes practical usage patterns for shared dependencies in Micro Frontends",
-          "It helps with debugging issues connected to shared dependencies",
-          "It prepares you to answer interview and architecture questions about shared dependencies"
+          "avoid duplicate libraries",
+          "share common dependencies",
+          "version alignment required",
+          "singleton dependency usage",
+          "reduce bundle size",
+          "manage dependency conflicts",
+          "optimize performance loading",
+          "debug shared issues"
         ]
       }
     },
     {
       "Monorepo Management": {
         "monorepo_vs_polyrepo": [
-          "Monorepo vs Polyrepo defines a core concept used in Frontend Infrastructure",
-          "It explains what monorepo vs polyrepo is and why it matters",
-          "It covers the main rules and mental model behind monorepo vs polyrepo",
-          "It shows how monorepo vs polyrepo behaves in real application code",
-          "It highlights common mistakes developers make with monorepo vs polyrepo",
-          "It compares monorepo vs polyrepo with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of monorepo vs polyrepo",
-          "It includes practical usage patterns for monorepo vs polyrepo in Monorepo Management",
-          "It helps with debugging issues connected to monorepo vs polyrepo",
-          "It prepares you to answer interview and architecture questions about monorepo vs polyrepo"
+          "single repo multiple projects",
+          "shared code easier reuse",
+          "centralized dependency management",
+          "polyrepo independent repos",
+          "tradeoffs scaling complexity",
+          "tooling support required",
+          "team collaboration impact",
+          "debug repo issues"
         ],
         "nx": [
-          "Nx defines a core concept used in Frontend Infrastructure",
-          "It explains what nx is and why it matters",
-          "It covers the main rules and mental model behind nx",
-          "It shows how nx behaves in real application code",
-          "It highlights common mistakes developers make with nx",
-          "It compares nx with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of nx",
-          "It includes practical usage patterns for nx in Monorepo Management",
-          "It helps with debugging issues connected to nx",
-          "It prepares you to answer interview and architecture questions about nx"
+          "monorepo tooling framework",
+          "dependency graph analysis",
+          "affected builds optimization",
+          "code generation utilities",
+          "task orchestration system",
+          "cache build outputs",
+          "scalable large projects",
+          "debug nx config"
         ],
         "turborepo": [
-          "Turborepo defines a core concept used in Frontend Infrastructure",
-          "It explains what turborepo is and why it matters",
-          "It covers the main rules and mental model behind turborepo",
-          "It shows how turborepo behaves in real application code",
-          "It highlights common mistakes developers make with turborepo",
-          "It compares turborepo with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of turborepo",
-          "It includes practical usage patterns for turborepo in Monorepo Management",
-          "It helps with debugging issues connected to turborepo",
-          "It prepares you to answer interview and architecture questions about turborepo"
+          "fast monorepo builds",
+          "incremental build caching",
+          "parallel task execution",
+          "remote cache support",
+          "optimize CI pipelines",
+          "simplify repo management",
+          "works with nextjs",
+          "debug turbo issues"
         ],
         "dependency_graph_management": [
-          "Dependency Graph Management defines a core concept used in Frontend Infrastructure",
-          "It explains what dependency graph management is and why it matters",
-          "It covers the main rules and mental model behind dependency graph management",
-          "It shows how dependency graph management behaves in real application code",
-          "It highlights common mistakes developers make with dependency graph management",
-          "It compares dependency graph management with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of dependency graph management",
-          "It includes practical usage patterns for dependency graph management in Monorepo Management",
-          "It helps with debugging issues connected to dependency graph management",
-          "It prepares you to answer interview and architecture questions about dependency graph management"
+          "track project dependencies",
+          "visualize module relations",
+          "detect circular dependencies",
+          "optimize build order",
+          "improve code isolation",
+          "manage shared modules",
+          "avoid tight coupling",
+          "debug graph issues"
         ]
       }
     },
     {
       "Versioning & Releases": {
         "semantic_versioning": [
-          "Semantic Versioning defines a core concept used in Frontend Infrastructure",
-          "It explains what semantic versioning is and why it matters",
-          "It covers the main rules and mental model behind semantic versioning",
-          "It shows how semantic versioning behaves in real application code",
-          "It highlights common mistakes developers make with semantic versioning",
-          "It compares semantic versioning with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of semantic versioning",
-          "It includes practical usage patterns for semantic versioning in Versioning & Releases",
-          "It helps with debugging issues connected to semantic versioning",
-          "It prepares you to answer interview and architecture questions about semantic versioning"
+          "major minor patch rules",
+          "breaking changes version bump",
+          "backward compatibility tracking",
+          "versioning libraries packages",
+          "predictable release cycles",
+          "automate version updates",
+          "manage dependency upgrades",
+          "debug version conflicts"
         ],
         "release_strategies": [
-          "Release Strategies defines a core concept used in Frontend Infrastructure",
-          "It explains what release strategies is and why it matters",
-          "It covers the main rules and mental model behind release strategies",
-          "It shows how release strategies behaves in real application code",
-          "It highlights common mistakes developers make with release strategies",
-          "It compares release strategies with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of release strategies",
-          "It includes practical usage patterns for release strategies in Versioning & Releases",
-          "It helps with debugging issues connected to release strategies",
-          "It prepares you to answer interview and architecture questions about release strategies"
+          "blue green deployments",
+          "canary release rollout",
+          "feature flag toggles",
+          "gradual user rollout",
+          "rollback strategy planning",
+          "CI CD integration",
+          "monitor release metrics",
+          "debug release issues"
         ],
         "changelog_management": [
-          "Changelog Management defines a core concept used in Frontend Infrastructure",
-          "It explains what changelog management is and why it matters",
-          "It covers the main rules and mental model behind changelog management",
-          "It shows how changelog management behaves in real application code",
-          "It highlights common mistakes developers make with changelog management",
-          "It compares changelog management with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of changelog management",
-          "It includes practical usage patterns for changelog management in Versioning & Releases",
-          "It helps with debugging issues connected to changelog management",
-          "It prepares you to answer interview and architecture questions about changelog management"
+          "track release changes",
+          "auto generate changelog",
+          "follow conventional commits",
+          "document breaking changes",
+          "improve team visibility",
+          "version history tracking",
+          "release notes clarity",
+          "debug changelog issues"
         ]
       }
     },
     {
       "Design Systems": {
         "component_library": [
-          "Component Library defines a core concept used in Frontend Infrastructure",
-          "It explains what component library is and why it matters",
-          "It covers the main rules and mental model behind component library",
-          "It shows how component library behaves in real application code",
-          "It highlights common mistakes developers make with component library",
-          "It compares component library with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of component library",
-          "It includes practical usage patterns for component library in Design Systems",
-          "It helps with debugging issues connected to component library",
-          "It prepares you to answer interview and architecture questions about component library"
+          "central reusable components",
+          "consistent UI patterns",
+          "versioned component packages",
+          "shared across teams",
+          "optimize bundle usage",
+          "document component APIs",
+          "maintain accessibility standards",
+          "debug library issues"
         ],
         "storybook": [
-          "Storybook defines a core concept used in Frontend Infrastructure",
-          "It explains what storybook is and why it matters",
-          "It covers the main rules and mental model behind storybook",
-          "It shows how storybook behaves in real application code",
-          "It highlights common mistakes developers make with storybook",
-          "It compares storybook with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of storybook",
-          "It includes practical usage patterns for storybook in Design Systems",
-          "It helps with debugging issues connected to storybook",
-          "It prepares you to answer interview and architecture questions about storybook"
+          "component isolated development",
+          "visual component testing",
+          "document UI components",
+          "interactive playground usage",
+          "improve team collaboration",
+          "snapshot UI testing",
+          "integrate design systems",
+          "debug storybook issues"
         ],
         "design_tokens": [
-          "Design Tokens defines a core concept used in Frontend Infrastructure",
-          "It explains what design tokens is and why it matters",
-          "It covers the main rules and mental model behind design tokens",
-          "It shows how design tokens behaves in real application code",
-          "It highlights common mistakes developers make with design tokens",
-          "It compares design tokens with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of design tokens",
-          "It includes practical usage patterns for design tokens in Design Systems",
-          "It helps with debugging issues connected to design tokens",
-          "It prepares you to answer interview and architecture questions about design tokens"
+          "central design variables",
+          "colors spacing typography",
+          "cross platform consistency",
+          "theme driven design",
+          "update globally easily",
+          "use CSS variables",
+          "improve maintainability",
+          "debug token issues"
         ],
         "cross_team_scalability": [
-          "Cross Team Scalability defines a core concept used in Frontend Infrastructure",
-          "It explains what cross team scalability is and why it matters",
-          "It covers the main rules and mental model behind cross team scalability",
-          "It shows how cross team scalability behaves in real application code",
-          "It highlights common mistakes developers make with cross team scalability",
-          "It compares cross team scalability with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of cross team scalability",
-          "It includes practical usage patterns for cross team scalability in Design Systems",
-          "It helps with debugging issues connected to cross team scalability",
-          "It prepares you to answer interview and architecture questions about cross team scalability"
+          "multiple teams collaboration",
+          "shared design system usage",
+          "standard coding practices",
+          "governance model setup",
+          "avoid duplication efforts",
+          "scalable architecture design",
+          "communication across teams",
+          "debug scaling issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "cross app data sharing",
+          "event bus communication",
+          "global state strategies",
+          "avoid tight coupling",
+          "sync data across apps",
+          "use shared services",
+          "maintain consistency",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "validate shared forms",
+          "cross app validation rules",
+          "sync validation logic",
+          "error state consistency",
+          "prevent invalid submissions",
+          "use shared validators",
+          "optimize UX feedback",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "app init teardown flows",
+          "manage micro app lifecycle",
+          "cleanup resources properly",
+          "avoid memory leaks",
+          "handle mount unmount events",
+          "optimize lifecycle usage",
+          "sync lifecycle across apps",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load micro apps on demand",
+          "reduce initial bundle size",
+          "dynamic imports usage",
+          "optimize load performance",
+          "split features modules",
+          "prefetch preload strategies",
+          "improve scalability load",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "offline micro apps support",
+          "service worker integration",
+          "cache shared assets",
+          "background sync updates",
+          "installable applications",
+          "push notifications usage",
+          "improve resilience performance",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "trace micro app issues",
+          "monitor logs across apps",
+          "analyze performance bottlenecks",
+          "debug integration failures",
+          "inspect dependency issues",
+          "use devtools effectively",
+          "centralized logging systems",
+          "debug production issues"
+        ],
+        "testcase": [
+          "integration testing micro apps",
+          "unit test shared modules",
+          "mock dependencies usage",
+          "end to end testing flows",
+          "CI test pipelines",
+          "coverage analysis tools",
+          "test cross app flows",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "optimize bundle sharing",
+          "reduce duplicate dependencies",
+          "code splitting micro apps",
+          "optimize load performance",
+          "use caching strategies",
+          "analyze performance metrics",
+          "scale infrastructure efficiently",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure performance scores",
+          "optimize LCP CLS metrics",
+          "reduce blocking resources",
+          "improve load speed",
+          "analyze audit reports",
+          "optimize asset delivery",
+          "track performance trends",
+          "debug lighthouse issues"
+        ],
+        "security": [
+          "secure micro app communication",
+          "avoid exposing secrets",
+          "sanitize shared inputs",
+          "apply CSP policies",
+          "secure API interactions",
+          "handle authentication safely",
+          "isolate app boundaries",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "independent app deployments",
+          "automate CI pipelines",
+          "version control releases",
+          "environment config management",
+          "rollback deployment strategy",
+          "monitor production health",
+          "optimize deployment speed",
+          "debug deployment issues"
         ]
       }
     }

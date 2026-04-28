@@ -5,124 +5,460 @@
     {
       "Core Architecture": {
         "nodejs_runtime_overview": [
-          "Node.js is a JavaScript runtime built on Chrome V8 engine",
-          "It allows running JavaScript outside the browser",
-          "Uses event-driven, non-blocking I/O model",
-          "Designed for building scalable network applications",
-          "Single-threaded execution with async capabilities",
-          "Handles concurrency using event loop and callbacks",
-          "Includes built-in modules like fs, http, path",
-          "Uses libuv for async operations",
-          "Supports CommonJS module system",
-          "Ideal for I/O-heavy applications"
+          "v8 engine js runtime",
+          "non blocking async model",
+          "event driven architecture",
+          "single thread execution",
+          "libuv handles async ops",
+          "server side javascript runtime",
+          "fast io operations",
+          "debug runtime issues"
         ],
         "libuv_architecture": [
-          "libuv is a C library used by Node.js",
-          "Handles asynchronous I/O operations",
-          "Implements event loop internally",
-          "Manages thread pool for blocking tasks",
-          "Supports TCP, UDP, file system operations",
-          "Abstracts OS-level operations",
-          "Handles timers and polling",
-          "Used for cross-platform compatibility",
-          "Manages async DNS resolution",
-          "Core backbone of Node.js async behavior"
+          "handles async io operations",
+          "thread pool background tasks",
+          "event loop integration",
+          "manages timers network fs",
+          "cross platform abstraction layer",
+          "queues async callbacks",
+          "optimize io performance",
+          "debug libuv issues"
         ],
         "single_threaded_event_loop": [
-          "Node.js runs JavaScript in a single thread",
-          "Uses event loop for concurrency",
-          "Avoids thread-per-request model",
-          "Handles multiple requests efficiently",
-          "Delegates heavy work to worker threads",
-          "Non-blocking execution model",
-          "Callbacks executed via event loop",
-          "Prevents context switching overhead",
-          "Efficient for I/O-bound tasks",
-          "Can block if CPU-heavy tasks run"
+          "single thread execution model",
+          "handles concurrent requests",
+          "event loop processes tasks",
+          "non blocking operations",
+          "delegates heavy tasks",
+          "avoid blocking loop",
+          "efficient resource usage",
+          "debug loop issues"
         ],
         "event_loop_phases": [
-          "Timers phase executes setTimeout/setInterval",
-          "Pending callbacks phase handles system callbacks",
-          "Idle/prepare phase used internally",
-          "Poll phase handles I/O events",
-          "Check phase executes setImmediate",
-          "Close callbacks phase handles cleanup",
-          "Each phase has its own queue",
-          "Event loop cycles continuously",
-          "Microtasks run between phases",
-          "Order of execution is deterministic"
+          "timers pending callbacks idle",
+          "poll check close phases",
+          "process callbacks in order",
+          "handle async operations",
+          "understand execution flow",
+          "optimize task scheduling",
+          "avoid blocking phases",
+          "debug phase issues"
         ],
         "microtasks_vs_macrotasks": [
-          "Microtasks include Promises and process.nextTick",
-          "Macrotasks include setTimeout and setImmediate",
-          "Microtasks run before next event loop tick",
-          "Macrotasks run in event loop phases",
-          "Promise callbacks are microtasks",
-          "setTimeout callbacks are macrotasks",
-          "process.nextTick has higher priority",
-          "Microtask queue drains completely",
-          "Can starve event loop if overused",
-          "Important for execution order control"
+          "microtasks higher priority",
+          "promise nexttick queue",
+          "macrotasks timers io callbacks",
+          "execution order differences",
+          "queue processing flow",
+          "affects async behavior",
+          "optimize task scheduling",
+          "debug task issues"
+        ]
+      }
+    },
+    {
+      "Modules & Dependency System": {
+        "commonjs_vs_esmodules": [
+          "cjs require exports syntax",
+          "esm import export syntax",
+          "sync vs async loading",
+          "different module systems",
+          "node supports both",
+          "use esm modern apps",
+          "interop limitations exist",
+          "debug module issues"
         ],
-        "process_vs_thread": [
-          "Process is an independent execution unit",
-          "Thread is a lightweight unit within process",
-          "Node.js runs in a single process by default",
-          "Threads share memory, processes do not",
-          "Worker threads enable multithreading",
-          "Processes are isolated and safer",
-          "Threads are faster but complex",
-          "Cluster module uses multiple processes",
-          "Thread pool used by libuv",
-          "Choice depends on workload type"
+        "require_vs_import": [
+          "require dynamic synchronous",
+          "import static asynchronous",
+          "tree shaking support esm",
+          "used based on module type",
+          "affects bundling behavior",
+          "import preferred modern usage",
+          "resolve dependencies correctly",
+          "debug import issues"
         ],
-        "worker_threads": [
-          "Enable multi-threading in Node.js",
-          "Used for CPU-intensive tasks",
-          "Each worker has its own V8 instance",
-          "Communicate via message passing",
-          "SharedArrayBuffer allows shared memory",
-          "Avoid blocking main thread",
-          "Useful for heavy computations",
-          "Introduced in Node.js v10+",
-          "Alternative to child processes",
-          "Improves performance for CPU-bound tasks"
+        "module_resolution_algorithm": [
+          "resolve modules file paths",
+          "node_modules lookup hierarchy",
+          "package json entry points",
+          "index fallback resolution",
+          "resolve relative absolute paths",
+          "affects import behavior",
+          "optimize module loading",
+          "debug resolution issues"
         ],
-        "cluster_module": [
-          "Used to create multiple Node.js processes",
-          "Leverages multi-core CPUs",
-          "Each worker is a separate process",
-          "Shares same server port",
-          "Managed by master process",
-          "Improves scalability",
-          "Handles load distribution",
-          "Workers can be restarted",
-          "Good for stateless applications",
-          "Deprecated in favor of other approaches (partially)"
+        "caching_behavior": [
+          "modules cached after load",
+          "reuse same module instance",
+          "improves performance",
+          "state persists across imports",
+          "clear cache manually",
+          "avoid stale data issues",
+          "optimize memory usage",
+          "debug caching issues"
+        ]
+      }
+    },
+    {
+      "Asynchronous Internals": {
+        "event_loop_deep_dive": [
+          "understand loop internals deeply",
+          "phases execution order",
+          "callbacks scheduling flow",
+          "non blocking async behavior",
+          "optimize event loop usage",
+          "avoid blocking operations",
+          "improve performance handling",
+          "debug loop internals"
         ],
-        "child_process": [
-          "Used to spawn new processes",
-          "Supports exec, spawn, fork methods",
-          "Allows running shell commands",
-          "Used for heavy or external tasks",
-          "Separate memory space",
-          "Communication via IPC",
-          "Useful for scripting",
-          "Fork is optimized for Node.js modules",
-          "Avoids blocking main thread",
-          "Higher overhead than worker threads"
+        "nexttick_queue": [
+          "process nexttick queue priority",
+          "runs before other tasks",
+          "used for immediate execution",
+          "avoid excessive usage",
+          "affects execution order",
+          "optimize microtask handling",
+          "prevent starvation issues",
+          "debug nexttick issues"
         ],
-        "nodejs_vs_browser_runtime": [
-          "Node.js runs outside browser",
-          "Browser JS runs in window environment",
-          "Node has access to file system",
-          "Browser has DOM APIs",
-          "Node uses CommonJS, browser uses ESModules",
-          "Different global objects (global vs window)",
-          "Node supports backend development",
-          "Browser focuses on UI rendering",
-          "Different event loop implementations",
-          "Security restrictions differ"
+        "setimmediate_vs_settimeout": [
+          "setImmediate check phase",
+          "setTimeout timers phase",
+          "execution order differs",
+          "depends on event loop state",
+          "use appropriate scheduling",
+          "optimize async behavior",
+          "avoid confusion timing",
+          "debug timing issues"
+        ]
+      }
+    },
+    {
+      "Streams & Buffers": {
+        "readable_stream": [
+          "stream data in chunks",
+          "consume data progressively",
+          "pipe to writable streams",
+          "handle large data efficiently",
+          "event driven data flow",
+          "optimize memory usage",
+          "avoid full data load",
+          "debug readable issues"
+        ],
+        "writable_stream": [
+          "write data in chunks",
+          "handle backpressure flow",
+          "pipe from readable streams",
+          "efficient output handling",
+          "event driven writing",
+          "optimize io operations",
+          "manage write buffers",
+          "debug writable issues"
+        ],
+        "duplex_stream": [
+          "read write both directions",
+          "bidirectional data flow",
+          "combine readable writable",
+          "used in sockets",
+          "optimize streaming operations",
+          "handle async flow",
+          "improve performance",
+          "debug duplex issues"
+        ],
+        "backpressure_handling": [
+          "control data flow rate",
+          "prevent memory overflow",
+          "pause resume streams",
+          "optimize throughput",
+          "avoid overload system",
+          "manage buffer limits",
+          "improve performance",
+          "debug backpressure issues"
+        ]
+      }
+    },
+    {
+      "Networking & HTTP": {
+        "http_module_internals": [
+          "create http servers clients",
+          "handle request response lifecycle",
+          "low level api usage",
+          "headers parsing handling",
+          "stream based communication",
+          "optimize network performance",
+          "manage connections efficiently",
+          "debug http issues"
+        ],
+        "http_request_response_lifecycle": [
+          "incoming request processing",
+          "parse headers body data",
+          "route handle request",
+          "send response back client",
+          "close connection properly",
+          "optimize lifecycle flow",
+          "handle errors gracefully",
+          "debug lifecycle issues"
+        ],
+        "keep_alive_connections": [
+          "reuse tcp connections",
+          "reduce latency overhead",
+          "improve performance",
+          "configure connection headers",
+          "avoid repeated handshakes",
+          "optimize network usage",
+          "handle timeouts properly",
+          "debug keepalive issues"
+        ]
+      }
+    },
+    {
+      "Express & API Architecture": {
+        "middleware_pipeline": [
+          "chain request handlers functions",
+          "process request sequentially",
+          "modify request response objects",
+          "use next function flow",
+          "implement reusable logic",
+          "handle auth validation",
+          "optimize middleware usage",
+          "debug middleware issues"
+        ],
+        "routing_patterns": [
+          "define api routes endpoints",
+          "handle different http methods",
+          "use params query parsing",
+          "modular route organization",
+          "optimize route structure",
+          "separate concerns logic",
+          "improve maintainability",
+          "debug routing issues"
+        ],
+        "error_handling_middleware": [
+          "centralized error handling",
+          "capture thrown errors",
+          "send proper responses",
+          "avoid app crashes",
+          "log error details",
+          "improve reliability",
+          "handle async errors",
+          "debug error issues"
+        ]
+      }
+    },
+    {
+      "Performance & Optimization": {
+        "event_loop_blocking": [
+          "avoid blocking operations",
+          "use async non blocking code",
+          "offload heavy tasks",
+          "use worker threads",
+          "improve responsiveness",
+          "optimize cpu usage",
+          "monitor performance issues",
+          "debug blocking issues"
+        ],
+        "worker_threads_usage": [
+          "run cpu intensive tasks",
+          "parallel execution threads",
+          "avoid blocking event loop",
+          "share memory safely",
+          "improve performance",
+          "handle heavy computations",
+          "optimize concurrency",
+          "debug worker issues"
+        ],
+        "clustering_and_scaling": [
+          "use multiple cpu cores",
+          "fork multiple processes",
+          "load balancing requests",
+          "improve scalability",
+          "share server workload",
+          "optimize performance",
+          "handle high traffic",
+          "debug cluster issues"
+        ]
+      }
+    },
+    {
+      "Security": {
+        "authentication_jwt": [
+          "token based authentication",
+          "stateless auth system",
+          "sign verify tokens",
+          "store securely client",
+          "handle expiration refresh",
+          "secure api endpoints",
+          "avoid token leaks",
+          "debug auth issues"
+        ],
+        "password_hashing_bcrypt": [
+          "hash passwords securely",
+          "use salt rounds",
+          "prevent plain storage",
+          "compare hashed values",
+          "avoid weak passwords",
+          "improve security",
+          "protect user data",
+          "debug hashing issues"
+        ],
+        "xss_csrf_protection": [
+          "prevent script injection",
+          "sanitize user inputs",
+          "use csrf tokens",
+          "secure cookies usage",
+          "validate requests origin",
+          "protect user sessions",
+          "improve app security",
+          "debug security issues"
+        ]
+      }
+    },
+    {
+      "Database Integration": {
+        "connection_pooling": [
+          "reuse db connections",
+          "reduce connection overhead",
+          "improve performance",
+          "limit max connections",
+          "manage pool lifecycle",
+          "handle errors gracefully",
+          "optimize db usage",
+          "debug pooling issues"
+        ],
+        "transactions": [
+          "group operations atomically",
+          "commit rollback support",
+          "ensure data consistency",
+          "handle failures safely",
+          "use isolation levels",
+          "avoid partial updates",
+          "improve reliability",
+          "debug transaction issues"
+        ],
+        "orm_vs_query_builder": [
+          "orm abstracts database logic",
+          "query builder flexible queries",
+          "tradeoff simplicity control",
+          "choose based use case",
+          "optimize db operations",
+          "handle migrations schemas",
+          "improve maintainability",
+          "debug db issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "pass request response data",
+          "share context across layers",
+          "avoid tight coupling modules",
+          "use dependency injection",
+          "manage data flow properly",
+          "optimize architecture design",
+          "maintain clean interfaces",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "validate api inputs",
+          "sanitize request payloads",
+          "prevent invalid data",
+          "use validation libraries",
+          "handle errors gracefully",
+          "improve api reliability",
+          "secure input handling",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "server startup shutdown lifecycle",
+          "handle graceful shutdown",
+          "cleanup resources properly",
+          "manage connections lifecycle",
+          "optimize app lifecycle",
+          "handle signals events",
+          "improve reliability",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load modules on demand",
+          "reduce startup time",
+          "optimize memory usage",
+          "dynamic imports usage",
+          "improve performance",
+          "split heavy modules",
+          "load resources efficiently",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "backend support for PWA",
+          "handle offline sync APIs",
+          "optimize response caching",
+          "improve performance delivery",
+          "support push notifications",
+          "handle background sync",
+          "optimize network usage",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "inspect logs stack traces",
+          "use node debug tools",
+          "trace async flows",
+          "monitor performance metrics",
+          "analyze memory leaks",
+          "fix runtime errors",
+          "optimize troubleshooting",
+          "debug production issues"
+        ],
+        "testcase": [
+          "unit test backend logic",
+          "integration api testing",
+          "mock dependencies services",
+          "test edge cases",
+          "automate test pipelines",
+          "ensure code coverage",
+          "prevent regressions",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "optimize event loop usage",
+          "reduce memory footprint",
+          "improve throughput performance",
+          "use efficient algorithms",
+          "profile application performance",
+          "optimize db queries",
+          "scale horizontally",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure api performance metrics",
+          "optimize response time",
+          "reduce latency overhead",
+          "analyze performance reports",
+          "track efficiency trends",
+          "improve throughput",
+          "optimize resource usage",
+          "debug audit issues"
+        ],
+        "security": [
+          "secure backend endpoints",
+          "validate sanitize inputs",
+          "use https encryption",
+          "protect sensitive data",
+          "implement auth checks",
+          "prevent common attacks",
+          "audit dependencies",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "automate backend pipelines",
+          "build test deploy flow",
+          "manage environment configs",
+          "monitor production apps",
+          "rollback deployment issues",
+          "optimize deployment process",
+          "scale infrastructure",
+          "debug deployment issues"
         ]
       }
     }

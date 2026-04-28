@@ -5,104 +5,202 @@
     {
       "Edge Concepts": {
         "edge_functions": [
-          "Define Edge Functions clearly and explain where it fits within Edge Concepts.",
-          "Understand the core purpose of Edge Functions and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Edge Functions.",
-          "Study how Edge Functions works internally step by step in real application flow.",
-          "Compare Edge Functions with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Edge Functions.",
-          "Practice Edge Functions with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Edge Functions.",
-          "Learn how to debug, test, and validate behavior when working with Edge Functions.",
-          "Be able to explain Edge Functions in interviews using practical examples and tradeoffs."
+          "run code near users",
+          "low latency execution",
+          "stateless lightweight functions",
+          "deploy globally at edge",
+          "handle request response logic",
+          "limited runtime environment",
+          "fast cold start times",
+          "debug edge function issues"
         ],
         "serverless_edge": [
-          "Define Serverless Edge clearly and explain where it fits within Edge Concepts.",
-          "Understand the core purpose of Serverless Edge and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Serverless Edge.",
-          "Study how Serverless Edge works internally step by step in real application flow.",
-          "Compare Serverless Edge with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Serverless Edge.",
-          "Practice Serverless Edge with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Serverless Edge.",
-          "Learn how to debug, test, and validate behavior when working with Serverless Edge.",
-          "Be able to explain Serverless Edge in interviews using practical examples and tradeoffs."
+          "no server management needed",
+          "auto scaling infrastructure",
+          "pay per execution model",
+          "deploy globally distributed",
+          "event driven execution",
+          "fast response times",
+          "limited compute constraints",
+          "debug serverless issues"
         ],
         "latency_optimization": [
-          "Define Latency Optimization clearly and explain where it fits within Edge Concepts.",
-          "Understand the core purpose of Latency Optimization and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Latency Optimization.",
-          "Study how Latency Optimization works internally step by step in real application flow.",
-          "Compare Latency Optimization with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Latency Optimization.",
-          "Practice Latency Optimization with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Latency Optimization.",
-          "Learn how to debug, test, and validate behavior when working with Latency Optimization.",
-          "Be able to explain Latency Optimization in interviews using practical examples and tradeoffs."
+          "reduce network round trips",
+          "serve content closer users",
+          "optimize API response time",
+          "use caching strategies",
+          "minimize backend calls",
+          "improve page load speed",
+          "use CDN edge nodes",
+          "debug latency issues"
         ],
         "geo_distribution": [
-          "Define Geo Distribution clearly and explain where it fits within Edge Concepts.",
-          "Understand the core purpose of Geo Distribution and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Geo Distribution.",
-          "Study how Geo Distribution works internally step by step in real application flow.",
-          "Compare Geo Distribution with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Geo Distribution.",
-          "Practice Geo Distribution with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Geo Distribution.",
-          "Learn how to debug, test, and validate behavior when working with Geo Distribution.",
-          "Be able to explain Geo Distribution in interviews using practical examples and tradeoffs."
+          "deploy across regions globally",
+          "route users nearest location",
+          "improve performance delivery",
+          "handle region based logic",
+          "failover across regions",
+          "data residency concerns",
+          "optimize traffic routing",
+          "debug geo issues"
         ]
       }
     },
     {
       "Rendering at Edge": {
         "edge_ssr": [
-          "Define Edge SSR clearly and explain where it fits within Rendering at Edge.",
-          "Understand the core purpose of Edge SSR and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Edge SSR.",
-          "Study how Edge SSR works internally step by step in real application flow.",
-          "Compare Edge SSR with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Edge SSR.",
-          "Practice Edge SSR with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Edge SSR.",
-          "Learn how to debug, test, and validate behavior when working with Edge SSR.",
-          "Be able to explain Edge SSR in interviews using practical examples and tradeoffs."
+          "render pages at edge",
+          "faster initial response",
+          "reduce origin server load",
+          "combine SSR CDN benefits",
+          "dynamic content rendering",
+          "optimize SEO performance",
+          "handle personalization logic",
+          "debug edge SSR issues"
         ],
         "streaming": [
-          "Define Streaming clearly and explain where it fits within Rendering at Edge.",
-          "Understand the core purpose of Streaming and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Streaming.",
-          "Study how Streaming works internally step by step in real application flow.",
-          "Compare Streaming with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Streaming.",
-          "Practice Streaming with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Streaming.",
-          "Learn how to debug, test, and validate behavior when working with Streaming.",
-          "Be able to explain Streaming in interviews using practical examples and tradeoffs."
+          "send HTML chunks progressively",
+          "improve perceived performance",
+          "render partial UI early",
+          "reduce time to first byte",
+          "handle async data streams",
+          "progressive hydration support",
+          "optimize user experience",
+          "debug streaming issues"
         ],
         "middleware_execution": [
-          "Define Middleware Execution clearly and explain where it fits within Rendering at Edge.",
-          "Understand the core purpose of Middleware Execution and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Middleware Execution.",
-          "Study how Middleware Execution works internally step by step in real application flow.",
-          "Compare Middleware Execution with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Middleware Execution.",
-          "Practice Middleware Execution with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Middleware Execution.",
-          "Learn how to debug, test, and validate behavior when working with Middleware Execution.",
-          "Be able to explain Middleware Execution in interviews using practical examples and tradeoffs."
+          "run logic before request",
+          "handle auth routing logic",
+          "modify request response",
+          "execute at edge layer",
+          "fast lightweight processing",
+          "use for redirects rewrites",
+          "optimize performance flow",
+          "debug middleware issues"
         ],
         "edge_caching": [
-          "Define Edge Caching clearly and explain where it fits within Rendering at Edge.",
-          "Understand the core purpose of Edge Caching and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Edge Caching.",
-          "Study how Edge Caching works internally step by step in real application flow.",
-          "Compare Edge Caching with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Edge Caching.",
-          "Practice Edge Caching with small examples before applying it in larger Edge Runtime projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Edge Caching.",
-          "Learn how to debug, test, and validate behavior when working with Edge Caching.",
-          "Be able to explain Edge Caching in interviews using practical examples and tradeoffs."
+          "cache responses at edge",
+          "reduce origin server calls",
+          "serve cached content fast",
+          "use stale while revalidate",
+          "configure cache headers",
+          "improve scalability performance",
+          "optimize content delivery",
+          "debug cache issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "pass data via headers",
+          "inject edge context values",
+          "avoid sensitive exposure",
+          "use request metadata",
+          "sync data across edge",
+          "optimize data flow",
+          "secure data transfer",
+          "debug data issues"
+        ],
+        "form_validation": [
+          "validate inputs at edge",
+          "early request validation",
+          "reduce backend load",
+          "sanitize incoming data",
+          "prevent invalid requests",
+          "fast validation logic",
+          "improve performance flow",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "request lifecycle handling",
+          "before after request logic",
+          "middleware execution flow",
+          "cleanup response handling",
+          "optimize lifecycle stages",
+          "control execution timing",
+          "manage async operations",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load logic on demand",
+          "dynamic edge functions",
+          "optimize resource usage",
+          "reduce initial processing",
+          "split edge logic modules",
+          "improve performance load",
+          "conditional execution paths",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "edge cache PWA assets",
+          "serve offline resources",
+          "optimize service worker",
+          "global asset delivery",
+          "reduce latency offline",
+          "improve user experience",
+          "sync data efficiently",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "inspect edge logs",
+          "trace request flow",
+          "analyze latency issues",
+          "debug middleware logic",
+          "monitor execution errors",
+          "use observability tools",
+          "fix runtime issues",
+          "debug production issues"
+        ],
+        "testcase": [
+          "test edge functions logic",
+          "mock request responses",
+          "integration edge flows",
+          "validate routing behavior",
+          "edge case testing",
+          "automated pipeline tests",
+          "performance testing edge",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "optimize cold start time",
+          "reduce execution cost",
+          "use efficient caching",
+          "minimize payload size",
+          "optimize routing logic",
+          "improve scalability performance",
+          "analyze performance metrics",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure edge performance",
+          "optimize TTFB metrics",
+          "reduce latency impact",
+          "improve load speed",
+          "analyze audit reports",
+          "optimize asset delivery",
+          "track performance trends",
+          "debug audit issues"
+        ],
+        "security": [
+          "secure edge endpoints",
+          "validate incoming requests",
+          "protect sensitive data",
+          "apply auth checks",
+          "use HTTPS always",
+          "sanitize user inputs",
+          "prevent abuse attacks",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "deploy edge functions globally",
+          "automate edge pipelines",
+          "version edge deployments",
+          "rollback strategies setup",
+          "monitor edge performance",
+          "optimize deployment flow",
+          "manage environments configs",
+          "debug deployment issues"
         ]
       }
     }

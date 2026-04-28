@@ -1,972 +1,521 @@
 {
   "order": 3,
-  "title": "JavaScript Core",
+  "title": "JavaScript",
   "topics": [
     {
       "Execution Context": {
         "global_execution_context": [
-          "Global Execution Context defines a core concept used in JavaScript Core",
-          "It explains what global execution context is and why it matters",
-          "It covers the main rules and mental model behind global execution context",
-          "It shows how global execution context behaves in real application code",
-          "It highlights common mistakes developers make with global execution context",
-          "It compares global execution context with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of global execution context",
-          "It includes practical usage patterns for global execution context in Execution Context",
-          "It helps with debugging issues connected to global execution context",
-          "It prepares you to answer interview and architecture questions about global execution context"
+          "global object binding",
+          "this global reference",
+          "single global context",
+          "creation execution phases",
+          "variable environment setup",
+          "hoisting basics",
+          "interview core concept"
         ],
         "function_execution_context": [
-          "Function Execution Context defines a core concept used in JavaScript Core",
-          "It explains what function execution context is and why it matters",
-          "It covers the main rules and mental model behind function execution context",
-          "It shows how function execution context behaves in real application code",
-          "It highlights common mistakes developers make with function execution context",
-          "It compares function execution context with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of function execution context",
-          "It includes practical usage patterns for function execution context in Execution Context",
-          "It helps with debugging issues connected to function execution context",
-          "It prepares you to answer interview and architecture questions about function execution context"
+          "new context per call",
+          "arguments object creation",
+          "local scope variables",
+          "this binding rules",
+          "stack push pop",
+          "nested execution handling",
+          "function scope isolation"
         ],
         "creation_phase": [
-          "Creation Phase defines a core concept used in JavaScript Core",
-          "It explains what creation phase is and why it matters",
-          "It covers the main rules and mental model behind creation phase",
-          "It shows how creation phase behaves in real application code",
-          "It highlights common mistakes developers make with creation phase",
-          "It compares creation phase with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of creation phase",
-          "It includes practical usage patterns for creation phase in Execution Context",
-          "It helps with debugging issues connected to creation phase",
-          "It prepares you to answer interview and architecture questions about creation phase"
+          "memory allocation variables",
+          "functions fully hoisted",
+          "var undefined init",
+          "let const TDZ",
+          "scope chain setup",
+          "this binding assigned",
+          "environment record init"
         ],
         "execution_phase": [
-          "Execution Phase defines a core concept used in JavaScript Core",
-          "It explains what execution phase is and why it matters",
-          "It covers the main rules and mental model behind execution phase",
-          "It shows how execution phase behaves in real application code",
-          "It highlights common mistakes developers make with execution phase",
-          "It compares execution phase with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of execution phase",
-          "It includes practical usage patterns for execution phase in Execution Context",
-          "It helps with debugging issues connected to execution phase",
-          "It prepares you to answer interview and architecture questions about execution phase"
+          "code line execution",
+          "variable assignment runtime",
+          "function calls execution",
+          "scope lookup process",
+          "runtime errors occur",
+          "stack frame updates",
+          "control flow execution"
         ],
         "call_stack": [
-          "Call Stack defines a core concept used in JavaScript Core",
-          "It explains what call stack is and why it matters",
-          "It covers the main rules and mental model behind call stack",
-          "It shows how call stack behaves in real application code",
-          "It highlights common mistakes developers make with call stack",
-          "It compares call stack with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of call stack",
-          "It includes practical usage patterns for call stack in Execution Context",
-          "It helps with debugging issues connected to call stack",
-          "It prepares you to answer interview and architecture questions about call stack"
+          "LIFO execution order",
+          "function push pop",
+          "stack overflow recursion",
+          "execution context stack",
+          "synchronous blocking behavior",
+          "debug stack traces",
+          "single thread model"
         ],
         "memory_heap": [
-          "Memory Heap defines a core concept used in JavaScript Core",
-          "It explains what memory heap is and why it matters",
-          "It covers the main rules and mental model behind memory heap",
-          "It shows how memory heap behaves in real application code",
-          "It highlights common mistakes developers make with memory heap",
-          "It compares memory heap with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of memory heap",
-          "It includes practical usage patterns for memory heap in Execution Context",
-          "It helps with debugging issues connected to memory heap",
-          "It prepares you to answer interview and architecture questions about memory heap"
+          "object storage location",
+          "reference allocation heap",
+          "dynamic memory usage",
+          "garbage collection target",
+          "large data structures",
+          "memory leaks risk",
+          "performance impact"
         ]
       }
     },
     {
       "Scope & Lexical Environment": {
         "lexical_environment": [
-          "Lexical Environment defines a core concept used in JavaScript Core",
-          "It explains what lexical environment is and why it matters",
-          "It covers the main rules and mental model behind lexical environment",
-          "It shows how lexical environment behaves in real application code",
-          "It highlights common mistakes developers make with lexical environment",
-          "It compares lexical environment with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of lexical environment",
-          "It includes practical usage patterns for lexical environment in Scope & Lexical Environment",
-          "It helps with debugging issues connected to lexical environment",
-          "It prepares you to answer interview and architecture questions about lexical environment"
+          "scope plus environment record",
+          "created per execution",
+          "stores variables functions",
+          "outer reference pointer",
+          "static scope behavior",
+          "used for lookup",
+          "closure foundation"
         ],
         "environment_record": [
-          "Environment Record defines a core concept used in JavaScript Core",
-          "It explains what environment record is and why it matters",
-          "It covers the main rules and mental model behind environment record",
-          "It shows how environment record behaves in real application code",
-          "It highlights common mistakes developers make with environment record",
-          "It compares environment record with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of environment record",
-          "It includes practical usage patterns for environment record in Scope & Lexical Environment",
-          "It helps with debugging issues connected to environment record",
-          "It prepares you to answer interview and architecture questions about environment record"
+          "variable bindings storage",
+          "function declarations storage",
+          "this binding storage",
+          "block function records",
+          "mutable immutable bindings",
+          "scope lookup usage",
+          "execution context part"
         ],
         "outer_reference": [
-          "Outer Reference defines a core concept used in JavaScript Core",
-          "It explains what outer reference is and why it matters",
-          "It covers the main rules and mental model behind outer reference",
-          "It shows how outer reference behaves in real application code",
-          "It highlights common mistakes developers make with outer reference",
-          "It compares outer reference with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of outer reference",
-          "It includes practical usage patterns for outer reference in Scope & Lexical Environment",
-          "It helps with debugging issues connected to outer reference",
-          "It prepares you to answer interview and architecture questions about outer reference"
+          "parent lexical link",
+          "scope chain connection",
+          "lexical lookup process",
+          "points outer environment",
+          "null at global",
+          "closure reference link",
+          "variable resolution path"
         ],
         "scope_chain": [
-          "Scope Chain defines a core concept used in JavaScript Core",
-          "It explains what scope chain is and why it matters",
-          "It covers the main rules and mental model behind scope chain",
-          "It shows how scope chain behaves in real application code",
-          "It highlights common mistakes developers make with scope chain",
-          "It compares scope chain with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of scope chain",
-          "It includes practical usage patterns for scope chain in Scope & Lexical Environment",
-          "It helps with debugging issues connected to scope chain",
-          "It prepares you to answer interview and architecture questions about scope chain"
+          "chain of environments",
+          "variable lookup traversal",
+          "lexical scope resolution",
+          "global fallback access",
+          "lookup performance cost",
+          "closure scope usage",
+          "debug variable scope"
         ],
         "block_scope": [
-          "Block Scope defines a core concept used in JavaScript Core",
-          "It explains what block scope is and why it matters",
-          "It covers the main rules and mental model behind block scope",
-          "It shows how block scope behaves in real application code",
-          "It highlights common mistakes developers make with block scope",
-          "It compares block scope with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of block scope",
-          "It includes practical usage patterns for block scope in Scope & Lexical Environment",
-          "It helps with debugging issues connected to block scope",
-          "It prepares you to answer interview and architecture questions about block scope"
+          "let const scoped",
+          "inside block braces",
+          "TDZ applies",
+          "shadowing possible",
+          "loop scope isolation",
+          "no var support",
+          "memory control benefit"
         ],
         "function_scope": [
-          "Function Scope defines a core concept used in JavaScript Core",
-          "It explains what function scope is and why it matters",
-          "It covers the main rules and mental model behind function scope",
-          "It shows how function scope behaves in real application code",
-          "It highlights common mistakes developers make with function scope",
-          "It compares function scope with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of function scope",
-          "It includes practical usage patterns for function scope in Scope & Lexical Environment",
-          "It helps with debugging issues connected to function scope",
-          "It prepares you to answer interview and architecture questions about function scope"
+          "var scoped functions",
+          "accessible inside function",
+          "no block restriction",
+          "hoisting applies",
+          "closure creation base",
+          "global leakage risk",
+          "legacy usage pattern"
         ],
         "global_scope": [
-          "Global Scope defines a core concept used in JavaScript Core",
-          "It explains what global scope is and why it matters",
-          "It covers the main rules and mental model behind global scope",
-          "It shows how global scope behaves in real application code",
-          "It highlights common mistakes developers make with global scope",
-          "It compares global scope with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of global scope",
-          "It includes practical usage patterns for global scope in Scope & Lexical Environment",
-          "It helps with debugging issues connected to global scope",
-          "It prepares you to answer interview and architecture questions about global scope"
+          "window global object",
+          "accessible everywhere",
+          "pollution risk high",
+          "single scope instance",
+          "var attaches global",
+          "let const no attach",
+          "avoid excessive globals"
         ]
       }
     },
     {
       "Hoisting & TDZ": {
         "var_hoisting": [
-          "Var Hoisting defines a core concept used in JavaScript Core",
-          "It explains what var hoisting is and why it matters",
-          "It covers the main rules and mental model behind var hoisting",
-          "It shows how var hoisting behaves in real application code",
-          "It highlights common mistakes developers make with var hoisting",
-          "It compares var hoisting with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of var hoisting",
-          "It includes practical usage patterns for var hoisting in Hoisting & TDZ",
-          "It helps with debugging issues connected to var hoisting",
-          "It prepares you to answer interview and architecture questions about var hoisting"
+          "declared before execution",
+          "initialized undefined",
+          "function scope behavior",
+          "redeclare allowed",
+          "no TDZ restriction",
+          "undefined bugs common",
+          "legacy variable usage"
         ],
         "let_const_hoisting": [
-          "Let Const Hoisting defines a core concept used in JavaScript Core",
-          "It explains what let const hoisting is and why it matters",
-          "It covers the main rules and mental model behind let const hoisting",
-          "It shows how let const hoisting behaves in real application code",
-          "It highlights common mistakes developers make with let const hoisting",
-          "It compares let const hoisting with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of let const hoisting",
-          "It includes practical usage patterns for let const hoisting in Hoisting & TDZ",
-          "It helps with debugging issues connected to let const hoisting",
-          "It prepares you to answer interview and architecture questions about let const hoisting"
+          "hoisted not initialized",
+          "temporal dead zone",
+          "block scoped variables",
+          "no redeclaration allowed",
+          "access before error",
+          "safer variable usage",
+          "modern standard"
         ],
         "temporal_dead_zone": [
-          "Temporal Dead Zone defines a core concept used in JavaScript Core",
-          "It explains what temporal dead zone is and why it matters",
-          "It covers the main rules and mental model behind temporal dead zone",
-          "It shows how temporal dead zone behaves in real application code",
-          "It highlights common mistakes developers make with temporal dead zone",
-          "It compares temporal dead zone with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of temporal dead zone",
-          "It includes practical usage patterns for temporal dead zone in Hoisting & TDZ",
-          "It helps with debugging issues connected to temporal dead zone",
-          "It prepares you to answer interview and architecture questions about temporal dead zone"
+          "access before init error",
+          "between declaration init",
+          "applies let const",
+          "prevents unsafe usage",
+          "runtime reference error",
+          "block scope restriction",
+          "interview key concept"
         ],
         "initialization_vs_declaration": [
-          "Initialization vs Declaration defines a core concept used in JavaScript Core",
-          "It explains what initialization vs declaration is and why it matters",
-          "It covers the main rules and mental model behind initialization vs declaration",
-          "It shows how initialization vs declaration behaves in real application code",
-          "It highlights common mistakes developers make with initialization vs declaration",
-          "It compares initialization vs declaration with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of initialization vs declaration",
-          "It includes practical usage patterns for initialization vs declaration in Hoisting & TDZ",
-          "It helps with debugging issues connected to initialization vs declaration",
-          "It prepares you to answer interview and architecture questions about initialization vs declaration"
+          "declaration memory allocation",
+          "initialization value assignment",
+          "var undefined default",
+          "let const no default",
+          "TDZ until init",
+          "function fully initialized",
+          "execution phase difference"
         ],
         "re_declaration_rules": [
-          "Re Declaration Rules defines a core concept used in JavaScript Core",
-          "It explains what re declaration rules is and why it matters",
-          "It covers the main rules and mental model behind re declaration rules",
-          "It shows how re declaration rules behaves in real application code",
-          "It highlights common mistakes developers make with re declaration rules",
-          "It compares re declaration rules with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of re declaration rules",
-          "It includes practical usage patterns for re declaration rules in Hoisting & TDZ",
-          "It helps with debugging issues connected to re declaration rules",
-          "It prepares you to answer interview and architecture questions about re declaration rules"
+          "var allows redeclare",
+          "let const no redeclare",
+          "same scope restriction",
+          "different scope allowed",
+          "function redeclare allowed",
+          "strict mode errors",
+          "shadowing distinction"
         ],
         "shadowing": [
-          "Shadowing defines a core concept used in JavaScript Core",
-          "It explains what shadowing is and why it matters",
-          "It covers the main rules and mental model behind shadowing",
-          "It shows how shadowing behaves in real application code",
-          "It highlights common mistakes developers make with shadowing",
-          "It compares shadowing with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of shadowing",
-          "It includes practical usage patterns for shadowing in Hoisting & TDZ",
-          "It helps with debugging issues connected to shadowing",
-          "It prepares you to answer interview and architecture questions about shadowing"
+          "inner variable override",
+          "different scope levels",
+          "let var combinations",
+          "illegal shadowing cases",
+          "scope chain priority",
+          "debugging confusion risk",
+          "interview edge cases"
         ]
       }
     },
     {
       "this Binding": {
         "default_binding": [
-          "Default Binding defines a core concept used in JavaScript Core",
-          "It explains what default binding is and why it matters",
-          "It covers the main rules and mental model behind default binding",
-          "It shows how default binding behaves in real application code",
-          "It highlights common mistakes developers make with default binding",
-          "It compares default binding with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of default binding",
-          "It includes practical usage patterns for default binding in this Binding",
-          "It helps with debugging issues connected to default binding",
-          "It prepares you to answer interview and architecture questions about default binding"
+          "global object binding",
+          "non strict window",
+          "strict undefined this",
+          "function direct call",
+          "fallback binding rule",
+          "common mistake this",
+          "interview concept"
         ],
         "implicit_binding": [
-          "Implicit Binding defines a core concept used in JavaScript Core",
-          "It explains what implicit binding is and why it matters",
-          "It covers the main rules and mental model behind implicit binding",
-          "It shows how implicit binding behaves in real application code",
-          "It highlights common mistakes developers make with implicit binding",
-          "It compares implicit binding with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of implicit binding",
-          "It includes practical usage patterns for implicit binding in this Binding",
-          "It helps with debugging issues connected to implicit binding",
-          "It prepares you to answer interview and architecture questions about implicit binding"
+          "object method call",
+          "this refers object",
+          "lost binding cases",
+          "nested object issues",
+          "call site matters",
+          "debug binding errors",
+          "method invocation rule"
         ],
         "explicit_binding_call_apply_bind": [
-          "Explicit Binding Call Apply Bind defines a core concept used in JavaScript Core",
-          "It explains what explicit binding call apply bind is and why it matters",
-          "It covers the main rules and mental model behind explicit binding call apply bind",
-          "It shows how explicit binding call apply bind behaves in real application code",
-          "It highlights common mistakes developers make with explicit binding call apply bind",
-          "It compares explicit binding call apply bind with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of explicit binding call apply bind",
-          "It includes practical usage patterns for explicit binding call apply bind in this Binding",
-          "It helps with debugging issues connected to explicit binding call apply bind",
-          "It prepares you to answer interview and architecture questions about explicit binding call apply bind"
+          "manual this binding",
+          "call apply bind usage",
+          "argument passing styles",
+          "hard binding concept",
+          "function borrowing usage",
+          "override default binding",
+          "interview scenarios"
         ],
         "new_binding": [
-          "New Binding defines a core concept used in JavaScript Core",
-          "It explains what new binding is and why it matters",
-          "It covers the main rules and mental model behind new binding",
-          "It shows how new binding behaves in real application code",
-          "It highlights common mistakes developers make with new binding",
-          "It compares new binding with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of new binding",
-          "It includes practical usage patterns for new binding in this Binding",
-          "It helps with debugging issues connected to new binding",
-          "It prepares you to answer interview and architecture questions about new binding"
+          "constructor invocation new",
+          "this new object",
+          "prototype linkage setup",
+          "implicit return object",
+          "instance creation flow",
+          "binding precedence high",
+          "class style usage"
         ],
         "arrow_function_this": [
-          "Arrow Function This defines a core concept used in JavaScript Core",
-          "It explains what arrow function this is and why it matters",
-          "It covers the main rules and mental model behind arrow function this",
-          "It shows how arrow function this behaves in real application code",
-          "It highlights common mistakes developers make with arrow function this",
-          "It compares arrow function this with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of arrow function this",
-          "It includes practical usage patterns for arrow function this in this Binding",
-          "It helps with debugging issues connected to arrow function this",
-          "It prepares you to answer interview and architecture questions about arrow function this"
+          "lexical this binding",
+          "no own this",
+          "inherits parent scope",
+          "cannot rebind this",
+          "no constructor usage",
+          "event handler usage",
+          "common pitfalls"
         ],
         "strict_mode_this": [
-          "Strict Mode This defines a core concept used in JavaScript Core",
-          "It explains what strict mode this is and why it matters",
-          "It covers the main rules and mental model behind strict mode this",
-          "It shows how strict mode this behaves in real application code",
-          "It highlights common mistakes developers make with strict mode this",
-          "It compares strict mode this with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of strict mode this",
-          "It includes practical usage patterns for strict mode this in this Binding",
-          "It helps with debugging issues connected to strict mode this",
-          "It prepares you to answer interview and architecture questions about strict mode this"
+          "undefined default this",
+          "no global fallback",
+          "safer binding behavior",
+          "prevents silent bugs",
+          "strict mode differences",
+          "debug binding issues",
+          "interview topic"
         ]
       }
     },
     {
       "Closures": {
         "closure_definition": [
-          "Closure Definition defines a core concept used in JavaScript Core",
-          "It explains what closure definition is and why it matters",
-          "It covers the main rules and mental model behind closure definition",
-          "It shows how closure definition behaves in real application code",
-          "It highlights common mistakes developers make with closure definition",
-          "It compares closure definition with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of closure definition",
-          "It includes practical usage patterns for closure definition in Closures",
-          "It helps with debugging issues connected to closure definition",
-          "It prepares you to answer interview and architecture questions about closure definition"
+          "function with scope access",
+          "lexical scope capture",
+          "inner outer reference",
+          "data persistence closure",
+          "function return usage",
+          "memory retention behavior",
+          "interview core concept"
         ],
         "lexical_scope_capture": [
-          "Lexical Scope Capture defines a core concept used in JavaScript Core",
-          "It explains what lexical scope capture is and why it matters",
-          "It covers the main rules and mental model behind lexical scope capture",
-          "It shows how lexical scope capture behaves in real application code",
-          "It highlights common mistakes developers make with lexical scope capture",
-          "It compares lexical scope capture with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of lexical scope capture",
-          "It includes practical usage patterns for lexical scope capture in Closures",
-          "It helps with debugging issues connected to lexical scope capture",
-          "It prepares you to answer interview and architecture questions about lexical scope capture"
+          "captures outer variables",
+          "scope chain retention",
+          "static scope behavior",
+          "closure environment access",
+          "used in callbacks",
+          "async closures usage",
+          "debug variable capture"
         ],
         "memory_retention": [
-          "Memory Retention defines a core concept used in JavaScript Core",
-          "It explains what memory retention is and why it matters",
-          "It covers the main rules and mental model behind memory retention",
-          "It shows how memory retention behaves in real application code",
-          "It highlights common mistakes developers make with memory retention",
-          "It compares memory retention with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of memory retention",
-          "It includes practical usage patterns for memory retention in Closures",
-          "It helps with debugging issues connected to memory retention",
-          "It prepares you to answer interview and architecture questions about memory retention"
+          "variables retained memory",
+          "heap reference storage",
+          "garbage collection impact",
+          "long lived closures",
+          "memory usage increase",
+          "performance impact",
+          "optimize closure usage"
         ],
         "closures_in_loops_var_vs_let": [
-          "Closures in Loops Var vs Let defines a core concept used in JavaScript Core",
-          "It explains what closures in loops var vs let is and why it matters",
-          "It covers the main rules and mental model behind closures in loops var vs let",
-          "It shows how closures in loops var vs let behaves in real application code",
-          "It highlights common mistakes developers make with closures in loops var vs let",
-          "It compares closures in loops var vs let with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of closures in loops var vs let",
-          "It includes practical usage patterns for closures in loops var vs let in Closures",
-          "It helps with debugging issues connected to closures in loops var vs let",
-          "It prepares you to answer interview and architecture questions about closures in loops var vs let"
+          "var shared reference",
+          "let block scope",
+          "loop closure behavior",
+          "async callback issues",
+          "iife workaround pattern",
+          "common bug pattern",
+          "interview tricky case"
         ],
         "data_privacy": [
-          "Data Privacy defines a core concept used in JavaScript Core",
-          "It explains what data privacy is and why it matters",
-          "It covers the main rules and mental model behind data privacy",
-          "It shows how data privacy behaves in real application code",
-          "It highlights common mistakes developers make with data privacy",
-          "It compares data privacy with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of data privacy",
-          "It includes practical usage patterns for data privacy in Closures",
-          "It helps with debugging issues connected to data privacy",
-          "It prepares you to answer interview and architecture questions about data privacy"
+          "private variables closure",
+          "encapsulation pattern",
+          "module pattern usage",
+          "avoid global exposure",
+          "secure data handling",
+          "function scope privacy",
+          "design pattern usage"
         ],
         "closure_leaks": [
-          "Closure Leaks defines a core concept used in JavaScript Core",
-          "It explains what closure leaks is and why it matters",
-          "It covers the main rules and mental model behind closure leaks",
-          "It shows how closure leaks behaves in real application code",
-          "It highlights common mistakes developers make with closure leaks",
-          "It compares closure leaks with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of closure leaks",
-          "It includes practical usage patterns for closure leaks in Closures",
-          "It helps with debugging issues connected to closure leaks",
-          "It prepares you to answer interview and architecture questions about closure leaks"
+          "unused references retained",
+          "DOM closure leaks",
+          "event listener leaks",
+          "memory growth issues",
+          "cleanup required",
+          "debug memory leaks",
+          "avoid unnecessary closures"
         ]
       }
     },
     {
       "Objects & Prototypes": {
         "object_creation": [
-          "Object Creation defines a core concept used in JavaScript Core",
-          "It explains what object creation is and why it matters",
-          "It covers the main rules and mental model behind object creation",
-          "It shows how object creation behaves in real application code",
-          "It highlights common mistakes developers make with object creation",
-          "It compares object creation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of object creation",
-          "It includes practical usage patterns for object creation in Objects & Prototypes",
-          "It helps with debugging issues connected to object creation",
-          "It prepares you to answer interview and architecture questions about object creation"
+          "object literal creation",
+          "constructor function usage",
+          "Object.create method",
+          "dynamic property addition",
+          "reference type behavior",
+          "memory allocation heap",
+          "object patterns usage"
         ],
         "property_descriptors": [
-          "Property Descriptors defines a core concept used in JavaScript Core",
-          "It explains what property descriptors is and why it matters",
-          "It covers the main rules and mental model behind property descriptors",
-          "It shows how property descriptors behaves in real application code",
-          "It highlights common mistakes developers make with property descriptors",
-          "It compares property descriptors with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of property descriptors",
-          "It includes practical usage patterns for property descriptors in Objects & Prototypes",
-          "It helps with debugging issues connected to property descriptors",
-          "It prepares you to answer interview and architecture questions about property descriptors"
-        ],
-        "object_methods": [
-          "Object Methods defines a core concept used in JavaScript Core",
-          "It explains what object methods is and why it matters",
-          "It covers the main rules and mental model behind object methods",
-          "It shows how object methods behaves in real application code",
-          "It highlights common mistakes developers make with object methods",
-          "It compares object methods with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of object methods",
-          "It includes practical usage patterns for object methods in Objects & Prototypes",
-          "It helps with debugging issues connected to object methods",
-          "It prepares you to answer interview and architecture questions about object methods"
-        ],
-        "object_freeze_seal": [
-          "Object Freeze Seal defines a core concept used in JavaScript Core",
-          "It explains what object freeze seal is and why it matters",
-          "It covers the main rules and mental model behind object freeze seal",
-          "It shows how object freeze seal behaves in real application code",
-          "It highlights common mistakes developers make with object freeze seal",
-          "It compares object freeze seal with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of object freeze seal",
-          "It includes practical usage patterns for object freeze seal in Objects & Prototypes",
-          "It helps with debugging issues connected to object freeze seal",
-          "It prepares you to answer interview and architecture questions about object freeze seal"
-        ],
-        "shallow_vs_deep_copy": [
-          "Shallow vs Deep Copy defines a core concept used in JavaScript Core",
-          "It explains what shallow vs deep copy is and why it matters",
-          "It covers the main rules and mental model behind shallow vs deep copy",
-          "It shows how shallow vs deep copy behaves in real application code",
-          "It highlights common mistakes developers make with shallow vs deep copy",
-          "It compares shallow vs deep copy with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of shallow vs deep copy",
-          "It includes practical usage patterns for shallow vs deep copy in Objects & Prototypes",
-          "It helps with debugging issues connected to shallow vs deep copy",
-          "It prepares you to answer interview and architecture questions about shallow vs deep copy"
+          "writable enumerable configurable",
+          "defineProperty usage",
+          "control property access",
+          "getter setter usage",
+          "immutable property setup",
+          "descriptor inspection",
+          "object control behavior"
         ],
         "prototype": [
-          "Prototype defines a core concept used in JavaScript Core",
-          "It explains what prototype is and why it matters",
-          "It covers the main rules and mental model behind prototype",
-          "It shows how prototype behaves in real application code",
-          "It highlights common mistakes developers make with prototype",
-          "It compares prototype with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of prototype",
-          "It includes practical usage patterns for prototype in Objects & Prototypes",
-          "It helps with debugging issues connected to prototype",
-          "It prepares you to answer interview and architecture questions about prototype"
+          "shared object methods",
+          "prototype property link",
+          "inheritance base mechanism",
+          "memory optimization reuse",
+          "function prototype usage",
+          "dynamic prototype change",
+          "interview key concept"
         ],
         "prototype_chain": [
-          "Prototype Chain defines a core concept used in JavaScript Core",
-          "It explains what prototype chain is and why it matters",
-          "It covers the main rules and mental model behind prototype chain",
-          "It shows how prototype chain behaves in real application code",
-          "It highlights common mistakes developers make with prototype chain",
-          "It compares prototype chain with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of prototype chain",
-          "It includes practical usage patterns for prototype chain in Objects & Prototypes",
-          "It helps with debugging issues connected to prototype chain",
-          "It prepares you to answer interview and architecture questions about prototype chain"
-        ],
-        "constructor_functions": [
-          "Constructor Functions defines a core concept used in JavaScript Core",
-          "It explains what constructor functions is and why it matters",
-          "It covers the main rules and mental model behind constructor functions",
-          "It shows how constructor functions behaves in real application code",
-          "It highlights common mistakes developers make with constructor functions",
-          "It compares constructor functions with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of constructor functions",
-          "It includes practical usage patterns for constructor functions in Objects & Prototypes",
-          "It helps with debugging issues connected to constructor functions",
-          "It prepares you to answer interview and architecture questions about constructor functions"
-        ],
-        "es6_classes": [
-          "Es6 Classes defines a core concept used in JavaScript Core",
-          "It explains what es6 classes is and why it matters",
-          "It covers the main rules and mental model behind es6 classes",
-          "It shows how es6 classes behaves in real application code",
-          "It highlights common mistakes developers make with es6 classes",
-          "It compares es6 classes with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of es6 classes",
-          "It includes practical usage patterns for es6 classes in Objects & Prototypes",
-          "It helps with debugging issues connected to es6 classes",
-          "It prepares you to answer interview and architecture questions about es6 classes"
-        ],
-        "inheritance": [
-          "Inheritance defines a core concept used in JavaScript Core",
-          "It explains what inheritance is and why it matters",
-          "It covers the main rules and mental model behind inheritance",
-          "It shows how inheritance behaves in real application code",
-          "It highlights common mistakes developers make with inheritance",
-          "It compares inheritance with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of inheritance",
-          "It includes practical usage patterns for inheritance in Objects & Prototypes",
-          "It helps with debugging issues connected to inheritance",
-          "It prepares you to answer interview and architecture questions about inheritance"
+          "object inheritance chain",
+          "lookup via chain",
+          "fallback to null",
+          "method resolution path",
+          "performance lookup cost",
+          "debug prototype issues",
+          "inheritance mechanism"
         ]
       }
     },
     {
-      "Advanced Data Structures": {
-        "map": [
-          "Map defines a core concept used in JavaScript Core",
-          "It explains what map is and why it matters",
-          "It covers the main rules and mental model behind map",
-          "It shows how map behaves in real application code",
-          "It highlights common mistakes developers make with map",
-          "It compares map with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of map",
-          "It includes practical usage patterns for map in Advanced Data Structures",
-          "It helps with debugging issues connected to map",
-          "It prepares you to answer interview and architecture questions about map"
+      "Event Loop": {
+        "call_stack": [
+          "sync execution stack",
+          "function push pop",
+          "blocks async tasks",
+          "LIFO behavior",
+          "empty triggers loop",
+          "stack overflow risk",
+          "execution context stack"
         ],
-        "set": [
-          "Set defines a core concept used in JavaScript Core",
-          "It explains what set is and why it matters",
-          "It covers the main rules and mental model behind set",
-          "It shows how set behaves in real application code",
-          "It highlights common mistakes developers make with set",
-          "It compares set with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of set",
-          "It includes practical usage patterns for set in Advanced Data Structures",
-          "It helps with debugging issues connected to set",
-          "It prepares you to answer interview and architecture questions about set"
+        "web_apis": [
+          "browser async handlers",
+          "setTimeout fetch events",
+          "runs outside engine",
+          "callback registration",
+          "non blocking execution",
+          "event driven model",
+          "API environment support"
         ],
-        "weakmap": [
-          "Weakmap defines a core concept used in JavaScript Core",
-          "It explains what weakmap is and why it matters",
-          "It covers the main rules and mental model behind weakmap",
-          "It shows how weakmap behaves in real application code",
-          "It highlights common mistakes developers make with weakmap",
-          "It compares weakmap with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of weakmap",
-          "It includes practical usage patterns for weakmap in Advanced Data Structures",
-          "It helps with debugging issues connected to weakmap",
-          "It prepares you to answer interview and architecture questions about weakmap"
+        "callback_queue": [
+          "macrotask queue tasks",
+          "setTimeout callbacks",
+          "FIFO execution order",
+          "wait empty stack",
+          "event loop checks",
+          "delayed execution tasks",
+          "async scheduling basics"
         ],
-        "weakset": [
-          "Weakset defines a core concept used in JavaScript Core",
-          "It explains what weakset is and why it matters",
-          "It covers the main rules and mental model behind weakset",
-          "It shows how weakset behaves in real application code",
-          "It highlights common mistakes developers make with weakset",
-          "It compares weakset with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of weakset",
-          "It includes practical usage patterns for weakset in Advanced Data Structures",
-          "It helps with debugging issues connected to weakset",
-          "It prepares you to answer interview and architecture questions about weakset"
+        "microtask_queue": [
+          "promise callbacks queue",
+          "higher priority tasks",
+          "runs before macrotasks",
+          "then catch handlers",
+          "queue drain fully",
+          "event loop priority",
+          "async execution order"
         ],
-        "map_vs_object": [
-          "Map vs Object defines a core concept used in JavaScript Core",
-          "It explains what map vs object is and why it matters",
-          "It covers the main rules and mental model behind map vs object",
-          "It shows how map vs object behaves in real application code",
-          "It highlights common mistakes developers make with map vs object",
-          "It compares map vs object with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of map vs object",
-          "It includes practical usage patterns for map vs object in Advanced Data Structures",
-          "It helps with debugging issues connected to map vs object",
-          "It prepares you to answer interview and architecture questions about map vs object"
+        "macrotask_queue": [
+          "setTimeout setInterval tasks",
+          "lower priority queue",
+          "runs after microtasks",
+          "UI events callbacks",
+          "event loop cycle part",
+          "async scheduling control",
+          "task grouping"
         ],
-        "set_vs_array": [
-          "Set vs Array defines a core concept used in JavaScript Core",
-          "It explains what set vs array is and why it matters",
-          "It covers the main rules and mental model behind set vs array",
-          "It shows how set vs array behaves in real application code",
-          "It highlights common mistakes developers make with set vs array",
-          "It compares set vs array with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of set vs array",
-          "It includes practical usage patterns for set vs array in Advanced Data Structures",
-          "It helps with debugging issues connected to set vs array",
-          "It prepares you to answer interview and architecture questions about set vs array"
-        ],
-        "iteration_order": [
-          "Iteration Order defines a core concept used in JavaScript Core",
-          "It explains what iteration order is and why it matters",
-          "It covers the main rules and mental model behind iteration order",
-          "It shows how iteration order behaves in real application code",
-          "It highlights common mistakes developers make with iteration order",
-          "It compares iteration order with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of iteration order",
-          "It includes practical usage patterns for iteration order in Advanced Data Structures",
-          "It helps with debugging issues connected to iteration order",
-          "It prepares you to answer interview and architecture questions about iteration order"
-        ],
-        "garbage_collection_weakmap_weakset": [
-          "Garbage Collection Weakmap Weakset defines a core concept used in JavaScript Core",
-          "It explains what garbage collection weakmap weakset is and why it matters",
-          "It covers the main rules and mental model behind garbage collection weakmap weakset",
-          "It shows how garbage collection weakmap weakset behaves in real application code",
-          "It highlights common mistakes developers make with garbage collection weakmap weakset",
-          "It compares garbage collection weakmap weakset with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of garbage collection weakmap weakset",
-          "It includes practical usage patterns for garbage collection weakmap weakset in Advanced Data Structures",
-          "It helps with debugging issues connected to garbage collection weakmap weakset",
-          "It prepares you to answer interview and architecture questions about garbage collection weakmap weakset"
-        ],
-        "use_cases_deduplication_caching": [
-          "Use Cases Deduplication Caching defines a core concept used in JavaScript Core",
-          "It explains what use cases deduplication caching is and why it matters",
-          "It covers the main rules and mental model behind use cases deduplication caching",
-          "It shows how use cases deduplication caching behaves in real application code",
-          "It highlights common mistakes developers make with use cases deduplication caching",
-          "It compares use cases deduplication caching with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of use cases deduplication caching",
-          "It includes practical usage patterns for use cases deduplication caching in Advanced Data Structures",
-          "It helps with debugging issues connected to use cases deduplication caching",
-          "It prepares you to answer interview and architecture questions about use cases deduplication caching"
+        "execution_order": [
+          "sync first execution",
+          "microtasks next priority",
+          "macrotasks last execution",
+          "event loop cycle",
+          "queue priority rules",
+          "promise vs timeout",
+          "interview tricky outputs"
         ]
       }
     },
     {
-      "Advanced Primitives & Iteration": {
-        "symbol": [
-          "Symbol defines a core concept used in JavaScript Core",
-          "It explains what symbol is and why it matters",
-          "It covers the main rules and mental model behind symbol",
-          "It shows how symbol behaves in real application code",
-          "It highlights common mistakes developers make with symbol",
-          "It compares symbol with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of symbol",
-          "It includes practical usage patterns for symbol in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to symbol",
-          "It prepares you to answer interview and architecture questions about symbol"
+      "Promises": {
+        "promise_states": [
+          "pending fulfilled rejected",
+          "state immutability rule",
+          "resolve reject functions",
+          "state transition once",
+          "async result handling",
+          "error propagation chain",
+          "promise lifecycle basics"
         ],
-        "bigint": [
-          "Bigint defines a core concept used in JavaScript Core",
-          "It explains what bigint is and why it matters",
-          "It covers the main rules and mental model behind bigint",
-          "It shows how bigint behaves in real application code",
-          "It highlights common mistakes developers make with bigint",
-          "It compares bigint with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of bigint",
-          "It includes practical usage patterns for bigint in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to bigint",
-          "It prepares you to answer interview and architecture questions about bigint"
+        "then_chain": [
+          "chaining async operations",
+          "returns new promise",
+          "value passing next",
+          "error bubbling chain",
+          "flatten nested callbacks",
+          "clean async flow",
+          "promise composition"
         ],
-        "iterables": [
-          "Iterables defines a core concept used in JavaScript Core",
-          "It explains what iterables is and why it matters",
-          "It covers the main rules and mental model behind iterables",
-          "It shows how iterables behaves in real application code",
-          "It highlights common mistakes developers make with iterables",
-          "It compares iterables with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of iterables",
-          "It includes practical usage patterns for iterables in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to iterables",
-          "It prepares you to answer interview and architecture questions about iterables"
+        "catch_finally": [
+          "error handling catch",
+          "finally always executes",
+          "no value modification",
+          "cleanup operations usage",
+          "chain error handling",
+          "debug promise errors",
+          "best practice usage"
         ],
-        "iterators": [
-          "Iterators defines a core concept used in JavaScript Core",
-          "It explains what iterators is and why it matters",
-          "It covers the main rules and mental model behind iterators",
-          "It shows how iterators behaves in real application code",
-          "It highlights common mistakes developers make with iterators",
-          "It compares iterators with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of iterators",
-          "It includes practical usage patterns for iterators in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to iterators",
-          "It prepares you to answer interview and architecture questions about iterators"
+        "promise_all": [
+          "parallel promise execution",
+          "fails fast behavior",
+          "array results order",
+          "all must resolve",
+          "reject stops all",
+          "performance optimization",
+          "common interview topic"
         ],
-        "generators": [
-          "Generators defines a core concept used in JavaScript Core",
-          "It explains what generators is and why it matters",
-          "It covers the main rules and mental model behind generators",
-          "It shows how generators behaves in real application code",
-          "It highlights common mistakes developers make with generators",
-          "It compares generators with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of generators",
-          "It includes practical usage patterns for generators in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to generators",
-          "It prepares you to answer interview and architecture questions about generators"
-        ],
-        "for_of_vs_for_in": [
-          "for of vs for in defines a core concept used in JavaScript Core",
-          "It explains what for of vs for in is and why it matters",
-          "It covers the main rules and mental model behind for of vs for in",
-          "It shows how for of vs for in behaves in real application code",
-          "It highlights common mistakes developers make with for of vs for in",
-          "It compares for of vs for in with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of for of vs for in",
-          "It includes practical usage patterns for for of vs for in in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to for of vs for in",
-          "It prepares you to answer interview and architecture questions about for of vs for in"
-        ],
-        "spread_operator": [
-          "Spread Operator defines a core concept used in JavaScript Core",
-          "It explains what spread operator is and why it matters",
-          "It covers the main rules and mental model behind spread operator",
-          "It shows how spread operator behaves in real application code",
-          "It highlights common mistakes developers make with spread operator",
-          "It compares spread operator with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of spread operator",
-          "It includes practical usage patterns for spread operator in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to spread operator",
-          "It prepares you to answer interview and architecture questions about spread operator"
-        ],
-        "rest_parameters": [
-          "Rest Parameters defines a core concept used in JavaScript Core",
-          "It explains what rest parameters is and why it matters",
-          "It covers the main rules and mental model behind rest parameters",
-          "It shows how rest parameters behaves in real application code",
-          "It highlights common mistakes developers make with rest parameters",
-          "It compares rest parameters with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of rest parameters",
-          "It includes practical usage patterns for rest parameters in Advanced Primitives & Iteration",
-          "It helps with debugging issues connected to rest parameters",
-          "It prepares you to answer interview and architecture questions about rest parameters"
+        "promise_race": [
+          "first settled result",
+          "resolve reject first",
+          "timeout patterns usage",
+          "race conditions handling",
+          "faster response selection",
+          "edge case handling",
+          "interview scenario"
         ]
       }
     },
     {
-      "Functions Deep Dive": {
-        "first_class_functions": [
-          "First Class Functions defines a core concept used in JavaScript Core",
-          "It explains what first class functions is and why it matters",
-          "It covers the main rules and mental model behind first class functions",
-          "It shows how first class functions behaves in real application code",
-          "It highlights common mistakes developers make with first class functions",
-          "It compares first class functions with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of first class functions",
-          "It includes practical usage patterns for first class functions in Functions Deep Dive",
-          "It helps with debugging issues connected to first class functions",
-          "It prepares you to answer interview and architecture questions about first class functions"
+      "Async/Await": {
+        "async_function": [
+          "returns promise always",
+          "syntactic sugar promises",
+          "clean async code",
+          "implicit promise wrapping",
+          "error via throw",
+          "await inside only",
+          "interview basics"
         ],
-        "higher_order_functions": [
-          "Higher Order Functions defines a core concept used in JavaScript Core",
-          "It explains what higher order functions is and why it matters",
-          "It covers the main rules and mental model behind higher order functions",
-          "It shows how higher order functions behaves in real application code",
-          "It highlights common mistakes developers make with higher order functions",
-          "It compares higher order functions with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of higher order functions",
-          "It includes practical usage patterns for higher order functions in Functions Deep Dive",
-          "It helps with debugging issues connected to higher order functions",
-          "It prepares you to answer interview and architecture questions about higher order functions"
+        "await_behavior": [
+          "pause execution async",
+          "non blocking main thread",
+          "resolves promise value",
+          "reject throws error",
+          "microtask scheduling",
+          "sequential execution style",
+          "debug async flow"
         ],
-        "callback_functions": [
-          "Callback Functions defines a core concept used in JavaScript Core",
-          "It explains what callback functions is and why it matters",
-          "It covers the main rules and mental model behind callback functions",
-          "It shows how callback functions behaves in real application code",
-          "It highlights common mistakes developers make with callback functions",
-          "It compares callback functions with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of callback functions",
-          "It includes practical usage patterns for callback functions in Functions Deep Dive",
-          "It helps with debugging issues connected to callback functions",
-          "It prepares you to answer interview and architecture questions about callback functions"
-        ],
-        "pure_functions": [
-          "Pure Functions defines a core concept used in JavaScript Core",
-          "It explains what pure functions is and why it matters",
-          "It covers the main rules and mental model behind pure functions",
-          "It shows how pure functions behaves in real application code",
-          "It highlights common mistakes developers make with pure functions",
-          "It compares pure functions with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of pure functions",
-          "It includes practical usage patterns for pure functions in Functions Deep Dive",
-          "It helps with debugging issues connected to pure functions",
-          "It prepares you to answer interview and architecture questions about pure functions"
-        ],
-        "side_effects": [
-          "Side Effects defines a core concept used in JavaScript Core",
-          "It explains what side effects is and why it matters",
-          "It covers the main rules and mental model behind side effects",
-          "It shows how side effects behaves in real application code",
-          "It highlights common mistakes developers make with side effects",
-          "It compares side effects with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of side effects",
-          "It includes practical usage patterns for side effects in Functions Deep Dive",
-          "It helps with debugging issues connected to side effects",
-          "It prepares you to answer interview and architecture questions about side effects"
-        ],
-        "currying": [
-          "Currying defines a core concept used in JavaScript Core",
-          "It explains what currying is and why it matters",
-          "It covers the main rules and mental model behind currying",
-          "It shows how currying behaves in real application code",
-          "It highlights common mistakes developers make with currying",
-          "It compares currying with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of currying",
-          "It includes practical usage patterns for currying in Functions Deep Dive",
-          "It helps with debugging issues connected to currying",
-          "It prepares you to answer interview and architecture questions about currying"
-        ],
-        "partial_application": [
-          "Partial Application defines a core concept used in JavaScript Core",
-          "It explains what partial application is and why it matters",
-          "It covers the main rules and mental model behind partial application",
-          "It shows how partial application behaves in real application code",
-          "It highlights common mistakes developers make with partial application",
-          "It compares partial application with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of partial application",
-          "It includes practical usage patterns for partial application in Functions Deep Dive",
-          "It helps with debugging issues connected to partial application",
-          "It prepares you to answer interview and architecture questions about partial application"
-        ],
-        "function_composition": [
-          "Function Composition defines a core concept used in JavaScript Core",
-          "It explains what function composition is and why it matters",
-          "It covers the main rules and mental model behind function composition",
-          "It shows how function composition behaves in real application code",
-          "It highlights common mistakes developers make with function composition",
-          "It compares function composition with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of function composition",
-          "It includes practical usage patterns for function composition in Functions Deep Dive",
-          "It helps with debugging issues connected to function composition",
-          "It prepares you to answer interview and architecture questions about function composition"
+        "parallel_vs_sequential": [
+          "await sequential execution",
+          "Promise.all parallel",
+          "performance difference high",
+          "independent tasks parallel",
+          "dependent tasks sequential",
+          "optimize API calls",
+          "interview comparison"
         ]
       }
     },
     {
-      "Equality & Comparisons": {
-        "==_vs_===": [
-          "== vs === defines a core concept used in JavaScript Core",
-          "It explains what == vs === is and why it matters",
-          "It covers the main rules and mental model behind == vs ===",
-          "It shows how == vs === behaves in real application code",
-          "It highlights common mistakes developers make with == vs ===",
-          "It compares == vs === with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of == vs ===",
-          "It includes practical usage patterns for == vs === in Equality & Comparisons",
-          "It helps with debugging issues connected to == vs ===",
-          "It prepares you to answer interview and architecture questions about == vs ==="
+      "Memory Management": {
+        "stack_vs_heap": [
+          "primitive stack storage",
+          "objects heap storage",
+          "fast access stack",
+          "dynamic heap allocation",
+          "reference vs value",
+          "memory usage patterns",
+          "performance implications"
         ],
-        "type_coercion": [
-          "Type Coercion defines a core concept used in JavaScript Core",
-          "It explains what type coercion is and why it matters",
-          "It covers the main rules and mental model behind type coercion",
-          "It shows how type coercion behaves in real application code",
-          "It highlights common mistakes developers make with type coercion",
-          "It compares type coercion with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of type coercion",
-          "It includes practical usage patterns for type coercion in Equality & Comparisons",
-          "It helps with debugging issues connected to type coercion",
-          "It prepares you to answer interview and architecture questions about type coercion"
+        "garbage_collection": [
+          "automatic memory cleanup",
+          "unused object removal",
+          "heap memory management",
+          "reference tracking system",
+          "prevent memory leaks",
+          "runtime optimization",
+          "engine responsibility"
         ],
-        "truthy_falsy_values": [
-          "Truthy Falsy Values defines a core concept used in JavaScript Core",
-          "It explains what truthy falsy values is and why it matters",
-          "It covers the main rules and mental model behind truthy falsy values",
-          "It shows how truthy falsy values behaves in real application code",
-          "It highlights common mistakes developers make with truthy falsy values",
-          "It compares truthy falsy values with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of truthy falsy values",
-          "It includes practical usage patterns for truthy falsy values in Equality & Comparisons",
-          "It helps with debugging issues connected to truthy falsy values",
-          "It prepares you to answer interview and architecture questions about truthy falsy values"
+        "mark_and_sweep": [
+          "mark reachable objects",
+          "sweep unreachable memory",
+          "reference graph traversal",
+          "root object tracking",
+          "heap cleanup cycle",
+          "memory optimization",
+          "GC algorithm basics"
         ],
-        "object_reference_comparison": [
-          "Object Reference Comparison defines a core concept used in JavaScript Core",
-          "It explains what object reference comparison is and why it matters",
-          "It covers the main rules and mental model behind object reference comparison",
-          "It shows how object reference comparison behaves in real application code",
-          "It highlights common mistakes developers make with object reference comparison",
-          "It compares object reference comparison with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of object reference comparison",
-          "It includes practical usage patterns for object reference comparison in Equality & Comparisons",
-          "It helps with debugging issues connected to object reference comparison",
-          "It prepares you to answer interview and architecture questions about object reference comparison"
-        ],
-        "NaN_behavior": [
-          "Nan Behavior defines a core concept used in JavaScript Core",
-          "It explains what nan behavior is and why it matters",
-          "It covers the main rules and mental model behind nan behavior",
-          "It shows how nan behavior behaves in real application code",
-          "It highlights common mistakes developers make with nan behavior",
-          "It compares nan behavior with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of nan behavior",
-          "It includes practical usage patterns for nan behavior in Equality & Comparisons",
-          "It helps with debugging issues connected to nan behavior",
-          "It prepares you to answer interview and architecture questions about nan behavior"
-        ],
-        "Object.is": [
-          "Object.is defines a core concept used in JavaScript Core",
-          "It explains what object.is is and why it matters",
-          "It covers the main rules and mental model behind object.is",
-          "It shows how object.is behaves in real application code",
-          "It highlights common mistakes developers make with object.is",
-          "It compares object.is with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of object.is",
-          "It includes practical usage patterns for object.is in Equality & Comparisons",
-          "It helps with debugging issues connected to object.is",
-          "It prepares you to answer interview and architecture questions about object.is"
-        ]
-      }
-    },
-    {
-      "Error Handling": {
-        "try_catch": [
-          "Try Catch defines a core concept used in JavaScript Core",
-          "It explains what try catch is and why it matters",
-          "It covers the main rules and mental model behind try catch",
-          "It shows how try catch behaves in real application code",
-          "It highlights common mistakes developers make with try catch",
-          "It compares try catch with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of try catch",
-          "It includes practical usage patterns for try catch in Error Handling",
-          "It helps with debugging issues connected to try catch",
-          "It prepares you to answer interview and architecture questions about try catch"
-        ],
-        "finally": [
-          "Finally defines a core concept used in JavaScript Core",
-          "It explains what finally is and why it matters",
-          "It covers the main rules and mental model behind finally",
-          "It shows how finally behaves in real application code",
-          "It highlights common mistakes developers make with finally",
-          "It compares finally with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of finally",
-          "It includes practical usage patterns for finally in Error Handling",
-          "It helps with debugging issues connected to finally",
-          "It prepares you to answer interview and architecture questions about finally"
-        ],
-        "throw": [
-          "Throw defines a core concept used in JavaScript Core",
-          "It explains what throw is and why it matters",
-          "It covers the main rules and mental model behind throw",
-          "It shows how throw behaves in real application code",
-          "It highlights common mistakes developers make with throw",
-          "It compares throw with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of throw",
-          "It includes practical usage patterns for throw in Error Handling",
-          "It helps with debugging issues connected to throw",
-          "It prepares you to answer interview and architecture questions about throw"
-        ],
-        "custom_errors": [
-          "Custom Errors defines a core concept used in JavaScript Core",
-          "It explains what custom errors is and why it matters",
-          "It covers the main rules and mental model behind custom errors",
-          "It shows how custom errors behaves in real application code",
-          "It highlights common mistakes developers make with custom errors",
-          "It compares custom errors with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of custom errors",
-          "It includes practical usage patterns for custom errors in Error Handling",
-          "It helps with debugging issues connected to custom errors",
-          "It prepares you to answer interview and architecture questions about custom errors"
-        ],
-        "error_propagation": [
-          "Error Propagation defines a core concept used in JavaScript Core",
-          "It explains what error propagation is and why it matters",
-          "It covers the main rules and mental model behind error propagation",
-          "It shows how error propagation behaves in real application code",
-          "It highlights common mistakes developers make with error propagation",
-          "It compares error propagation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of error propagation",
-          "It includes practical usage patterns for error propagation in Error Handling",
-          "It helps with debugging issues connected to error propagation",
-          "It prepares you to answer interview and architecture questions about error propagation"
+        "memory_leaks": [
+          "unused memory retained",
+          "closure retention issues",
+          "global variable leaks",
+          "detached DOM references",
+          "performance degradation",
+          "debug memory usage",
+          "avoid long lived refs"
         ]
       }
     }

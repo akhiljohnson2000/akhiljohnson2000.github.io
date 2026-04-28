@@ -5,220 +5,300 @@
     {
       "Core Architecture": {
         "components": [
-          "Components defines a core concept used in Angular",
-          "It explains what components is and why it matters",
-          "It covers the main rules and mental model behind components",
-          "It shows how components behaves in real application code",
-          "It highlights common mistakes developers make with components",
-          "It compares components with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of components",
-          "It includes practical usage patterns for components in Core Architecture",
-          "It helps with debugging issues connected to components",
-          "It prepares you to answer interview and architecture questions about components"
+          "component decorator basics",
+          "template style separation",
+          "input output communication",
+          "component lifecycle hooks",
+          "smart dumb components",
+          "reuse via composition",
+          "performance render cost",
+          "debug component issues"
         ],
         "modules": [
-          "Modules defines a core concept used in Angular",
-          "It explains what modules is and why it matters",
-          "It covers the main rules and mental model behind modules",
-          "It shows how modules behaves in real application code",
-          "It highlights common mistakes developers make with modules",
-          "It compares modules with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of modules",
-          "It includes practical usage patterns for modules in Core Architecture",
-          "It helps with debugging issues connected to modules",
-          "It prepares you to answer interview and architecture questions about modules"
+          "ngModule structure basics",
+          "declarations imports exports",
+          "feature module separation",
+          "lazy vs eager modules",
+          "shared module pattern",
+          "avoid circular dependencies",
+          "tree shaking impact",
+          "debug module errors"
         ],
         "services": [
-          "Services defines a core concept used in Angular",
-          "It explains what services is and why it matters",
-          "It covers the main rules and mental model behind services",
-          "It shows how services behaves in real application code",
-          "It highlights common mistakes developers make with services",
-          "It compares services with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of services",
-          "It includes practical usage patterns for services in Core Architecture",
-          "It helps with debugging issues connected to services",
-          "It prepares you to answer interview and architecture questions about services"
+          "singleton service pattern",
+          "business logic separation",
+          "injectable decorator usage",
+          "state sharing via service",
+          "http service integration",
+          "providedIn root scope",
+          "test service isolation",
+          "debug service injection"
         ],
         "dependency_injection": [
-          "Dependency Injection defines a core concept used in Angular",
-          "It explains what dependency injection is and why it matters",
-          "It covers the main rules and mental model behind dependency injection",
-          "It shows how dependency injection behaves in real application code",
-          "It highlights common mistakes developers make with dependency injection",
-          "It compares dependency injection with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of dependency injection",
-          "It includes practical usage patterns for dependency injection in Core Architecture",
-          "It helps with debugging issues connected to dependency injection",
-          "It prepares you to answer interview and architecture questions about dependency injection"
+          "injector hierarchy basics",
+          "provider configuration",
+          "constructor injection pattern",
+          "tree shakeable providers",
+          "scoped injectors usage",
+          "avoid tight coupling",
+          "token based injection",
+          "debug DI issues"
         ],
         "standalone_components": [
-          "Standalone Components defines a core concept used in Angular",
-          "It explains what standalone components is and why it matters",
-          "It covers the main rules and mental model behind standalone components",
-          "It shows how standalone components behaves in real application code",
-          "It highlights common mistakes developers make with standalone components",
-          "It compares standalone components with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of standalone components",
-          "It includes practical usage patterns for standalone components in Core Architecture",
-          "It helps with debugging issues connected to standalone components",
-          "It prepares you to answer interview and architecture questions about standalone components"
+          "no module requirement",
+          "direct imports usage",
+          "simplified architecture",
+          "lazy loading friendly",
+          "better tree shaking",
+          "reduce boilerplate code",
+          "migrate from modules",
+          "debug standalone setup"
         ]
       }
     },
     {
       "Templates & Binding": {
         "interpolation": [
-          "Interpolation defines a core concept used in Angular",
-          "It explains what interpolation is and why it matters",
-          "It covers the main rules and mental model behind interpolation",
-          "It shows how interpolation behaves in real application code",
-          "It highlights common mistakes developers make with interpolation",
-          "It compares interpolation with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of interpolation",
-          "It includes practical usage patterns for interpolation in Templates & Binding",
-          "It helps with debugging issues connected to interpolation",
-          "It prepares you to answer interview and architecture questions about interpolation"
+          "double curly binding",
+          "display component data",
+          "expression evaluation rules",
+          "no statements allowed",
+          "auto change detection",
+          "avoid heavy expressions",
+          "string output binding",
+          "debug template errors"
         ],
         "property_binding": [
-          "Property Binding defines a core concept used in Angular",
-          "It explains what property binding is and why it matters",
-          "It covers the main rules and mental model behind property binding",
-          "It shows how property binding behaves in real application code",
-          "It highlights common mistakes developers make with property binding",
-          "It compares property binding with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of property binding",
-          "It includes practical usage patterns for property binding in Templates & Binding",
-          "It helps with debugging issues connected to property binding",
-          "It prepares you to answer interview and architecture questions about property binding"
+          "bind DOM properties",
+          "square bracket syntax",
+          "dynamic attribute values",
+          "one way data flow",
+          "bind class style props",
+          "avoid string interpolation",
+          "performance binding checks",
+          "debug binding issues"
         ],
         "event_binding": [
-          "Event Binding defines a core concept used in Angular",
-          "It explains what event binding is and why it matters",
-          "It covers the main rules and mental model behind event binding",
-          "It shows how event binding behaves in real application code",
-          "It highlights common mistakes developers make with event binding",
-          "It compares event binding with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of event binding",
-          "It includes practical usage patterns for event binding in Templates & Binding",
-          "It helps with debugging issues connected to event binding",
-          "It prepares you to answer interview and architecture questions about event binding"
+          "parentheses event syntax",
+          "handle user interactions",
+          "pass event object",
+          "custom event emitters",
+          "prevent default actions",
+          "avoid heavy handlers",
+          "event bubbling handling",
+          "debug event issues"
         ],
         "two_way_binding": [
-          "Two Way Binding defines a core concept used in Angular",
-          "It explains what two way binding is and why it matters",
-          "It covers the main rules and mental model behind two way binding",
-          "It shows how two way binding behaves in real application code",
-          "It highlights common mistakes developers make with two way binding",
-          "It compares two way binding with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of two way binding",
-          "It includes practical usage patterns for two way binding in Templates & Binding",
-          "It helps with debugging issues connected to two way binding",
-          "It prepares you to answer interview and architecture questions about two way binding"
+          "banana in box syntax",
+          "ngModel usage basics",
+          "sync input output",
+          "forms integration pattern",
+          "avoid overuse binding",
+          "performance implications",
+          "custom two way binding",
+          "debug sync issues"
         ]
       }
     },
     {
       "RxJS & Async": {
         "observables": [
-          "Observables defines a core concept used in Angular",
-          "It explains what observables is and why it matters",
-          "It covers the main rules and mental model behind observables",
-          "It shows how observables behaves in real application code",
-          "It highlights common mistakes developers make with observables",
-          "It compares observables with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of observables",
-          "It includes practical usage patterns for observables in RxJS & Async",
-          "It helps with debugging issues connected to observables",
-          "It prepares you to answer interview and architecture questions about observables"
+          "stream based async data",
+          "subscribe unsubscribe pattern",
+          "cold vs hot observables",
+          "pipe operators usage",
+          "error completion handling",
+          "memory leak risks",
+          "combine multiple streams",
+          "debug observable flow"
         ],
         "subjects": [
-          "Subjects defines a core concept used in Angular",
-          "It explains what subjects is and why it matters",
-          "It covers the main rules and mental model behind subjects",
-          "It shows how subjects behaves in real application code",
-          "It highlights common mistakes developers make with subjects",
-          "It compares subjects with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of subjects",
-          "It includes practical usage patterns for subjects in RxJS & Async",
-          "It helps with debugging issues connected to subjects",
-          "It prepares you to answer interview and architecture questions about subjects"
+          "multicast observable type",
+          "behavior subject replay",
+          "share data streams",
+          "event bus pattern",
+          "avoid overusing subjects",
+          "state management usage",
+          "unsubscribe properly",
+          "debug subject issues"
         ],
         "operators_map_switchmap_mergemap": [
-          "Operators Map Switchmap Mergemap defines a core concept used in Angular",
-          "It explains what operators map switchmap mergemap is and why it matters",
-          "It covers the main rules and mental model behind operators map switchmap mergemap",
-          "It shows how operators map switchmap mergemap behaves in real application code",
-          "It highlights common mistakes developers make with operators map switchmap mergemap",
-          "It compares operators map switchmap mergemap with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of operators map switchmap mergemap",
-          "It includes practical usage patterns for operators map switchmap mergemap in RxJS & Async",
-          "It helps with debugging issues connected to operators map switchmap mergemap",
-          "It prepares you to answer interview and architecture questions about operators map switchmap mergemap"
+          "map transform values",
+          "switchMap cancel previous",
+          "mergeMap parallel streams",
+          "choose correct operator",
+          "avoid nested subscribes",
+          "handle async chaining",
+          "performance operator choice",
+          "debug operator behavior"
         ],
         "async_pipe": [
-          "async Pipe defines a core concept used in Angular",
-          "It explains what async pipe is and why it matters",
-          "It covers the main rules and mental model behind async pipe",
-          "It shows how async pipe behaves in real application code",
-          "It highlights common mistakes developers make with async pipe",
-          "It compares async pipe with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of async pipe",
-          "It includes practical usage patterns for async pipe in RxJS & Async",
-          "It helps with debugging issues connected to async pipe",
-          "It prepares you to answer interview and architecture questions about async pipe"
+          "auto subscribe unsubscribe",
+          "template observable binding",
+          "avoid manual subscribe",
+          "clean memory management",
+          "works with promises",
+          "change detection trigger",
+          "simplify async templates",
+          "debug async pipe issues"
         ]
       }
     },
     {
       "Change Detection": {
         "default_strategy": [
-          "Default Strategy defines a core concept used in Angular",
-          "It explains what default strategy is and why it matters",
-          "It covers the main rules and mental model behind default strategy",
-          "It shows how default strategy behaves in real application code",
-          "It highlights common mistakes developers make with default strategy",
-          "It compares default strategy with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of default strategy",
-          "It includes practical usage patterns for default strategy in Change Detection",
-          "It helps with debugging issues connected to default strategy",
-          "It prepares you to answer interview and architecture questions about default strategy"
+          "checks entire component tree",
+          "triggered by events async",
+          "zone js integration",
+          "simple but less efficient",
+          "auto change detection",
+          "heavy large apps cost",
+          "easy debugging flow",
+          "optimize when needed"
         ],
         "onpush_strategy": [
-          "Onpush Strategy defines a core concept used in Angular",
-          "It explains what onpush strategy is and why it matters",
-          "It covers the main rules and mental model behind onpush strategy",
-          "It shows how onpush strategy behaves in real application code",
-          "It highlights common mistakes developers make with onpush strategy",
-          "It compares onpush strategy with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of onpush strategy",
-          "It includes practical usage patterns for onpush strategy in Change Detection",
-          "It helps with debugging issues connected to onpush strategy",
-          "It prepares you to answer interview and architecture questions about onpush strategy"
+          "checks on input change",
+          "immutable data required",
+          "manual trigger detectChanges",
+          "improves performance",
+          "avoid unnecessary checks",
+          "use with observables",
+          "smart dumb pattern",
+          "debug change issues"
         ],
         "zone_js": [
-          "Zone JS defines a core concept used in Angular",
-          "It explains what zone js is and why it matters",
-          "It covers the main rules and mental model behind zone js",
-          "It shows how zone js behaves in real application code",
-          "It highlights common mistakes developers make with zone js",
-          "It compares zone js with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of zone js",
-          "It includes practical usage patterns for zone js in Change Detection",
-          "It helps with debugging issues connected to zone js",
-          "It prepares you to answer interview and architecture questions about zone js"
+          "patch async operations",
+          "auto trigger change detection",
+          "wrap browser APIs",
+          "performance overhead cost",
+          "zone less Angular option",
+          "detect async events",
+          "custom zone handling",
+          "debug zone issues"
         ],
         "signals": [
-          "Signals defines a core concept used in Angular",
-          "It explains what signals is and why it matters",
-          "It covers the main rules and mental model behind signals",
-          "It shows how signals behaves in real application code",
-          "It highlights common mistakes developers make with signals",
-          "It compares signals with closely related concepts when relevant",
-          "It describes performance, readability, or maintainability impact of signals",
-          "It includes practical usage patterns for signals in Change Detection",
-          "It helps with debugging issues connected to signals",
-          "It prepares you to answer interview and architecture questions about signals"
+          "reactive state primitives",
+          "fine grained updates",
+          "no zone dependency",
+          "computed signals usage",
+          "effect reactive tracking",
+          "better performance model",
+          "replace RxJS partly",
+          "debug signal updates"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "input output decorators",
+          "event emitter usage",
+          "parent child communication",
+          "service shared state",
+          "avoid deep prop chains",
+          "observable data flow",
+          "state lifting pattern",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "template driven forms",
+          "reactive forms usage",
+          "formGroup formControl",
+          "validators built in custom",
+          "error state handling",
+          "async validation rules",
+          "form performance tuning",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "ngOnInit ngOnDestroy",
+          "ngOnChanges detection",
+          "ngAfterViewInit usage",
+          "cleanup subscriptions",
+          "hook execution order",
+          "avoid heavy hooks",
+          "memory leak prevention",
+          "debug lifecycle flow"
+        ],
+        "lazy_loading": [
+          "route based lazy modules",
+          "reduce initial bundle",
+          "dynamic imports usage",
+          "preloading strategies",
+          "optimize app load time",
+          "feature module split",
+          "router config lazy",
+          "debug lazy loading"
+        ],
+        "pwa": [
+          "service worker setup",
+          "ng add pwa",
+          "offline caching support",
+          "manifest configuration",
+          "push notifications",
+          "background sync usage",
+          "performance improvements",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "angular devtools usage",
+          "component tree inspect",
+          "change detection debug",
+          "console logging patterns",
+          "network error tracing",
+          "rxjs debugging tools",
+          "breakpoints usage",
+          "debug production issues"
+        ],
+        "testcase": [
+          "unit testing components",
+          "testbed configuration",
+          "jest karma jasmine",
+          "mock services usage",
+          "integration testing flows",
+          "async test handling",
+          "coverage analysis",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "onpush strategy usage",
+          "trackBy in ngFor",
+          "lazy loading modules",
+          "bundle size reduction",
+          "pure pipes optimization",
+          "zone less strategy",
+          "memoization techniques",
+          "debug performance issues"
+        ],
+        "efficiency_lighthouse": [
+          "lighthouse audit basics",
+          "performance metrics analysis",
+          "accessibility improvements",
+          "SEO checks Angular",
+          "optimize bundle size",
+          "reduce blocking scripts",
+          "improve LCP CLS",
+          "debug audit report"
+        ],
+        "security": [
+          "XSS protection Angular",
+          "dom sanitizer usage",
+          "avoid unsafe innerHTML",
+          "csrf protection tokens",
+          "secure http interceptors",
+          "authentication guards",
+          "content security policy",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "build angular production",
+          "ng build optimization",
+          "CI pipelines setup",
+          "docker deployment basics",
+          "environment configs usage",
+          "automated testing pipeline",
+          "rollback strategies",
+          "debug deployment issues"
         ]
       }
     }

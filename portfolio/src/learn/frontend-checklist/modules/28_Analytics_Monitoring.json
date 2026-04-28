@@ -5,144 +5,236 @@
     {
       "Analytics": {
         "event_tracking": [
-          "Define Event Tracking clearly and explain where it fits within Analytics.",
-          "Understand the core purpose of Event Tracking and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Event Tracking.",
-          "Study how Event Tracking works internally step by step in real application flow.",
-          "Compare Event Tracking with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Event Tracking.",
-          "Practice Event Tracking with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Event Tracking.",
-          "Learn how to debug, test, and validate behavior when working with Event Tracking.",
-          "Be able to explain Event Tracking in interviews using practical examples and tradeoffs."
+          "track user interactions events",
+          "click scroll submit events",
+          "custom event naming strategy",
+          "attach metadata properties",
+          "measure feature usage",
+          "integrate analytics SDK",
+          "avoid over tracking noise",
+          "debug event tracking"
         ],
         "funnels": [
-          "Define Funnels clearly and explain where it fits within Analytics.",
-          "Understand the core purpose of Funnels and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Funnels.",
-          "Study how Funnels works internally step by step in real application flow.",
-          "Compare Funnels with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Funnels.",
-          "Practice Funnels with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Funnels.",
-          "Learn how to debug, test, and validate behavior when working with Funnels.",
-          "Be able to explain Funnels in interviews using practical examples and tradeoffs."
+          "define user journey steps",
+          "track conversion flow stages",
+          "identify drop off points",
+          "optimize user experience",
+          "measure step conversion rates",
+          "analyze bottlenecks issues",
+          "improve product performance",
+          "debug funnel issues"
         ],
         "user_behavior": [
-          "Define User Behavior clearly and explain where it fits within Analytics.",
-          "Understand the core purpose of User Behavior and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to User Behavior.",
-          "Study how User Behavior works internally step by step in real application flow.",
-          "Compare User Behavior with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in User Behavior.",
-          "Practice User Behavior with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to User Behavior.",
-          "Learn how to debug, test, and validate behavior when working with User Behavior.",
-          "Be able to explain User Behavior in interviews using practical examples and tradeoffs."
+          "analyze user interaction patterns",
+          "track sessions navigation flow",
+          "heatmaps click tracking",
+          "segment users behavior",
+          "identify engagement trends",
+          "improve UX decisions",
+          "optimize feature usage",
+          "debug behavior data"
         ],
         "conversion_tracking": [
-          "Define Conversion Tracking clearly and explain where it fits within Analytics.",
-          "Understand the core purpose of Conversion Tracking and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Conversion Tracking.",
-          "Study how Conversion Tracking works internally step by step in real application flow.",
-          "Compare Conversion Tracking with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Conversion Tracking.",
-          "Practice Conversion Tracking with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Conversion Tracking.",
-          "Learn how to debug, test, and validate behavior when working with Conversion Tracking.",
-          "Be able to explain Conversion Tracking in interviews using practical examples and tradeoffs."
+          "track goal completions",
+          "measure signup purchase events",
+          "define conversion metrics",
+          "analyze campaign effectiveness",
+          "optimize conversion rate",
+          "attribute user actions",
+          "improve business outcomes",
+          "debug conversion issues"
         ]
       }
     },
     {
       "Monitoring": {
         "error_tracking": [
-          "Define Error Tracking clearly and explain where it fits within Monitoring.",
-          "Understand the core purpose of Error Tracking and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Error Tracking.",
-          "Study how Error Tracking works internally step by step in real application flow.",
-          "Compare Error Tracking with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Error Tracking.",
-          "Practice Error Tracking with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Error Tracking.",
-          "Learn how to debug, test, and validate behavior when working with Error Tracking.",
-          "Be able to explain Error Tracking in interviews using practical examples and tradeoffs."
+          "capture runtime errors",
+          "log stack traces details",
+          "track production issues",
+          "group similar errors",
+          "alert on critical failures",
+          "improve app stability",
+          "integrate monitoring tools",
+          "debug error issues"
         ],
         "performance_monitoring": [
-          "Define Performance Monitoring clearly and explain where it fits within Monitoring.",
-          "Understand the core purpose of Performance Monitoring and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Performance Monitoring.",
-          "Study how Performance Monitoring works internally step by step in real application flow.",
-          "Compare Performance Monitoring with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Performance Monitoring.",
-          "Practice Performance Monitoring with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Performance Monitoring.",
-          "Learn how to debug, test, and validate behavior when working with Performance Monitoring.",
-          "Be able to explain Performance Monitoring in interviews using practical examples and tradeoffs."
+          "track load performance metrics",
+          "measure LCP CLS FID",
+          "monitor API response time",
+          "analyze slow operations",
+          "optimize bottlenecks issues",
+          "improve user experience",
+          "track resource usage",
+          "debug performance issues"
         ],
         "real_user_monitoring": [
-          "Define Real User Monitoring clearly and explain where it fits within Monitoring.",
-          "Understand the core purpose of Real User Monitoring and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Real User Monitoring.",
-          "Study how Real User Monitoring works internally step by step in real application flow.",
-          "Compare Real User Monitoring with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Real User Monitoring.",
-          "Practice Real User Monitoring with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Real User Monitoring.",
-          "Learn how to debug, test, and validate behavior when working with Real User Monitoring.",
-          "Be able to explain Real User Monitoring in interviews using practical examples and tradeoffs."
+          "collect real user data",
+          "monitor live performance",
+          "analyze user sessions",
+          "track network conditions",
+          "measure real world metrics",
+          "identify performance issues",
+          "improve UX quality",
+          "debug RUM issues"
         ]
       }
     },
     {
       "Tools": {
         "google_analytics": [
-          "Define Google Analytics clearly and explain where it fits within Tools.",
-          "Understand the core purpose of Google Analytics and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Google Analytics.",
-          "Study how Google Analytics works internally step by step in real application flow.",
-          "Compare Google Analytics with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Google Analytics.",
-          "Practice Google Analytics with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Google Analytics.",
-          "Learn how to debug, test, and validate behavior when working with Google Analytics.",
-          "Be able to explain Google Analytics in interviews using practical examples and tradeoffs."
+          "web analytics tracking tool",
+          "track user sessions behavior",
+          "measure traffic sources",
+          "analyze conversion funnels",
+          "GA4 event based model",
+          "integrate via scripts SDK",
+          "dashboard reporting insights",
+          "debug GA issues"
         ],
         "mixpanel": [
-          "Define Mixpanel clearly and explain where it fits within Tools.",
-          "Understand the core purpose of Mixpanel and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Mixpanel.",
-          "Study how Mixpanel works internally step by step in real application flow.",
-          "Compare Mixpanel with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Mixpanel.",
-          "Practice Mixpanel with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Mixpanel.",
-          "Learn how to debug, test, and validate behavior when working with Mixpanel.",
-          "Be able to explain Mixpanel in interviews using practical examples and tradeoffs."
+          "event based analytics platform",
+          "track user actions events",
+          "advanced funnel analysis",
+          "user segmentation support",
+          "real time analytics data",
+          "product usage insights",
+          "cohort analysis features",
+          "debug mixpanel issues"
         ],
         "sentry": [
-          "Define Sentry clearly and explain where it fits within Tools.",
-          "Understand the core purpose of Sentry and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Sentry.",
-          "Study how Sentry works internally step by step in real application flow.",
-          "Compare Sentry with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Sentry.",
-          "Practice Sentry with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Sentry.",
-          "Learn how to debug, test, and validate behavior when working with Sentry.",
-          "Be able to explain Sentry in interviews using practical examples and tradeoffs."
+          "error monitoring platform",
+          "capture frontend backend errors",
+          "stack trace debugging",
+          "release tracking support",
+          "alerting notifications system",
+          "performance monitoring tools",
+          "integrate with apps easily",
+          "debug sentry issues"
         ],
         "logrocket": [
-          "Define Logrocket clearly and explain where it fits within Tools.",
-          "Understand the core purpose of Logrocket and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Logrocket.",
-          "Study how Logrocket works internally step by step in real application flow.",
-          "Compare Logrocket with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Logrocket.",
-          "Practice Logrocket with small examples before applying it in larger Analytics & Monitoring projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Logrocket.",
-          "Learn how to debug, test, and validate behavior when working with Logrocket.",
-          "Be able to explain Logrocket in interviews using practical examples and tradeoffs."
+          "session replay tool",
+          "record user sessions",
+          "track UI interactions",
+          "debug user issues visually",
+          "combine logs analytics",
+          "identify UX problems",
+          "improve debugging efficiency",
+          "debug logrocket issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "pass tracking data props",
+          "share analytics context",
+          "avoid duplicate tracking",
+          "centralize event logic",
+          "sync tracking across components",
+          "optimize data consistency",
+          "manage global analytics state",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "track form validation errors",
+          "measure form drop offs",
+          "log invalid submissions",
+          "analyze validation UX",
+          "improve conversion rates",
+          "optimize form flows",
+          "track error frequency",
+          "debug validation tracking"
+        ],
+        "lifecycle_hooks": [
+          "trigger events on mount",
+          "track page view events",
+          "log lifecycle interactions",
+          "cleanup tracking listeners",
+          "avoid duplicate events",
+          "optimize lifecycle tracking",
+          "measure user flows",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "track lazy load performance",
+          "measure resource loading time",
+          "optimize dynamic imports",
+          "analyze load delays",
+          "improve perceived performance",
+          "log loading events",
+          "optimize UX metrics",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "track offline usage data",
+          "monitor sync behavior",
+          "analyze install rates",
+          "measure engagement offline",
+          "optimize PWA performance",
+          "track background sync",
+          "improve UX metrics",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "analyze logs events",
+          "trace user sessions",
+          "inspect network requests",
+          "debug production issues",
+          "use monitoring dashboards",
+          "fix runtime problems",
+          "track error patterns",
+          "debug issues"
+        ],
+        "testcase": [
+          "test tracking implementation",
+          "validate event firing",
+          "mock analytics tools",
+          "verify monitoring logs",
+          "edge case testing",
+          "automation test pipelines",
+          "performance testing metrics",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "optimize tracking overhead",
+          "reduce analytics payload size",
+          "batch event processing",
+          "improve performance impact",
+          "efficient data collection",
+          "optimize monitoring tools",
+          "analyze performance metrics",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure performance impact",
+          "optimize analytics scripts",
+          "reduce blocking resources",
+          "improve load speed",
+          "analyze audit reports",
+          "track performance scores",
+          "optimize monitoring overhead",
+          "debug audit issues"
+        ],
+        "security": [
+          "protect user data privacy",
+          "avoid sensitive data tracking",
+          "secure analytics endpoints",
+          "sanitize tracked data",
+          "comply with regulations GDPR",
+          "manage user consent",
+          "protect logs access",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "deploy tracking scripts safely",
+          "validate analytics in pipeline",
+          "monitor production metrics",
+          "rollback faulty tracking",
+          "optimize deployment flow",
+          "manage environment configs",
+          "track deployment performance",
+          "debug deployment issues"
         ]
       }
     }

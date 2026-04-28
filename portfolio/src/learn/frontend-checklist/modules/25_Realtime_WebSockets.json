@@ -5,80 +5,182 @@
     {
       "Realtime Communication": {
         "websockets_protocol": [
-          "Define Websockets Protocol clearly and explain where it fits within Realtime Communication.",
-          "Understand the core purpose of Websockets Protocol and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Websockets Protocol.",
-          "Study how Websockets Protocol works internally step by step in real application flow.",
-          "Compare Websockets Protocol with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Websockets Protocol.",
-          "Practice Websockets Protocol with small examples before applying it in larger Realtime & WebSockets projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Websockets Protocol.",
-          "Learn how to debug, test, and validate behavior when working with Websockets Protocol.",
-          "Be able to explain Websockets Protocol in interviews using practical examples and tradeoffs."
+          "full duplex communication channel",
+          "persistent TCP connection",
+          "low latency data transfer",
+          "handshake HTTP upgrade",
+          "bi directional messaging",
+          "stateful connection model",
+          "used for live apps",
+          "debug websocket issues"
         ],
         "server_sent_events": [
-          "Define Server Sent Events clearly and explain where it fits within Realtime Communication.",
-          "Understand the core purpose of Server Sent Events and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Server Sent Events.",
-          "Study how Server Sent Events works internally step by step in real application flow.",
-          "Compare Server Sent Events with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Server Sent Events.",
-          "Practice Server Sent Events with small examples before applying it in larger Realtime & WebSockets projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Server Sent Events.",
-          "Learn how to debug, test, and validate behavior when working with Server Sent Events.",
-          "Be able to explain Server Sent Events in interviews using practical examples and tradeoffs."
+          "one way server to client",
+          "event stream over HTTP",
+          "auto reconnect support",
+          "text event based data",
+          "simpler than websockets",
+          "good for live updates",
+          "limited bidirectional support",
+          "debug SSE issues"
         ],
         "polling_vs_long_polling": [
-          "Define Polling Vs Long Polling clearly and explain where it fits within Realtime Communication.",
-          "Understand the core purpose of Polling Vs Long Polling and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Polling Vs Long Polling.",
-          "Study how Polling Vs Long Polling works internally step by step in real application flow.",
-          "Compare Polling Vs Long Polling with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Polling Vs Long Polling.",
-          "Practice Polling Vs Long Polling with small examples before applying it in larger Realtime & WebSockets projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Polling Vs Long Polling.",
-          "Learn how to debug, test, and validate behavior when working with Polling Vs Long Polling.",
-          "Be able to explain Polling Vs Long Polling in interviews using practical examples and tradeoffs."
+          "polling periodic requests",
+          "long polling wait response",
+          "simulate realtime updates",
+          "higher network overhead",
+          "less efficient than websockets",
+          "fallback for unsupported clients",
+          "easy implementation setup",
+          "debug polling issues"
         ]
       }
     },
     {
       "Realtime Architecture": {
         "connection_management": [
-          "Define Connection Management clearly and explain where it fits within Realtime Architecture.",
-          "Understand the core purpose of Connection Management and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Connection Management.",
-          "Study how Connection Management works internally step by step in real application flow.",
-          "Compare Connection Management with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Connection Management.",
-          "Practice Connection Management with small examples before applying it in larger Realtime & WebSockets projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Connection Management.",
-          "Learn how to debug, test, and validate behavior when working with Connection Management.",
-          "Be able to explain Connection Management in interviews using practical examples and tradeoffs."
+          "manage active connections",
+          "track connected clients",
+          "handle connection lifecycle",
+          "scale connection limits",
+          "use load balancing",
+          "optimize resource usage",
+          "handle disconnect cleanup",
+          "debug connection issues"
         ],
         "reconnection_strategies": [
-          "Define Reconnection Strategies clearly and explain where it fits within Realtime Architecture.",
-          "Understand the core purpose of Reconnection Strategies and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Reconnection Strategies.",
-          "Study how Reconnection Strategies works internally step by step in real application flow.",
-          "Compare Reconnection Strategies with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Reconnection Strategies.",
-          "Practice Reconnection Strategies with small examples before applying it in larger Realtime & WebSockets projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Reconnection Strategies.",
-          "Learn how to debug, test, and validate behavior when working with Reconnection Strategies.",
-          "Be able to explain Reconnection Strategies in interviews using practical examples and tradeoffs."
+          "auto reconnect on failure",
+          "exponential backoff retry",
+          "handle network interruptions",
+          "restore session state",
+          "avoid reconnect storms",
+          "track connection status",
+          "improve user experience",
+          "debug reconnection issues"
         ],
         "backpressure_handling": [
-          "Define Backpressure Handling clearly and explain where it fits within Realtime Architecture.",
-          "Understand the core purpose of Backpressure Handling and the problem it is meant to solve.",
-          "Learn the main concepts, terminology, and mental models related to Backpressure Handling.",
-          "Study how Backpressure Handling works internally step by step in real application flow.",
-          "Compare Backpressure Handling with related alternatives and know when each approach is better.",
-          "Identify common implementation patterns, best practices, and typical pitfalls in Backpressure Handling.",
-          "Practice Backpressure Handling with small examples before applying it in larger Realtime & WebSockets projects.",
-          "Understand performance, scalability, accessibility, or security concerns connected to Backpressure Handling.",
-          "Learn how to debug, test, and validate behavior when working with Backpressure Handling.",
-          "Be able to explain Backpressure Handling in interviews using practical examples and tradeoffs."
+          "manage data flow rate",
+          "prevent overload system",
+          "queue incoming messages",
+          "drop or throttle data",
+          "optimize processing speed",
+          "avoid memory overflow",
+          "balance producer consumer",
+          "debug backpressure issues"
+        ]
+      }
+    },
+    {
+      "Added Topics (Important)": {
+        "component_data_passing": [
+          "pass realtime data streams",
+          "use state management sync",
+          "avoid prop drilling",
+          "handle message updates",
+          "maintain data consistency",
+          "optimize rerender flow",
+          "use global store",
+          "debug data flow"
+        ],
+        "form_validation": [
+          "validate realtime inputs",
+          "handle async validation",
+          "prevent invalid submissions",
+          "sync validation updates",
+          "optimize UX feedback",
+          "sanitize incoming data",
+          "secure form handling",
+          "debug validation issues"
+        ],
+        "lifecycle_hooks": [
+          "init connection on mount",
+          "cleanup on unmount",
+          "manage connection lifecycle",
+          "handle side effects",
+          "avoid memory leaks",
+          "track connection state",
+          "optimize lifecycle flow",
+          "debug lifecycle issues"
+        ],
+        "lazy_loading": [
+          "load realtime modules dynamically",
+          "optimize resource usage",
+          "reduce initial load",
+          "connect on demand",
+          "split connection logic",
+          "improve performance load",
+          "conditional connection setup",
+          "debug lazy issues"
+        ],
+        "pwa": [
+          "realtime offline fallback",
+          "sync when online",
+          "cache realtime data",
+          "background sync integration",
+          "improve user experience",
+          "handle network changes",
+          "optimize data flow",
+          "debug PWA issues"
+        ],
+        "debugging": [
+          "inspect websocket frames",
+          "trace message flow",
+          "analyze network latency",
+          "monitor connection state",
+          "log realtime events",
+          "use devtools network tab",
+          "fix runtime issues",
+          "debug production issues"
+        ],
+        "testcase": [
+          "test realtime flows",
+          "mock websocket server",
+          "simulate network issues",
+          "validate reconnection logic",
+          "edge case testing",
+          "automation test pipelines",
+          "performance testing",
+          "debug failing tests"
+        ],
+        "advanced_optimising": [
+          "optimize message payload size",
+          "reduce network overhead",
+          "efficient data encoding",
+          "batch messages updates",
+          "optimize connection reuse",
+          "improve scalability performance",
+          "analyze latency metrics",
+          "debug optimization issues"
+        ],
+        "efficiency_lighthouse": [
+          "measure realtime performance",
+          "optimize latency metrics",
+          "reduce blocking operations",
+          "improve load speed",
+          "analyze audit reports",
+          "optimize network usage",
+          "track performance trends",
+          "debug audit issues"
+        ],
+        "security": [
+          "secure websocket connections",
+          "use wss protocol",
+          "validate incoming messages",
+          "prevent unauthorized access",
+          "sanitize data streams",
+          "handle auth tokens",
+          "protect against attacks",
+          "debug security issues"
+        ],
+        "ci_cd_deployment": [
+          "deploy realtime services",
+          "automate pipeline setup",
+          "monitor connection health",
+          "scale infrastructure",
+          "rollback deployment issues",
+          "optimize deployment flow",
+          "manage environment configs",
+          "debug deployment issues"
         ]
       }
     }
