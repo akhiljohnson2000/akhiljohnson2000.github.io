@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { ref, watch, computed, onUnmounted } from 'vue'
 import { useDebounceFn, useEventListener, useMediaQuery } from '@vueuse/core'
-import { RouterLink } from 'vue-router'
-import { Check, Copy, Download, Home, X } from 'lucide-vue-next'
+import { ArrowLeft, Check, Copy, Download, FileText, PenSquare, Plus, X } from 'lucide-vue-next'
 import pdfMakeModule from 'pdfmake/build/pdfmake'
 import pdfFontsModule from 'pdfmake/build/vfs_fonts'
 
@@ -15,9 +14,30 @@ import type { CvResume } from '@/types/cv-resume'
 import { normalizeCvResume } from '@/lib/cv-normalize'
 import { jsonKeysStructure } from '@/lib/json-structure'
 
+const STORAGE_KEY_RESUME_LIBRARY = 'portfolio-resume-library-v1'
 const STORAGE_KEY = 'portfolio-resume-json'
 const STORAGE_KEY_LEGACY = 'portfolio-generate-cv-json'
 const STORAGE_KEY_EDIT_MODE = 'portfolio-generate-cv-edit-mode'
+
+type ResumeMeta = {
+  id: string
+  name: string
+  createdAt: number
+  updatedAt: number
+}
+
+function makeResumeStorageKey(id: string) {
+  return `portfolio-resume-json:${id}`
+}
+
+function nowMs() {
+  return Date.now()
+}
+
+function generateResumeId() {
+  if (typeof crypto !== 'undefined' && typeof crypto.randomUUID === 'function') return crypto.randomUUID()
+  return `resume_${nowMs()}_${Math.random().toString(36).slice(2, 8)}`
+}
 
 function readEditMode(): 'json' | 'ui' {
   try {
@@ -29,30 +49,38 @@ function readEditMode(): 'json' | 'ui' {
   return 'ui'
 }
 
-function readStoredJson(): string {
-  const fallback = JSON.stringify(defaultCv, null, 2)
+function readResumeLibrary(): ResumeMeta[] {
   try {
-    const s = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(STORAGE_KEY_LEGACY)
-    if (s) {
-      JSON.parse(s)
-      return s
-    }
+    const raw = localStorage.getItem(STORAGE_KEY_RESUME_LIBRARY)
+    if (!raw) return []
+    const parsed = JSON.parse(raw)
+    if (!Array.isArray(parsed)) return []
+    return parsed
+      .filter((item): item is ResumeMeta => !!item && typeof item === 'object')
+      .map((item) => ({
+        id: String(item.id ?? ''),
+        name: String(item.name ?? ''),
+        createdAt: Number(item.createdAt ?? 0),
+        updatedAt: Number(item.updatedAt ?? 0),
+      }))
+      .filter((item) => item.id && item.name)
+      .sort((a, b) => b.updatedAt - a.updatedAt)
   } catch {
-    try {
-      localStorage.removeItem(STORAGE_KEY)
-      localStorage.removeItem(STORAGE_KEY_LEGACY)
-    } catch {
-      /* ignore */
-    }
+    return []
   }
-  return fallback
+}
+
+function saveResumeLibrary(list: ResumeMeta[]) {
+  localStorage.setItem(STORAGE_KEY_RESUME_LIBRARY, JSON.stringify(list))
 }
 
 const isDesktop = useMediaQuery('(min-width: 768px)')
 
 const editMode = ref<'json' | 'ui'>(readEditMode())
 
-const jsonText = ref(readStoredJson())
+const resumeLibrary = ref<ResumeMeta[]>(readResumeLibrary())
+const selectedResumeId = ref<string | null>(null)
+const jsonText = ref(JSON.stringify(defaultCv, null, 2))
 const parseError = ref<string | null>(null)
 const cvData = ref<CvResume>(
   (() => {
@@ -64,6 +92,11 @@ const cvData = ref<CvResume>(
   })(),
 )
 const exporting = ref(false)
+const libraryCreateError = ref<string | null>(null)
+
+const selectedResume = computed(() =>
+  resumeLibrary.value.find((item) => item.id === selectedResumeId.value) ?? null,
+)
 
 const structureModalOpen = ref(false)
 const structureCopied = ref(false)
@@ -117,12 +150,99 @@ useEventListener('keydown', (e: KeyboardEvent) => {
   if (e.key === 'Escape' && structureModalOpen.value) closeStructureModal()
 })
 
+function touchResume(id: string) {
+  const t = nowMs()
+  resumeLibrary.value = resumeLibrary.value
+    .map((item) => (item.id === id ? { ...item, updatedAt: t } : item))
+    .sort((a, b) => b.updatedAt - a.updatedAt)
+  saveResumeLibrary(resumeLibrary.value)
+}
+
+function loadResumeJsonById(id: string): string {
+  const fallback = JSON.stringify(defaultCv, null, 2)
+  try {
+    const s = localStorage.getItem(makeResumeStorageKey(id))
+    if (s) {
+      JSON.parse(s)
+      return s
+    }
+  } catch {
+    /* ignore */
+  }
+  return fallback
+}
+
+function openResume(id: string) {
+  const text = loadResumeJsonById(id)
+  selectedResumeId.value = id
+  jsonText.value = text
+  parseError.value = null
+  try {
+    cvData.value = normalizeCvResume(JSON.parse(text))
+  } catch {
+    cvData.value = normalizeCvResume(defaultCv)
+  }
+  touchResume(id)
+}
+
+function goToLibrary() {
+  selectedResumeId.value = null
+  structureModalOpen.value = false
+  parseError.value = null
+}
+
+function createResume() {
+  const id = generateResumeId()
+  const t = nowMs()
+  const defaultName = `Resume ${resumeLibrary.value.length + 1}`
+  const meta: ResumeMeta = { id, name: defaultName, createdAt: t, updatedAt: t }
+  resumeLibrary.value = [meta, ...resumeLibrary.value]
+  saveResumeLibrary(resumeLibrary.value)
+  const seed = JSON.stringify(defaultCv, null, 2)
+  localStorage.setItem(makeResumeStorageKey(id), seed)
+  libraryCreateError.value = null
+  openResume(id)
+}
+
+function renameResume(id: string) {
+  const current = resumeLibrary.value.find((item) => item.id === id)
+  if (!current) return
+  const nextName = window.prompt('Rename resume', current.name)?.trim()
+  if (!nextName) return
+  const t = nowMs()
+  resumeLibrary.value = resumeLibrary.value
+    .map((item) => (item.id === id ? { ...item, name: nextName, updatedAt: t } : item))
+    .sort((a, b) => b.updatedAt - a.updatedAt)
+  saveResumeLibrary(resumeLibrary.value)
+}
+
+function migrateLegacyResumeIfNeeded() {
+  if (resumeLibrary.value.length > 0) return
+  let legacy: string | null = null
+  try {
+    legacy = localStorage.getItem(STORAGE_KEY) ?? localStorage.getItem(STORAGE_KEY_LEGACY)
+    if (!legacy) return
+    JSON.parse(legacy)
+  } catch {
+    return
+  }
+  const id = generateResumeId()
+  const t = nowMs()
+  resumeLibrary.value = [{ id, name: 'Resume 1', createdAt: t, updatedAt: t }]
+  saveResumeLibrary(resumeLibrary.value)
+  localStorage.setItem(makeResumeStorageKey(id), legacy)
+}
+
+migrateLegacyResumeIfNeeded()
+
 function tryApplyJsonSync(): boolean {
+  if (!selectedResumeId.value) return false
   try {
     const parsed = JSON.parse(jsonText.value)
     parseError.value = null
     cvData.value = normalizeCvResume(parsed)
-    localStorage.setItem(STORAGE_KEY, jsonText.value)
+    localStorage.setItem(makeResumeStorageKey(selectedResumeId.value), jsonText.value)
+    touchResume(selectedResumeId.value)
     return true
   } catch (e) {
     parseError.value = e instanceof Error ? e.message : 'Invalid JSON'
@@ -134,17 +254,62 @@ function applyJson() {
   tryApplyJsonSync()
 }
 
+function formatJsonText() {
+  try {
+    const parsed = JSON.parse(jsonText.value)
+    jsonText.value = JSON.stringify(parsed, null, 2)
+    parseError.value = null
+  } catch (e) {
+    parseError.value = e instanceof Error ? e.message : 'Invalid JSON'
+  }
+}
+
+function extractJsonErrorLine(message: string, text: string): number | null {
+  const lineMatch = message.match(/line\s+(\d+)/i)
+  if (lineMatch) {
+    const line = Number.parseInt(lineMatch[1], 10)
+    return Number.isFinite(line) && line > 0 ? line : null
+  }
+
+  const positionMatch = message.match(/position\s+(\d+)/i)
+  if (!positionMatch) return null
+  const pos = Number.parseInt(positionMatch[1], 10)
+  if (!Number.isFinite(pos) || pos < 0) return null
+
+  const snippet = text.slice(0, pos)
+  return snippet.split('\n').length
+}
+
+const jsonErrorLine = computed(() => {
+  if (editMode.value !== 'json' || !parseError.value) return null
+  return extractJsonErrorLine(parseError.value, jsonText.value)
+})
+
+const jsonTextareaStyle = computed<Record<string, string>>(() => {
+  if (!jsonErrorLine.value) return {} as Record<string, string>
+  const lineHeightPx = 21
+  const top = (jsonErrorLine.value - 1) * lineHeightPx
+  const bottom = top + lineHeightPx
+  return {
+    backgroundImage: `linear-gradient(to bottom, transparent ${top}px, rgba(239,68,68,0.18) ${top}px, rgba(239,68,68,0.18) ${bottom}px, transparent ${bottom}px)`,
+    backgroundRepeat: 'no-repeat',
+  }
+})
+
 const debouncedApply = useDebounceFn(applyJson, 450)
 
 watch(jsonText, () => {
+  if (!selectedResumeId.value) return
   if (editMode.value !== 'json') return
   debouncedApply()
 })
 
 const debouncedSyncJsonFromCv = useDebounceFn(() => {
+  if (!selectedResumeId.value) return
   jsonText.value = JSON.stringify(cvData.value, null, 2)
   try {
-    localStorage.setItem(STORAGE_KEY, jsonText.value)
+    localStorage.setItem(makeResumeStorageKey(selectedResumeId.value), jsonText.value)
+    touchResume(selectedResumeId.value)
   } catch {
     /* ignore */
   }
@@ -457,7 +622,7 @@ function buildPdfDocDefinition(data: CvResume): any {
 }
 
 async function exportPdf() {
-  if (parseError.value || exporting.value) return
+  if (!selectedResumeId.value || parseError.value || exporting.value) return
   exporting.value = true
   try {
     const pdfMake = getPdfMake()
@@ -487,20 +652,23 @@ const jsonPanelClass = computed(() => {
       class="border-b border-border/60 bg-background/95 backdrop-blur p-0 flex flex-wrap items-center justify-between gap-2 shrink-0 z-10"
     >
       <div class="flex min-w-0 flex-1 flex-wrap items-center gap-x-3 gap-y-2 px-2 py-2">
-        <RouterLink
-          to="/"
+        <button
+          type="button"
           class="inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-md border border-border/60 bg-background text-muted-foreground hover:bg-accent hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2"
-          aria-label="Home"
+          aria-label="All resumes"
+          @click="goToLibrary"
         >
-          <Home class="h-5 w-5" aria-hidden="true" />
-        </RouterLink>
-        <h1 class="text-lg font-semibold tracking-tight shrink-0">Make Your Resume</h1>
+          <ArrowLeft class="h-5 w-5" aria-hidden="true" />
+        </button>
+        <span v-if="selectedResume" class="text-sm text-muted-foreground">
+          {{ selectedResume.name }}
+        </span>
         <div
+          v-if="selectedResumeId"
           class="relative inline-grid h-9 min-w-[15.5rem] shrink-0 grid-cols-2 items-stretch rounded-full border border-border/80 bg-muted/70 p-1 shadow-inner ring-1 ring-black/[0.04] dark:ring-white/[0.06]"
           role="group"
           aria-label="Editor mode: Text fields or JSON"
         >
-          <!-- Sliding pill -->
           <span
             aria-hidden="true"
             class="pointer-events-none absolute left-1 top-1 h-[calc(100%-8px)] w-[calc(50%-4px)] rounded-full bg-pink-500 shadow-md shadow-pink-500/25 transition-[left,box-shadow] duration-200 ease-out dark:bg-pink-600 dark:shadow-pink-600/30"
@@ -509,11 +677,7 @@ const jsonPanelClass = computed(() => {
           <button
             type="button"
             class="relative z-10 flex items-center justify-center rounded-full px-1.5 text-[11px] font-semibold leading-tight tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-xs"
-            :class="
-              editMode === 'ui'
-                ? 'text-white'
-                : 'text-muted-foreground hover:text-foreground'
-            "
+            :class="editMode === 'ui' ? 'text-white' : 'text-muted-foreground hover:text-foreground'"
             :aria-pressed="editMode === 'ui'"
             @click="setEditMode('ui')"
           >
@@ -522,11 +686,7 @@ const jsonPanelClass = computed(() => {
           <button
             type="button"
             class="relative z-10 flex items-center justify-center rounded-full px-1.5 text-[11px] font-semibold leading-tight tracking-wide transition-colors duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:text-xs"
-            :class="
-              editMode === 'json'
-                ? 'text-white'
-                : 'text-muted-foreground hover:text-foreground'
-            "
+            :class="editMode === 'json' ? 'text-white' : 'text-muted-foreground hover:text-foreground'"
             :aria-pressed="editMode === 'json'"
             @click="setEditMode('json')"
           >
@@ -535,7 +695,7 @@ const jsonPanelClass = computed(() => {
         </div>
       </div>
       <div class="flex flex-wrap items-center justify-end gap-2 shrink-0 px-2 py-2">
-        <Button type="button" size="sm" :disabled="!!parseError || exporting" @click="exportPdf">
+        <Button v-if="selectedResumeId" type="button" size="sm" :disabled="!!parseError || exporting" @click="exportPdf">
           <Download class="h-4 w-4" />
           {{ exporting ? 'Exporting…' : 'Export' }}
         </Button>
@@ -545,13 +705,65 @@ const jsonPanelClass = computed(() => {
     <div
       class="flex flex-1 flex-col min-h-0 overflow-hidden px-4 sm:px-6 md:px-10 lg:px-12"
     >
-      <!-- JSON editor -->
-      <section :class="jsonPanelClass">
+      <section v-if="!selectedResumeId" class="flex flex-1 flex-col">
+        <div class="flex items-center justify-between gap-3 py-3 border-b border-border/60">
+          <p class="text-sm text-muted-foreground">
+            Create multiple resumes and manage them as separate tiles.
+          </p>
+          <Button type="button" size="sm" @click="createResume">
+            <Plus class="h-4 w-4" />
+            New resume
+          </Button>
+        </div>
+        <div class="py-4">
+          <p v-if="libraryCreateError" class="text-sm text-destructive mb-3">{{ libraryCreateError }}</p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            <button
+              type="button"
+              class="group min-h-36 rounded-lg border-2 border-dashed border-border bg-muted/20 hover:bg-muted/40 transition-colors flex flex-col items-center justify-center gap-2"
+              @click="createResume"
+            >
+              <Plus class="h-6 w-6 text-pink-600" />
+              <span class="text-sm font-medium">Create new resume</span>
+            </button>
+
+            <div
+              v-for="item in resumeLibrary"
+              :key="item.id"
+              class="rounded-lg border border-border bg-card/50 p-4 flex flex-col gap-3"
+            >
+              <button
+                type="button"
+                class="text-left min-h-16"
+                @click="openResume(item.id)"
+              >
+                <div class="flex items-start gap-2">
+                  <FileText class="h-4 w-4 mt-0.5 text-pink-600 shrink-0" />
+                  <div class="min-w-0">
+                    <div class="font-medium break-words">{{ item.name }}</div>
+                    <p class="text-xs text-muted-foreground mt-1">
+                      Updated {{ new Date(item.updatedAt).toLocaleString() }}
+                    </p>
+                  </div>
+                </div>
+              </button>
+              <div class="flex justify-end">
+                <Button type="button" variant="outline" size="sm" @click="renameResume(item.id)">
+                  <PenSquare class="h-4 w-4" />
+                  Rename
+                </Button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section v-else :class="jsonPanelClass">
         <div
           class="flex border-b border-border/60 p-0 shrink-0 flex-wrap items-center justify-between gap-2 py-2"
         >
           <span v-if="parseError" class="text-sm text-destructive shrink-0">
-            {{ parseError }}
+            {{ parseError }}<span v-if="jsonErrorLine"> (line {{ jsonErrorLine }})</span>
           </span>
           <span v-else-if="editMode === 'json'" class="text-xs text-muted-foreground shrink-0 min-w-0">
             JSON is saved in this browser (localStorage). Invalid JSON will not apply until fixed.
@@ -559,16 +771,26 @@ const jsonPanelClass = computed(() => {
           <span v-else class="text-xs text-muted-foreground shrink-0 min-w-0">
             Edits are saved in this browser (localStorage) and used when you export.
           </span>
-          <Button
-            v-if="editMode === 'json'"
-            type="button"
-            variant="outline"
-            size="sm"
-            class="shrink-0"
-            @click="openStructureModal"
-          >
-            View JSON structure
-          </Button>
+          <div v-if="editMode === 'json'" class="flex items-center gap-2 shrink-0">
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              class="shrink-0"
+              @click="openStructureModal"
+            >
+              View JSON structure
+            </Button>
+            <Button
+              type="button"
+              variant="outline"
+              size="sm"
+              class="shrink-0"
+              @click="formatJsonText"
+            >
+              Format
+            </Button>
+          </div>
         </div>
         <div v-if="editMode === 'ui'" class="flex flex-1 min-h-0 flex-col overflow-y-auto py-3">
           <CvResumeEditorForm v-model="cvData" />
@@ -578,7 +800,12 @@ const jsonPanelClass = computed(() => {
             v-model="jsonText"
             autosize
             :rows="2"
-            class="min-h-[min(50vh,28rem)] font-mono text-[13px] leading-relaxed"
+            :class="
+              parseError
+                ? 'min-h-[min(50vh,28rem)] font-mono text-[13px] leading-relaxed border-destructive focus-visible:ring-destructive'
+                : 'min-h-[min(50vh,28rem)] font-mono text-[13px] leading-relaxed'
+            "
+            :style="jsonTextareaStyle"
             placeholder="{ ... }"
           />
         </div>

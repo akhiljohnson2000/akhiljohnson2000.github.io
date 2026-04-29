@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 import { Plus, Trash2 } from 'lucide-vue-next'
 
 import Button from '@/components/ui/Button.vue'
@@ -16,6 +17,8 @@ import type {
 } from '@/types/cv-resume'
 
 const cv = defineModel<CvResume>({ required: true })
+const draggingWorkResponsibility = ref<{ jobIdx: number; lineIdx: number } | null>(null)
+const draggingProjectResponsibility = ref<{ projectIdx: number; lineIdx: number } | null>(null)
 
 const d = defaultCv as CvResume
 
@@ -92,6 +95,23 @@ function removeResponsibility(jobIdx: number, lineIdx: number) {
   if (r.length === 0) r.push('')
 }
 
+function moveStringItem(arr: string[], fromIdx: number, toIdx: number) {
+  if (fromIdx === toIdx || fromIdx < 0 || toIdx < 0 || fromIdx >= arr.length || toIdx >= arr.length) return
+  const [item] = arr.splice(fromIdx, 1)
+  arr.splice(toIdx, 0, item)
+}
+
+function startDragWorkResponsibility(jobIdx: number, lineIdx: number) {
+  draggingWorkResponsibility.value = { jobIdx, lineIdx }
+}
+
+function dropWorkResponsibility(jobIdx: number, lineIdx: number) {
+  const source = draggingWorkResponsibility.value
+  draggingWorkResponsibility.value = null
+  if (!source || source.jobIdx !== jobIdx) return
+  moveStringItem(cv.value.work_experience[jobIdx].responsibilities, source.lineIdx, lineIdx)
+}
+
 function addEducation() {
   cv.value.education.push(newEducation())
 }
@@ -152,6 +172,17 @@ function removeProjectResponsibility(projectIdx: number, lineIdx: number) {
   if (r.length === 0) r.push('')
 }
 
+function startDragProjectResponsibility(projectIdx: number, lineIdx: number) {
+  draggingProjectResponsibility.value = { projectIdx, lineIdx }
+}
+
+function dropProjectResponsibility(projectIdx: number, lineIdx: number) {
+  const source = draggingProjectResponsibility.value
+  draggingProjectResponsibility.value = null
+  if (!source || source.projectIdx !== projectIdx) return
+  moveStringItem(cv.value.projects[projectIdx].responsibilities, source.lineIdx, lineIdx)
+}
+
 function addAchievement() {
   cv.value.achievements.push('')
 }
@@ -170,9 +201,9 @@ function removeKeyword(i: number) {
 </script>
 
 <template>
-  <div class="cv-editor-form space-y-10 pb-8 [scrollbar-gutter:stable]">
+  <div class="cv-editor-form cv-table-editor space-y-6 pb-6 [scrollbar-gutter:stable]">
     <!-- Basics -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
         Basics
       </h2>
@@ -230,7 +261,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Work experience -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Work experience
@@ -289,12 +320,21 @@ function removeKeyword(i: number) {
               Add line
             </Button>
           </div>
-          <div v-for="(_, ri) in job.responsibilities" :key="'r-' + ji + '-' + ri" class="flex gap-2">
+          <div
+            v-for="(_, ri) in job.responsibilities"
+            :key="'r-' + ji + '-' + ri"
+            class="flex gap-2"
+            draggable="true"
+            @dragstart="startDragWorkResponsibility(ji, ri)"
+            @dragover.prevent
+            @drop="dropWorkResponsibility(ji, ri)"
+            @dragend="draggingWorkResponsibility = null"
+          >
             <Textarea
               v-model="job.responsibilities[ri]"
               autosize
               :rows="1"
-              class="!min-h-0 flex-1 font-sans text-sm leading-normal"
+              class="!min-h-0 flex-1 font-sans text-sm leading-normal cursor-move"
               placeholder="Bullet point"
             />
             <Button
@@ -313,7 +353,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Education -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Education
@@ -368,7 +408,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Skills -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Skills
@@ -397,7 +437,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Projects -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Projects
@@ -461,12 +501,21 @@ function removeKeyword(i: number) {
               Add line
             </Button>
           </div>
-          <div v-for="(_, ri) in proj.responsibilities" :key="'pr-' + pi + '-' + ri" class="flex gap-2">
+          <div
+            v-for="(_, ri) in proj.responsibilities"
+            :key="'pr-' + pi + '-' + ri"
+            class="flex gap-2"
+            draggable="true"
+            @dragstart="startDragProjectResponsibility(pi, ri)"
+            @dragover.prevent
+            @drop="dropProjectResponsibility(pi, ri)"
+            @dragend="draggingProjectResponsibility = null"
+          >
             <Textarea
               v-model="proj.responsibilities[ri]"
               autosize
               :rows="1"
-              class="!min-h-0 flex-1 font-sans text-sm leading-normal"
+              class="!min-h-0 flex-1 font-sans text-sm leading-normal cursor-move"
               placeholder="Project responsibility"
             />
             <Button
@@ -507,7 +556,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Languages -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Languages
@@ -546,7 +595,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Certifications -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Certifications
@@ -601,7 +650,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Achievements -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Key strengths / achievements
@@ -636,7 +685,7 @@ function removeKeyword(i: number) {
     </section>
 
     <!-- Keywords -->
-    <section class="space-y-4">
+    <section class="space-y-3 rounded-lg border border-border/70 bg-card/30 p-3 md:p-4">
       <div class="flex flex-wrap items-center justify-between gap-2">
         <h2 class="text-sm font-semibold uppercase tracking-wide text-foreground">
           Keywords
@@ -665,3 +714,28 @@ function removeKeyword(i: number) {
     </section>
   </div>
 </template>
+<style scoped>
+.cv-table-editor :deep(.space-y-1\.5) {
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  align-items: center;
+  column-gap: 0.75rem;
+  row-gap: 0.25rem;
+}
+
+.cv-table-editor :deep(.space-y-1\.5 > label) {
+  margin: 0;
+  line-height: 1.2;
+}
+
+.cv-table-editor :deep(.space-y-1\.5 textarea) {
+  align-self: start;
+}
+
+@media (max-width: 640px) {
+  .cv-table-editor :deep(.space-y-1\.5) {
+    grid-template-columns: 1fr;
+    row-gap: 0.35rem;
+  }
+}
+</style>
