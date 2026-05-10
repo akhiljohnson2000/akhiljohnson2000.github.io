@@ -3,7 +3,10 @@ import { collectSearchableFromTopics, countTopicRows } from '@/lib/learn-topic-r
 export type LearnModuleJson = {
   order: number
   title: string
-  /** Each item: `{ "Section title": { "subtopic_key": ["detail", ...] } }`. */
+  /**
+   * Either a flat checklist (`string[]`) or sectioned objects:
+   * `{ "Section title": { "subtopic_key": ["detail", ...] } }` per array item.
+   */
   topics: unknown[]
 }
 

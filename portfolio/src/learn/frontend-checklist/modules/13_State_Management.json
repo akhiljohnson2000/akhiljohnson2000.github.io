@@ -2,295 +2,102 @@
   "order": 13,
   "title": "State Management",
   "topics": [
-    {
-      "Fundamentals": {
-        "local_vs_global_state": [
-          "component scoped local state",
-          "shared global store state",
-          "lifting state up pattern",
-          "avoid duplicate state copies",
-          "choose scope carefully",
-          "rerender impact scope",
-          "debug state ownership",
-          "optimize state placement"
-        ],
-        "client_vs_server_state": [
-          "client UI interaction state",
-          "server fetched remote data",
-          "cache server responses",
-          "sync backend data state",
-          "avoid duplicating server state",
-          "use query libraries",
-          "stale data handling",
-          "debug data sync issues"
-        ],
-        "state_normalization": [
-          "flatten nested state structure",
-          "store entities by id",
-          "avoid deep nesting",
-          "reduce duplication data",
-          "easier updates lookup",
-          "improve performance access",
-          "use normalized schemas",
-          "debug inconsistent state"
-        ],
-        "immutability": [
-          "avoid direct state mutation",
-          "use spread operators",
-          "create new references",
-          "shallow vs deep copy",
-          "helps change detection",
-          "predictable state updates",
-          "immutable libraries usage",
-          "debug mutation bugs"
-        ]
-      }
-    },
-    {
-      "Patterns": {
-        "flux_architecture": [
-          "unidirectional data flow",
-          "actions dispatch events",
-          "store holds state",
-          "reducers update state",
-          "predictable state changes",
-          "debug via action logs",
-          "separate concerns clearly",
-          "scalable architecture pattern"
-        ],
-        "event_driven_state": [
-          "state changes via events",
-          "publish subscribe pattern",
-          "decouple components logic",
-          "async event handling",
-          "event bus communication",
-          "avoid tight coupling",
-          "debug event flows",
-          "manage event lifecycle"
-        ],
-        "observer_pattern": [
-          "subscribe to state changes",
-          "notify observers updates",
-          "reactive data flow",
-          "decouple producer consumer",
-          "used in reactive libs",
-          "handle multiple subscribers",
-          "unsubscribe cleanup needed",
-          "debug observer leaks"
-        ]
-      }
-    },
-    {
-      "Libraries": {
-        "redux": [
-          "centralized global store",
-          "pure reducer functions",
-          "action based updates",
-          "immutable state updates",
-          "middleware async handling",
-          "devtools time travel",
-          "boilerplate heavy setup",
-          "debug redux flow"
-        ],
-        "redux_toolkit": [
-          "simplified redux setup",
-          "createSlice usage",
-          "immer immutability handling",
-          "thunks async logic",
-          "less boilerplate code",
-          "better defaults config",
-          "integrates devtools",
-          "debug toolkit usage"
-        ],
-        "zustand": [
-          "lightweight state library",
-          "hook based store",
-          "minimal boilerplate setup",
-          "direct state mutation allowed",
-          "fine grained subscriptions",
-          "good performance scaling",
-          "simple global state",
-          "debug zustand issues"
-        ],
-        "react_query": [
-          "server state management",
-          "data fetching caching",
-          "auto refetch mechanisms",
-          "stale time configuration",
-          "background updates sync",
-          "optimistic updates support",
-          "pagination infinite queries",
-          "debug query cache"
-        ],
-        "mobx": [
-          "observable state management",
-          "automatic dependency tracking",
-          "reactive computed values",
-          "minimal boilerplate setup",
-          "mutable style updates",
-          "fine grained reactivity",
-          "side effects reactions",
-          "debug mobx state"
-        ]
-      }
-    },
-    {
-      "Advanced Concepts": {
-        "selector_memoization": [
-          "memoize derived state",
-          "avoid recomputation cost",
-          "reselect library usage",
-          "cache previous results",
-          "dependency based recalculation",
-          "optimize render performance",
-          "use stable inputs",
-          "debug selector issues"
-        ],
-        "cache_invalidation": [
-          "refresh stale cached data",
-          "manual automatic invalidation",
-          "query key based cache",
-          "time based expiry rules",
-          "avoid stale UI data",
-          "refetch on events",
-          "sync backend updates",
-          "debug cache issues"
-        ],
-        "state_synchronization": [
-          "sync client server state",
-          "real time updates websockets",
-          "multi tab sync storage",
-          "conflict resolution strategies",
-          "offline sync handling",
-          "ensure data consistency",
-          "handle race conditions",
-          "debug sync issues"
-        ],
-        "optimistic_updates": [
-          "update UI before response",
-          "rollback on failure",
-          "improve perceived speed",
-          "handle error recovery",
-          "sync with server later",
-          "avoid inconsistent state",
-          "used in mutations",
-          "debug optimistic issues"
-        ]
-      }
-    },
-    {
-      "Added Topics (Important)": {
-        "component_data_passing": [
-          "props and callbacks flow",
-          "context or store sharing",
-          "avoid prop drilling",
-          "event based communication",
-          "lift state when needed",
-          "global store usage",
-          "maintain data consistency",
-          "debug data flow"
-        ],
-        "form_validation": [
-          "form state validation rules",
-          "sync async validation",
-          "error state handling",
-          "touched dirty tracking",
-          "prevent invalid submits",
-          "library usage forms",
-          "optimize large forms",
-          "debug validation issues"
-        ],
-        "lifecycle_hooks": [
-          "init update cleanup flow",
-          "sync state on mount",
-          "cleanup subscriptions properly",
-          "trigger side effects safely",
-          "avoid memory leaks",
-          "framework specific hooks",
-          "handle async updates",
-          "debug lifecycle issues"
-        ],
-        "lazy_loading": [
-          "load state on demand",
-          "code splitting stores",
-          "reduce initial load",
-          "dynamic module loading",
-          "optimize performance load",
-          "fetch data when needed",
-          "avoid unused state",
-          "debug lazy state"
-        ],
-        "pwa": [
-          "offline state persistence",
-          "sync background updates",
-          "cache application data",
-          "handle network fallback",
-          "improve app resilience",
-          "local storage strategies",
-          "service worker integration",
-          "debug offline issues"
-        ],
-        "debugging": [
-          "devtools state inspection",
-          "track state changes logs",
-          "time travel debugging",
-          "trace actions updates",
-          "console debugging patterns",
-          "monitor performance impact",
-          "identify memory leaks",
-          "debug production issues"
-        ],
-        "testcase": [
-          "unit test reducers logic",
-          "mock store interactions",
-          "integration state flows",
-          "test async actions",
-          "snapshot state testing",
-          "coverage analysis tools",
-          "edge case testing",
-          "debug failing tests"
-        ],
-        "advanced_optimising": [
-          "memoization selectors usage",
-          "avoid unnecessary rerenders",
-          "split state smaller chunks",
-          "optimize store updates",
-          "batch state changes",
-          "use efficient libraries",
-          "profile performance bottlenecks",
-          "debug optimization issues"
-        ],
-        "efficiency_lighthouse": [
-          "measure performance metrics",
-          "optimize render blocking",
-          "reduce bundle size impact",
-          "improve user experience",
-          "monitor state updates cost",
-          "optimize data fetching",
-          "analyze audit reports",
-          "debug performance score"
-        ],
-        "security": [
-          "protect sensitive state data",
-          "avoid storing secrets client",
-          "secure API interactions",
-          "validate input data",
-          "prevent XSS injection",
-          "token storage strategies",
-          "sanitize user inputs",
-          "debug security issues"
-        ],
-        "ci_cd_deployment": [
-          "automate build pipelines",
-          "run tests on deploy",
-          "environment configs handling",
-          "monitor production state",
-          "rollback deployment strategy",
-          "CI tools integration",
-          "optimize build output",
-          "debug deployment issues"
-        ]
-      }
-    }
+    "What is state in applications",
+    "UI state vs server state",
+    "Local state vs global state",
+    "Derived state concept",
+    "Single source of truth",
+    "State normalization",
+    "Immutable state updates",
+    "Why immutability matters",
+    "Shallow vs deep updates",
+    "State colocation",
+    "Lifting state up",
+    "Prop drilling problem",
+    "Avoiding unnecessary global state",
+    "Component-level state patterns",
+    "Context API basics",
+    "When to use Context",
+    "Context performance pitfalls",
+    "Splitting context for performance",
+    "Custom hooks for state reuse",
+    "State persistence (localStorage, IndexedDB)",
+    "Server state concept",
+    "Client state vs server state difference",
+    "Caching strategies",
+    "Cache invalidation",
+    "Stale vs fresh data",
+    "Optimistic updates",
+    "Pessimistic updates",
+    "Data fetching patterns",
+    "React Query basics",
+    "SWR basics",
+    "Query keys design",
+    "Refetch strategies",
+    "Background updates",
+    "Pagination and infinite queries",
+    "Mutation handling",
+    "Error handling strategies",
+    "Loading states management",
+    "Retry strategies",
+    "Global loading indicators",
+    "State hydration",
+    "State synchronization across tabs",
+    "Redux architecture overview",
+    "Redux store",
+    "Actions and reducers",
+    "Redux Toolkit",
+    "createSlice and createAsyncThunk",
+    "Selectors",
+    "Middleware (Redux Thunk, Saga basics)",
+    "NgRx architecture (Angular)",
+    "Actions, reducers, effects",
+    "Store selectors in NgRx",
+    "Signal-based state (Angular)",
+    "Vue state (Pinia)",
+    "Vuex (legacy understanding)",
+    "Zustand basics",
+    "Jotai basics",
+    "Recoil basics",
+    "Lightweight vs heavy state libraries",
+    "Global vs modular stores",
+    "State partitioning",
+    "Managing complex state trees",
+    "Handling form state",
+    "Form libraries (Formik, React Hook Form)",
+    "Validation state management",
+    "Undo/redo state patterns",
+    "Finite state machines (XState)",
+    "Event-driven state management",
+    "State machines vs reducers",
+    "Side effects handling",
+    "Async state handling",
+    "Handling race conditions",
+    "Debouncing state updates",
+    "Throttling state updates",
+    "Avoiding unnecessary re-renders",
+    "Memoization strategies",
+    "Selectors memoization",
+    "Normalization for performance",
+    "Large-scale state architecture",
+    "Microfrontend state sharing",
+    "State isolation",
+    "Security of state (sensitive data)",
+    "Persisted vs volatile state",
+    "Testing state logic",
+    "Mocking state in tests",
+    "Debugging state issues",
+    "DevTools (Redux DevTools)",
+    "Logging state changes",
+    "Time travel debugging",
+    "State versioning",
+    "Data synchronization with backend",
+    "Real-time state updates (WebSockets)",
+    "Offline-first state management",
+    "Conflict resolution strategies",
+    "Scalability considerations",
+    "Choosing the right state tool",
+    "Avoiding over-engineering",
+    "Best practices for production apps"
   ]
 }

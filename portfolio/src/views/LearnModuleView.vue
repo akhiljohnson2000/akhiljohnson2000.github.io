@@ -3,7 +3,11 @@ import { computed } from 'vue'
 import { useRoute, RouterLink } from 'vue-router'
 
 import { getModuleDataBySlug } from '@/lib/learn-data'
-import { expandTopicsToRows } from '@/lib/learn-topic-rows'
+import {
+  expandFlatTopicRows,
+  expandTopicsToRows,
+  topicsDisplayMode,
+} from '@/lib/learn-topic-rows'
 import type { TopicDisplayRow } from '@/lib/learn-topic-rows'
 
 type GroupedRow = TopicDisplayRow & {
@@ -41,13 +45,27 @@ const moduleData = computed(() => {
   return getModuleDataBySlug(s)
 })
 
-const displayRows = computed((): TopicDisplayRow[] => {
+const topicsMode = computed(() => {
   const m = moduleData.value
-  if (!m) return []
-  return expandTopicsToRows(m.topics)
+  if (!m) return 'flat' as const
+  return topicsDisplayMode(m.topics)
 })
 
-const groupedRows = computed(() => groupRowsBySection(displayRows.value))
+const flatRows = computed(() => {
+  const m = moduleData.value
+  if (!m || topicsMode.value !== 'flat') return []
+  return expandFlatTopicRows(m.topics)
+})
+
+const groupedRows = computed(() => {
+  const m = moduleData.value
+  if (!m || topicsMode.value !== 'nested') return []
+  return groupRowsBySection(expandTopicsToRows(m.topics))
+})
+
+const hasTopicRows = computed(() =>
+  topicsMode.value === 'flat' ? flatRows.value.length > 0 : groupedRows.value.length > 0,
+)
 </script>
 
 <template>
@@ -88,12 +106,55 @@ const groupedRows = computed(() => groupRowsBySection(displayRows.value))
             </h1>
 
             <div
-              v-if="groupedRows.length === 0"
+              v-if="!hasTopicRows"
               class="text-muted-foreground text-[15px] md:text-[20px] py-8"
             >
               No topics in this module.
             </div>
 
+            <!-- Flat checklist: topics as string[] (e.g. 01_HTML.json) -->
+            <div
+              v-else-if="topicsMode === 'flat'"
+              class="overflow-x-auto rounded-lg border border-border/60 -mx-1 px-1 sm:mx-0 sm:px-0"
+            >
+              <table class="w-full min-w-[min(100%,28rem)] table-fixed border-collapse border border-border/60 text-left">
+                <thead class="bg-muted/30">
+                  <tr>
+                    <th
+                      scope="col"
+                      class="w-14 sm:w-16 border-b border-border/60 px-3 py-3 text-sm font-semibold text-muted-foreground align-top tabular-nums"
+                    >
+                      #
+                    </th>
+                    <th
+                      scope="col"
+                      class="border-b border-border/60 px-3 py-3 text-sm font-semibold text-muted-foreground align-top"
+                    >
+                      Topic
+                    </th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr
+                    v-for="row in flatRows"
+                    :key="row.index"
+                    class="border-b border-border/60 last:border-b-0 odd:bg-muted/10"
+                  >
+                    <th
+                      scope="row"
+                      class="px-3 py-2.5 align-top text-sm tabular-nums text-muted-foreground font-medium border-r border-border/40 bg-muted/15"
+                    >
+                      {{ row.index }}
+                    </th>
+                    <td class="px-3 py-2.5 align-top text-[15px] md:text-[17px] text-foreground/90 leading-snug whitespace-normal break-words">
+                      {{ row.text }}
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <!-- Nested sections: object-shaped topic entries -->
             <div
               v-else
               class="overflow-x-auto rounded-lg border border-border/60 -mx-1 px-1 sm:mx-0 sm:px-0"
