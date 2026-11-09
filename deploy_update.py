@@ -16,7 +16,7 @@ from pathlib import Path
 # Run from repo root (directory where this script lives)
 REPO_ROOT = Path(__file__).resolve().parent
 
-KEEP = {".git", "portfolio", ".gitignore", "deploy_update.py"}
+KEEP = {".git", "portfolio", ".gitignore", "deploy_update.py", ".nojekyll"}
 DIST_SOURCE = REPO_ROOT / "portfolio" / "dist"
 
 
@@ -57,7 +57,10 @@ def main():
             print(f"Error copying {item.name}: {e}")
             return 1
 
-    print("Done. Root now has: .git, portfolio, deploy_update.py, .gitignore + dist contents.")
+    # GitHub Pages/Jekyll skips paths starting with "_"; disable Jekyll processing.
+    (REPO_ROOT / ".nojekyll").touch()
+
+    print("Done. Root now has: .git, portfolio, deploy_update.py, .gitignore, .nojekyll + dist contents.")
     return 0
 
 
