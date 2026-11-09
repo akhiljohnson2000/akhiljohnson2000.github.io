@@ -16,6 +16,11 @@ const router = createRouter({
       component: () => import('@/views/LearnModuleView.vue'),
     },
     { path: '/generate-cv', name: 'ResumeGenerator', component: () => import('@/views/GenerateCvView.vue') },
+    {
+      path: '/image-reducer',
+      name: 'ImageReducer',
+      component: () => import('@/views/ImageReducerView.vue'),
+    },
   ],
 })
 

@@ -1,2 +1,4 @@
 /portfolio/node_modules
 /portfolio/.env
+.DS_Store
+**/.DS_Store

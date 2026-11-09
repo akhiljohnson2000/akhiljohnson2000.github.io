@@ -2,7 +2,7 @@
 import { RouterLink } from 'vue-router'
 import Card from '@/components/ui/Card.vue'
 import CardContent from '@/components/ui/CardContent.vue'
-import { ArrowRight, FileText, ListChecks } from 'lucide-vue-next'
+import { ArrowRight, FileText, ImageDown, ListChecks } from 'lucide-vue-next'
 
 const services = [
   {
@@ -19,6 +19,13 @@ const services = [
       'Edit structured JSON, preview a print-ready resume layout, and export to PDF.',
     icon: FileText,
   },
+  {
+    to: '/image-reducer',
+    title: 'Image Reducer',
+    description:
+      'Compress and convert images to JPEG, WebP, or PNG — estimate size, then download or save to a folder.',
+    icon: ImageDown,
+  },
 ] as const
 </script>
 
@@ -32,7 +39,7 @@ const services = [
             Tools and guides for your frontend career — pick a service below.
           </p>
 
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 md:gap-8">
             <RouterLink
               v-for="item in services"
               :key="item.to"
