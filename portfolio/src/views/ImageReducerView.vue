@@ -62,8 +62,9 @@ const FORMATS: Record<FormatKey, { mime: string; ext: string; label: string }> =
 const files = ref<QueueItem[]>([])
 const results = ref<ResultRow[]>([])
 const selectedFormat = ref<FormatKey>('jpeg')
-const qualityValue = ref(80)
-const qualityText = ref('80')
+/** Keep this % of each original file’s size (0 ≈ smallest, 100 ≈ original size). */
+const sizePercentValue = ref(50)
+const sizePercentText = ref('50')
 const rootHandle = ref<DirectoryHandleLike | null>(null)
 const converting = ref(false)
 const estimating = ref(false)
@@ -82,34 +83,37 @@ let pickerPromise: Promise<DirectoryHandleLike> | null = null
 const fileInputEl = ref<HTMLInputElement | null>(null)
 const hasDirectoryPicker = typeof window !== 'undefined' && 'showDirectoryPicker' in window
 
-const qualityValid = computed(() => {
-  if (selectedFormat.value === 'png') return true
-  const raw = qualityText.value.trim()
+const sizePercentValid = computed(() => {
+  const raw = sizePercentText.value.trim()
   if (!/^\d+$/.test(raw)) return false
   const n = Number(raw)
-  return n >= 1 && n <= 100
+  return n >= 0 && n <= 100
 })
 
-const currentQuality = computed(() => {
-  if (selectedFormat.value === 'png') return 100
-  if (!qualityValid.value) return null
-  return Number(qualityText.value.trim())
+const currentSizePercent = computed(() => {
+  if (!sizePercentValid.value) return null
+  return Number(sizePercentText.value.trim())
 })
 
 const currentKey = computed(() => {
-  if (selectedFormat.value === 'png') return 'png'
-  const q = currentQuality.value
-  if (q == null) return null
-  return `${selectedFormat.value}:${q}`
+  const pct = currentSizePercent.value
+  if (pct == null) return null
+  return `${selectedFormat.value}:size:${pct}`
 })
 
-const pngMode = computed(() => selectedFormat.value === 'png')
+const totalOriginalBytes = computed(() => files.value.reduce((sum, item) => sum + item.file.size, 0))
+
+const targetTotalBytes = computed(() => {
+  const pct = currentSizePercent.value
+  if (pct == null) return null
+  return Math.round(totalOriginalBytes.value * (pct / 100))
+})
 
 const estimateLabel = computed(() => {
   const list = files.value
   const key = currentKey.value
   if (!list.length) return '—'
-  if (!pngMode.value && currentQuality.value == null) return '—'
+  if (currentSizePercent.value == null) return '—'
   const ready = list.filter((item) => item.encoded && item.encoded.key === key && !item.error)
   const failed = list.filter((item) => item.error).length
   const pending = list.length - ready.length - failed
@@ -121,15 +125,17 @@ const estimateLabel = computed(() => {
 const estimateDetail = computed(() => {
   const list = files.value
   const key = currentKey.value
+  const pct = currentSizePercent.value
   if (!list.length) return 'Add images to estimate the converted size.'
-  if (!pngMode.value && currentQuality.value == null) return 'Enter a quality from 1 to 100.'
+  if (pct == null) return 'Enter a target size from 0 to 100% of the original.'
   const ready = list.filter((item) => item.encoded && item.encoded.key === key && !item.error)
   const failed = list.filter((item) => item.error).length
   const pending = list.length - ready.length - failed
   const bytes = ready.reduce((sum, item) => sum + (item.encoded?.bytes ?? 0), 0)
-  const original = list.reduce((sum, item) => sum + item.file.size, 0)
-  if (pending > 0 || estimating.value) return `Estimating ${ready.length} of ${list.length}`
-  let detail = `Original ${formatBytes(original)} · ${savingsText(original, bytes)}`
+  const original = totalOriginalBytes.value
+  const target = targetTotalBytes.value ?? 0
+  if (pending > 0 || estimating.value) return `Estimating ${ready.length} of ${list.length} · target ${formatBytes(target)}`
+  let detail = `Original ${formatBytes(original)} · target ${formatBytes(target)} · ${savingsText(original, bytes)}`
   if (failed) detail += ` · ${failed} unreadable`
   return detail
 })
@@ -222,7 +228,56 @@ function breakdownSize(item: QueueItem) {
   return '…'
 }
 
-async function encode(item: QueueItem, format: FormatKey, quality: number) {
+function canvasToBlob(canvas: HTMLCanvasElement, mime: string, quality?: number) {
+  return new Promise<Blob>((resolve, reject) => {
+    canvas.toBlob(
+      (result) => {
+        if (result) resolve(result)
+        else reject(new Error('Could not encode this image'))
+      },
+      mime,
+      quality,
+    )
+  })
+}
+
+async function encodeAt(
+  bitmap: ImageBitmap,
+  format: FormatKey,
+  opts: { quality?: number; scale?: number },
+) {
+  const scale = Math.min(1, Math.max(0.05, opts.scale ?? 1))
+  const width = Math.max(1, Math.round(bitmap.width * scale))
+  const height = Math.max(1, Math.round(bitmap.height * scale))
+  const canvas = document.createElement('canvas')
+  canvas.width = width
+  canvas.height = height
+  const ctx = canvas.getContext('2d', { alpha: format !== 'jpeg' })
+  if (!ctx) throw new Error('Could not encode this image')
+  if (format === 'jpeg') {
+    ctx.fillStyle = '#ffffff'
+    ctx.fillRect(0, 0, width, height)
+  }
+  ctx.imageSmoothingEnabled = true
+  ctx.imageSmoothingQuality = 'high'
+  ctx.drawImage(bitmap, 0, 0, width, height)
+  const spec = FORMATS[format]
+  const quality = format === 'png' ? undefined : opts.quality
+  try {
+    return await canvasToBlob(canvas, spec.mime, quality)
+  } finally {
+    canvas.width = 0
+    canvas.height = 0
+  }
+}
+
+/**
+ * Encode toward a fraction of the original file size.
+ * 100% ≈ original bytes (never intentionally larger), 0% ≈ smallest practical output.
+ * Uses quality search, then downscales when quality alone cannot hit the target
+ * (common for HEIC → JPEG/WebP where the source is already highly compressed).
+ */
+async function encodeToTargetSize(item: QueueItem, format: FormatKey, sizePercent: number) {
   let bitmap: ImageBitmap
   try {
     const source = await bitmapSource(item)
@@ -230,34 +285,100 @@ async function encode(item: QueueItem, format: FormatKey, quality: number) {
   } catch {
     throw new Error('Cannot read this image')
   }
+
   try {
-    const canvas = document.createElement('canvas')
-    canvas.width = bitmap.width
-    canvas.height = bitmap.height
-    const ctx = canvas.getContext('2d', { alpha: format !== 'jpeg' })
-    if (!ctx) throw new Error('Could not encode this image')
-    if (format === 'jpeg') {
-      ctx.fillStyle = '#ffffff'
-      ctx.fillRect(0, 0, canvas.width, canvas.height)
+    const original = item.file.size
+    const targetBytes = Math.max(0, Math.round(original * (Math.min(100, Math.max(0, sizePercent)) / 100)))
+    const lossy = format !== 'png'
+
+    const tryEncode = (quality: number, scale: number) =>
+      encodeAt(bitmap, format, { quality: lossy ? quality : undefined, scale })
+
+    // Start from near-max quality / full size, then shrink until under target.
+    let scale = 1
+    let quality = lossy ? 0.92 : 1
+    let best = await tryEncode(quality, scale)
+
+    const underTarget = (blob: Blob) => blob.size <= targetBytes || targetBytes === 0
+
+    // If already at/under target at high quality, binary-search upward quality
+    // only when we still have headroom and want better fidelity near 100%.
+    if (best.size <= targetBytes && targetBytes > 0 && lossy) {
+      let lo = quality
+      let hi = 1
+      for (let i = 0; i < 6; i += 1) {
+        const mid = (lo + hi) / 2
+        const candidate = await tryEncode(mid, scale)
+        if (candidate.size <= targetBytes) {
+          best = candidate
+          lo = mid
+        } else {
+          hi = mid
+        }
+      }
+      return { blob: best, width: bitmap.width, height: bitmap.height }
     }
-    ctx.imageSmoothingEnabled = true
-    ctx.imageSmoothingQuality = 'high'
-    ctx.drawImage(bitmap, 0, 0)
-    const spec = FORMATS[format]
-    const q = format === 'png' ? undefined : quality / 100
-    const blob = await new Promise<Blob>((resolve, reject) => {
-      canvas.toBlob(
-        (result) => {
-          canvas.width = 0
-          canvas.height = 0
-          if (result) resolve(result)
-          else reject(new Error('Could not encode this image'))
-        },
-        spec.mime,
-        q,
-      )
-    })
-    return { blob, width: bitmap.width, height: bitmap.height }
+
+    // Need smaller: binary-search quality at full resolution.
+    if (lossy && best.size > targetBytes) {
+      let lo = 0.01
+      let hi = quality
+      best = await tryEncode(lo, scale)
+      for (let i = 0; i < 8; i += 1) {
+        const mid = (lo + hi) / 2
+        const candidate = await tryEncode(mid, scale)
+        if (candidate.size > targetBytes) {
+          hi = mid
+        } else {
+          best = candidate
+          lo = mid
+        }
+      }
+      quality = lo
+    }
+
+    // Still too big (or target is ~0): downscale until under target or floor.
+    while (best.size > targetBytes && scale > 0.08) {
+      scale = Math.max(0.08, scale * 0.82)
+      if (lossy) {
+        let lo = 0.01
+        let hi = Math.max(quality, 0.35)
+        best = await tryEncode(lo, scale)
+        if (underTarget(best) && targetBytes > 0) {
+          for (let i = 0; i < 6; i += 1) {
+            const mid = (lo + hi) / 2
+            const candidate = await tryEncode(mid, scale)
+            if (candidate.size <= targetBytes) {
+              best = candidate
+              lo = mid
+            } else {
+              hi = mid
+            }
+          }
+          quality = lo
+        } else {
+          best = await tryEncode(0.01, scale)
+          quality = 0.01
+        }
+      } else {
+        best = await tryEncode(1, scale)
+      }
+      if (targetBytes === 0 && scale <= 0.08) break
+    }
+
+    // Never keep an output larger than original when user asked for ≤100% of original.
+    if (sizePercent <= 100 && best.size > original) {
+      scale = Math.min(scale, 1)
+      while (best.size > original && scale > 0.08) {
+        scale = Math.max(0.08, scale * 0.8)
+        best = await tryEncode(lossy ? 0.01 : 1, scale)
+      }
+      if (best.size > original && lossy) {
+        best = await tryEncode(0.01, 0.08)
+      }
+    }
+
+    return { blob: best, width: bitmap.width, height: bitmap.height }
   } finally {
     bitmap.close()
   }
@@ -273,19 +394,19 @@ function scheduleEstimate() {
 
 async function runEstimates(token: number) {
   const format = selectedFormat.value
-  const quality = format === 'png' ? 100 : currentQuality.value
-  if (quality == null || !files.value.length) {
+  const sizePercent = currentSizePercent.value
+  if (sizePercent == null || !files.value.length) {
     if (token === estimateToken) estimating.value = false
     return
   }
   estimating.value = true
-  const key = format === 'png' ? 'png' : `${format}:${quality}`
+  const key = `${format}:size:${sizePercent}`
   for (const item of [...files.value]) {
     if (token !== estimateToken) return
     if (!files.value.includes(item)) continue
     if (item.encoded && item.encoded.key === key) continue
     try {
-      const encoded = await encode(item, format, quality)
+      const encoded = await encodeToTargetSize(item, format, sizePercent)
       if (token !== estimateToken || !files.value.includes(item)) continue
       item.width = encoded.width
       item.height = encoded.height
@@ -312,10 +433,10 @@ async function runEstimates(token: number) {
 
 async function blobFor(item: QueueItem) {
   const format = selectedFormat.value
-  const quality = format === 'png' ? 100 : qualityValue.value
-  const key = format === 'png' ? 'png' : `${format}:${quality}`
+  const sizePercent = sizePercentValue.value
+  const key = `${format}:size:${sizePercent}`
   if (item.encoded && item.encoded.key === key && item.encoded.blob) return item.encoded
-  const encoded = await encode(item, format, quality)
+  const encoded = await encodeToTargetSize(item, format, sizePercent)
   item.width = encoded.width
   item.height = encoded.height
   item.error = null
@@ -621,28 +742,28 @@ function onFileChange() {
   if (input) input.value = ''
 }
 
-function onQualityInput() {
-  const q = currentQuality.value
-  if (q == null) {
+function onSizePercentInput() {
+  const pct = currentSizePercent.value
+  if (pct == null) {
     estimateToken += 1
     estimating.value = false
     return
   }
-  qualityValue.value = q
+  sizePercentValue.value = pct
   scheduleEstimate()
 }
 
-function onQualityBlur() {
-  if (currentQuality.value == null) {
-    qualityText.value = String(qualityValue.value)
+function onSizePercentBlur() {
+  if (currentSizePercent.value == null) {
+    sizePercentText.value = String(sizePercentValue.value)
     scheduleEstimate()
   }
 }
 
-function onQualityRange(event: Event) {
+function onSizePercentRange(event: Event) {
   const value = Number((event.target as HTMLInputElement).value)
-  qualityValue.value = value
-  qualityText.value = String(value)
+  sizePercentValue.value = value
+  sizePercentText.value = String(value)
   scheduleEstimate()
 }
 
@@ -680,12 +801,12 @@ async function onChooseFolder() {
 
 async function onConvert() {
   if (converting.value || pickerPromise || !files.value.length) return
-  const quality = selectedFormat.value === 'png' ? 100 : currentQuality.value
-  if (quality == null) {
-    setStatus('Enter a quality from 1 to 100.', true)
+  const sizePercent = currentSizePercent.value
+  if (sizePercent == null) {
+    setStatus('Enter a target size from 0 to 100% of the original.', true)
     return
   }
-  qualityValue.value = quality
+  sizePercentValue.value = sizePercent
   try {
     let root: DirectoryHandleLike | null = null
     if (hasDirectoryPicker) {
@@ -713,7 +834,7 @@ async function onConvert() {
 }
 
 watch(
-  () => [selectedFormat.value, qualityText.value, files.value.length] as const,
+  () => [selectedFormat.value, sizePercentText.value, files.value.length] as const,
   () => {
     if (!statusLocked.value) idleStatus()
   },
@@ -755,7 +876,7 @@ onUnmounted(() => {
               <ImageDown class="h-5 w-5 text-primary" aria-hidden="true" />
               Image Reducer
             </h1>
-            <p>Drop images, pick a format and quality, then convert and download or save to a folder.</p>
+            <p>Drop images, pick a format and target size, then convert and download or save to a folder.</p>
           </div>
         </div>
       </header>
@@ -893,21 +1014,21 @@ onUnmounted(() => {
             <div>
               <label
                 class="label"
-                for="quality"
-              >Quality %</label>
+                for="size-percent"
+              >Target size %</label>
               <div class="quality-wrap">
                 <input
-                  id="quality"
-                  v-model="qualityText"
+                  id="size-percent"
+                  v-model="sizePercentText"
                   type="number"
                   inputmode="numeric"
-                  min="1"
+                  min="0"
                   max="100"
                   step="1"
                   autocomplete="off"
-                  :disabled="pngMode || converting"
-                  @input="onQualityInput"
-                  @blur="onQualityBlur"
+                  :disabled="converting"
+                  @input="onSizePercentInput"
+                  @blur="onSizePercentBlur"
                 >
                 <span
                   class="suffix"
@@ -916,19 +1037,21 @@ onUnmounted(() => {
               </div>
               <input
                 type="range"
-                min="1"
+                min="0"
                 max="100"
                 step="1"
-                :value="qualityValue"
-                aria-label="Quality percent"
-                :disabled="pngMode || converting"
-                @input="onQualityRange"
+                :value="sizePercentValue"
+                aria-label="Target size percent of original"
+                :disabled="converting"
+                @input="onSizePercentRange"
               >
               <p class="hint">
                 {{
-                  pngMode
-                    ? 'PNG is lossless, so quality is not used.'
-                    : 'Lower percentages make smaller JPEG and WebP files.'
+                  currentSizePercent == null
+                    ? 'Enter 0–100. 0% aims for the smallest file; 100% aims for the original size.'
+                    : files.length
+                      ? `0% ≈ 0 KB · 100% ≈ original (${formatBytes(totalOriginalBytes)}) · now targeting ${formatBytes(targetTotalBytes ?? 0)}.`
+                      : '0% aims for ~0 KB. 100% aims for the original file size.'
                 }}
               </p>
             </div>
